@@ -1,0 +1,455 @@
+{
+  "meta": {
+    "title": "EarScribe | Free Speech & Audio to Text Converter No Sign-up",
+    "description": "Free audio to text & speech to text converter. Convert MP3 to text, WAV or M4A to SRT/VTT subtitles, no sign up or login, 100% free and privacy, unlimited.",
+    "ogTitle": "EarScribe — Free audio to text converter Online, No Sign-up",
+    "ogDescription": "Free audio to text and free speech to text. Convert MP3 to text, WAV or M4A to SRT/VTT subtitles using OpenAI Whisper — in your browser."
+  },
+  "header": {
+    "product": "EarScribe",
+    "about": "About",
+    "github": "GitHub"
+  },
+  "hero": {
+    "tag": "100% free, no sign-up",
+    "title": "Audio to text. Nothing leaves your device.",
+    "subtitle": "100% free audio to text converter — no sign-up, no login, unlimited use. Drop an MP3 to text, WAV or M4A — get a transcript with timestamps and SRT / VTT subtitles. Free speech to text powered by OpenAI Whisper. Private, your audio never leaves your device.",
+    "cta": "Choose an audio file"
+  },
+  "trust": {
+    "private": "100% free, unlimited",
+    "free": "No sign-up, no login",
+    "openModels": "Private, no upload",
+    "subtitles": "SRT & VTT export"
+  },
+  "dropzone": {
+    "idle": "Drop an audio file or click to browse",
+    "hint": "MP3, WAV, M4A, OGG, FLAC, WebM — up to ~2 hours per file",
+    "dragging": "Release to use this file",
+    "rejected": "Unsupported file type. Use an audio file.",
+    "tooLarge": "File is unusually large. Long audio may exceed browser memory.",
+    "changeFile": "Use a different file"
+  },
+  "modelPicker": {
+    "title": "Pick a model",
+    "subtitle": "Larger models are more accurate but take longer to download and run. Pick once — the model is cached in your browser.",
+    "recommended": "Recommended",
+    "selected": "Selected",
+    "cached": "Cached",
+    "cachedHint": "Already on this device. Ready to run instantly.",
+    "needsDownload": "{size} download",
+    "select": "Select",
+    "downloadAndRun": "Download & transcribe",
+    "downloadAndRunSized": "Download {size} & transcribe",
+    "transcribeNow": "Transcribe",
+    "downloading": "Downloading…",
+    "downloadingPct": "Downloading {percent}",
+    "initializingModel": "Initializing model…",
+    "loadingCached": "Loading cached model…",
+    "transcribingShort": "Transcribing…",
+    "transcribingPct": "Transcribing {percent}",
+    "deleteRemoveAria": "Remove from this device",
+    "deleteConfirmQuestion": "Remove from this device?",
+    "deleteConfirmHint": "Frees ~{size}. You can re-download anytime.",
+    "deleteConfirmYes": "Yes, remove",
+    "deleteConfirmCancel": "Cancel",
+    "deleting": "Removing…",
+    "deleteSuccess": "Removed · freed {size}",
+    "deleteFailed": "Failed to remove",
+    "warningWebgpuMissing": "Your browser has no WebGPU. This model will run on CPU (WASM) and may be slow.",
+    "warningRamLow": "Your device reports {available} GB RAM. This model recommends at least {required} GB and may crash on low-memory devices.",
+    "deviceCapability": "Your device",
+    "webgpuOn": "WebGPU available",
+    "webgpuOff": "WebGPU unavailable — CPU only",
+    "memoryReport": "{gb} GB RAM",
+    "memoryUnknown": "RAM unknown",
+    "cores": "{cores} CPU cores"
+  },
+  "models": {
+    "tiny": {
+      "name": "Whisper Tiny",
+      "tagline": "Fastest, smallest. Lower accuracy.",
+      "pros": "Smallest download. Runs on any device, even old phones.",
+      "cons": "Misses words in noisy audio, struggles with accents."
+    },
+    "base": {
+      "name": "Whisper Base",
+      "tagline": "Best balance of speed and accuracy.",
+      "pros": "Good accuracy for most clean speech. Runs on any device.",
+      "cons": "Still misses some words on heavily accented or noisy audio."
+    },
+    "small": {
+      "name": "Whisper Small",
+      "tagline": "Higher accuracy, slower.",
+      "pros": "Noticeably better on accents and noise.",
+      "cons": "Slow without WebGPU. Larger download."
+    },
+    "turbo": {
+      "name": "Whisper Large v3 Turbo",
+      "tagline": "Highest accuracy. WebGPU recommended.",
+      "pros": "Best transcription quality, fast on WebGPU.",
+      "cons": "Large download and memory footprint. May crash on low-end devices."
+    }
+  },
+  "progress": {
+    "downloadingModel": "Downloading model… {percent}",
+    "downloadingFile": "{file} — {loaded} of {total}",
+    "decodingAudio": "Decoding audio…",
+    "transcribing": "Transcribing… {percent}",
+    "preparing": "Preparing…",
+    "cancel": "Cancel"
+  },
+  "result": {
+    "title": "Transcript",
+    "detectedLanguage": "Detected language: {language}",
+    "wordCount": "{count} words",
+    "duration": "{duration}",
+    "copy": "Copy text",
+    "copied": "Copied",
+    "export": "Export",
+    "exportTxt": "Plain text (.txt)",
+    "exportSrt": "Subtitles (.srt)",
+    "exportVtt": "Subtitles (.vtt)",
+    "exportJson": "Raw JSON (.json)",
+    "newFile": "Transcribe another file",
+    "playFromHere": "Play from here",
+    "play": "Play",
+    "pause": "Pause"
+  },
+  "errors": {
+    "modelLoadFailed": "Could not load the model. Check your network connection and try again.",
+    "audioDecodeFailed": "Could not decode this audio file. Try a different format (MP3 / WAV / M4A).",
+    "transcribeFailed": "Transcription failed. Your device may be out of memory — try a smaller model.",
+    "browserUnsupported": "Your browser is missing required features (Web Workers, AudioContext). Try the latest Chrome, Edge or Safari."
+  },
+  "faq": {
+    "title": "Free unlimited audio to text — FAQ",
+    "items": [
+      {
+        "q": "Is EarScribe really 100% free with no limits?",
+        "a": "Yes — 100% free, unlimited, no sign-up and no login required. There are no paid tiers, no credit card, no per-minute fees, and no daily or monthly quota. The Whisper speech to text model runs on your own hardware, so there is no cloud compute cost to pass on. Free audio to text with no strings attached."
+      },
+      {
+        "q": "Is my audio private and secure?",
+        "a": "Fully private. EarScribe is a local-first audio to text converter: your audio file never leaves your device and is never uploaded to any server. No account means no data collected about you. You can even use it offline once the model is downloaded."
+      },
+      {
+        "q": "Is my audio uploaded anywhere?",
+        "a": "No. Free audio to text happens entirely locally — the audio is decoded on your device and fed to a Whisper model running in a Web Worker. Nothing is sent to a server."
+      },
+      {
+        "q": "Why is the first run slow?",
+        "a": "The first time you pick a model for audio to text, your browser downloads it (80 MB to 800 MB depending on the size). After that the free audio to text model is cached and reused — no re-download needed."
+      },
+      {
+        "q": "What languages are supported?",
+        "a": "Free audio to text supports 99 languages via Whisper. The language is detected automatically — you do not need to pick one."
+      },
+      {
+        "q": "Can I transcribe a video?",
+        "a": "Not directly. For video audio to text, extract the audio first (any tool that can output MP3 or WAV will work) and drop that here."
+      },
+      {
+        "q": "Does this work offline?",
+        "a": "After the model has been downloaded once, yes — free audio to text works offline. The page itself needs to be loaded first, but subsequent audio to text runs work without internet."
+      },
+      {
+        "q": "How do I convert an MP3 to text for free?",
+        "a": "Drop the MP3 onto EarScribe for free MP3 to text. The file is decoded in your browser, Whisper transcribes it locally, and you can copy the MP3 to text output or export your MP3 to text as SRT, VTT, TXT or JSON. There is no upload step and no account required."
+      },
+      {
+        "q": "Is there a free Otter.ai or Rev alternative?",
+        "a": "EarScribe is a free audio to text alternative to cloud transcription services like Otter.ai, Rev and HappyScribe. The trade-off: you do the compute on your own machine for free speech to text, but the audio never leaves it and there are no per-minute fees or subscriptions."
+      },
+      {
+        "q": "Can I generate SRT or VTT subtitles from audio?",
+        "a": "Yes. After audio to text, click Export → .srt or .vtt. Cue timing comes from Whisper's emitted timestamps, so the subtitles align with the audio to text output without manual splitting."
+      },
+      {
+        "q": "Does this run OpenAI Whisper in the browser?",
+        "a": "Yes — EarScribe runs free audio to text via Whisper (Tiny, Base, Small, and Large v3 Turbo) directly in the browser through Transformers.js on WebGPU, falling back to WebAssembly when unavailable."
+      }
+    ]
+  },
+  "about": {
+    "title": "About EarScribe",
+    "intro": "EarScribe is a static web app that runs OpenAI's Whisper speech-recognition models directly in your browser using Transformers.js and the WebGPU / WebAssembly runtimes.",
+    "noServer": "There is no backend that touches your audio. The Cloudflare Pages host only serves the static HTML, JS and CSS. The Whisper model weights are fetched from the Hugging Face CDN on first use and cached by your browser.",
+    "credits": "Built on Transformers.js, ONNX Runtime Web and the open-source Whisper models from OpenAI."
+  },
+  "footer": {
+    "tagline": "100% free audio to text and speech to text. No sign-up, no login.",
+    "links": {
+      "about": "About",
+      "privacy": "Privacy",
+      "github": "Source"
+    },
+    "builtWith": "Built with Transformers.js, ONNX Runtime Web, Whisper."
+  },
+  "seo": {
+    "showcase": {
+      "kicker": "Audio to text — see what you get",
+      "title": "A real transcript, with timestamps, waveform, and one-click subtitle export.",
+      "subtitle": "Free audio to text — drop in a podcast, lecture, or interview. EarScribe shows you the full transcript synced to the audio — click any line to jump there, or export to SRT / VTT / TXT in a single click.",
+      "fakeUrl": "earscribe.app — interview-acme-q3.mp3",
+      "badges": {
+        "onDevice": "On-device",
+        "autoLanguage": "English (auto-detected)",
+        "duration": "12:48",
+        "wordCount": "1,842 words"
+      },
+      "pauseAria": "Pause",
+      "playbackTime": "00:01:14 / 00:12:48",
+      "playbackRate": "1.0x",
+      "transcript": [
+        {
+          "ts": "00:00:08",
+          "speaker": "Host",
+          "text": "Welcome back — today we're talking with someone who studies attention."
+        },
+        {
+          "ts": "00:00:24",
+          "speaker": "Guest",
+          "text": "Interruption isn't actually the problem people think it is."
+        }
+      ],
+      "exportHeading": "Export",
+      "copyText": "Copy text",
+      "tiles": [
+        { "label": ".srt", "sub": "Subtitles" },
+        { "label": ".vtt", "sub": "Web subtitles" },
+        { "label": ".txt", "sub": "Plain text" },
+        { "label": ".json", "sub": "Raw + timing" }
+      ],
+      "srtFilename": "interview-acme-q3.srt",
+      "srtPreview": "1\n00:00:08,120 --> 00:00:18,640\nWelcome back — we're talking attention research.",
+      "exportNote": "Audio to text subtitles are cue-aligned and ready to drop into Premiere, Final Cut, DaVinci Resolve, YouTube, or any web player."
+    },
+    "howItWorks": {
+      "kicker": "How free unlimited audio to text works",
+      "title": "Three steps. No sign-up, no login, 100% free, unlimited.",
+      "subtitle": "100% free and private audio to text — no sign-up, no login required. Your audio is processed locally on your device; there is literally nowhere for it to leak to.",
+      "steps": [
+        {
+          "title": "Drop your audio",
+          "body": "Drop an MP3 to text, WAV, M4A, OGG, FLAC or WebM — up to about two hours per file. The file never leaves your machine."
+        },
+        {
+          "title": "Pick a Whisper model",
+          "body": "Tiny (40 MB) for quick notes, Turbo (~800 MB) for studio-grade accuracy. Models are cached after the first run."
+        },
+        {
+          "title": "Read, edit, export",
+          "body": "Get your audio to text as a timestamped transcript synced to a waveform. Export as SRT / VTT for subtitles or plain text for notes."
+        }
+      ]
+    },
+    "whatYouCanDo": {
+      "kicker": "What you can do — 100% free, no sign-up, unlimited",
+      "title": "Free unlimited audio to text converter — no sign-up, no login.",
+      "prose": "EarScribe is a 100% free <kw>audio to text</kw> converter — <kw>no sign-up</kw>, no login, <kw>unlimited</kw> use. Convert <kw>MP3 to text</kw>, <kw>WAV to text</kw> or <kw>M4A to text</kw>, generate <kw>SRT or VTT subtitles</kw> from any audio, or run <kw>OpenAI Whisper online</kw> without an API key. 100% free <kw>speech to text</kw> with no account, no quota, no per-minute fees — private, your audio never leaves your device.",
+      "jobs": [
+        { "from": "MP3", "to": ".txt", "label": "MP3 to text" },
+        { "from": "WAV", "to": ".txt", "label": "WAV to text" },
+        { "from": "M4A", "to": ".txt", "label": "M4A to text" },
+        { "from": "Audio", "to": ".srt", "label": "Audio to SRT" },
+        { "from": "Audio", "to": ".vtt", "label": "Audio to VTT" },
+        { "from": "Podcast", "to": ".txt", "label": "Podcast to text" }
+      ]
+    },
+    "useCases": {
+      "kicker": "Free, unlimited, no-login audio to text — built for everyone",
+      "title": "Who uses EarScribe.",
+      "subtitle": "100% free, unlimited audio to text with no sign-up — six very different jobs. If your audio shouldn't end up on someone else's server, you're in the right place.",
+      "items": [
+        {
+          "title": "Podcasters & creators",
+          "body": "Free audio to text for podcasters — cut episodes faster: paste the transcript into your editor, search for the moment you need, and ship show notes the same day.",
+          "tag": "Podcasting"
+        },
+        {
+          "title": "Journalists & researchers",
+          "body": "MP3 to text for source interviews — private, no sign-up, no account. Your audio stays on your laptop. No third-party server, no audit log to subpoena.",
+          "tag": "Journalism"
+        },
+        {
+          "title": "Students & lectures",
+          "body": "Free audio to text for students — drop a recorded lecture and get a searchable transcript before your next class.",
+          "tag": "Education"
+        },
+        {
+          "title": "Meetings & user interviews",
+          "body": "Audio to text for research sessions — drop the audio in, get free speech to text, and ship a tagged transcript to your team. Nothing leaves your device.",
+          "tag": "Research"
+        },
+        {
+          "title": "Video subtitles",
+          "body": "Free audio to text exported as .srt or .vtt — drops straight into Premiere, Resolve, Final Cut, or YouTube. Cue times are aligned to the audio.",
+          "tag": "Subtitles"
+        },
+        {
+          "title": "Audiobooks & long-form",
+          "body": "Two-hour MP3 to text? No problem. Turbo handles audiobook-length audio — unlimited, no API quota, no per-minute fee, no login required.",
+          "tag": "Long-form"
+        }
+      ]
+    },
+    "features": {
+      "kicker": "Why our free unlimited audio to text converter",
+      "title": "Open Whisper, privacy-first, with the rough edges sanded off.",
+      "items": [
+        {
+          "title": "Private, no upload",
+          "body": "All free audio to text is private — decoded locally, never uploaded to any server. Your data stays yours, with zero risk of leaking to a third party."
+        },
+        {
+          "title": "WebGPU when available, WASM when not",
+          "body": "Turbo runs ~10× faster on WebGPU. On older devices we fall back to WebAssembly automatically."
+        },
+        {
+          "title": "99 languages, auto-detected",
+          "body": "Drop a French podcast, a Mandarin lecture, or a Hindi interview — free audio to text in 99 languages, all auto-detected."
+        },
+        {
+          "title": "SRT, VTT, JSON, TXT",
+          "body": "One-click MP3 to text or audio to SRT export. SRT and VTT cues are aligned to model-emitted timestamps, not heuristic chunking."
+        },
+        {
+          "title": "Works offline — unlimited, no internet needed",
+          "body": "Models are cached locally. Once downloaded, unlimited audio to text — no internet, no quota, no per-minute billing."
+        },
+        {
+          "title": "100% free. No account. No API key.",
+          "body": "100% free and unlimited — no credit card, no sign-up, no login, no usage caps. Free audio to text and free speech to text the moment you open the page."
+        }
+      ]
+    },
+    "sampleOutput": {
+      "kicker": "Audio to text — sample output",
+      "title": "The same audio to text transcript, three formats, ready to ship.",
+      "subtitle": "What an exported MP3 to text or audio to SRT file actually looks like — paste straight into your editor or upload to YouTube.",
+      "files": [
+        {
+          "name": "transcript.srt",
+          "lang": "SubRip",
+          "code": "1\n00:00:08,120 --> 00:00:18,640\nWelcome back — we're talking attention research."
+        },
+        {
+          "name": "transcript.vtt",
+          "lang": "WebVTT",
+          "code": "WEBVTT\n\n00:00:08.120 --> 00:00:18.640\nWelcome back — we're talking attention research."
+        },
+        {
+          "name": "transcript.txt",
+          "lang": "Plain text",
+          "code": "[00:00:08] Host: Welcome back — we're talking attention research."
+        }
+      ]
+    },
+    "testimonials": {
+      "kicker": "100% free, no login audio to text — from real users",
+      "title": "Quiet, fast, and entirely yours.",
+      "subtitle": "A few representative folks who switched to free, unlimited, no-login audio to text. (Placeholder quotes — swap with real ones when you have them.)",
+      "quotes": [
+        {
+          "name": "Maya R.",
+          "role": "Podcast producer",
+          "quote": "Replaced a $19/mo subscription — 100% free, no login, unlimited audio to text. The Turbo model on my M2 is faster than waiting for a cloud upload over hotel wifi."
+        },
+        {
+          "name": "Daniel K.",
+          "role": "Investigative reporter",
+          "quote": "Source confidentiality is non-negotiable. With this free speech to text tool — no account, no upload — the audio never leaves the laptop. That's the difference between using it and not."
+        },
+        {
+          "name": "Priya S.",
+          "role": "PhD student, linguistics",
+          "quote": "Unlimited audio to text of fieldwork audio, on a plane, with no quota and no login. Free speech to text that just keeps working."
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "100% free, unlimited, no-login audio to text — how it compares",
+      "title": "EarScribe vs Otter.ai, Rev and the Whisper API.",
+      "subtitle": "A 100% free, unlimited, no-login audio to text alternative to cloud transcription — same Whisper model family, three very different deployment shapes. (Pricing is indicative.)",
+      "headers": {
+        "capability": "Capability",
+        "earscribe": "EarScribe",
+        "you": "You",
+        "cloudApi": "Whisper API",
+        "saas": "Hosted SaaS"
+      },
+      "yes": "Yes",
+      "no": "No",
+      "rows": [
+        { "label": "100% free, no credit card", "earscribe": true, "cloudApi": false, "saas": false },
+        { "label": "Unlimited use, no quota", "earscribe": true, "cloudApi": false, "saas": false },
+        { "label": "Account / login required", "earscribe": false, "cloudApi": true, "saas": true },
+        { "label": "Per-minute pricing", "earscribe": "Free", "cloudApi": "$0.006/min", "saas": "$10–25/mo" },
+        { "label": "Private, audio stays on-device", "earscribe": true, "cloudApi": false, "saas": false },
+        { "label": "Works offline", "earscribe": true, "cloudApi": false, "saas": false },
+        { "label": "Whisper-quality accuracy", "earscribe": true, "cloudApi": true, "saas": "Varies" },
+        { "label": "Open source models", "earscribe": true, "cloudApi": false, "saas": false },
+        { "label": "SRT / VTT export", "earscribe": true, "cloudApi": false, "saas": true },
+        { "label": "Setup time", "earscribe": "0s", "cloudApi": "API key + code", "saas": "Sign-up flow" }
+      ]
+    },
+    "stats": {
+      "srTitle": "EarScribe free audio to text in numbers",
+      "items": [
+        { "v": "99", "unit": "languages", "body": "Auto-detected, no manual pick required." },
+        { "v": "0", "unit": "bytes uploaded", "body": "Private audio to text — your audio never leaves your device." },
+        { "v": "$0", "unit": "/ month", "body": "100% free and unlimited — no sign-up, no login, no usage cap." },
+        { "v": "~2h", "unit": "max length", "body": "Long-form MP3 to text handled in a single pass." }
+      ]
+    },
+    "formatsLanguages": {
+      "audioFormatsTitle": "Audio to text — supported formats",
+      "audioFormatsDesc": "Free unlimited audio to text converter — no sign-up, no account. If you can play it, EarScribe converts your audio to text: MP3 to text, WAV to text, M4A to text, and more.",
+      "formats": ["MP3", "WAV", "M4A", "OGG", "FLAC", "WebM", "Opus", "AAC"],
+      "languagesTitle": "Free audio to text in 99 languages (auto-detected)",
+      "languagesDesc": "Free audio to text in Whisper's 99 supported languages. The model picks the right one from the first few seconds of audio.",
+      "languages": [
+        "English",
+        "Mandarin",
+        "Spanish",
+        "Hindi",
+        "Arabic",
+        "Portuguese",
+        "Bengali",
+        "Russian",
+        "Japanese",
+        "Punjabi",
+        "German",
+        "Javanese",
+        "Korean",
+        "French",
+        "Telugu",
+        "Vietnamese",
+        "Tamil",
+        "Italian",
+        "Turkish",
+        "Polish",
+        "Ukrainian",
+        "Dutch",
+        "Persian",
+        "Thai",
+        "Swedish",
+        "Czech",
+        "Greek",
+        "Hebrew",
+        "Finnish",
+        "Norwegian",
+        "Hungarian"
+      ],
+      "more": "+68 more"
+    },
+    "finalCta": {
+      "tag": "100% free, no sign-up, unlimited",
+      "title": "Drop an audio file for 100% free audio to text — no sign-up, no login, unlimited.",
+      "subtitle": "Scroll back to the top, pick a file, and you're ten seconds away from unlimited free audio to text with timestamps. 100% free speech to text and MP3 to text — no account required.",
+      "tryNow": "Start free, no sign-up",
+      "howItWorks": "How audio to text works"
+    }
+  }
+}

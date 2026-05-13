@@ -29,12 +29,29 @@
   <a href="https://earscribe.app/es">Español</a> ·
   <a href="https://earscribe.app/de">Deutsch</a> ·
   <a href="https://earscribe.app/fr">Français</a> ·
-  <a href="https://earscribe.app/ja">日本語</a> ·
-  <a href="https://earscribe.app/ko">한국어</a> ·
   <a href="https://earscribe.app/pt-br">Português</a> ·
   <a href="https://earscribe.app/ru">Русский</a> ·
+  <a href="https://earscribe.app/ja">日本語</a> ·
+  <a href="https://earscribe.app/ko">한국어</a> ·
+  <a href="https://earscribe.app/zh-CN">简体中文</a> ·
+  <a href="https://earscribe.app/zh-TW">繁體中文</a> ·
   <a href="https://earscribe.app/hi">हिन्दी</a> ·
-  <a href="https://earscribe.app/ar">العربية</a>
+  <a href="https://earscribe.app/ar">العربية</a> ·
+  <a href="https://earscribe.app/id">Bahasa Indonesia</a> ·
+  <a href="https://earscribe.app/tr">Türkçe</a> ·
+  <a href="https://earscribe.app/vi">Tiếng Việt</a> ·
+  <a href="https://earscribe.app/it">Italiano</a> ·
+  <a href="https://earscribe.app/pl">Polski</a> ·
+  <a href="https://earscribe.app/nl">Nederlands</a> ·
+  <a href="https://earscribe.app/uk">Українська</a> ·
+  <a href="https://earscribe.app/th">ภาษาไทย</a> ·
+  <a href="https://earscribe.app/fa">فارسی</a> ·
+  <a href="https://earscribe.app/bn">বাংলা</a> ·
+  <a href="https://earscribe.app/ur">اردو</a> ·
+  <a href="https://earscribe.app/sv">Svenska</a> ·
+  <a href="https://earscribe.app/nb">Norsk</a> ·
+  <a href="https://earscribe.app/da">Dansk</a> ·
+  <a href="https://earscribe.app/fi">Suomi</a>
 </p>
 
 ---

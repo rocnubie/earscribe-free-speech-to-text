@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.png" alt="EarScribe — Free Audio to Text Converter screenshot — drag-and-drop MP3, WAV, M4A and free speech to text in your browser via OpenAI Whisper"></a>
+  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — Free Audio to Text Converter screenshot — drag-and-drop MP3, WAV, M4A and free speech to text in your browser via OpenAI Whisper"></a>
 </p>
 
 <p align="center">
@@ -97,43 +97,43 @@ EarScribe is a complete, **free online transcription** workspace — built for p
 ### 1. Drop an audio file — 100% free, no sign-up, no login
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.png" alt="Free audio to text converter — drag and drop MP3, WAV, M4A, OGG, FLAC or WebM in the browser. No sign-up, no login, unlimited free speech to text."></a>
+  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Free audio to text converter — drag and drop MP3, WAV, M4A, OGG, FLAC or WebM in the browser. No sign-up, no login, unlimited free speech to text."></a>
 </p>
 
 ### 2. Timestamped transcript with waveform, click any line to jump
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.png" alt="EarScribe transcript output — timestamped audio to text with waveform scrubber and one-click SRT and VTT subtitle export"></a>
+  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="EarScribe transcript output — timestamped audio to text with waveform scrubber and one-click SRT and VTT subtitle export"></a>
 </p>
 
 ### 3. Three steps: drop → pick a Whisper model → export
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.png" alt="How free audio to text works on EarScribe — drop audio, pick OpenAI Whisper model (Tiny, Base, Small, or Large v3 Turbo), read and export transcript"></a>
+  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="How free audio to text works on EarScribe — drop audio, pick OpenAI Whisper model (Tiny, Base, Small, or Large v3 Turbo), read and export transcript"></a>
 </p>
 
 ### 4. Why EarScribe — privacy-first, browser-native Whisper
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.png" alt="EarScribe features — private no upload, WebGPU plus WASM, 99 languages auto-detected, SRT VTT JSON TXT export, works offline, 100% free no API key"></a>
+  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScribe features — private no upload, WebGPU plus WASM, 99 languages auto-detected, SRT VTT JSON TXT export, works offline, 100% free no API key"></a>
 </p>
 
 ### 5. Who uses EarScribe — podcasters, journalists, students, editors
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.png" alt="EarScribe use cases — free audio to text for podcasters, journalists, students, user research, video subtitle SRT generator, and audiobook transcription"></a>
+  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="EarScribe use cases — free audio to text for podcasters, journalists, students, user research, video subtitle SRT generator, and audiobook transcription"></a>
 </p>
 
 ### 6. EarScribe vs Otter.ai, Rev, Whisper API — built-in comparison
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.png" alt="EarScribe vs Otter.ai vs Rev vs Whisper API comparison — free unlimited audio to text alternative with no per-minute fees and on-device privacy"></a>
+  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="EarScribe vs Otter.ai vs Rev vs Whisper API comparison — free unlimited audio to text alternative with no per-minute fees and on-device privacy"></a>
 </p>
 
 ### 7. Free Speech to Text — FAQ
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.png" alt="Free speech to text FAQ — answers about privacy, MP3 to text, SRT and VTT subtitle export, supported languages, offline use, and OpenAI Whisper in the browser"></a>
+  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="Free speech to text FAQ — answers about privacy, MP3 to text, SRT and VTT subtitle export, supported languages, offline use, and OpenAI Whisper in the browser"></a>
 </p>
 
 ---

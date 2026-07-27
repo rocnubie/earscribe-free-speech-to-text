@@ -4,6 +4,8 @@ import type { MetadataRoute } from "next";
 
 import { defaultLocale, locales } from "@/i18n/locale";
 import { urlFor } from "@/lib/seo";
+import { PRIVACY_LOCALES } from "@/lib/privacy-content";
+import { TOOL_LOCALES, TOOL_SLUGS } from "@/lib/tool-pages";
 
 /**
  * Static sitemap, generated at build time. Update by editing the `pages`
@@ -15,7 +17,7 @@ const pages = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  const lastModified = new Date("2026-07-27");
   const entries: MetadataRoute.Sitemap = [];
 
   for (const page of pages) {
@@ -34,6 +36,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified,
         changeFrequency: page.changeFrequency,
         priority: page.priority,
+        alternates: { languages },
+      });
+    }
+  }
+
+  const privacyLanguages = Object.fromEntries(
+    PRIVACY_LOCALES.map((locale) => [locale, urlFor(locale, "/privacy")]),
+  ) as Record<string, string>;
+  privacyLanguages["x-default"] = urlFor(defaultLocale, "/privacy");
+  for (const locale of PRIVACY_LOCALES) {
+    entries.push({
+      url: urlFor(locale, "/privacy"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.5,
+      alternates: { languages: privacyLanguages },
+    });
+  }
+
+  for (const slug of TOOL_SLUGS) {
+    const path = `/${slug}`;
+    const languages = Object.fromEntries(
+      TOOL_LOCALES.map((locale) => [locale, urlFor(locale, path)]),
+    ) as Record<string, string>;
+    languages["x-default"] = urlFor(defaultLocale, path);
+
+    for (const locale of TOOL_LOCALES) {
+      entries.push({
+        url: urlFor(locale, path),
+        lastModified,
+        changeFrequency: "monthly",
+        priority: slug === "audio-to-text" ? 0.9 : 0.8,
         alternates: { languages },
       });
     }

@@ -25,12 +25,16 @@ export function track(event: string, props?: PlausibleProps): void {
 }
 
 export const Events = {
+  FileSelected: "File Selected",
   ModelSelected: "Model Selected",
   ModelDownloaded: "Model Downloaded",
   ModelDownloadFailed: "Model Download Failed",
   TranscriptionStarted: "Transcription Started",
   TranscriptionDone: "Transcription Done",
   TranscriptionFailed: "Transcription Failed",
+  TranscriptionCancelled: "Transcription Cancelled",
+  TranscriptEdited: "Transcript Edited",
+  SubtitleQaUsed: "Subtitle QA Used",
+  CopyTranscript: "Copy Transcript",
   ExportFormat: "Export",
-  DeviceCapability: "Device Capability",
 } as const;

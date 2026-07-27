@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "title": "免費無限次音訊轉文字，無需註冊 | EarScribe",
+    "description": "免費、無限次使用，無需註冊。將音訊轉為可搜尋、可編輯的時間戳文字與字幕，可匯出 SRT、VTT、TXT、JSON。",
+    "ogTitle": "EarScribe — 免費無限次線上音訊轉文字，無需註冊",
+    "ogDescription": "免費、無限次使用，無需註冊。將音訊轉為可搜尋、可編輯的時間戳文字與字幕，可匯出 SRT、VTT、TXT、JSON。"
+  },
+  "header": {
+    "product": "EarScribe",
+    "about": "關於",
+    "github": "GitHub"
+  },
+  "hero": {
+    "tag": "100% 免費，無需註冊",
+    "title": "免費無限次音訊轉文字，產生附時間戳的文字與字幕。",
+    "subtitle": "100% 免費音訊轉文字工具——無需註冊、無需登入、無限使用。拖入 MP3、WAV 或 M4A，即可獲得帶時間戳記的逐字稿及 SRT / VTT 字幕。由 OpenAI Whisper 驅動的免費語音轉文字，你的音訊始終留在本機裝置上。",
+    "cta": "選擇音訊檔案"
+  },
+  "trust": {
+    "private": "100% 免費，無限使用",
+    "free": "無需註冊，無需登入",
+    "openModels": "隱私保護，不上傳",
+    "subtitles": "匯出 SRT & VTT"
+  },
+  "dropzone": {
+    "idle": "拖入音訊檔案，或點擊瀏覽",
+    "hint": "MP3、WAV、M4A、OGG、FLAC、WebM——每個檔案最長約 2 小時",
+    "dragging": "放開即可使用此檔案",
+    "rejected": "不支援的檔案類型，請使用音訊檔案。",
+    "tooLarge": "檔案異常偏大，較長的音訊可能超出瀏覽器記憶體限制。",
+    "changeFile": "使用其他檔案"
+  },
+  "modelPicker": {
+    "title": "選擇模型",
+    "subtitle": "模型越大，辨識精度越高，但下載和執行時間更長。選擇一次即可——模型會快取在你的瀏覽器中。",
+    "advancedShow": "Compare all models",
+    "advancedHide": "Hide model details",
+    "speedLabel": "Speed",
+    "accuracyLabel": "Accuracy",
+    "changeFile": "Change file",
+    "cachedRunHint": "{model} is already on this device and ready to use.",
+    "downloadRunHint": "The first run downloads {size}. It stays cached for later use.",
+    "chooseModelHint": "Choose a quality level to continue.",
+    "recommended": "推薦",
+    "selected": "已選擇",
+    "cached": "已快取",
+    "cachedHint": "已在此裝置上，可立即執行。",
+    "needsDownload": "需下載 {size}",
+    "select": "選擇",
+    "downloadAndRun": "下載並轉錄",
+    "downloadAndRunSized": "下載 {size} 並轉錄",
+    "transcribeNow": "開始轉錄",
+    "downloading": "下載中…",
+    "downloadingPct": "下載中 {percent}",
+    "initializingModel": "正在初始化模型…",
+    "loadingCached": "正在載入快取模型…",
+    "transcribingShort": "轉錄中…",
+    "transcribingPct": "轉錄中 {percent}",
+    "deleteRemoveAria": "從此裝置移除",
+    "deleteConfirmQuestion": "從此裝置移除？",
+    "deleteConfirmHint": "將釋放約 {size}，隨時可重新下載。",
+    "deleteConfirmYes": "確認移除",
+    "deleteConfirmCancel": "取消",
+    "deleting": "移除中…",
+    "deleteSuccess": "已移除 · 釋放了 {size}",
+    "deleteFailed": "移除失敗",
+    "warningWebgpuMissing": "你的瀏覽器不支援 WebGPU，此模型將在 CPU（WASM）上執行，速度可能較慢。",
+    "warningRamLow": "你的裝置記憶體為 {available} GB，此模型建議至少 {required} GB，在低記憶體裝置上可能當機。",
+    "deviceCapability": "你的裝置",
+    "webgpuOn": "WebGPU 可用",
+    "webgpuOff": "WebGPU 不可用——僅限 CPU",
+    "memoryReport": "{gb} GB 記憶體",
+    "memoryUnknown": "記憶體未知",
+    "cores": "{cores} 核 CPU"
+  },
+  "models": {
+    "tiny": {
+      "name": "Whisper Tiny",
+      "tagline": "最快、最小，精度較低。",
+      "pros": "下載量最小，可在任何裝置上執行，包括舊型手機。",
+      "cons": "在嘈雜音訊中容易漏字，對口音辨識較差。"
+    },
+    "base": {
+      "name": "Whisper Base",
+      "tagline": "速度與精度的最佳平衡。",
+      "pros": "對清晰語音的辨識效果良好，可在任何裝置上執行。",
+      "cons": "對重口音或嘈雜音訊仍會漏字。"
+    },
+    "small": {
+      "name": "Whisper Small",
+      "tagline": "精度更高，速度較慢。",
+      "pros": "對口音和噪音的辨識明顯更好。",
+      "cons": "無 WebGPU 時速度較慢，下載量更大。"
+    },
+    "turbo": {
+      "name": "Whisper Large v3 Turbo",
+      "tagline": "最高精度，建議使用 WebGPU。",
+      "pros": "轉錄品質最佳，在 WebGPU 上執行速度快。",
+      "cons": "下載量大，記憶體佔用高，低階裝置上可能當機。"
+    }
+  },
+  "progress": {
+    "downloadingModel": "正在下載模型… {percent}",
+    "downloadingFile": "{file} — 已下載 {loaded} / {total}",
+    "decodingAudio": "正在解碼音訊…",
+    "transcribing": "轉錄中… {percent}",
+    "preparing": "準備中…",
+    "cancel": "取消"
+  },
+  "result": {
+    "title": "逐字稿",
+    "detectedLanguage": "偵測到的語言：{language}",
+    "wordCount": "{count} 個字詞",
+    "duration": "{duration}",
+    "copy": "複製文字",
+    "copied": "已複製",
+    "export": "匯出",
+    "exportTxt": "純文字（.txt）",
+    "exportSrt": "字幕（.srt）",
+    "exportVtt": "字幕（.vtt）",
+    "exportJson": "原始 JSON（.json）",
+    "newFile": "轉錄另一個檔案",
+    "playFromHere": "從這裡播放",
+    "play": "播放",
+    "pause": "暫停",
+    "workspaceLabel": "Transcript workspace",
+    "tabTranscript": "Review transcript",
+    "tabSubtitles": "Subtitle check",
+    "searchPlaceholder": "Search the transcript",
+    "editTranscript": "Edit text",
+    "finishEditing": "Finish editing",
+    "savedOnDevice": "Edits are saved on this device",
+    "restoredDraft": "Saved edits restored from this device",
+    "noSearchResults": "No matching text found.",
+    "qaTitle": "Subtitle check",
+    "qaBody": "Review cues that may be hard to read or need a quick listen before export.",
+    "qaIssueCount": "{count} items may need attention",
+    "qaNoIssues": "No common subtitle issues found",
+    "qaCleanTitle": "Ready for a final watch-through",
+    "qaCleanBody": "No empty, repeated, overlapping, overly long, or unusually fast cues were detected.",
+    "qaHint": "Automatic layout changes use the current timestamps. Listen through important sections before publishing.",
+    "qaEmptyCue": "Empty subtitle cue",
+    "qaType_empty": "Empty",
+    "qaType_long": "Too long",
+    "qaType_fast": "Fast reading",
+    "qaType_overlap": "Time overlap",
+    "qaType_repeated": "Repeated",
+    "optimizeSubtitles": "Improve line breaks"
+  },
+  "errors": {
+    "modelLoadFailed": "無法載入模型，請檢查網路連線後重試。",
+    "audioDecodeFailed": "無法解碼此音訊檔案，請嘗試其他格式（MP3 / WAV / M4A）。",
+    "transcribeFailed": "轉錄失敗，裝置記憶體可能不足，請嘗試較小的模型。",
+    "browserUnsupported": "你的瀏覽器缺少必要功能（Web Workers、AudioContext），請使用最新版 Chrome、Edge 或 Safari。"
+  },
+  "faq": {
+    "title": "免費無限制音訊轉文字——常見問題",
+    "items": [
+      {
+        "q": "EarScribe 真的 100% 免費且沒有限制嗎？",
+        "a": "是的——100% 免費、無限使用、無需註冊、無需登入。沒有付費方案、不需要信用卡、不按分鐘收費，也沒有每日或每月配額。Whisper 語音轉文字模型在你自己的硬體上執行，無需承擔任何雲端運算費用。真正無附加條件的免費音訊轉文字。"
+      },
+      {
+        "q": "我的音訊安全私密嗎？",
+        "a": "完全私密。EarScribe 是一款本機優先的音訊轉文字工具：你的音訊檔案永遠不會離開你的裝置，也不會上傳到任何伺服器。無需帳號意味著不收集任何關於你的資料。模型下載完成後，你甚至可以離線使用。"
+      },
+      {
+        "q": "我的音訊會被上傳嗎？",
+        "a": "不會。音訊轉文字完全在本機進行——音訊在你的裝置上解碼，並由執行在 Web Worker 中的 Whisper 模型處理。沒有任何內容會被傳送到伺服器。"
+      },
+      {
+        "q": "為什麼第一次執行比較慢？",
+        "a": "首次選擇模型時，瀏覽器需要下載模型檔案（根據大小不同，約 80 MB 至 800 MB）。之後模型會被快取並重複使用，無需再次下載。"
+      },
+      {
+        "q": "支援哪些語言？",
+        "a": "透過 Whisper 支援 99 種語言的音訊轉文字。語言會自動偵測，無需手動選擇。"
+      },
+      {
+        "q": "可以轉錄影片嗎？",
+        "a": "暫不支援直接轉錄影片。如需將影片音訊轉文字，請先擷取音訊（任何能匯出 MP3 或 WAV 的工具均可），然後將音訊檔案拖入此處。"
+      },
+      {
+        "q": "離線可以使用嗎？",
+        "a": "模型下載完成後可以離線使用。首次需要載入頁面，之後的音訊轉文字無需網路連線即可進行。"
+      },
+      {
+        "q": "如何免費將 MP3 轉換為文字？",
+        "a": "將 MP3 拖入 EarScribe 即可免費完成 MP3 轉文字。檔案在瀏覽器中解碼，Whisper 在本機轉錄，你可以複製轉錄結果，或將 MP3 轉文字內容匯出為 SRT、VTT、TXT 或 JSON。無需上傳，無需帳號。"
+      },
+      {
+        "q": "有沒有免費的 Otter.ai 或 Rev 替代方案？",
+        "a": "EarScribe 是 Otter.ai、Rev 和 HappyScribe 等雲端轉錄服務的免費替代方案。差別在於：你在自己的裝置上完成運算，音訊永遠不會離開本機，也沒有按分鐘收費或訂閱費。"
+      },
+      {
+        "q": "能從音訊生成 SRT 或 VTT 字幕嗎？",
+        "a": "可以。音訊轉文字完成後，點選「匯出」選擇 .srt 或 .vtt。字幕時間軸來自 Whisper 輸出的時間戳記，與音訊精準對齊，無需手動調整。"
+      },
+      {
+        "q": "這個工具在瀏覽器中執行 OpenAI Whisper 嗎？",
+        "a": "是的——EarScribe 透過 Transformers.js 在瀏覽器中執行 Whisper（Tiny、Base、Small 和 Large v3 Turbo），優先使用 WebGPU，不可用時自動回退至 WebAssembly。"
+      }
+    ]
+  },
+  "about": {
+    "title": "關於 EarScribe",
+    "intro": "EarScribe 是一款靜態網頁應用程式，透過 Transformers.js 以及 WebGPU / WebAssembly 執行環境，直接在瀏覽器中執行 OpenAI 的 Whisper 語音辨識模型。",
+    "noServer": "沒有任何後端會接觸你的音訊。Cloudflare Pages 託管僅提供靜態 HTML、JS 和 CSS 檔案。Whisper 模型權重在首次使用時從 Hugging Face CDN 下載，並由瀏覽器快取。",
+    "credits": "基於 Transformers.js、ONNX Runtime Web 和 OpenAI 開源 Whisper 模型建構。"
+  },
+  "footer": {
+    "tagline": "100% 免費音訊轉文字與語音轉文字，無需註冊，無需登入。",
+    "links": {
+      "about": "關於",
+      "privacy": "隱私",
+      "github": "GitHub"
+    },
+    "builtWith": "基於 Transformers.js、ONNX Runtime Web、Whisper 建構。"
+  },
+  "seo": {
+    "showcase": {
+      "kicker": "音訊轉文字——效果預覽",
+      "title": "真實逐字稿，帶時間戳記、波形，一鍵匯出字幕。",
+      "subtitle": "免費音訊轉文字——拖入 Podcast、講座或訪談，EarScribe 顯示與音訊同步的完整逐字稿。點選任意行即可跳轉，或一鍵匯出為 SRT / VTT / TXT。",
+      "fakeUrl": "earscribe.app — interview-acme-q3.mp3",
+      "badges": {
+        "onDevice": "本機處理",
+        "autoLanguage": "英文（自動偵測）",
+        "duration": "12:48",
+        "wordCount": "1,842 個字詞"
+      },
+      "pauseAria": "暫停",
+      "playbackTime": "00:01:14 / 00:12:48",
+      "playbackRate": "1.0x",
+      "transcript": [
+        {
+          "ts": "00:00:08",
+          "speaker": "主持人",
+          "text": "歡迎回來——今天我們與一位研究注意力的學者對談。"
+        },
+        {
+          "ts": "00:00:24",
+          "speaker": "來賓",
+          "text": "被打斷其實並不像人們想像的那樣是個問題。"
+        }
+      ],
+      "exportHeading": "匯出",
+      "copyText": "複製文字",
+      "tiles": [
+        {
+          "label": ".srt",
+          "sub": "字幕"
+        },
+        {
+          "label": ".vtt",
+          "sub": "網頁字幕"
+        },
+        {
+          "label": ".txt",
+          "sub": "純文字"
+        },
+        {
+          "label": ".json",
+          "sub": "原始+時間軸"
+        }
+      ],
+      "srtFilename": "interview-acme-q3.srt",
+      "srtPreview": "1\n00:00:08,120 --> 00:00:18,640\n歡迎回來——我們正在討論注意力研究。",
+      "exportNote": "音訊轉文字字幕已精準對齊時間軸，可直接匯入 Premiere、Final Cut、DaVinci Resolve、YouTube 或任何網頁播放器。"
+    },
+    "howItWorks": {
+      "kicker": "免費無限制音訊轉文字的運作原理",
+      "title": "三個步驟完成，無需註冊、無需登入，100% 免費，無限使用。",
+      "subtitle": "100% 免費且私密的音訊轉文字——無需註冊，無需登入。你的音訊在本機裝置上處理，根本沒有外洩的可能。",
+      "steps": [
+        {
+          "title": "拖入音訊",
+          "body": "支援 MP3、WAV、M4A、OGG、FLAC 或 WebM——每個檔案最長約兩小時。檔案始終留在你的裝置上。"
+        },
+        {
+          "title": "選擇 Whisper 模型",
+          "body": "Tiny（40 MB）適合快速記錄，Turbo（約 800 MB）適合專業級精度。模型首次執行後即被快取。"
+        },
+        {
+          "title": "閱讀、編輯、匯出",
+          "body": "獲取與波形同步的帶時間戳記逐字稿，匯出為 SRT / VTT 字幕或純文字筆記。"
+        }
+      ]
+    },
+    "whatYouCanDo": {
+      "kicker": "你能做什麼——100% 免費，無需註冊，無限使用",
+      "title": "免費無限制音訊轉文字——無需註冊，無需登入。",
+      "prose": "EarScribe 是 100% 免費的<kw>音訊轉文字</kw>工具——<kw>無需註冊</kw>，無需登入，<kw>無限使用</kw>。支援<kw>MP3 轉文字</kw>、<kw>WAV 轉文字</kw>和<kw>M4A 轉文字</kw>，可從任意音訊生成<kw>SRT 或 VTT 字幕</kw>，也可無需 API 金鑰線上執行<kw>OpenAI Whisper</kw>。100% 免費<kw>語音轉文字</kw>，無帳號、無配額、不按分鐘收費——隱私保護，音訊始終留在本機。",
+      "jobs": [
+        {
+          "from": "MP3",
+          "to": ".txt",
+          "label": "MP3 轉文字"
+        },
+        {
+          "from": "WAV",
+          "to": ".txt",
+          "label": "WAV 轉文字"
+        },
+        {
+          "from": "M4A",
+          "to": ".txt",
+          "label": "M4A 轉文字"
+        },
+        {
+          "from": "音訊",
+          "to": ".srt",
+          "label": "音訊轉 SRT"
+        },
+        {
+          "from": "音訊",
+          "to": ".vtt",
+          "label": "音訊轉 VTT"
+        },
+        {
+          "from": "Podcast",
+          "to": ".txt",
+          "label": "Podcast 轉文字"
+        }
+      ]
+    },
+    "useCases": {
+      "kicker": "免費無限制、無需登入的音訊轉文字——適合所有人",
+      "title": "誰在使用 EarScribe。",
+      "subtitle": "100% 免費、無限使用的音訊轉文字，無需註冊——六種截然不同的使用情境。如果你的音訊不應該出現在別人的伺服器上，你來對地方了。",
+      "items": [
+        {
+          "title": "Podcast 主持人與內容創作者",
+          "body": "為 Podcast 提供免費音訊轉文字——將逐字稿貼入編輯器，快速找到需要的片段，當天即可發布節目筆記。",
+          "tag": "Podcast"
+        },
+        {
+          "title": "記者與研究人員",
+          "body": "將採訪錄音 MP3 轉文字——私密處理，無需註冊，無需帳號。音訊留在你的電腦上，沒有第三方伺服器，也沒有可被法院傳喚的稽核記錄。",
+          "tag": "新聞"
+        },
+        {
+          "title": "學生與課堂錄音",
+          "body": "免費音訊轉文字，專為學生設計——拖入課堂錄音，在下一堂課前獲得可搜尋的逐字稿。",
+          "tag": "教育"
+        },
+        {
+          "title": "會議與使用者訪談",
+          "body": "將錄音拖入即可免費轉錄，然後將帶標註的逐字稿分享給團隊。資料始終留在你的裝置上。",
+          "tag": "研究"
+        },
+        {
+          "title": "影片字幕製作",
+          "body": "音訊轉文字後匯出為 .srt 或 .vtt，可直接匯入 Premiere、Resolve、Final Cut 或 YouTube，時間軸與音訊精準對齊。",
+          "tag": "字幕"
+        },
+        {
+          "title": "有聲書與長篇音訊",
+          "body": "兩小時的 MP3 轉文字？沒問題。Turbo 可處理有聲書級別的長音訊——無限使用，無 API 配額，不按分鐘收費，無需登入。",
+          "tag": "長篇音訊"
+        }
+      ]
+    },
+    "features": {
+      "kicker": "為什麼選擇我們的免費無限制音訊轉文字工具",
+      "title": "開源 Whisper，隱私優先，細心打磨每個細節。",
+      "items": [
+        {
+          "title": "隱私保護，不上傳",
+          "body": "所有音訊轉文字均在本機完成——解碼在本機進行，從不上傳到任何伺服器。你的資料始終歸你所有，外洩給第三方的風險為零。"
+        },
+        {
+          "title": "優先使用 WebGPU，不可用時自動回退 WASM",
+          "body": "Turbo 在 WebGPU 上執行速度約快 10 倍。在舊型裝置上自動回退至 WebAssembly。"
+        },
+        {
+          "title": "99 種語言，自動偵測",
+          "body": "拖入法語 Podcast、普通話講座或印地語訪談——99 種語言的音訊轉文字，全部自動偵測。"
+        },
+        {
+          "title": "支援 SRT、VTT、JSON、TXT",
+          "body": "一鍵完成 MP3 轉文字或音訊轉 SRT 匯出。SRT 和 VTT 時間軸來自模型輸出的時間戳記，而非啟發式分段。"
+        },
+        {
+          "title": "離線可用——無限制，無需網路",
+          "body": "模型快取在本機。下載完成後，無需網路即可無限次進行音訊轉文字，沒有配額，不按分鐘計費。"
+        },
+        {
+          "title": "100% 免費，無需帳號，無需 API 金鑰。",
+          "body": "100% 免費且無限使用——無需信用卡、無需註冊、無需登入、沒有使用上限。開啟頁面即可立即使用免費音訊轉文字和語音轉文字。"
+        }
+      ]
+    },
+    "sampleOutput": {
+      "kicker": "音訊轉文字——範例輸出",
+      "title": "同一段音訊轉文字，三種格式，隨時可用。",
+      "subtitle": "MP3 轉文字或音訊轉 SRT 檔案的實際效果——直接貼入編輯器或上傳至 YouTube。",
+      "files": [
+        {
+          "name": "transcript.srt",
+          "lang": "SubRip",
+          "code": "1\n00:00:08,120 --> 00:00:18,640\n歡迎回來——我們正在討論注意力研究。"
+        },
+        {
+          "name": "transcript.vtt",
+          "lang": "WebVTT",
+          "code": "WEBVTT\n\n00:00:08.120 --> 00:00:18.640\n歡迎回來——我們正在討論注意力研究。"
+        },
+        {
+          "name": "transcript.txt",
+          "lang": "Plain text",
+          "code": "[00:00:08] 主持人：歡迎回來——我們正在討論注意力研究。"
+        }
+      ]
+    },
+    "testimonials": {
+      "kicker": "100% 免費、無需登入的音訊轉文字——來自真實使用者",
+      "title": "安靜、快速，完全屬於你。",
+      "subtitle": "幾位改用免費、無限制、無需登入音訊轉文字的代表性使用者。（示例引用——有真實使用者回饋後可替換。）",
+      "quotes": [
+        {
+          "name": "Maya R.",
+          "role": "Podcast 製作人",
+          "quote": "取代了每月 $19 的訂閱——100% 免費、無需登入、無限制音訊轉文字。在我的 M2 上，Turbo 模型的速度比在飯店 WiFi 等待雲端上傳還要快。"
+        },
+        {
+          "name": "Daniel K.",
+          "role": "調查記者",
+          "quote": "消息來源的保密性不容妥協。這款免費語音轉文字工具——無帳號、不上傳——音訊始終留在筆記型電腦上。這就是用與不用之間的差別。"
+        },
+        {
+          "name": "Priya S.",
+          "role": "語言學博士生",
+          "quote": "在飛機上對田野錄音進行無限制音訊轉文字，沒有配額，無需登入。免費語音轉文字，隨時可用，從不中斷。"
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "100% 免費、無限制、無需登入音訊轉文字——橫向比較",
+      "title": "EarScribe vs Otter.ai、Rev 與 Whisper API。",
+      "subtitle": "針對雲端轉錄服務的 100% 免費、無限制、無需登入替代方案——相同的 Whisper 模型系列，三種截然不同的部署形態。（價格僅供參考。）",
+      "headers": {
+        "capability": "功能",
+        "earscribe": "EarScribe",
+        "you": "你",
+        "cloudApi": "Whisper API",
+        "saas": "雲端 SaaS"
+      },
+      "yes": "是",
+      "no": "否",
+      "rows": [
+        {
+          "label": "100% 免費，無需信用卡",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "無限使用，無配額",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "需要帳號/登入",
+          "earscribe": false,
+          "cloudApi": true,
+          "saas": true
+        },
+        {
+          "label": "按分鐘計費",
+          "earscribe": "免費",
+          "cloudApi": "$0.006/min",
+          "saas": "$10–25/mo"
+        },
+        {
+          "label": "隱私保護，音訊留在本機",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "支援離線使用",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Whisper 級別的辨識精度",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": "因服務而異"
+        },
+        {
+          "label": "開源模型",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "支援 SRT / VTT 匯出",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "準備時間",
+          "earscribe": "0s",
+          "cloudApi": "API key + code",
+          "saas": "註冊流程"
+        }
+      ]
+    },
+    "stats": {
+      "srTitle": "EarScribe 免費音訊轉文字的數據",
+      "items": [
+        {
+          "v": "99",
+          "unit": "種語言",
+          "body": "自動偵測，無需手動選擇。"
+        },
+        {
+          "v": "0",
+          "unit": "位元組上傳",
+          "body": "私密音訊轉文字——你的音訊永遠不離開裝置。"
+        },
+        {
+          "v": "$0",
+          "unit": "/ 月",
+          "body": "100% 免費且無限使用——無需註冊、無需登入、沒有使用上限。"
+        },
+        {
+          "v": "~2h",
+          "unit": "最大時長",
+          "body": "長篇 MP3 轉文字，單次即可完成。"
+        }
+      ]
+    },
+    "formatsLanguages": {
+      "audioFormatsTitle": "音訊轉文字——支援的格式",
+      "audioFormatsDesc": "免費無限制音訊轉文字，無需註冊，無需帳號。只要能播放，EarScribe 就能轉換：MP3 轉文字、WAV 轉文字、M4A 轉文字等。",
+      "formats": [
+        "MP3",
+        "WAV",
+        "M4A",
+        "OGG",
+        "FLAC",
+        "WebM",
+        "Opus",
+        "AAC"
+      ],
+      "languagesTitle": "支援 99 種語言的免費音訊轉文字（自動偵測）",
+      "languagesDesc": "免費音訊轉文字支援 Whisper 的 99 種語言，模型會從音訊開頭幾秒自動辨識語言。",
+      "languages": [
+        "英語",
+        "普通話",
+        "西班牙語",
+        "印地語",
+        "阿拉伯語",
+        "葡萄牙語",
+        "孟加拉語",
+        "俄語",
+        "日語",
+        "旁遮普語",
+        "德語",
+        "爪哇語",
+        "韓語",
+        "法語",
+        "泰盧固語",
+        "越南語",
+        "泰米爾語",
+        "義大利語",
+        "土耳其語",
+        "波蘭語",
+        "烏克蘭語",
+        "荷蘭語",
+        "波斯語",
+        "泰語",
+        "瑞典語",
+        "捷克語",
+        "希臘語",
+        "希伯來語",
+        "芬蘭語",
+        "挪威語",
+        "匈牙利語"
+      ],
+      "more": "+68 種"
+    },
+    "finalCta": {
+      "tag": "100% 免費，無需註冊，無限使用",
+      "title": "拖入音訊檔案，即刻體驗 100% 免費音訊轉文字——無需註冊，無需登入，無限使用。",
+      "subtitle": "捲回頁面頂端，選擇檔案，十秒後即可獲得帶時間戳記的免費音訊轉文字結果。100% 免費語音轉文字和 MP3 轉文字——無需帳號。",
+      "tryNow": "免費開始，無需註冊",
+      "howItWorks": "了解音訊轉文字原理"
+    }
+  }
+}

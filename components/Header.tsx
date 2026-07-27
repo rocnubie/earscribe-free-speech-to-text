@@ -1,13 +1,13 @@
 "use client";
 
-import { Github, Mic } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { Mic } from "lucide-react";
 
 import { Link } from "@/i18n/routing";
-import { GITHUB_URL, SITE_NAME } from "@/lib/site";
+import { SITE_NAME } from "@/lib/site";
+
+import { LocaleSwitcher } from "./LocaleSwitcher";
 
 export function Header() {
-  const t = useTranslations("header");
   return (
     <header className="border-b border-slate-200 bg-white">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
@@ -20,20 +20,7 @@ export function Header() {
           </span>
           {SITE_NAME}
         </Link>
-        <nav className="flex items-center gap-5 text-sm text-slate-600">
-          <Link href="/about" className="hover:text-slate-900">
-            {t("about")}
-          </Link>
-          <a
-            href={GITHUB_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 hover:text-slate-900"
-          >
-            <Github className="h-4 w-4" />
-            {t("github")}
-          </a>
-        </nav>
+        <LocaleSwitcher />
       </div>
     </header>
   );

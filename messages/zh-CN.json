@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "title": "免费无限音频转文字，无需注册 | EarScribe",
+    "description": "免费、无限使用，无需注册。把 MP3、WAV、M4A 等音频转成可搜索、可编辑的带时间戳文字和字幕，并可导出 SRT、VTT、TXT、JSON。",
+    "ogTitle": "EarScribe — 免费无限在线音频转文字，无需注册",
+    "ogDescription": "免费、无限使用的音频转文字工具。把音频转成可搜索、可编辑的带时间戳文字和字幕；无需注册，可导出 SRT、VTT、TXT、JSON。"
+  },
+  "header": {
+    "product": "EarScribe",
+    "about": "关于",
+    "github": "GitHub"
+  },
+  "hero": {
+    "tag": "100% 免费，无需注册",
+    "title": "免费无限音频转文字，生成带时间戳的文字和字幕。",
+    "subtitle": "免费、无限使用，无需注册或登录。将 MP3、WAV、M4A 等音频转成带时间戳的文字，自动识别语言；可复制文本或导出 SRT、VTT、TXT 字幕文件。音频不上传。",
+    "cta": "选择音频文件"
+  },
+  "trust": {
+    "private": "免费，无限使用",
+    "free": "无需注册，无需登录",
+    "openModels": "带时间戳文字稿",
+    "subtitles": "导出 SRT & VTT"
+  },
+  "dropzone": {
+    "idle": "拖入音频文件，或点击浏览",
+    "hint": "MP3、WAV、M4A、OGG、FLAC、WebM；可处理长度取决于设备内存",
+    "dragging": "松开即可使用此文件",
+    "rejected": "不支持的文件类型，请使用音频文件。",
+    "tooLarge": "文件异常偏大，较长的音频可能超出浏览器内存限制。",
+    "changeFile": "使用其他文件"
+  },
+  "modelPicker": {
+    "title": "选择转写质量",
+    "subtitle": "大多数录音选择均衡档即可。只有需要更快处理或更高识别效果时，再比较其他模型。",
+    "advancedShow": "比较全部模型",
+    "advancedHide": "收起模型详情",
+    "speedLabel": "处理速度",
+    "accuracyLabel": "识别效果",
+    "changeFile": "更换文件",
+    "cachedRunHint": "{model} 已保存在此设备上，可以直接使用。",
+    "downloadRunHint": "首次使用需下载 {size}，之后会缓存在此设备上。",
+    "chooseModelHint": "请选择转写质量后继续。",
+    "recommended": "推荐",
+    "selected": "已选择",
+    "cached": "已缓存",
+    "cachedHint": "已在此设备上，可立即运行。",
+    "needsDownload": "需下载 {size}",
+    "select": "选择",
+    "downloadAndRun": "下载并转录",
+    "downloadAndRunSized": "下载 {size} 并转录",
+    "transcribeNow": "开始转录",
+    "downloading": "下载中…",
+    "downloadingPct": "下载中 {percent}",
+    "initializingModel": "正在初始化模型…",
+    "loadingCached": "正在加载缓存模型…",
+    "transcribingShort": "转录中…",
+    "transcribingPct": "转录中 {percent}",
+    "deleteRemoveAria": "从此设备移除",
+    "deleteConfirmQuestion": "从此设备移除？",
+    "deleteConfirmHint": "将释放约 {size}，随时可重新下载。",
+    "deleteConfirmYes": "确认移除",
+    "deleteConfirmCancel": "取消",
+    "deleting": "移除中…",
+    "deleteSuccess": "已移除 · 释放了 {size}",
+    "deleteFailed": "移除失败",
+    "warningWebgpuMissing": "当前设备处理这一质量档可能较慢。",
+    "warningRamLow": "这一质量档约需 {required} GB 内存；当前设备为 {available} GB，建议选择更小的档位。",
+    "deviceCapability": "你的设备",
+    "webgpuOn": "WebGPU 可用",
+    "webgpuOff": "WebGPU 不可用——仅 CPU",
+    "memoryReport": "{gb} GB 内存",
+    "memoryUnknown": "内存未知",
+    "cores": "{cores} 核 CPU"
+  },
+  "models": {
+    "tiny": {
+      "name": "Whisper Tiny",
+      "tagline": "最快、最小，精度较低。",
+      "pros": "下载量最小，多数设备都能运行，实际速度取决于设备性能。",
+      "cons": "在嘈杂音频中容易漏词，对口音识别较差。"
+    },
+    "base": {
+      "name": "Whisper Base",
+      "tagline": "速度与精度的最佳平衡。",
+      "pros": "对清晰语音的识别效果良好，多数电脑和手机都能运行。",
+      "cons": "对重口音或嘈杂音频仍会漏词。"
+    },
+    "small": {
+      "name": "Whisper Small",
+      "tagline": "精度更高，速度较慢。",
+      "pros": "对口音和噪音的识别明显更好。",
+      "cons": "无 WebGPU 时速度较慢，下载量更大。"
+    },
+    "turbo": {
+      "name": "Whisper Large v3 Turbo",
+      "tagline": "最高精度，推荐使用 WebGPU。",
+      "pros": "转录质量最佳，在 WebGPU 上运行速度快。",
+      "cons": "下载量大，内存占用高，低端设备上可能崩溃。"
+    }
+  },
+  "progress": {
+    "downloadingModel": "正在下载模型… {percent}",
+    "downloadingFile": "{file} — 已下载 {loaded} / {total}",
+    "decodingAudio": "正在解码音频…",
+    "transcribing": "转录中… {percent}",
+    "preparing": "准备中…",
+    "cancel": "取消"
+  },
+  "result": {
+    "title": "转录文本",
+    "detectedLanguage": "检测到的语言：{language}",
+    "wordCount": "{count} 个词语",
+    "duration": "{duration}",
+    "copy": "复制文本",
+    "copied": "已复制",
+    "export": "导出",
+    "exportTxt": "纯文本（.txt）",
+    "exportSrt": "字幕（.srt）",
+    "exportVtt": "字幕（.vtt）",
+    "exportJson": "原始 JSON（.json）",
+    "newFile": "转录另一个文件",
+    "playFromHere": "从这里播放",
+    "play": "播放",
+    "pause": "暂停",
+    "workspaceLabel": "转写工作台",
+    "tabTranscript": "查看文字",
+    "tabSubtitles": "字幕检查",
+    "searchPlaceholder": "搜索转写内容",
+    "editTranscript": "编辑文字",
+    "finishEditing": "完成编辑",
+    "savedOnDevice": "修改已保存在此设备上",
+    "restoredDraft": "已恢复此设备上保存的修改",
+    "noSearchResults": "没有找到匹配的文字。",
+    "qaTitle": "字幕检查",
+    "qaBody": "导出前查看可能不易阅读，或建议回听确认的字幕片段。",
+    "qaIssueCount": "有 {count} 处建议检查",
+    "qaNoIssues": "未发现常见字幕问题",
+    "qaCleanTitle": "建议导出前再完整看一遍",
+    "qaCleanBody": "未发现空白、重复、时间重叠、文字过长或阅读过快的字幕。",
+    "qaHint": "优化断行会保留当前时间轴。发布前建议回听重点片段。",
+    "qaEmptyCue": "空白字幕",
+    "qaType_empty": "空白",
+    "qaType_long": "文字过长",
+    "qaType_fast": "阅读过快",
+    "qaType_overlap": "时间重叠",
+    "qaType_repeated": "内容重复",
+    "optimizeSubtitles": "优化字幕断行"
+  },
+  "errors": {
+    "modelLoadFailed": "无法加载模型，请检查网络连接后重试。",
+    "audioDecodeFailed": "无法解码此音频文件，请尝试其他格式（MP3 / WAV / M4A）。",
+    "transcribeFailed": "转录失败，设备内存可能不足，请尝试较小的模型。",
+    "browserUnsupported": "你的浏览器缺少必要功能（Web Workers、AudioContext），请使用最新版 Chrome、Edge 或 Safari。"
+  },
+  "faq": {
+    "title": "免费无限制音频转文字——常见问题",
+    "items": [
+      {
+        "q": "EarScribe 真的 100% 免费且没有限制吗？",
+        "a": "是的。EarScribe 免费、无限使用，无需注册或登录；不设付费套餐、不需要信用卡，也不按分钟收费。Whisper 语音转文字模型在你的设备上运行，因此不产生云端转录费用。"
+      },
+      {
+        "q": "导出前可以修改文字稿吗？",
+        "a": "可以。开启编辑后可修正人名、引语、数字和专业术语；复制文字和所有导出格式都会使用修改后的内容，草稿会保存在当前浏览器中。"
+      },
+      {
+        "q": "字幕检查会发现哪些问题？",
+        "a": "它会标出空白、过长、阅读过快、重复和时间重叠的字幕。你可以一键优化断行，再回听重点片段后导出 SRT 或 VTT。"
+      },
+      {
+        "q": "为什么第一次运行比较慢？",
+        "a": "首次选择模型时，浏览器需要下载模型文件（根据大小不同，约 80 MB 至 800 MB）。之后模型会被缓存并复用，无需再次下载。"
+      },
+      {
+        "q": "支持哪些语言？",
+        "a": "通过 Whisper 支持 99 种语言的音频转文字。语言会自动检测，无需手动选择。"
+      },
+      {
+        "q": "可以转录视频吗？",
+        "a": "暂不支持直接转录视频。如需将视频音频转文字，请先提取音频（任何能导出 MP3 或 WAV 的工具均可），然后将音频文件拖入这里。"
+      },
+      {
+        "q": "应该选择哪个 Whisper 模型？",
+        "a": "大多数录音先用推荐的均衡模型。希望下载更小可选 Tiny；较难识别的音频可在设备内存足够时尝试 Small；性能较好的设备可使用 Turbo 追求更高精度。"
+      },
+      {
+        "q": "如何免费将 MP3 转换为文字？",
+        "a": "选择 MP3，保留推荐的均衡设置，完成后核对带时间戳的文字稿。修正关键信息，再复制文字或导出 SRT、VTT、TXT、JSON；无需账号。"
+      },
+      {
+        "q": "有没有免费的 Otter.ai 或 Rev 替代品？",
+        "a": "如果你只想免费处理一段录音，不想先注册账号，EarScribe 提供转写、搜索、按时间戳回听、编辑、字幕检查和导出的一体化流程。需要团队协作空间时，托管服务可能更合适。"
+      },
+      {
+        "q": "能从音频生成 SRT 或 VTT 字幕吗？",
+        "a": "可以。音频转文字完成后，点击「导出」选择 .srt 或 .vtt。字幕时间轴使用 Whisper 输出的时间戳，必要时可再按你的剪辑需求微调。"
+      },
+      {
+        "q": "这个工具在浏览器中运行 OpenAI Whisper 吗？",
+        "a": "是的——EarScribe 通过 Transformers.js 在浏览器中运行 Whisper（Tiny、Base、Small 和 Large v3 Turbo），优先使用 WebGPU，不可用时自动回退至 WebAssembly。"
+      }
+    ]
+  },
+  "about": {
+    "title": "关于 EarScribe",
+    "intro": "EarScribe 把录音整理成可搜索、可编辑、带时间戳的文字稿和字幕，让用户先拿到结果，不被注册流程打断。",
+    "noServer": "默认推荐均衡设置，新手可以直接开始；模型对比、文字编辑和字幕检查按需展开，熟悉后再使用更多控制。",
+    "credits": "基于 Transformers.js、ONNX Runtime Web 和 OpenAI 开源 Whisper 模型构建。"
+  },
+  "footer": {
+    "tagline": "100% 免费音频转文字与语音转文字，无需注册，无需登录。",
+    "links": {
+      "about": "关于",
+      "privacy": "隐私",
+      "github": "GitHub"
+    },
+    "builtWith": "基于 Transformers.js、ONNX Runtime Web、Whisper 构建。"
+  },
+  "seo": {
+    "showcase": {
+      "kicker": "音频转文字——效果预览",
+      "title": "真实转录文本，带时间戳、波形，一键导出字幕。",
+      "subtitle": "免费音频转文字——拖入播客、讲座或访谈，EarScribe 显示与音频同步的完整转录文本。点击任意行即可跳转，或一键导出为 SRT / VTT / TXT。",
+      "fakeUrl": "earscribe.app — interview-acme-q3.mp3",
+      "badges": {
+        "onDevice": "本地处理",
+        "autoLanguage": "英语（自动检测）",
+        "duration": "12:48",
+        "wordCount": "1,842 个词"
+      },
+      "pauseAria": "暂停",
+      "playbackTime": "00:01:14 / 00:12:48",
+      "playbackRate": "1.0x",
+      "transcript": [
+        {
+          "ts": "00:00:08",
+          "speaker": "主持人",
+          "text": "欢迎回来——今天我们与一位研究注意力的学者对话。"
+        },
+        {
+          "ts": "00:00:24",
+          "speaker": "嘉宾",
+          "text": "打断其实并不像人们想象的那样是个问题。"
+        }
+      ],
+      "exportHeading": "导出",
+      "copyText": "复制文本",
+      "tiles": [
+        {
+          "label": ".srt",
+          "sub": "字幕"
+        },
+        {
+          "label": ".vtt",
+          "sub": "网页字幕"
+        },
+        {
+          "label": ".txt",
+          "sub": "纯文本"
+        },
+        {
+          "label": ".json",
+          "sub": "原始+时间轴"
+        }
+      ],
+      "srtFilename": "interview-acme-q3.srt",
+      "srtPreview": "1\n00:00:08,120 --> 00:00:18,640\n欢迎回来——我们正在讨论注意力研究。",
+      "exportNote": "导出的音频字幕带有模型生成的时间轴，可用于 Premiere、Final Cut、DaVinci Resolve、YouTube 或网页播放器，并可按项目需要继续调整。"
+    },
+    "howItWorks": {
+      "kicker": "免费无限制音频转文字的工作原理",
+      "title": "三步开始，无需注册、无需登录，免费且无限使用。",
+      "subtitle": "免费、无限使用，无需注册。先用推荐设置生成文字稿，再核对内容并导出下一步需要的格式。",
+      "steps": [
+        {
+          "title": "拖入音频",
+          "body": "支持 MP3、WAV、M4A、OGG、FLAC 和 WebM。可处理的实际时长取决于浏览器和设备可用内存。"
+        },
+        {
+          "title": "选择 Whisper 模型",
+          "body": "大多数录音直接使用推荐的均衡设置；需要更小下载或更高精度时，再展开高级模型。"
+        },
+        {
+          "title": "查看、编辑、导出",
+          "body": "核对并编辑带时间戳的文字稿，检查字幕可读性，再导出 SRT、VTT、TXT 或 JSON。"
+        }
+      ]
+    },
+    "whatYouCanDo": {
+      "kicker": "你能做什么——100% 免费，无需注册，无限使用",
+      "title": "免费无限制音频转文字——无需注册，无需登录。",
+      "prose": "EarScribe 是免费、<kw>无需注册</kw>且<kw>无限使用</kw>的<kw>音频转文字</kw>工具。支持<kw>MP3 转文字</kw>、<kw>WAV 转文字</kw>、<kw>M4A 转文字</kw>和<kw>SRT 或 VTT 字幕</kw>。自动识别语言后，可搜索、编辑文字稿，点击时间戳回听，并导出 TXT、SRT、VTT 或 JSON。",
+      "jobs": [
+        {
+          "from": "MP3",
+          "to": ".txt",
+          "label": "MP3 转文字"
+        },
+        {
+          "from": "WAV",
+          "to": ".txt",
+          "label": "WAV 转文字"
+        },
+        {
+          "from": "M4A",
+          "to": ".txt",
+          "label": "M4A 转文字"
+        },
+        {
+          "from": "音频",
+          "to": ".srt",
+          "label": "音频转 SRT"
+        },
+        {
+          "from": "音频",
+          "to": ".vtt",
+          "label": "音频转 VTT"
+        },
+        {
+          "from": "播客",
+          "to": ".txt",
+          "label": "播客转文字"
+        }
+      ]
+    },
+    "useCases": {
+      "kicker": "免费无限制、无需登录的音频转文字——适合所有人",
+      "title": "EarScribe 的常见使用场景。",
+      "subtitle": "把采访、课程、会议和视频音频整理为可搜索、可回听、可编辑、可导出的文字与字幕。",
+      "items": [
+        {
+          "title": "播客主与内容创作者",
+          "body": "将播客音频转成文字，在转录内容中查找片段，再整理节目简介、标题和章节说明。",
+          "tag": "播客"
+        },
+        {
+          "title": "记者与研究人员",
+          "body": "把采访录音转成带时间戳的文字，便于检索引述、回听原声、核对内容和整理研究笔记。",
+          "tag": "新闻"
+        },
+        {
+          "title": "学生与课堂录音",
+          "body": "将课堂录音或网课音频转成可搜索的文字，复习时可按关键词快速定位讲解内容。",
+          "tag": "教育"
+        },
+        {
+          "title": "会议与用户访谈",
+          "body": "将会议录音和用户访谈转成文字，方便提炼结论、标注待办事项并与团队共享整理后的内容。",
+          "tag": "研究"
+        },
+        {
+          "title": "视频字幕制作",
+          "body": "为短视频或长视频生成 .srt、.vtt 字幕，可导入 Premiere、Resolve、Final Cut 或 YouTube，并按剪辑节奏调整。",
+          "tag": "字幕"
+        },
+        {
+          "title": "有声书与长音频",
+          "body": "长篇 MP3、有声书或播客录音也可转文字；选择适合设备性能的模型后即可开始处理，无需登录。",
+          "tag": "长音频"
+        }
+      ]
+    },
+    "features": {
+      "kicker": "从录音到可交付结果",
+      "title": "不只是转写，而是一套简洁的文字稿工作台。",
+      "items": [
+        {
+          "title": "从文字定位原音",
+          "body": "搜索文字稿，点击任意时间戳即可回听录音中的对应片段。"
+        },
+        {
+          "title": "不用猜该选哪个模型",
+          "body": "默认使用均衡推荐；只有需要更小下载或更高精度时，再展开高级模型。"
+        },
+        {
+          "title": "99 种语言，自动识别",
+          "body": "采访、课程和播客可自动识别音频语言，无需先手动选择。"
+        },
+        {
+          "title": "导出前直接编辑",
+          "body": "在工作台中修正人名、引语、数字和术语，复制与导出都会使用最新内容。"
+        },
+        {
+          "title": "导出前检查字幕",
+          "body": "集中检查空白、过长、阅读过快、重复和时间重叠的字幕，并优化断行。"
+        },
+        {
+          "title": "把结果交给下一步",
+          "body": "复制文字，或导出 TXT、SRT、VTT、JSON。免费、无限使用，无需注册。"
+        }
+      ]
+    },
+    "sampleOutput": {
+      "kicker": "音频转文字——示例输出",
+      "title": "同一段音频转文字，三种格式，随时可用。",
+      "subtitle": "MP3 转文字或音频转 SRT 文件的实际效果——直接粘贴到编辑器或上传至 YouTube。",
+      "files": [
+        {
+          "name": "transcript.srt",
+          "lang": "SubRip",
+          "code": "1\n00:00:08,120 --> 00:00:18,640\n欢迎回来——我们正在讨论注意力研究。"
+        },
+        {
+          "name": "transcript.vtt",
+          "lang": "WebVTT",
+          "code": "WEBVTT\n\n00:00:08.120 --> 00:00:18.640\n欢迎回来——我们正在讨论注意力研究。"
+        },
+        {
+          "name": "transcript.txt",
+          "lang": "纯文本",
+          "code": "[00:00:08] 主持人：欢迎回来——我们正在讨论注意力研究。"
+        }
+      ]
+    },
+    "testimonials": {
+      "kicker": "一份转写内容，衔接三种工作流",
+      "title": "先拿到文字，再打开下一步需要的工具。",
+      "subtitle": "大多数时候，读懂文字并导出即可。需要做字幕、整理采访或复习课程时，再使用搜索、编辑和字幕检查，不打扰第一步。",
+      "quotes": [
+        {
+          "name": "字幕制作流程",
+          "role": "适用于视频和短视频",
+          "quote": "导出 SRT 或 VTT 前，检查字幕的文字长度、阅读速度、重复内容和时间重叠。"
+        },
+        {
+          "name": "采访整理流程",
+          "role": "适用于调研和报道",
+          "quote": "搜索转写内容，点击时间戳回听原始录音，再直接修改人名、术语或引述。"
+        },
+        {
+          "name": "学习复习流程",
+          "role": "适用于课堂录音和网课",
+          "quote": "快速搜索课程主题，整理转写文字后导出 TXT，用于笔记、引用或复习。"
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "按任务选择合适的工作方式",
+      "title": "音频转文字的三种常见方式。",
+      "subtitle": "对比浏览器工作台、转录 API 和托管转录软件分别适合什么任务。",
+      "headers": {
+        "capability": "功能",
+        "earscribe": "EarScribe",
+        "you": "你",
+        "cloudApi": "转录 API",
+        "saas": "托管软件"
+      },
+      "yes": "是",
+      "no": "否",
+      "rows": [
+        {
+          "label": "无需账号即可开始",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "无需 API 集成即可使用",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "包含可编辑的文字稿工作台",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "在哪里工作",
+          "earscribe": "浏览器内",
+          "cloudApi": "你的产品内",
+          "saas": "托管应用内"
+        },
+        {
+          "label": "包含带时间戳的文字",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": true
+        },
+        {
+          "label": "点击时间戳回听原音",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "可选择模型",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": "因产品而异"
+        },
+        {
+          "label": "内置五类字幕检查",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "免费无限使用",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "最适合",
+          "earscribe": "处理、核对并导出单个录音",
+          "cloudApi": "集成到产品",
+          "saas": "团队协作"
+        }
+      ]
+    },
+    "stats": {
+      "srTitle": "EarScribe 免费音频转文字的数据",
+      "items": [
+        {
+          "v": "99",
+          "unit": "种语言",
+          "body": "自动检测，无需手动选择。"
+        },
+        {
+          "v": "4",
+          "unit": "种导出格式",
+          "body": "文字稿完成后可导出 TXT、SRT、VTT 或 JSON。"
+        },
+        {
+          "v": "$0",
+          "unit": "/ 月",
+          "body": "100% 免费且无限使用——无需注册、无需登录、没有使用上限。"
+        },
+        {
+          "v": "1",
+          "unit": "个结果工作台",
+          "body": "搜索、回听、编辑和字幕检查集中在同一处。"
+        }
+      ]
+    },
+    "formatsLanguages": {
+      "audioFormatsTitle": "音频转文字——支持的格式",
+      "audioFormatsDesc": "免费、无限使用的音频转文字，无需注册或账号。支持 MP3 转文字、WAV 转文字、M4A 转文字及更多常见音频格式。",
+      "formats": [
+        "MP3",
+        "WAV",
+        "M4A",
+        "OGG",
+        "FLAC",
+        "WebM",
+        "Opus",
+        "AAC"
+      ],
+      "languagesTitle": "支持 99 种语言的免费音频转文字（自动检测）",
+      "languagesDesc": "Whisper 支持 99 种语言的音频转文字，模型会自动识别音频语言，无需手动选择。",
+      "languages": [
+        "英语",
+        "普通话",
+        "西班牙语",
+        "印地语",
+        "阿拉伯语",
+        "葡萄牙语",
+        "孟加拉语",
+        "俄语",
+        "日语",
+        "旁遮普语",
+        "德语",
+        "爪哇语",
+        "韩语",
+        "法语",
+        "泰卢固语",
+        "越南语",
+        "泰米尔语",
+        "意大利语",
+        "土耳其语",
+        "波兰语",
+        "乌克兰语",
+        "荷兰语",
+        "波斯语",
+        "泰语",
+        "瑞典语",
+        "捷克语",
+        "希腊语",
+        "希伯来语",
+        "芬兰语",
+        "挪威语",
+        "匈牙利语"
+      ],
+      "more": "+68 种"
+    },
+    "finalCta": {
+      "tag": "100% 免费，无需注册，无限使用",
+      "title": "拖入音频文件，免费开始音频转文字——无需注册，无需登录，无限使用。",
+      "subtitle": "回到顶部选择文件，使用推荐设置生成带时间戳的文字稿，再核对内容并导出 SRT、VTT、TXT 或 JSON。",
+      "tryNow": "免费开始，无需注册",
+      "howItWorks": "了解音频转文字原理"
+    }
+  }
+}

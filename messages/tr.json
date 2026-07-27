@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "title": "Ücretsiz ve sınırsız ses metne dönüştürme, kayıt gerekmez | EarScribe",
+    "description": "Sesi zaman damgalı metne ve altyazıya ücretsiz, sınırsız ve kayıt olmadan dönüştürün. SRT, VTT, TXT veya JSON olarak dışa aktarın.",
+    "ogTitle": "EarScribe — Ücretsiz ve sınırsız ses metne dönüştürme",
+    "ogDescription": "Sesi zaman damgalı metne ve altyazıya ücretsiz, sınırsız ve kayıt olmadan dönüştürün. SRT, VTT, TXT veya JSON olarak dışa aktarın."
+  },
+  "header": {
+    "product": "EarScribe",
+    "about": "Hakkında",
+    "github": "GitHub"
+  },
+  "hero": {
+    "tag": "%100 ücretsiz, kayıt gerekmez",
+    "title": "Sesi zaman damgalı metne ve altyazıya ücretsiz ve sınırsız dönüştürün.",
+    "subtitle": "%100 ücretsiz ses metne dönüştürücü — kayıt gerekmez, giriş gerekmez, sınırsız kullanım. Bir MP3, WAV veya M4A yükleyin — zaman damgalı transkript ve SRT / VTT altyazılar elde edin. OpenAI Whisper destekli ücretsiz konuşma metne dönüşüm. Gizli: sesiniz hiçbir zaman cihazınızı terk etmez.",
+    "cta": "Ses dosyası seçin"
+  },
+  "trust": {
+    "private": "%100 ücretsiz, sınırsız",
+    "free": "Kayıt yok, giriş yok",
+    "openModels": "Gizli, yükleme yok",
+    "subtitles": "SRT & VTT dışa aktarım"
+  },
+  "dropzone": {
+    "idle": "Ses dosyasını bırakın veya tıklayarak göz atın",
+    "hint": "MP3, WAV, M4A, OGG, FLAC, WebM — dosya başına yaklaşık 2 saate kadar",
+    "dragging": "Dosyayı kullanmak için bırakın",
+    "rejected": "Desteklenmeyen dosya türü. Bir ses dosyası kullanın.",
+    "tooLarge": "Dosya olağandışı şekilde büyük. Uzun ses dosyaları tarayıcı belleğini aşabilir.",
+    "changeFile": "Farklı bir dosya kullanın"
+  },
+  "modelPicker": {
+    "title": "Model seçin",
+    "subtitle": "Büyük modeller daha doğru sonuçlar verir ancak indirip çalıştırmak daha uzun sürer. Bir kez seçin — model tarayıcınızda önbelleğe alınır.",
+    "advancedShow": "Compare all models",
+    "advancedHide": "Hide model details",
+    "speedLabel": "Speed",
+    "accuracyLabel": "Accuracy",
+    "changeFile": "Change file",
+    "cachedRunHint": "{model} is already on this device and ready to use.",
+    "downloadRunHint": "The first run downloads {size}. It stays cached for later use.",
+    "chooseModelHint": "Choose a quality level to continue.",
+    "recommended": "Önerilen",
+    "selected": "Seçildi",
+    "cached": "Önbellekte",
+    "cachedHint": "Bu cihazda zaten mevcut. Anında çalışmaya hazır.",
+    "needsDownload": "{size} indirme",
+    "select": "Seç",
+    "downloadAndRun": "İndir ve transkribe et",
+    "downloadAndRunSized": "{size} indir ve transkribe et",
+    "transcribeNow": "Transkribe et",
+    "downloading": "İndiriliyor…",
+    "downloadingPct": "İndiriliyor {percent}",
+    "initializingModel": "Model başlatılıyor…",
+    "loadingCached": "Önbellekteki model yükleniyor…",
+    "transcribingShort": "Transkribe ediliyor…",
+    "transcribingPct": "Transkribe ediliyor {percent}",
+    "deleteRemoveAria": "Bu cihazdan kaldır",
+    "deleteConfirmQuestion": "Bu cihazdan kaldırılsın mı?",
+    "deleteConfirmHint": "~{size} boşaltır. İstediğiniz zaman yeniden indirebilirsiniz.",
+    "deleteConfirmYes": "Evet, kaldır",
+    "deleteConfirmCancel": "İptal",
+    "deleting": "Kaldırılıyor…",
+    "deleteSuccess": "Kaldırıldı · {size} boşaltıldı",
+    "deleteFailed": "Kaldırılamadı",
+    "warningWebgpuMissing": "Tarayıcınızda WebGPU bulunmuyor. Bu model CPU (WASM) üzerinde çalışacak ve yavaş olabilir.",
+    "warningRamLow": "Cihazınız {available} GB RAM bildiriyor. Bu model en az {required} GB öneriyor ve düşük bellekli cihazlarda çökebilir.",
+    "deviceCapability": "Cihazınız",
+    "webgpuOn": "WebGPU mevcut",
+    "webgpuOff": "WebGPU mevcut değil — yalnızca CPU",
+    "memoryReport": "{gb} GB RAM",
+    "memoryUnknown": "RAM bilinmiyor",
+    "cores": "{cores} CPU çekirdeği"
+  },
+  "models": {
+    "tiny": {
+      "name": "Whisper Tiny",
+      "tagline": "En hızlı, en küçük. Daha düşük doğruluk.",
+      "pros": "En küçük indirme. Eski telefonlar dahil her cihazda çalışır.",
+      "cons": "Gürültülü seste kelimeleri kaçırır, aksanlı konuşmada zorlanır."
+    },
+    "base": {
+      "name": "Whisper Base",
+      "tagline": "Hız ve doğruluk arasında en iyi denge.",
+      "pros": "Temiz konuşmanın büyük bölümünde iyi doğruluk. Her cihazda çalışır.",
+      "cons": "Ağır aksanlı veya gürültülü seste bazı kelimeleri hâlâ kaçırabilir."
+    },
+    "small": {
+      "name": "Whisper Small",
+      "tagline": "Daha yüksek doğruluk, daha yavaş.",
+      "pros": "Aksan ve gürültüde belirgin biçimde daha iyi.",
+      "cons": "WebGPU olmadan yavaş. Daha büyük indirme."
+    },
+    "turbo": {
+      "name": "Whisper Large v3 Turbo",
+      "tagline": "En yüksek doğruluk. WebGPU önerilir.",
+      "pros": "En iyi transkripsiyon kalitesi, WebGPU'da hızlı.",
+      "cons": "Büyük indirme ve bellek kullanımı. Düşük performanslı cihazlarda çökebilir."
+    }
+  },
+  "progress": {
+    "downloadingModel": "Model indiriliyor… {percent}",
+    "downloadingFile": "{file} — {loaded} / {total}",
+    "decodingAudio": "Ses çözümleniyor…",
+    "transcribing": "Transkribe ediliyor… {percent}",
+    "preparing": "Hazırlanıyor…",
+    "cancel": "İptal"
+  },
+  "result": {
+    "title": "Transkript",
+    "detectedLanguage": "Algılanan dil: {language}",
+    "wordCount": "{count} kelime",
+    "duration": "{duration}",
+    "copy": "Metni kopyala",
+    "copied": "Kopyalandı",
+    "export": "Dışa aktar",
+    "exportTxt": "Düz metin (.txt)",
+    "exportSrt": "Altyazı (.srt)",
+    "exportVtt": "Altyazı (.vtt)",
+    "exportJson": "Ham JSON (.json)",
+    "newFile": "Başka bir dosyayı transkribe et",
+    "playFromHere": "Buradan oynat",
+    "play": "Oynat",
+    "pause": "Duraklat",
+    "workspaceLabel": "Transcript workspace",
+    "tabTranscript": "Review transcript",
+    "tabSubtitles": "Subtitle check",
+    "searchPlaceholder": "Search the transcript",
+    "editTranscript": "Edit text",
+    "finishEditing": "Finish editing",
+    "savedOnDevice": "Edits are saved on this device",
+    "restoredDraft": "Saved edits restored from this device",
+    "noSearchResults": "No matching text found.",
+    "qaTitle": "Subtitle check",
+    "qaBody": "Review cues that may be hard to read or need a quick listen before export.",
+    "qaIssueCount": "{count} items may need attention",
+    "qaNoIssues": "No common subtitle issues found",
+    "qaCleanTitle": "Ready for a final watch-through",
+    "qaCleanBody": "No empty, repeated, overlapping, overly long, or unusually fast cues were detected.",
+    "qaHint": "Automatic layout changes use the current timestamps. Listen through important sections before publishing.",
+    "qaEmptyCue": "Empty subtitle cue",
+    "qaType_empty": "Empty",
+    "qaType_long": "Too long",
+    "qaType_fast": "Fast reading",
+    "qaType_overlap": "Time overlap",
+    "qaType_repeated": "Repeated",
+    "optimizeSubtitles": "Improve line breaks"
+  },
+  "errors": {
+    "modelLoadFailed": "Model yüklenemedi. Ağ bağlantınızı kontrol edip tekrar deneyin.",
+    "audioDecodeFailed": "Bu ses dosyası çözümlenemedi. Farklı bir format deneyin (MP3 / WAV / M4A).",
+    "transcribeFailed": "Transkripsiyon başarısız oldu. Cihazınızın belleği dolmuş olabilir — daha küçük bir model deneyin.",
+    "browserUnsupported": "Tarayıcınızda gerekli özellikler eksik (Web Workers, AudioContext). En güncel Chrome, Edge veya Safari'yi deneyin."
+  },
+  "faq": {
+    "title": "Ücretsiz sınırsız ses metne dönüşüm — SSS",
+    "items": [
+      {
+        "q": "EarScribe gerçekten sınır olmaksızın %100 ücretsiz mi?",
+        "a": "Evet — %100 ücretsiz, sınırsız, kayıt ve giriş gerekmez. Ücretli katman, kredi kartı, dakika başı ücret ya da günlük veya aylık kota yoktur. Whisper konuşma metne dönüşüm modeli kendi donanımınızda çalışır; bu yüzden aktarılacak herhangi bir bulut hesaplama maliyeti de yoktur. Hiçbir koşul olmaksızın ücretsiz ses metne dönüşüm."
+      },
+      {
+        "q": "Sesim gizli ve güvenli mi?",
+        "a": "Tamamen gizli. EarScribe, yerel öncelikli bir ses metne dönüştürücüdür: ses dosyanız hiçbir zaman cihazınızı terk etmez ve hiçbir sunucuya yüklenmez. Hesap olmadığı için sizinle ilgili hiçbir veri toplanmaz. Model indirildikten sonra çevrimdışı bile kullanabilirsiniz."
+      },
+      {
+        "q": "Sesim herhangi bir yere yükleniyor mu?",
+        "a": "Hayır. Ücretsiz ses metne dönüşüm tamamen yerel olarak gerçekleşir — ses cihazınızda çözümlenir ve bir Web Worker içinde çalışan Whisper modeline aktarılır. Hiçbir şey sunucuya gönderilmez."
+      },
+      {
+        "q": "İlk çalıştırma neden yavaş?",
+        "a": "Ses metne dönüşüm için ilk kez model seçtiğinizde, tarayıcınız modeli indirir (boyuta göre 80 MB ile 800 MB arasında). Bundan sonra ücretsiz ses metne dönüşüm modeli önbelleğe alınarak yeniden kullanılır — tekrar indirme gerekmez."
+      },
+      {
+        "q": "Hangi diller destekleniyor?",
+        "a": "Ücretsiz ses metne dönüşüm, Whisper aracılığıyla 99 dili destekler. Dil otomatik olarak algılanır — manuel seçim yapmanıza gerek yoktur."
+      },
+      {
+        "q": "Bir videoyu transkribe edebilir miyim?",
+        "a": "Doğrudan değil. Video için ses metne dönüşüm yapmak istiyorsanız önce sesi çıkarın (MP3 veya WAV çıktısı verebilen herhangi bir araç işe yarar) ve buraya bırakın."
+      },
+      {
+        "q": "Bu çevrimdışı çalışır mı?",
+        "a": "Model bir kez indirildikten sonra evet — ücretsiz ses metne dönüşüm çevrimdışı çalışır. Sayfanın ilk kez yüklenmesi gerekir; ancak sonraki ses metne dönüşüm işlemleri internet bağlantısı olmadan da çalışır."
+      },
+      {
+        "q": "MP3'ü ücretsiz olarak nasıl metne dönüştürebilirim?",
+        "a": "MP3'ü EarScribe'a bırakın; ücretsiz MP3 metne dönüşüm başlasın. Dosya tarayıcınızda çözümlenir, Whisper yerel olarak transkribe eder ve MP3 metne dönüşüm çıktısını kopyalayabilir ya da SRT, VTT, TXT veya JSON olarak dışa aktarabilirsiniz. Yükleme adımı veya hesap gerekmez."
+      },
+      {
+        "q": "Ücretsiz Otter.ai veya Rev alternatifi var mı?",
+        "a": "EarScribe, Otter.ai, Rev ve HappyScribe gibi bulut transkripsiyon hizmetlerine ücretsiz bir ses metne dönüşüm alternatifidir. Fark şu: hesaplamayı kendi makinenizde ücretsiz konuşma metne dönüşüm olarak yaparsınız, ancak ses hiçbir zaman cihazınızı terk etmez ve dakika başı ücret veya abonelik yoktur."
+      },
+      {
+        "q": "Sesten SRT veya VTT altyazı oluşturabilir miyim?",
+        "a": "Evet. Ses metne dönüşüm tamamlandıktan sonra Dışa Aktar → .srt veya .vtt seçeneğine tıklayın. İşaret zamanlaması Whisper'ın ürettiği zaman damgalarından geldiği için altyazılar, ses metne dönüşüm çıktısıyla manuel bölme gerekmeksizin hizalanır."
+      },
+      {
+        "q": "Bu, tarayıcıda OpenAI Whisper mi çalıştırıyor?",
+        "a": "Evet — EarScribe, Whisper (Tiny, Base, Small ve Large v3 Turbo) aracılığıyla ücretsiz ses metne dönüşümü, Transformers.js üzerinden doğrudan tarayıcıda WebGPU ile çalıştırır; kullanılamadığında ise WebAssembly'ye geri döner."
+      }
+    ]
+  },
+  "about": {
+    "title": "EarScribe Hakkında",
+    "intro": "EarScribe, Transformers.js ve WebGPU / WebAssembly çalışma zamanlarını kullanarak OpenAI'nin Whisper konuşma tanıma modellerini doğrudan tarayıcınızda çalıştıran statik bir web uygulamasıdır.",
+    "noServer": "Sesinize dokunan herhangi bir arka uç yoktur. Cloudflare Pages sunucusu yalnızca statik HTML, JS ve CSS dosyalarını sunar. Whisper model ağırlıkları ilk kullanımda Hugging Face CDN'den alınır ve tarayıcınız tarafından önbelleğe alınır.",
+    "credits": "Transformers.js, ONNX Runtime Web ve OpenAI'nin açık kaynaklı Whisper modelleri kullanılarak geliştirilmiştir."
+  },
+  "footer": {
+    "tagline": "%100 ücretsiz ses metne ve konuşma metne dönüşüm. Kayıt yok, giriş yok.",
+    "links": {
+      "about": "Hakkında",
+      "privacy": "Gizlilik",
+      "github": "GitHub"
+    },
+    "builtWith": "Transformers.js, ONNX Runtime Web, Whisper ile geliştirilmiştir."
+  },
+  "seo": {
+    "showcase": {
+      "kicker": "Ses metne dönüşüm — ne elde ettiğinizi görün",
+      "title": "Zaman damgalı, dalga formu ve tek tıkla altyazı dışa aktarımlı gerçek bir transkript.",
+      "subtitle": "Ücretsiz ses metne dönüşüm — bir podcast, ders veya röportaj bırakın. EarScribe sese eşlenmiş tam transkripti gösterir — herhangi bir satıra tıklayarak oraya atlayın ya da tek tıkla SRT / VTT / TXT olarak dışa aktarın.",
+      "fakeUrl": "earscribe.app — interview-acme-q3.mp3",
+      "badges": {
+        "onDevice": "Cihaz üzerinde",
+        "autoLanguage": "İngilizce (otomatik algılandı)",
+        "duration": "12:48",
+        "wordCount": "1.842 kelime"
+      },
+      "pauseAria": "Duraklat",
+      "playbackTime": "00:01:14 / 00:12:48",
+      "playbackRate": "1,0x",
+      "transcript": [
+        {
+          "ts": "00:00:08",
+          "speaker": "Sunucu",
+          "text": "Tekrar hoş geldiniz — bugün dikkat araştıran biriyle konuşuyoruz."
+        },
+        {
+          "ts": "00:00:24",
+          "speaker": "Konuk",
+          "text": "Kesinti, aslında insanların sandığı sorun değil."
+        }
+      ],
+      "exportHeading": "Dışa Aktar",
+      "copyText": "Metni kopyala",
+      "tiles": [
+        {
+          "label": ".srt",
+          "sub": "Altyazı"
+        },
+        {
+          "label": ".vtt",
+          "sub": "Web altyazısı"
+        },
+        {
+          "label": ".txt",
+          "sub": "Düz metin"
+        },
+        {
+          "label": ".json",
+          "sub": "Ham + zamanlama"
+        }
+      ],
+      "srtFilename": "interview-acme-q3.srt",
+      "srtPreview": "1\n00:00:08,120 --> 00:00:18,640\nTekrar hoş geldiniz — dikkat araştırmasından konuşuyoruz.",
+      "exportNote": "Ses metne dönüşüm altyazıları işaret hizalıdır; Premiere, Final Cut, DaVinci Resolve, YouTube veya herhangi bir web oynatıcısına doğrudan eklenmeye hazırdır."
+    },
+    "howItWorks": {
+      "kicker": "Ücretsiz sınırsız ses metne dönüşüm nasıl çalışır",
+      "title": "Üç adım. Kayıt yok, giriş yok, %100 ücretsiz, sınırsız.",
+      "subtitle": "%100 ücretsiz ve gizli ses metne dönüşüm — kayıt gerekmez, giriş gerekmez. Sesiniz cihazınızda yerel olarak işlenir; sızacak herhangi bir yer gerçek anlamda yoktur.",
+      "steps": [
+        {
+          "title": "Sesinizi bırakın",
+          "body": "Dosya başına yaklaşık iki saate kadar MP3, WAV, M4A, OGG, FLAC veya WebM bırakın. Dosya hiçbir zaman makinenizi terk etmez."
+        },
+        {
+          "title": "Bir Whisper modeli seçin",
+          "body": "Hızlı notlar için Tiny (40 MB), stüdyo kalitesinde doğruluk için Turbo (~800 MB). Modeller ilk çalıştırmadan sonra önbelleğe alınır."
+        },
+        {
+          "title": "Okuyun, düzenleyin, dışa aktarın",
+          "body": "Ses metne dönüşüm sonucunuzu dalga formuyla eşlenmiş zaman damgalı transkript olarak alın. Altyazı için SRT / VTT veya notlar için düz metin olarak dışa aktarın."
+        }
+      ]
+    },
+    "whatYouCanDo": {
+      "kicker": "Yapabilecekleriniz — %100 ücretsiz, kayıt gerekmez, sınırsız",
+      "title": "Ücretsiz sınırsız ses metne dönüştürücü — kayıt yok, giriş yok.",
+      "prose": "EarScribe %100 ücretsiz bir <kw>ses metne dönüştürücü</kw> — <kw>kayıt gerekmez</kw>, giriş gerekmez, <kw>sınırsız</kw> kullanım. <kw>MP3'ü metne</kw>, <kw>WAV'ı metne</kw> veya <kw>M4A'yı metne</kw> dönüştürün, herhangi bir sesten <kw>SRT veya VTT altyazı</kw> oluşturun ya da API anahtarı olmadan <kw>OpenAI Whisper'ı çevrimiçi</kw> çalıştırın. Hesap, kota ve dakika başı ücret olmaksızın %100 ücretsiz <kw>konuşma metne</kw> dönüşüm — gizli, sesiniz hiçbir zaman cihazınızı terk etmez.",
+      "jobs": [
+        {
+          "from": "MP3",
+          "to": ".txt",
+          "label": "MP3'ten metne"
+        },
+        {
+          "from": "WAV",
+          "to": ".txt",
+          "label": "WAV'dan metne"
+        },
+        {
+          "from": "M4A",
+          "to": ".txt",
+          "label": "M4A'dan metne"
+        },
+        {
+          "from": "Ses",
+          "to": ".srt",
+          "label": "Sesten SRT'ye"
+        },
+        {
+          "from": "Ses",
+          "to": ".vtt",
+          "label": "Sesten VTT'ye"
+        },
+        {
+          "from": "Podcast",
+          "to": ".txt",
+          "label": "Podcast'ten metne"
+        }
+      ]
+    },
+    "useCases": {
+      "kicker": "Ücretsiz, sınırsız, girişsiz ses metne dönüşüm — herkes için",
+      "title": "EarScribe'ı kimler kullanır.",
+      "subtitle": "Kayıt gerektirmeyen %100 ücretsiz sınırsız ses metne dönüşüm — altı çok farklı kullanım senaryosu. Sesinizin başka birinin sunucusuna taşınmaması gerekiyorsa doğru yerdesiniz.",
+      "items": [
+        {
+          "title": "Podcaster'lar ve içerik üreticileri",
+          "body": "Podcaster'lar için ücretsiz ses metne dönüşüm — bölümleri daha hızlı kurgulayin: transkripti editörünüze yapıştırın, ihtiyacınız olan anı arayın ve aynı gün gösterim notlarını yayınlayın.",
+          "tag": "Podcast"
+        },
+        {
+          "title": "Gazeteciler ve araştırmacılar",
+          "body": "Kaynak röportajları için MP3'ten metne — gizli, kayıt ve hesap gerekmez. Sesiniz dizüstü bilgisayarınızda kalır. Üçüncü taraf sunucu yok, celp edilecek denetim günlüğü yok.",
+          "tag": "Gazetecilik"
+        },
+        {
+          "title": "Öğrenciler ve dersler",
+          "body": "Öğrenciler için ücretsiz ses metne dönüşüm — kaydedilmiş bir ders bırakın ve bir sonraki dersinizden önce aranabilir bir transkript elde edin.",
+          "tag": "Eğitim"
+        },
+        {
+          "title": "Toplantılar ve kullanıcı görüşmeleri",
+          "body": "Araştırma oturumları için ses metne dönüşüm — sesi bırakın, ücretsiz konuşma metne dönüşüm alın ve etiketlenmiş transkripti ekibinizle paylaşın. Hiçbir şey cihazınızı terk etmez.",
+          "tag": "Araştırma"
+        },
+        {
+          "title": "Video altyazıları",
+          "body": ".srt veya .vtt olarak dışa aktarılan ücretsiz ses metne dönüşüm — doğrudan Premiere, Resolve, Final Cut veya YouTube'a eklenir. İşaret zamanları sese hizalanmıştır.",
+          "tag": "Altyazı"
+        },
+        {
+          "title": "Sesli kitaplar ve uzun içerikler",
+          "body": "İki saatlik MP3'ten metne mi? Sorun değil. Turbo, sesli kitap uzunluğundaki sesleri işler — sınırsız, API kotası yok, dakika başı ücret yok, giriş gerekmez.",
+          "tag": "Uzun içerik"
+        }
+      ]
+    },
+    "features": {
+      "kicker": "Neden ücretsiz sınırsız ses metne dönüştürücümüzü seçmelisiniz",
+      "title": "Açık Whisper, önce gizlilik, köşeleri törpülenmiş.",
+      "items": [
+        {
+          "title": "Gizli, yükleme yok",
+          "body": "Tüm ücretsiz ses metne dönüşüm gizlidir — yerel olarak çözümlenir, hiçbir sunucuya yüklenmez. Verileriniz sizin kalır; üçüncü taraflara sızma riski sıfırdır."
+        },
+        {
+          "title": "Mümkünse WebGPU, değilse WASM",
+          "body": "Turbo, WebGPU'da yaklaşık 10 kat daha hızlı çalışır. Eski cihazlarda otomatik olarak WebAssembly'ye geri düşer."
+        },
+        {
+          "title": "99 dil, otomatik algılama",
+          "body": "Fransızca bir podcast, Mandarin bir ders veya Hintçe bir röportaj bırakın — 99 dilde ücretsiz ses metne dönüşüm, tümü otomatik algılanır."
+        },
+        {
+          "title": "SRT, VTT, JSON, TXT",
+          "body": "Tek tıkla MP3'ten metne veya sesten SRT dışa aktarımı. SRT ve VTT işaretleri, sezgisel parçalamaya değil model tarafından üretilen zaman damgalarına hizalanır."
+        },
+        {
+          "title": "Çevrimdışı çalışır — sınırsız, internet gerekmez",
+          "body": "Modeller yerel olarak önbelleğe alınır. İndirildikten sonra sınırsız ses metne dönüşüm — internet yok, kota yok, dakika başı faturalandırma yok."
+        },
+        {
+          "title": "%100 ücretsiz. Hesap gerekmez. API anahtarı gerekmez.",
+          "body": "%100 ücretsiz ve sınırsız — kredi kartı yok, kayıt yok, giriş yok, kullanım sınırı yok. Sayfayı açtığınız anda ücretsiz ses metne ve konuşma metne dönüşüm."
+        }
+      ]
+    },
+    "sampleOutput": {
+      "kicker": "Ses metne dönüşüm — örnek çıktı",
+      "title": "Aynı ses metne dönüşüm transkripti, üç format, gönderime hazır.",
+      "subtitle": "Dışa aktarılan bir MP3 metne veya sesten SRT dosyasının gerçekte nasıl göründüğü — doğrudan editörünüze yapıştırın veya YouTube'a yükleyin.",
+      "files": [
+        {
+          "name": "transcript.srt",
+          "lang": "SubRip",
+          "code": "1\n00:00:08,120 --> 00:00:18,640\nTekrar hoş geldiniz — dikkat araştırmasından konuşuyoruz."
+        },
+        {
+          "name": "transcript.vtt",
+          "lang": "WebVTT",
+          "code": "WEBVTT\n\n00:00:08.120 --> 00:00:18.640\nTekrar hoş geldiniz — dikkat araştırmasından konuşuyoruz."
+        },
+        {
+          "name": "transcript.txt",
+          "lang": "Plain text",
+          "code": "[00:00:08] Sunucu: Tekrar hoş geldiniz — dikkat araştırmasından konuşuyoruz."
+        }
+      ]
+    },
+    "testimonials": {
+      "kicker": "%100 ücretsiz, girişsiz ses metne dönüşüm — gerçek kullanıcılardan",
+      "title": "Sessiz, hızlı ve tamamen sizin.",
+      "subtitle": "Ücretsiz, sınırsız, girişsiz ses metne dönüşüme geçen birkaç temsili kullanıcı. (Yer tutucu alıntılar — gerçek alıntılarınız olduğunda değiştirin.)",
+      "quotes": [
+        {
+          "name": "Maya R.",
+          "role": "Podcast yapımcısı",
+          "quote": "Aylık 19 $'lık aboneliğimi iptal ettim — %100 ücretsiz, girişsiz, sınırsız ses metne dönüşüm. M2'mde Turbo modeli, otel wi-fi'siyle bulut yüklemesini beklemekten daha hızlı."
+        },
+        {
+          "name": "Daniel K.",
+          "role": "Araştırmacı gazeteci",
+          "quote": "Kaynak gizliliği tartışılmaz. Bu ücretsiz konuşma metne dönüşüm aracıyla — hesap yok, yükleme yok — ses hiçbir zaman dizüstü bilgisayarı terk etmiyor. Kullanmak ile kullanmamak arasındaki fark bu."
+        },
+        {
+          "name": "Priya S.",
+          "role": "Doktora öğrencisi, dilbilim",
+          "quote": "Uçakta, kota ve giriş olmaksızın saha araştırması seslerinin sınırsız ses metne dönüşümü. Çalışmaya devam eden ücretsiz konuşma metne dönüşüm."
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "%100 ücretsiz, sınırsız, girişsiz ses metne dönüşüm — karşılaştırma",
+      "title": "EarScribe ile Otter.ai, Rev ve Whisper API karşılaştırması.",
+      "subtitle": "Bulut transkripsiyonuna %100 ücretsiz, sınırsız, girişsiz bir ses metne dönüşüm alternatifi — aynı Whisper model ailesi, üç çok farklı dağıtım biçimi. (Fiyatlar gösterge niteliğindedir.)",
+      "headers": {
+        "capability": "Özellik",
+        "earscribe": "EarScribe",
+        "you": "Siz",
+        "cloudApi": "Whisper API",
+        "saas": "Barındırılan SaaS"
+      },
+      "yes": "Evet",
+      "no": "Hayır",
+      "rows": [
+        {
+          "label": "%100 ücretsiz, kredi kartı gerekmez",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Sınırsız kullanım, kota yok",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Hesap / giriş gerekli",
+          "earscribe": false,
+          "cloudApi": true,
+          "saas": true
+        },
+        {
+          "label": "Dakika başı fiyatlandırma",
+          "earscribe": "Ücretsiz",
+          "cloudApi": "$0.006/min",
+          "saas": "$10–25/mo"
+        },
+        {
+          "label": "Gizli, ses cihazda kalır",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Çevrimdışı çalışır",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Whisper kalitesinde doğruluk",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": "Varies"
+        },
+        {
+          "label": "Açık kaynak modeller",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "SRT / VTT dışa aktarım",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "Kurulum süresi",
+          "earscribe": "0s",
+          "cloudApi": "API key + code",
+          "saas": "Sign-up flow"
+        }
+      ]
+    },
+    "stats": {
+      "srTitle": "EarScribe ücretsiz ses metne dönüşüm rakamlarla",
+      "items": [
+        {
+          "v": "99",
+          "unit": "dil",
+          "body": "Otomatik algılanır, manuel seçim gerekmez."
+        },
+        {
+          "v": "0",
+          "unit": "bayt yükleme",
+          "body": "Gizli ses metne dönüşüm — sesiniz hiçbir zaman cihazınızı terk etmez."
+        },
+        {
+          "v": "$0",
+          "unit": "/ ay",
+          "body": "%100 ücretsiz ve sınırsız — kayıt yok, giriş yok, kullanım sınırı yok."
+        },
+        {
+          "v": "~2h",
+          "unit": "maksimum süre",
+          "body": "Uzun biçimli MP3 metne dönüşüm tek geçişte işlenir."
+        }
+      ]
+    },
+    "formatsLanguages": {
+      "audioFormatsTitle": "Ses metne dönüşüm — desteklenen formatlar",
+      "audioFormatsDesc": "Ücretsiz sınırsız ses metne dönüştürücü — kayıt yok, hesap yok. Oynatabiliyorsanız EarScribe sesinizi metne dönüştürür: MP3'ten metne, WAV'dan metne, M4A'dan metne ve daha fazlası.",
+      "formats": [
+        "MP3",
+        "WAV",
+        "M4A",
+        "OGG",
+        "FLAC",
+        "WebM",
+        "Opus",
+        "AAC"
+      ],
+      "languagesTitle": "99 dilde ücretsiz ses metne dönüşüm (otomatik algılama)",
+      "languagesDesc": "Whisper'ın desteklediği 99 dilde ücretsiz ses metne dönüşüm. Model, sesin ilk birkaç saniyesinden doğru dili seçer.",
+      "languages": [
+        "İngilizce",
+        "Mandarin Çincesi",
+        "İspanyolca",
+        "Hintçe",
+        "Arapça",
+        "Portekizce",
+        "Bengalce",
+        "Rusça",
+        "Japonca",
+        "Pencapça",
+        "Almanca",
+        "Cava dili",
+        "Korece",
+        "Fransızca",
+        "Telugu dili",
+        "Vietnamca",
+        "Tamilce",
+        "İtalyanca",
+        "Türkçe",
+        "Lehçe",
+        "Ukraynaca",
+        "Felemenkçe",
+        "Farsça",
+        "Tayca",
+        "İsveççe",
+        "Çekçe",
+        "Yunanca",
+        "İbranice",
+        "Fince",
+        "Norveççe",
+        "Macarca"
+      ],
+      "more": "+68 daha"
+    },
+    "finalCta": {
+      "tag": "%100 ücretsiz, kayıt gerekmez, sınırsız",
+      "title": "%100 ücretsiz ses metne dönüşüm için bir ses dosyası bırakın — kayıt yok, giriş yok, sınırsız.",
+      "subtitle": "Sayfanın en üstüne dönün, bir dosya seçin; zaman damgalı sınırsız ücretsiz ses metne dönüşümden on saniye uzakta olursunuz. %100 ücretsiz konuşma metne ve MP3 metne dönüşüm — hesap gerekmez.",
+      "tryNow": "Ücretsiz başlayın, kayıt gerekmez",
+      "howItWorks": "Ses metne dönüşüm nasıl çalışır"
+    }
+  }
+}

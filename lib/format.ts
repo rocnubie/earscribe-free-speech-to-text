@@ -26,11 +26,14 @@ export function formatPercent(value: number): string {
   return `${Math.max(0, Math.min(100, Math.round(value)))}%`;
 }
 
-export function languageName(code: string | undefined): string {
+export function languageName(
+  code: string | undefined,
+  locale = "en",
+): string {
   if (!code) return "—";
   try {
     return (
-      new Intl.DisplayNames([navigator.language || "en"], {
+      new Intl.DisplayNames([locale], {
         type: "language",
       }).of(code) ?? code
     );

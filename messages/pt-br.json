@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "title": "Áudio para texto grátis e ilimitado, sem cadastro | EarScribe",
+    "description": "Transforme áudio em texto com marcações de tempo e legendas, grátis e sem limites. Sem cadastro; exporte SRT, VTT, TXT ou JSON.",
+    "ogTitle": "EarScribe — Áudio para texto grátis e ilimitado",
+    "ogDescription": "Transforme áudio em texto com marcações de tempo e legendas, grátis e sem limites. Sem cadastro; exporte SRT, VTT, TXT ou JSON."
+  },
+  "header": {
+    "product": "EarScribe",
+    "about": "Sobre",
+    "github": "GitHub"
+  },
+  "hero": {
+    "tag": "100% grátis, sem cadastro",
+    "title": "Transforme áudio em texto com marcações de tempo e legendas, grátis e sem limites.",
+    "subtitle": "Conversor de áudio para texto 100% grátis — sem cadastro, sem login, uso ilimitado. Arraste um MP3 para texto, WAV ou M4A — receba a transcrição com marcações de tempo e legendas SRT / VTT. Voz para texto grátis com o OpenAI Whisper. Privado, seu áudio nunca sai do seu dispositivo.",
+    "cta": "Escolher um arquivo de áudio"
+  },
+  "trust": {
+    "private": "100% grátis, ilimitado",
+    "free": "Sem cadastro, sem login",
+    "openModels": "Privado, sem envio",
+    "subtitles": "Exportação SRT & VTT"
+  },
+  "dropzone": {
+    "idle": "Arraste um arquivo de áudio ou clique para buscar",
+    "hint": "MP3, WAV, M4A, OGG, FLAC, WebM — até ~2 horas por arquivo",
+    "dragging": "Solte para usar este arquivo",
+    "rejected": "Formato de arquivo não suportado. Use um arquivo de áudio.",
+    "tooLarge": "Arquivo muito grande. Áudios longos podem exceder a memória do navegador.",
+    "changeFile": "Usar um arquivo diferente"
+  },
+  "modelPicker": {
+    "title": "Escolher um modelo",
+    "subtitle": "Modelos maiores são mais precisos, mas demoram mais para baixar e rodar. Escolha uma vez — o modelo fica em cache no seu navegador.",
+    "advancedShow": "Compare all models",
+    "advancedHide": "Hide model details",
+    "speedLabel": "Speed",
+    "accuracyLabel": "Accuracy",
+    "changeFile": "Change file",
+    "cachedRunHint": "{model} is already on this device and ready to use.",
+    "downloadRunHint": "The first run downloads {size}. It stays cached for later use.",
+    "chooseModelHint": "Choose a quality level to continue.",
+    "recommended": "Recomendado",
+    "selected": "Selecionado",
+    "cached": "Em cache",
+    "cachedHint": "Já está neste dispositivo. Pronto para rodar na hora.",
+    "needsDownload": "Download de {size}",
+    "select": "Selecionar",
+    "downloadAndRun": "Baixar & transcrever",
+    "downloadAndRunSized": "Baixar {size} & transcrever",
+    "transcribeNow": "Transcrever",
+    "downloading": "Baixando…",
+    "downloadingPct": "Baixando {percent}",
+    "initializingModel": "Inicializando modelo…",
+    "loadingCached": "Carregando modelo em cache…",
+    "transcribingShort": "Transcrevendo…",
+    "transcribingPct": "Transcrevendo {percent}",
+    "deleteRemoveAria": "Remover deste dispositivo",
+    "deleteConfirmQuestion": "Remover deste dispositivo?",
+    "deleteConfirmHint": "Libera ~{size}. Você pode baixar de novo quando quiser.",
+    "deleteConfirmYes": "Sim, remover",
+    "deleteConfirmCancel": "Cancelar",
+    "deleting": "Removendo…",
+    "deleteSuccess": "Removido · {size} liberados",
+    "deleteFailed": "Falha ao remover",
+    "warningWebgpuMissing": "Seu navegador não tem WebGPU. Este modelo vai rodar na CPU (WASM) e pode ser lento.",
+    "warningRamLow": "Seu dispositivo reporta {available} GB de RAM. Este modelo recomenda pelo menos {required} GB e pode travar em dispositivos com pouca memória.",
+    "deviceCapability": "Seu dispositivo",
+    "webgpuOn": "WebGPU disponível",
+    "webgpuOff": "WebGPU indisponível — somente CPU",
+    "memoryReport": "{gb} GB de RAM",
+    "memoryUnknown": "RAM desconhecida",
+    "cores": "{cores} núcleos de CPU"
+  },
+  "models": {
+    "tiny": {
+      "name": "Whisper Tiny",
+      "tagline": "O mais rápido e leve. Precisão menor.",
+      "pros": "Download mínimo. Roda em qualquer dispositivo, até em celulares antigos.",
+      "cons": "Perde palavras em áudios com ruído, tem dificuldade com sotaques."
+    },
+    "base": {
+      "name": "Whisper Base",
+      "tagline": "Melhor equilíbrio entre velocidade e precisão.",
+      "pros": "Boa precisão para a maioria dos áudios limpos. Roda em qualquer dispositivo.",
+      "cons": "Ainda perde algumas palavras em áudios com sotaque forte ou muito ruído."
+    },
+    "small": {
+      "name": "Whisper Small",
+      "tagline": "Maior precisão, mais lento.",
+      "pros": "Visivelmente melhor com sotaques e ruídos.",
+      "cons": "Lento sem WebGPU. Download maior."
+    },
+    "turbo": {
+      "name": "Whisper Large v3 Turbo",
+      "tagline": "Máxima precisão. WebGPU recomendado.",
+      "pros": "Melhor qualidade de transcrição, rápido no WebGPU.",
+      "cons": "Download e uso de memória elevados. Pode travar em dispositivos básicos."
+    }
+  },
+  "progress": {
+    "downloadingModel": "Baixando modelo… {percent}",
+    "downloadingFile": "{file} — {loaded} de {total}",
+    "decodingAudio": "Decodificando áudio…",
+    "transcribing": "Transcrevendo… {percent}",
+    "preparing": "Preparando…",
+    "cancel": "Cancelar"
+  },
+  "result": {
+    "title": "Transcrição",
+    "detectedLanguage": "Idioma detectado: {language}",
+    "wordCount": "{count} palavras",
+    "duration": "{duration}",
+    "copy": "Copiar texto",
+    "copied": "Copiado",
+    "export": "Exportar",
+    "exportTxt": "Texto simples (.txt)",
+    "exportSrt": "Legendas (.srt)",
+    "exportVtt": "Legendas (.vtt)",
+    "exportJson": "JSON bruto (.json)",
+    "newFile": "Transcrever outro arquivo",
+    "playFromHere": "Reproduzir daqui",
+    "play": "Reproduzir",
+    "pause": "Pausar",
+    "workspaceLabel": "Transcript workspace",
+    "tabTranscript": "Review transcript",
+    "tabSubtitles": "Subtitle check",
+    "searchPlaceholder": "Search the transcript",
+    "editTranscript": "Edit text",
+    "finishEditing": "Finish editing",
+    "savedOnDevice": "Edits are saved on this device",
+    "restoredDraft": "Saved edits restored from this device",
+    "noSearchResults": "No matching text found.",
+    "qaTitle": "Subtitle check",
+    "qaBody": "Review cues that may be hard to read or need a quick listen before export.",
+    "qaIssueCount": "{count} items may need attention",
+    "qaNoIssues": "No common subtitle issues found",
+    "qaCleanTitle": "Ready for a final watch-through",
+    "qaCleanBody": "No empty, repeated, overlapping, overly long, or unusually fast cues were detected.",
+    "qaHint": "Automatic layout changes use the current timestamps. Listen through important sections before publishing.",
+    "qaEmptyCue": "Empty subtitle cue",
+    "qaType_empty": "Empty",
+    "qaType_long": "Too long",
+    "qaType_fast": "Fast reading",
+    "qaType_overlap": "Time overlap",
+    "qaType_repeated": "Repeated",
+    "optimizeSubtitles": "Improve line breaks"
+  },
+  "errors": {
+    "modelLoadFailed": "Não foi possível carregar o modelo. Verifique sua conexão com a internet e tente de novo.",
+    "audioDecodeFailed": "Não foi possível decodificar este arquivo de áudio. Tente um formato diferente (MP3 / WAV / M4A).",
+    "transcribeFailed": "A transcrição falhou. Seu dispositivo pode estar sem memória — tente um modelo menor.",
+    "browserUnsupported": "Seu navegador não tem os recursos necessários (Web Workers, AudioContext). Tente a versão mais recente do Chrome, Edge ou Safari."
+  },
+  "faq": {
+    "title": "Áudio para texto ilimitado e grátis — Perguntas frequentes",
+    "items": [
+      {
+        "q": "O EarScribe é mesmo 100% grátis e sem limites?",
+        "a": "Sim — 100% grátis, ilimitado, sem cadastro e sem login. Não há planos pagos, cartão de crédito, cobrança por minuto nem cota diária ou mensal. O modelo de voz para texto Whisper roda no seu próprio hardware, então não há custo de computação na nuvem a repassar. Áudio para texto grátis, sem pegadinhas."
+      },
+      {
+        "q": "Meu áudio é privado e seguro?",
+        "a": "Totalmente privado. O EarScribe é um conversor de áudio para texto que funciona localmente: seu arquivo de áudio nunca sai do seu dispositivo e nunca é enviado para nenhum servidor. Sem conta, nenhum dado seu é coletado. Você ainda pode usar offline depois que o modelo for baixado."
+      },
+      {
+        "q": "Meu áudio é enviado para algum lugar?",
+        "a": "Não. A conversão de áudio para texto acontece totalmente em local — o áudio é decodificado no seu dispositivo e passado para um modelo Whisper rodando em um Web Worker. Nada é enviado para um servidor."
+      },
+      {
+        "q": "Por que a primeira vez é lenta?",
+        "a": "Na primeira vez que você escolhe um modelo para converter áudio em texto, seu navegador faz o download (de 80 MB a 800 MB dependendo do tamanho). Depois disso, o modelo fica em cache e é reutilizado — sem precisar baixar de novo."
+      },
+      {
+        "q": "Quais idiomas são suportados?",
+        "a": "A conversão de áudio para texto suporta 99 idiomas via Whisper. O idioma é detectado automaticamente — você não precisa escolher nenhum."
+      },
+      {
+        "q": "Posso transcrever um vídeo?",
+        "a": "Não diretamente. Para converter áudio de vídeo em texto, extraia o áudio primeiro (qualquer ferramenta que gere MP3 ou WAV funciona) e arraste aqui."
+      },
+      {
+        "q": "Funciona offline?",
+        "a": "Depois que o modelo for baixado uma vez, sim — a conversão de áudio para texto funciona offline. A página precisa ser carregada antes, mas as transcrições seguintes funcionam sem internet."
+      },
+      {
+        "q": "Como converter um MP3 para texto de graça?",
+        "a": "Arraste o MP3 para o EarScribe para a conversão grátis de MP3 para texto. O arquivo é decodificado no seu navegador, o Whisper transcreve localmente, e você pode copiar o resultado ou exportar como SRT, VTT, TXT ou JSON. Sem etapa de upload, sem conta necessária."
+      },
+      {
+        "q": "Existe uma alternativa grátis ao Otter.ai ou Rev?",
+        "a": "O EarScribe é uma alternativa grátis de áudio para texto frente a serviços de transcrição na nuvem como Otter.ai, Rev e HappyScribe. A troca: você faz o processamento na sua própria máquina para ter voz para texto grátis, mas o áudio nunca sai dela e não há cobrança por minuto nem assinatura."
+      },
+      {
+        "q": "Posso gerar legendas SRT ou VTT a partir de um áudio?",
+        "a": "Sim. Após a conversão de áudio para texto, clique em Exportar → .srt ou .vtt. Os tempos das legendas vêm dos próprios timestamps do Whisper, então elas ficam sincronizadas com a transcrição sem precisar de ajuste manual."
+      },
+      {
+        "q": "Isso roda o OpenAI Whisper no navegador?",
+        "a": "Sim — o EarScribe converte áudio para texto via Whisper (Tiny, Base, Small e Large v3 Turbo) direto no navegador usando o Transformers.js no WebGPU, com fallback para WebAssembly quando indisponível."
+      }
+    ]
+  },
+  "about": {
+    "title": "Sobre o EarScribe",
+    "intro": "O EarScribe é um app web estático que roda os modelos de reconhecimento de voz Whisper da OpenAI diretamente no seu navegador usando Transformers.js e os runtimes WebGPU / WebAssembly.",
+    "noServer": "Não existe backend que toque no seu áudio. O host do Cloudflare Pages serve apenas os arquivos HTML, JS e CSS estáticos. Os pesos do modelo Whisper são baixados do CDN do Hugging Face no primeiro uso e ficam em cache no seu navegador.",
+    "credits": "Construído com Transformers.js, ONNX Runtime Web e os modelos Whisper open source da OpenAI."
+  },
+  "footer": {
+    "tagline": "Áudio para texto e voz para texto 100% grátis. Sem cadastro, sem login.",
+    "links": {
+      "about": "Sobre",
+      "privacy": "Privacidade",
+      "github": "GitHub"
+    },
+    "builtWith": "Feito com Transformers.js, ONNX Runtime Web, Whisper."
+  },
+  "seo": {
+    "showcase": {
+      "kicker": "Áudio para texto — veja o resultado",
+      "title": "Uma transcrição real, com marcações de tempo, forma de onda e exportação de legendas com um clique.",
+      "subtitle": "Áudio para texto grátis — arraste um podcast, aula ou entrevista. O EarScribe mostra a transcrição completa sincronizada ao áudio — clique em qualquer linha para pular até lá, ou exporte para SRT / VTT / TXT com um único clique.",
+      "fakeUrl": "earscribe.app — interview-acme-q3.mp3",
+      "badges": {
+        "onDevice": "No dispositivo",
+        "autoLanguage": "English (detectado automaticamente)",
+        "duration": "12:48",
+        "wordCount": "1.842 palavras"
+      },
+      "pauseAria": "Pausar",
+      "playbackTime": "00:01:14 / 00:12:48",
+      "playbackRate": "1.0x",
+      "transcript": [
+        {
+          "ts": "00:00:08",
+          "speaker": "Apresentador",
+          "text": "Bem-vindo de volta — hoje estamos falando com alguém que pesquisa atenção."
+        },
+        {
+          "ts": "00:00:24",
+          "speaker": "Convidado",
+          "text": "A interrupção não é bem o problema que as pessoas pensam que é."
+        }
+      ],
+      "exportHeading": "Exportar",
+      "copyText": "Copiar texto",
+      "tiles": [
+        {
+          "label": ".srt",
+          "sub": "Legendas"
+        },
+        {
+          "label": ".vtt",
+          "sub": "Legendas web"
+        },
+        {
+          "label": ".txt",
+          "sub": "Texto simples"
+        },
+        {
+          "label": ".json",
+          "sub": "Bruto + tempo"
+        }
+      ],
+      "srtFilename": "interview-acme-q3.srt",
+      "srtPreview": "1\n00:00:08,120 --> 00:00:18,640\nWelcome back — we're talking attention research.",
+      "exportNote": "As legendas de áudio para texto são alinhadas às marcações de tempo e prontas para importar no Premiere, Final Cut, DaVinci Resolve, YouTube ou qualquer player web."
+    },
+    "howItWorks": {
+      "kicker": "Como funciona a conversão de áudio para texto grátis e ilimitada",
+      "title": "Três passos. Sem cadastro, sem login, 100% grátis, ilimitado.",
+      "subtitle": "Conversão de áudio para texto 100% grátis e privada — sem cadastro, sem login. Seu áudio é processado localmente no seu dispositivo; literalmente não há para onde ele vazar.",
+      "steps": [
+        {
+          "title": "Arraste seu áudio",
+          "body": "Arraste um MP3 para texto, WAV, M4A, OGG, FLAC ou WebM — até cerca de duas horas por arquivo. O arquivo nunca sai da sua máquina."
+        },
+        {
+          "title": "Escolha um modelo Whisper",
+          "body": "Tiny (40 MB) para notas rápidas, Turbo (~800 MB) para precisão de estúdio. Os modelos ficam em cache após a primeira vez."
+        },
+        {
+          "title": "Leia, edite, exporte",
+          "body": "Receba seu áudio em texto como uma transcrição com timestamp sincronizada à forma de onda. Exporte como SRT / VTT para legendas ou texto simples para anotações."
+        }
+      ]
+    },
+    "whatYouCanDo": {
+      "kicker": "O que você pode fazer — 100% grátis, sem cadastro, ilimitado",
+      "title": "Conversor de áudio para texto 100% grátis e ilimitado — sem cadastro, sem login.",
+      "prose": "O EarScribe é um conversor de <kw>áudio para texto</kw> 100% grátis — <kw>sem cadastro</kw>, sem login, uso <kw>ilimitado</kw>. Converta <kw>MP3 para texto</kw>, <kw>WAV para texto</kw> ou <kw>M4A para texto</kw>, gere <kw>legendas SRT ou VTT</kw> de qualquer áudio, ou rode o <kw>OpenAI Whisper online</kw> sem precisar de chave de API. <kw>Voz para texto</kw> 100% grátis, sem conta, sem cota, sem cobrança por minuto — privado, seu áudio nunca sai do seu dispositivo.",
+      "jobs": [
+        {
+          "from": "MP3",
+          "to": ".txt",
+          "label": "MP3 para texto"
+        },
+        {
+          "from": "WAV",
+          "to": ".txt",
+          "label": "WAV para texto"
+        },
+        {
+          "from": "M4A",
+          "to": ".txt",
+          "label": "M4A para texto"
+        },
+        {
+          "from": "Audio",
+          "to": ".srt",
+          "label": "Áudio para SRT"
+        },
+        {
+          "from": "Audio",
+          "to": ".vtt",
+          "label": "Áudio para VTT"
+        },
+        {
+          "from": "Podcast",
+          "to": ".txt",
+          "label": "Podcast para texto"
+        }
+      ]
+    },
+    "useCases": {
+      "kicker": "Áudio para texto grátis, ilimitado, sem login — feito para todo mundo",
+      "title": "Quem usa o EarScribe.",
+      "subtitle": "Áudio para texto 100% grátis e ilimitado sem cadastro — seis usos bem diferentes. Se o seu áudio não pode parar no servidor de outra pessoa, você está no lugar certo.",
+      "items": [
+        {
+          "title": "Podcasters & criadores de conteúdo",
+          "body": "Áudio para texto grátis para podcasters — edite episódios mais rápido: cole a transcrição no seu editor, busque o trecho que precisa e publique as notas do episódio no mesmo dia.",
+          "tag": "Podcasting"
+        },
+        {
+          "title": "Jornalistas & pesquisadores",
+          "body": "MP3 para texto de entrevistas com fontes — privado, sem cadastro, sem conta. Seu áudio fica no seu computador. Sem servidor de terceiros, sem registro de auditoria que possa ser intimado.",
+          "tag": "Jornalismo"
+        },
+        {
+          "title": "Estudantes & aulas",
+          "body": "Áudio para texto grátis para estudantes — arraste uma aula gravada e receba uma transcrição pesquisável antes da próxima aula.",
+          "tag": "Educação"
+        },
+        {
+          "title": "Reuniões & entrevistas com usuários",
+          "body": "Áudio para texto para sessões de pesquisa — arraste o áudio, receba voz para texto grátis e mande uma transcrição anotada para o seu time. Nada sai do seu dispositivo.",
+          "tag": "Pesquisa"
+        },
+        {
+          "title": "Legendas para vídeo",
+          "body": "Áudio para texto grátis exportado como .srt ou .vtt — entra direto no Premiere, Resolve, Final Cut ou YouTube. Os tempos de legenda ficam alinhados ao áudio.",
+          "tag": "Legendas"
+        },
+        {
+          "title": "Audiobooks & conteúdo longo",
+          "body": "MP3 de duas horas para texto? Sem problema. O Turbo aguenta áudios do tamanho de um audiobook — ilimitado, sem cota de API, sem cobrança por minuto, sem login.",
+          "tag": "Longa duração"
+        }
+      ]
+    },
+    "features": {
+      "kicker": "Por que usar nosso conversor de áudio para texto grátis e ilimitado",
+      "title": "Whisper open source, com foco em privacidade e sem complicação.",
+      "items": [
+        {
+          "title": "Privado, sem envio",
+          "body": "Toda conversão de áudio para texto é privada — decodificada localmente, nunca enviada para nenhum servidor. Seus dados são seus, sem risco de vazar para terceiros."
+        },
+        {
+          "title": "WebGPU quando disponível, WASM quando não",
+          "body": "O Turbo roda ~10× mais rápido no WebGPU. Em dispositivos mais antigos, fazemos o fallback para WebAssembly automaticamente."
+        },
+        {
+          "title": "99 idiomas, detectados automaticamente",
+          "body": "Arraste um podcast em português, uma aula em mandarim ou uma entrevista em hindi — áudio para texto grátis em 99 idiomas, todos detectados automaticamente."
+        },
+        {
+          "title": "SRT, VTT, JSON, TXT",
+          "body": "Exportação de MP3 para texto ou áudio para SRT com um clique. Os tempos de SRT e VTT ficam alinhados aos timestamps do modelo, não a divisões heurísticas."
+        },
+        {
+          "title": "Funciona offline — ilimitado, sem internet",
+          "body": "Os modelos ficam em cache localmente. Uma vez baixados, áudio para texto ilimitado — sem internet, sem cota, sem cobrança por minuto."
+        },
+        {
+          "title": "100% grátis. Sem conta. Sem chave de API.",
+          "body": "100% grátis e ilimitado — sem cartão de crédito, sem cadastro, sem login, sem limite de uso. Áudio para texto e voz para texto grátis assim que você abrir a página."
+        }
+      ]
+    },
+    "sampleOutput": {
+      "kicker": "Áudio para texto — exemplo de saída",
+      "title": "A mesma transcrição de áudio para texto, em três formatos, pronta para usar.",
+      "subtitle": "Como é de verdade um arquivo de MP3 para texto ou áudio para SRT exportado — cole direto no seu editor ou faça upload para o YouTube.",
+      "files": [
+        {
+          "name": "transcript.srt",
+          "lang": "SubRip",
+          "code": "1\n00:00:08,120 --> 00:00:18,640\nWelcome back — we're talking attention research."
+        },
+        {
+          "name": "transcript.vtt",
+          "lang": "WebVTT",
+          "code": "WEBVTT\n\n00:00:08.120 --> 00:00:18.640\nWelcome back — we're talking attention research."
+        },
+        {
+          "name": "transcript.txt",
+          "lang": "Texto simples",
+          "code": "[00:00:08] Host: Welcome back — we're talking attention research."
+        }
+      ]
+    },
+    "testimonials": {
+      "kicker": "Áudio para texto 100% grátis, sem login — de usuários reais",
+      "title": "Discreto, rápido e totalmente seu.",
+      "subtitle": "Alguns perfis representativos que migraram para a conversão de áudio para texto grátis, ilimitada e sem login. (Depoimentos de exemplo — substitua pelos reais quando tiver.)",
+      "quotes": [
+        {
+          "name": "Maya R.",
+          "role": "Produtora de podcast",
+          "quote": "Cancelei uma assinatura de R$ 100/mês — 100% grátis, sem login, áudio para texto ilimitado. O modelo Turbo no meu M2 é mais rápido do que esperar um upload na nuvem pelo wi-fi do hotel."
+        },
+        {
+          "name": "Daniel K.",
+          "role": "Repórter investigativo",
+          "quote": "Sigilo de fonte não tem negociação. Com essa ferramenta de voz para texto grátis — sem conta, sem upload — o áudio nunca sai do notebook. É isso que faz a diferença entre usar ou não usar."
+        },
+        {
+          "name": "Priya S.",
+          "role": "Doutoranda em linguística",
+          "quote": "Áudio para texto ilimitado dos meus áudios de campo, no avião, sem cota e sem login. Voz para texto grátis que simplesmente não para."
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "Áudio para texto 100% grátis, ilimitado, sem login — comparativo",
+      "title": "EarScribe vs Otter.ai, Rev e a API Whisper.",
+      "subtitle": "Uma alternativa de áudio para texto 100% grátis, ilimitada e sem login frente à transcrição na nuvem — mesma família de modelos Whisper, três formatos de entrega bem diferentes. (Preços são indicativos.)",
+      "headers": {
+        "capability": "Recurso",
+        "earscribe": "EarScribe",
+        "you": "Você",
+        "cloudApi": "API Whisper",
+        "saas": "SaaS na nuvem"
+      },
+      "yes": "Sim",
+      "no": "Não",
+      "rows": [
+        {
+          "label": "100% grátis, sem cartão de crédito",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Uso ilimitado, sem cota",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Conta / login necessários",
+          "earscribe": false,
+          "cloudApi": true,
+          "saas": true
+        },
+        {
+          "label": "Cobrança por minuto",
+          "earscribe": "Grátis",
+          "cloudApi": "$0.006/min",
+          "saas": "$10–25/mo"
+        },
+        {
+          "label": "Privado, áudio fica no dispositivo",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Funciona offline",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Precisão de nível Whisper",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": "Varia"
+        },
+        {
+          "label": "Modelos open source",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Exportação SRT / VTT",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "Tempo de configuração",
+          "earscribe": "0s",
+          "cloudApi": "Chave de API + código",
+          "saas": "Fluxo de cadastro"
+        }
+      ]
+    },
+    "stats": {
+      "srTitle": "EarScribe áudio para texto grátis em números",
+      "items": [
+        {
+          "v": "99",
+          "unit": "idiomas",
+          "body": "Detectados automaticamente, sem escolha manual."
+        },
+        {
+          "v": "0",
+          "unit": "bytes enviados",
+          "body": "Áudio para texto privado — seu áudio nunca sai do dispositivo."
+        },
+        {
+          "v": "R$ 0",
+          "unit": "/ mês",
+          "body": "100% grátis e ilimitado — sem cadastro, sem login, sem limite de uso."
+        },
+        {
+          "v": "~2h",
+          "unit": "duração máx.",
+          "body": "MP3 para texto de longa duração processado em uma única passagem."
+        }
+      ]
+    },
+    "formatsLanguages": {
+      "audioFormatsTitle": "Áudio para texto — formatos suportados",
+      "audioFormatsDesc": "Conversor de áudio para texto grátis e ilimitado — sem cadastro, sem conta. Se você consegue reproduzir, o EarScribe converte para texto: MP3 para texto, WAV para texto, M4A para texto e muito mais.",
+      "formats": [
+        "MP3",
+        "WAV",
+        "M4A",
+        "OGG",
+        "FLAC",
+        "WebM",
+        "Opus",
+        "AAC"
+      ],
+      "languagesTitle": "Áudio para texto grátis em 99 idiomas (detecção automática)",
+      "languagesDesc": "Áudio para texto grátis nos 99 idiomas suportados pelo Whisper. O modelo identifica o idioma certo nos primeiros segundos do áudio.",
+      "languages": [
+        "Inglês",
+        "Mandarim",
+        "Espanhol",
+        "Hindi",
+        "Árabe",
+        "Português",
+        "Bengali",
+        "Russo",
+        "Japonês",
+        "Punjabi",
+        "Alemão",
+        "Javanês",
+        "Coreano",
+        "Francês",
+        "Télugo",
+        "Vietnamita",
+        "Tâmil",
+        "Italiano",
+        "Turco",
+        "Polonês",
+        "Ucraniano",
+        "Holandês",
+        "Persa",
+        "Tailandês",
+        "Sueco",
+        "Tcheco",
+        "Grego",
+        "Hebraico",
+        "Finlandês",
+        "Norueguês",
+        "Húngaro"
+      ],
+      "more": "+68 mais"
+    },
+    "finalCta": {
+      "tag": "100% grátis, sem cadastro, ilimitado",
+      "title": "Arraste um arquivo de áudio para a conversão 100% grátis — sem cadastro, sem login, ilimitado.",
+      "subtitle": "Volte ao topo da página, escolha um arquivo e em dez segundos você tem áudio para texto ilimitado e grátis com marcações de tempo. Voz para texto e MP3 para texto 100% grátis — sem conta necessária.",
+      "tryNow": "Começar grátis, sem cadastro",
+      "howItWorks": "Como funciona o áudio para texto"
+    }
+  }
+}

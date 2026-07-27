@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "title": "무료·무제한 음성 텍스트 변환, 회원가입 불필요 | EarScribe",
+    "description": "무료·무제한이며 회원가입이 필요 없습니다. MP3, WAV, M4A를 검색·편집 가능한 타임스탬프 전사본과 자막으로 변환하고 SRT, VTT, TXT, JSON으로 내보내세요.",
+    "ogTitle": "EarScribe — 무료·무제한 온라인 음성 텍스트 변환",
+    "ogDescription": "무료·무제한, 회원가입 불필요. 오디오를 검색·편집 가능한 타임스탬프 전사본과 자막으로 변환하고 SRT, VTT, TXT, JSON으로 내보내세요."
+  },
+  "header": {
+    "product": "EarScribe",
+    "about": "소개",
+    "github": "GitHub"
+  },
+  "hero": {
+    "tag": "100% 무료, 회원가입 불필요",
+    "title": "무료·무제한으로 음성을 타임스탬프 전사본과 자막으로 변환하세요.",
+    "subtitle": "오디오 언어를 자동으로 감지해 타임스탬프가 있는 텍스트와 자막을 만듭니다. 텍스트를 복사하거나 SRT / VTT / TXT로 내보낼 수 있습니다. 100% 무료이며 회원가입과 로그인이 필요 없고, 횟수 제한 없이 사용할 수 있습니다. 오디오 파일은 업로드하지 않고 기기에서 처리합니다.",
+    "cta": "오디오 파일 선택"
+  },
+  "trust": {
+    "private": "100% 무료, 무제한",
+    "free": "회원가입·로그인 불필요",
+    "openModels": "타임스탬프가 있는 전사본",
+    "subtitles": "SRT & VTT 내보내기"
+  },
+  "dropzone": {
+    "idle": "오디오 파일을 드래그하거나 클릭하여 선택하세요",
+    "hint": "MP3, WAV, M4A, OGG, FLAC, WebM — 처리 가능한 길이는 기기 메모리에 따라 달라집니다",
+    "dragging": "놓아서 파일을 사용하세요",
+    "rejected": "지원하지 않는 파일 형식입니다. 오디오 파일을 사용해 주세요.",
+    "tooLarge": "파일이 매우 큽니다. 긴 오디오는 브라우저 메모리를 초과할 수 있습니다.",
+    "changeFile": "다른 파일 사용"
+  },
+  "modelPicker": {
+    "title": "텍스트 변환 품질 선택",
+    "subtitle": "대부분의 녹음에는 속도와 정확도의 균형이 좋은 옵션을 권장합니다. 더 빠른 처리나 높은 정확도가 필요할 때만 모델을 비교해 보세요.",
+    "advancedShow": "모든 모델 비교",
+    "advancedHide": "모델 상세 숨기기",
+    "speedLabel": "속도",
+    "accuracyLabel": "정확도",
+    "changeFile": "파일 변경",
+    "cachedRunHint": "{model}은(는) 이미 이 기기에 저장되어 바로 사용할 수 있습니다.",
+    "downloadRunHint": "처음에는 {size}를 다운로드합니다. 이후에는 캐시에서 사용할 수 있습니다.",
+    "chooseModelHint": "계속하려면 품질을 선택하세요.",
+    "recommended": "추천",
+    "selected": "선택됨",
+    "cached": "캐시됨",
+    "cachedHint": "이미 이 기기에 저장되어 있습니다. 바로 사용할 수 있습니다.",
+    "needsDownload": "{size} 다운로드",
+    "select": "선택",
+    "downloadAndRun": "다운로드 후 변환",
+    "downloadAndRunSized": "{size} 다운로드 후 변환",
+    "transcribeNow": "변환 시작",
+    "downloading": "다운로드 중…",
+    "downloadingPct": "{percent} 다운로드 중",
+    "initializingModel": "모델 초기화 중…",
+    "loadingCached": "캐시된 모델 불러오는 중…",
+    "transcribingShort": "변환 중…",
+    "transcribingPct": "{percent} 변환 중",
+    "deleteRemoveAria": "이 기기에서 삭제",
+    "deleteConfirmQuestion": "이 기기에서 삭제하시겠습니까?",
+    "deleteConfirmHint": "약 {size}를 확보합니다. 언제든지 다시 다운로드할 수 있습니다.",
+    "deleteConfirmYes": "예, 삭제합니다",
+    "deleteConfirmCancel": "취소",
+    "deleting": "삭제 중…",
+    "deleteSuccess": "삭제 완료 · {size} 확보",
+    "deleteFailed": "삭제에 실패했습니다",
+    "warningWebgpuMissing": "사용 중인 브라우저는 WebGPU를 지원하지 않습니다. 이 모델은 CPU(WASM)로 실행되므로 속도가 느릴 수 있습니다.",
+    "warningRamLow": "이 기기의 RAM은 {available} GB입니다. 이 모델은 최소 {required} GB를 권장하며, 메모리가 부족한 기기에서는 충돌이 발생할 수 있습니다.",
+    "deviceCapability": "내 기기",
+    "webgpuOn": "WebGPU 사용 가능",
+    "webgpuOff": "WebGPU 사용 불가 — CPU 전용",
+    "memoryReport": "RAM {gb} GB",
+    "memoryUnknown": "RAM 알 수 없음",
+    "cores": "CPU {cores}코어"
+  },
+  "models": {
+    "tiny": {
+      "name": "Whisper Tiny",
+      "tagline": "가장 빠르고 가볍습니다. 정확도는 다소 낮음.",
+      "pros": "다운로드 용량이 가장 작고 많은 기기에서 사용할 수 있습니다. 처리 속도는 기기 성능에 따라 달라집니다.",
+      "cons": "노이즈가 많은 오디오에서 단어를 놓칠 수 있으며, 억양 인식에 어려움이 있습니다."
+    },
+    "base": {
+      "name": "Whisper Base",
+      "tagline": "속도와 정확도의 최적 균형.",
+      "pros": "깨끗한 음성에 적합한 인식 품질로, 대부분의 컴퓨터와 스마트폰에서 사용할 수 있습니다.",
+      "cons": "강한 억양이나 노이즈가 많은 오디오에서는 일부 단어를 놓칠 수 있습니다."
+    },
+    "small": {
+      "name": "Whisper Small",
+      "tagline": "높은 정확도, 다소 느린 속도.",
+      "pros": "억양 및 노이즈 처리 능력이 눈에 띄게 향상됩니다.",
+      "cons": "WebGPU 없이는 느립니다. 다운로드 용량이 더 큽니다."
+    },
+    "turbo": {
+      "name": "Whisper Large v3 Turbo",
+      "tagline": "최고 정확도. WebGPU 권장.",
+      "pros": "최고 품질의 변환, WebGPU에서 빠른 처리.",
+      "cons": "다운로드 용량과 메모리 사용량이 큽니다. 저사양 기기에서 충돌이 발생할 수 있습니다."
+    }
+  },
+  "progress": {
+    "downloadingModel": "모델 다운로드 중… {percent}",
+    "downloadingFile": "{file} — {loaded} / {total}",
+    "decodingAudio": "오디오 디코딩 중…",
+    "transcribing": "변환 중… {percent}",
+    "preparing": "준비 중…",
+    "cancel": "취소"
+  },
+  "result": {
+    "title": "변환 결과",
+    "detectedLanguage": "감지된 언어: {language}",
+    "wordCount": "{count}개 단어",
+    "duration": "{duration}",
+    "copy": "텍스트 복사",
+    "copied": "복사됨",
+    "export": "내보내기",
+    "exportTxt": "일반 텍스트 (.txt)",
+    "exportSrt": "자막 (.srt)",
+    "exportVtt": "자막 (.vtt)",
+    "exportJson": "원본 JSON (.json)",
+    "newFile": "다른 파일 변환",
+    "playFromHere": "여기서 재생",
+    "play": "재생",
+    "pause": "일시정지",
+    "workspaceLabel": "텍스트 변환 작업 공간",
+    "tabTranscript": "텍스트 확인",
+    "tabSubtitles": "자막 확인",
+    "searchPlaceholder": "변환된 텍스트 검색",
+    "editTranscript": "텍스트 편집",
+    "finishEditing": "편집 완료",
+    "savedOnDevice": "편집 내용은 이 기기에 저장됩니다",
+    "restoredDraft": "이 기기에 저장된 편집 내용을 불러왔습니다",
+    "noSearchResults": "일치하는 텍스트가 없습니다.",
+    "qaTitle": "자막 확인",
+    "qaBody": "내보내기 전에 읽기 어렵거나 잠깐 들어볼 필요가 있는 자막을 확인하세요.",
+    "qaIssueCount": "확인이 필요한 항목 {count}개",
+    "qaNoIssues": "흔한 자막 문제를 찾지 못했습니다",
+    "qaCleanTitle": "최종 확인을 할 준비가 되었습니다",
+    "qaCleanBody": "비어 있거나 반복된 자막, 시간 겹침, 너무 긴 자막, 읽기 속도가 유난히 빠른 자막을 찾지 못했습니다.",
+    "qaHint": "자동 줄바꿈은 현재 타임스탬프를 사용합니다. 공개 전 중요한 구간은 재생해 확인해 주세요.",
+    "qaEmptyCue": "자막 텍스트가 비어 있습니다",
+    "qaType_empty": "비어 있음",
+    "qaType_long": "너무 김",
+    "qaType_fast": "읽기 속도가 빠름",
+    "qaType_overlap": "시간 겹침",
+    "qaType_repeated": "반복됨",
+    "optimizeSubtitles": "줄바꿈 다듬기"
+  },
+  "errors": {
+    "modelLoadFailed": "모델을 불러올 수 없습니다. 네트워크 연결을 확인하고 다시 시도해 주세요.",
+    "audioDecodeFailed": "이 오디오 파일을 디코딩할 수 없습니다. 다른 형식(MP3 / WAV / M4A)을 시도해 보세요.",
+    "transcribeFailed": "변환에 실패했습니다. 기기 메모리가 부족할 수 있습니다. 더 작은 모델을 사용해 보세요.",
+    "browserUnsupported": "사용 중인 브라우저가 필요한 기능(Web Workers, AudioContext)을 지원하지 않습니다. 최신 Chrome, Edge 또는 Safari를 사용해 주세요."
+  },
+  "faq": {
+    "title": "무료 무제한 음성 텍스트 변환 — 자주 묻는 질문",
+    "items": [
+      {
+        "q": "EarScribe는 정말 100% 무료이고 제한이 없나요?",
+        "a": "네 — 100% 무료, 무제한, 회원가입·로그인 불필요입니다. 유료 요금제, 신용카드, 분당 요금, 일별·월별 사용 한도가 전혀 없습니다. Whisper 음성 인식 모델이 사용자의 기기에서 직접 실행되므로 클라우드 연산 비용이 발생하지 않습니다. 아무 조건 없는 무료 음성 텍스트 변환입니다."
+      },
+      {
+        "q": "내보내기 전에 전사본을 수정할 수 있나요?",
+        "a": "네. 편집 모드에서 이름, 인용문, 숫자, 전문 용어를 고칠 수 있습니다. 복사와 모든 내보내기 형식에는 수정된 내용이 반영되며 초안은 이 브라우저에 저장됩니다."
+      },
+      {
+        "q": "자막 검사는 어떤 문제를 찾나요?",
+        "a": "비어 있거나 너무 길고, 읽기 빠르며, 반복되거나 시간이 겹치는 자막을 표시합니다. 줄바꿈을 다듬고 중요한 구간을 다시 들은 뒤 SRT 또는 VTT로 내보낼 수 있습니다."
+      },
+      {
+        "q": "첫 번째 실행이 느린 이유는 무엇인가요?",
+        "a": "음성 텍스트 변환을 위해 처음으로 모델을 선택하면 브라우저가 모델을 다운로드합니다(크기에 따라 80MB~800MB). 이후에는 무료 음성 텍스트 변환 모델이 캐시되어 재사용되므로 다시 다운로드할 필요가 없습니다."
+      },
+      {
+        "q": "지원되는 언어는 몇 가지인가요?",
+        "a": "Whisper를 통해 99개 언어를 지원합니다. 언어는 자동으로 감지되므로 직접 선택할 필요가 없습니다."
+      },
+      {
+        "q": "동영상을 변환할 수 있나요?",
+        "a": "직접적으로는 지원하지 않습니다. 동영상의 음성을 텍스트로 변환하려면 먼저 오디오를 추출해 주세요(MP3 또는 WAV를 출력할 수 있는 도구라면 무엇이든 사용 가능합니다)."
+      },
+      {
+        "q": "어떤 Whisper 모델을 선택해야 하나요?",
+        "a": "대부분의 녹음은 추천 균형 모델로 시작하세요. 다운로드 크기를 줄이려면 Tiny, 어려운 음성은 메모리가 충분할 때 Small, 성능이 좋은 기기에서 정확도를 우선하면 Turbo를 선택할 수 있습니다."
+      },
+      {
+        "q": "MP3를 무료로 텍스트로 변환하는 방법은?",
+        "a": "MP3를 선택하고 추천 균형 설정으로 전사를 시작하세요. 타임스탬프 전사본의 중요한 내용을 수정한 뒤 텍스트를 복사하거나 SRT, VTT, TXT, JSON으로 내보낼 수 있으며 계정은 필요 없습니다."
+      },
+      {
+        "q": "Otter.ai나 Rev의 무료 대안이 있나요?",
+        "a": "한 녹음을 무료·계정 없이 전사하고 검색, 다시 듣기, 편집, 자막 검사, 내보내기까지 처리할 때 적합합니다. 공유 작업 공간이나 팀 협업이 필요하면 호스팅 서비스가 더 잘 맞을 수 있습니다."
+      },
+      {
+        "q": "오디오에서 SRT 또는 VTT 자막을 생성할 수 있나요?",
+        "a": "네. 음성 텍스트 변환 후 내보내기 → .srt 또는 .vtt를 클릭하세요. 큐 타이밍은 Whisper가 출력하는 타임스탬프에서 생성되므로, 수동으로 분할하지 않아도 자막이 오디오와 정확히 동기화됩니다."
+      },
+      {
+        "q": "브라우저에서 OpenAI Whisper를 직접 실행할 수 있나요?",
+        "a": "네 — EarScribe는 Transformers.js를 통해 WebGPU에서 Whisper(Tiny, Base, Small, Large v3 Turbo)를 브라우저에서 직접 실행합니다. WebGPU를 사용할 수 없는 경우 WebAssembly로 자동 전환됩니다."
+      }
+    ]
+  },
+  "about": {
+    "title": "EarScribe 소개",
+    "intro": "EarScribe는 녹음을 검색·편집 가능한 타임스탬프 전사본과 자막으로 바꾸며, 계정 생성보다 결과를 먼저 보여 줍니다.",
+    "noServer": "추천 설정으로 바로 시작하고, 모델 비교·텍스트 편집·자막 검사는 필요한 단계에서만 열 수 있습니다.",
+    "credits": "Transformers.js, ONNX Runtime Web, 그리고 OpenAI의 오픈소스 Whisper 모델을 기반으로 제작되었습니다."
+  },
+  "footer": {
+    "tagline": "100% 무료 음성 텍스트 변환 및 음성 받아쓰기. 회원가입·로그인 불필요.",
+    "links": {
+      "about": "소개",
+      "privacy": "개인정보처리방침",
+      "github": "GitHub"
+    },
+    "builtWith": "Transformers.js, ONNX Runtime Web, Whisper로 제작되었습니다."
+  },
+  "seo": {
+    "showcase": {
+      "kicker": "음성 텍스트 변환 — 실제 결과물",
+      "title": "타임스탬프, 파형, 원클릭 자막 내보내기가 포함된 실제 변환 결과.",
+      "subtitle": "무료 음성 텍스트 변환 — 팟캐스트, 강의, 인터뷰를 드롭하세요. EarScribe는 오디오와 동기화된 전체 자막을 보여주며, 원하는 줄을 클릭해 이동하거나 SRT/VTT/TXT를 한 번의 클릭으로 내보낼 수 있습니다.",
+      "fakeUrl": "earscribe.app — interview-acme-q3.mp3",
+      "badges": {
+        "onDevice": "기기 내 처리",
+        "autoLanguage": "영어 (자동 감지)",
+        "duration": "12:48",
+        "wordCount": "1,842개 단어"
+      },
+      "pauseAria": "일시정지",
+      "playbackTime": "00:01:14 / 00:12:48",
+      "playbackRate": "1.0x",
+      "transcript": [
+        {
+          "ts": "00:00:08",
+          "speaker": "진행자",
+          "text": "다시 찾아와 주셔서 감사합니다. 오늘은 주의력 연구를 하는 분과 이야기합니다."
+        },
+        {
+          "ts": "00:00:24",
+          "speaker": "게스트",
+          "text": "중단 자체가 사람들이 생각하는 만큼 큰 문제는 아닙니다."
+        }
+      ],
+      "exportHeading": "내보내기",
+      "copyText": "텍스트 복사",
+      "tiles": [
+        {
+          "label": ".srt",
+          "sub": "자막"
+        },
+        {
+          "label": ".vtt",
+          "sub": "웹 자막"
+        },
+        {
+          "label": ".txt",
+          "sub": "일반 텍스트"
+        },
+        {
+          "label": ".json",
+          "sub": "원본 + 타이밍"
+        }
+      ],
+      "srtFilename": "interview-acme-q3.srt",
+      "srtPreview": "1\n00:00:08,120 --> 00:00:18,640\n다시 찾아와 주셔서 감사합니다. 오늘은 주의력 연구를 이야기합니다.",
+      "exportNote": "음성 텍스트 변환 자막은 큐가 정렬되어 있어 Premiere, Final Cut, DaVinci Resolve, YouTube 또는 모든 웹 플레이어에 바로 적용할 수 있습니다."
+    },
+    "howItWorks": {
+      "kicker": "무료 무제한 음성 텍스트 변환 방법",
+      "title": "세 단계. 회원가입·로그인 불필요, 100% 무료, 무제한.",
+      "subtitle": "무료·무제한이며 회원가입이 필요 없습니다. 추천 설정으로 전사하고 결과를 확인한 뒤 다음 작업에 필요한 형식으로 저장하세요.",
+      "steps": [
+        {
+          "title": "오디오 드롭",
+          "body": "MP3, WAV, M4A, OGG, FLAC, WebM을 사용할 수 있습니다. 실제 처리 가능한 길이는 브라우저와 기기의 여유 메모리에 따라 달라집니다."
+        },
+        {
+          "title": "Whisper 모델 선택",
+          "body": "대부분의 녹음은 추천 균형 설정으로 충분합니다. 다운로드를 줄이거나 정확도를 높일 때만 고급 모델을 펼치세요."
+        },
+        {
+          "title": "확인·편집·내보내기",
+          "body": "타임스탬프 전사본을 확인하고 수정한 뒤 자막 가독성을 검사하고 SRT, VTT, TXT, JSON으로 내보냅니다."
+        }
+      ]
+    },
+    "whatYouCanDo": {
+      "kicker": "할 수 있는 것 — 100% 무료, 회원가입 불필요, 무제한",
+      "title": "무료 무제한 음성 텍스트 변환기 — 회원가입·로그인 불필요.",
+      "prose": "EarScribe는 무료 <kw>음성 텍스트 변환</kw> 도구로, <kw>회원가입 없이</kw> 로그인 없이 <kw>무제한</kw> 사용할 수 있습니다. <kw>MP3를 텍스트로</kw>, <kw>WAV를 텍스트로</kw>, <kw>M4A를 텍스트로</kw> 변환하고 <kw>SRT 또는 VTT 자막</kw>을 만들 수 있습니다. 전사본 검색과 편집, 타임스탬프 다시 듣기, TXT·SRT·VTT·JSON 내보내기도 지원합니다.",
+      "jobs": [
+        {
+          "from": "MP3",
+          "to": ".txt",
+          "label": "MP3를 텍스트로"
+        },
+        {
+          "from": "WAV",
+          "to": ".txt",
+          "label": "WAV를 텍스트로"
+        },
+        {
+          "from": "M4A",
+          "to": ".txt",
+          "label": "M4A를 텍스트로"
+        },
+        {
+          "from": "오디오",
+          "to": ".srt",
+          "label": "오디오를 SRT로"
+        },
+        {
+          "from": "오디오",
+          "to": ".vtt",
+          "label": "오디오를 VTT로"
+        },
+        {
+          "from": "팟캐스트",
+          "to": ".txt",
+          "label": "팟캐스트를 텍스트로"
+        }
+      ]
+    },
+    "useCases": {
+      "kicker": "무료·무제한·로그인 불필요 음성 텍스트 변환 — 모든 분을 위해",
+      "title": "EarScribe 활용 사례",
+      "subtitle": "여섯 가지 활용 방식, 하나의 흐름: 전사본 검색, 원음 다시 듣기, 텍스트 수정, 필요한 형식으로 내보내기.",
+      "items": [
+        {
+          "title": "팟캐스터 & 크리에이터",
+          "body": "팟캐스트 음성을 텍스트로 변환해 필요한 장면을 검색하고, 편집과 쇼 노트 작성에 활용할 수 있습니다.",
+          "tag": "팟캐스팅"
+        },
+        {
+          "title": "기자 & 연구자",
+          "body": "취재 인터뷰를 타임스탬프가 있는 텍스트로 변환해 인용을 찾고 원음을 다시 들으며 내용을 확인할 수 있습니다.",
+          "tag": "저널리즘"
+        },
+        {
+          "title": "학생 & 강의",
+          "body": "녹음한 강의를 검색 가능한 텍스트로 바꾸고, 타임스탬프에서 설명을 다시 들으며 복습할 수 있습니다.",
+          "tag": "교육"
+        },
+        {
+          "title": "회의 & 사용자 인터뷰",
+          "body": "사용자 인터뷰와 리서치 녹음을 텍스트로 변환하고, 필요한 내용을 정리한 전사본으로 내보낼 수 있습니다.",
+          "tag": "리서치"
+        },
+        {
+          "title": "동영상 자막",
+          "body": ".srt 또는 .vtt로 내보낸 음성 텍스트를 Premiere, Resolve, Final Cut, YouTube에 바로 적용. 큐 타이밍이 오디오에 맞게 정렬되어 있습니다.",
+          "tag": "자막"
+        },
+        {
+          "title": "오디오북 & 장편 오디오",
+          "body": "긴 MP3와 오디오북도 기기의 메모리와 성능에 맞는 모델로 처리할 수 있습니다. 매우 긴 녹음은 나누면 더 안정적입니다.",
+          "tag": "장편 콘텐츠"
+        }
+      ]
+    },
+    "features": {
+      "kicker": "녹음에서 바로 쓸 수 있는 결과까지",
+      "title": "텍스트만 보여주는 도구가 아닌, 검토와 내보내기를 위한 작업 공간.",
+      "items": [
+        {
+          "title": "텍스트에서 원음으로 이동",
+          "body": "전사본을 검색하고 타임스탬프를 눌러 녹음의 해당 구간을 다시 들을 수 있습니다."
+        },
+        {
+          "title": "고민 없이 품질 선택",
+          "body": "추천 균형 설정으로 시작하고, 다운로드 크기나 정확도를 조정할 때만 고급 모델을 펼칩니다."
+        },
+        {
+          "title": "99개 언어, 자동 감지",
+          "body": "인터뷰, 강의, 팟캐스트의 언어를 미리 선택하지 않아도 자동으로 감지합니다."
+        },
+        {
+          "title": "공유 전에 바로 수정",
+          "body": "이름, 인용문, 숫자, 전문 용어를 고치고 복사와 내보내기에 수정 내용을 반영합니다."
+        },
+        {
+          "title": "자막 가독성 검사",
+          "body": "빈 자막, 긴 문장, 빠른 읽기 속도, 반복, 시간 겹침을 확인하고 줄바꿈을 개선합니다."
+        },
+        {
+          "title": "다음 작업으로 내보내기",
+          "body": "텍스트를 복사하거나 TXT, SRT, VTT, JSON으로 저장하세요. 무료·무제한이며 계정이 필요 없습니다."
+        }
+      ]
+    },
+    "sampleOutput": {
+      "kicker": "음성 텍스트 변환 — 샘플 출력",
+      "title": "같은 음성 텍스트 변환 결과를 세 가지 형식으로, 바로 사용 가능.",
+      "subtitle": "내보낸 MP3 텍스트 또는 오디오 SRT 파일의 실제 모습 — 편집기에 붙여넣거나 YouTube에 업로드하세요.",
+      "files": [
+        {
+          "name": "transcript.srt",
+          "lang": "SubRip",
+          "code": "1\n00:00:08,120 --> 00:00:18,640\n다시 찾아와 주셔서 감사합니다. 오늘은 주의력 연구를 이야기합니다."
+        },
+        {
+          "name": "transcript.vtt",
+          "lang": "WebVTT",
+          "code": "WEBVTT\n\n00:00:08.120 --> 00:00:18.640\n다시 찾아와 주셔서 감사합니다. 오늘은 주의력 연구를 이야기합니다."
+        },
+        {
+          "name": "transcript.txt",
+          "lang": "일반 텍스트",
+          "code": "[00:00:08] 진행자: 다시 찾아와 주셔서 감사합니다. 오늘은 주의력 연구를 이야기합니다."
+        }
+      ]
+    },
+    "testimonials": {
+      "kicker": "하나의 텍스트 변환 결과, 여러 다음 작업",
+      "title": "처음은 간단하게. 필요한 도구는 다음에 여세요.",
+      "subtitle": "대부분은 읽기 쉬운 텍스트와 내보내기 버튼이면 충분합니다. 자막, 인터뷰, 학습 작업은 첫 단계에 복잡함을 더하지 않고 필요할 때 사용할 수 있습니다.",
+      "quotes": [
+        {
+          "name": "자막 만들기 흐름",
+          "role": "영상과 짧은 클립용",
+          "quote": "SRT 또는 VTT로 내보내기 전에 줄 길이, 읽기 속도, 반복된 자막, 시간 겹침을 확인할 수 있습니다."
+        },
+        {
+          "name": "인터뷰 흐름",
+          "role": "취재와 리서치용",
+          "quote": "변환된 텍스트를 검색하고 타임스탬프를 눌러 원본 녹음을 확인한 뒤, 이름이나 인용문을 바로 편집할 수 있습니다."
+        },
+        {
+          "name": "학습 흐름",
+          "role": "강의와 수업 녹음용",
+          "quote": "주제를 빠르게 찾고 텍스트를 다듬어 노트, 참고 자료, 복습용 텍스트로 내보낼 수 있습니다."
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "작업에 맞는 방식을 선택하세요",
+      "title": "오디오를 텍스트로 바꾸는 세 가지 방식.",
+      "subtitle": "브라우저 작업 공간, 전사 API, 호스팅 소프트웨어가 각각 어떤 작업에 적합한지 비교합니다.",
+      "headers": {
+        "capability": "기능",
+        "earscribe": "EarScribe",
+        "you": "나",
+        "cloudApi": "전사 API",
+        "saas": "호스팅 소프트웨어"
+      },
+      "yes": "예",
+      "no": "아니오",
+      "rows": [
+        {
+          "label": "계정 없이 시작",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "API 통합 없이 사용",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "편집 가능한 전사 작업 공간 포함",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "작업 위치",
+          "earscribe": "브라우저 안",
+          "cloudApi": "내 제품 안",
+          "saas": "호스팅 앱 안"
+        },
+        {
+          "label": "타임스탬프 텍스트 포함",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": true
+        },
+        {
+          "label": "타임스탬프에서 원음 다시 듣기",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "모델 선택",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": "서비스별 상이"
+        },
+        {
+          "label": "5가지 자막 검사 내장",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "무료 무제한 사용",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "적합한 용도",
+          "earscribe": "한 녹음을 검토하고 내보내기",
+          "cloudApi": "제품 기능 통합",
+          "saas": "팀 협업"
+        }
+      ]
+    },
+    "stats": {
+      "srTitle": "EarScribe 무료 음성 텍스트 변환 숫자로 보기",
+      "items": [
+        {
+          "v": "99",
+          "unit": "개 언어",
+          "body": "자동 감지, 수동 선택 불필요."
+        },
+        {
+          "v": "4",
+          "unit": "개 내보내기 형식",
+          "body": "전사 완료 후 TXT, SRT, VTT, JSON으로 저장할 수 있습니다."
+        },
+        {
+          "v": "$0",
+          "unit": "/ 월",
+          "body": "100% 무료·무제한 — 회원가입·로그인·사용 한도 없음."
+        },
+        {
+          "v": "1",
+          "unit": "개 검토 작업 공간",
+          "body": "검색, 다시 듣기, 편집, 자막 검사를 한곳에서 처리합니다."
+        }
+      ]
+    },
+    "formatsLanguages": {
+      "audioFormatsTitle": "음성 텍스트 변환 — 지원 형식",
+      "audioFormatsDesc": "무료 무제한 음성 텍스트 변환기 — 회원가입·계정 불필요. 재생할 수 있는 오디오라면 EarScribe로 변환 가능: MP3를 텍스트로, WAV를 텍스트로, M4A를 텍스트로, 그 외 다수.",
+      "formats": [
+        "MP3",
+        "WAV",
+        "M4A",
+        "OGG",
+        "FLAC",
+        "WebM",
+        "Opus",
+        "AAC"
+      ],
+      "languagesTitle": "99개 언어 무료 음성 텍스트 변환 (자동 감지)",
+      "languagesDesc": "Whisper가 지원하는 99개 언어로 무료 음성 텍스트 변환이 가능합니다. 모델이 오디오의 첫 몇 초로부터 언어를 자동으로 판별합니다.",
+      "languages": [
+        "영어",
+        "중국어(표준어)",
+        "스페인어",
+        "힌디어",
+        "아랍어",
+        "포르투갈어",
+        "벵골어",
+        "러시아어",
+        "일본어",
+        "펀자브어",
+        "독일어",
+        "자바어",
+        "한국어",
+        "프랑스어",
+        "텔루구어",
+        "베트남어",
+        "타밀어",
+        "이탈리아어",
+        "터키어",
+        "폴란드어",
+        "우크라이나어",
+        "네덜란드어",
+        "페르시아어",
+        "태국어",
+        "스웨덴어",
+        "체코어",
+        "그리스어",
+        "히브리어",
+        "핀란드어",
+        "노르웨이어",
+        "헝가리어"
+      ],
+      "more": "+68개 언어"
+    },
+    "finalCta": {
+      "tag": "100% 무료, 회원가입 불필요, 무제한",
+      "title": "오디오 파일을 드롭하여 100% 무료 음성 텍스트 변환 — 회원가입·로그인 불필요, 무제한.",
+      "subtitle": "위로 돌아가 파일을 선택하면 타임스탬프가 있는 텍스트 변환을 시작할 수 있습니다. 100% 무료 음성 텍스트 변환과 MP3 텍스트 변환을 계정 없이 이용하세요.",
+      "tryNow": "무료로 시작, 회원가입 불필요",
+      "howItWorks": "음성 텍스트 변환 방법"
+    }
+  }
+}

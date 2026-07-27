@@ -5,11 +5,31 @@ import { getSiteUrl } from "./site";
 /** Build an absolute URL for a given locale + path. */
 export function urlFor(locale: string, path = ""): string {
   const base = getSiteUrl();
-  const normalized = path && !path.startsWith("/") ? `/${path}` : path;
+  const pathWithoutHomeSlash = path === "/" ? "" : path;
+  const normalized =
+    pathWithoutHomeSlash && !pathWithoutHomeSlash.startsWith("/")
+      ? `/${pathWithoutHomeSlash}`
+      : pathWithoutHomeSlash;
   if (locale === defaultLocale) {
     return `${base}${normalized}`;
   }
   return `${base}/${locale}${normalized}`;
+}
+
+export function alternatesForLocales(
+  locale: string,
+  path: string,
+  supportedLocales: readonly string[],
+): { canonical: string; languages: Record<string, string> } {
+  const languages = supportedLocales.reduce(
+    (acc, supportedLocale) => {
+      acc[supportedLocale] = urlFor(supportedLocale, path);
+      return acc;
+    },
+    {} as Record<string, string>,
+  );
+  languages["x-default"] = urlFor(defaultLocale, path);
+  return { canonical: urlFor(locale, path), languages };
 }
 
 /** Build `alternates` for Next metadata: canonical + hreflang + x-default. */

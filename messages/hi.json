@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "title": "मुफ़्त और असीमित ऑडियो से टेक्स्ट, बिना साइन-अप | EarScribe",
+    "description": "बिना साइन-अप के ऑडियो को टाइमस्टैम्प वाले टेक्स्ट और सबटाइटल में मुफ़्त व असीमित रूप से बदलें। SRT, VTT, TXT या JSON में एक्सपोर्ट करें।",
+    "ogTitle": "EarScribe — मुफ़्त और असीमित ऑडियो से टेक्स्ट",
+    "ogDescription": "बिना साइन-अप के ऑडियो को टाइमस्टैम्प वाले टेक्स्ट और सबटाइटल में मुफ़्त व असीमित रूप से बदलें। SRT, VTT, TXT या JSON में एक्सपोर्ट करें।"
+  },
+  "header": {
+    "product": "EarScribe",
+    "about": "About",
+    "github": "GitHub"
+  },
+  "hero": {
+    "tag": "100% मुफ़्त, साइन-अप नहीं",
+    "title": "ऑडियो को मुफ़्त और असीमित रूप से टाइमस्टैम्प वाले टेक्स्ट और सबटाइटल में बदलें।",
+    "subtitle": "100% मुफ़्त ऑडियो टू टेक्स्ट कन्वर्टर — कोई साइन-अप नहीं, कोई लॉगिन नहीं, असीमित उपयोग। MP3, WAV या M4A ड्रॉप करें — टाइमस्टैंप और SRT / VTT सबटाइटल के साथ ट्रांसक्रिप्ट पाएं। OpenAI Whisper द्वारा पावर्ड फ्री स्पीच टू टेक्स्ट। पूरी तरह प्राइवेट — आपका ऑडियो आपके डिवाइस से कभी नहीं जाता।",
+    "cta": "ऑडियो फ़ाइल चुनें"
+  },
+  "trust": {
+    "private": "100% मुफ़्त, असीमित",
+    "free": "साइन-अप नहीं, लॉगिन नहीं",
+    "openModels": "प्राइवेट, कोई अपलोड नहीं",
+    "subtitles": "SRT & VTT एक्सपोर्ट"
+  },
+  "dropzone": {
+    "idle": "ऑडियो फ़ाइल ड्रॉप करें या ब्राउज़ करने के लिए क्लिक करें",
+    "hint": "MP3, WAV, M4A, OGG, FLAC, WebM — प्रति फ़ाइल ~2 घंटे तक",
+    "dragging": "फ़ाइल यहाँ छोड़ें",
+    "rejected": "फ़ाइल फॉर्मेट सपोर्टेड नहीं। कोई ऑडियो फ़ाइल इस्तेमाल करें।",
+    "tooLarge": "फ़ाइल बहुत बड़ी है। लंबे ऑडियो से ब्राउज़र की मेमोरी भर सकती है।",
+    "changeFile": "दूसरी फ़ाइल चुनें"
+  },
+  "modelPicker": {
+    "title": "मॉडल चुनें",
+    "subtitle": "बड़े मॉडल ज़्यादा accurate होते हैं लेकिन डाउनलोड और रन होने में ज़्यादा समय लेते हैं। एक बार चुनें — मॉडल आपके ब्राउज़र में cache हो जाता है।",
+    "advancedShow": "Compare all models",
+    "advancedHide": "Hide model details",
+    "speedLabel": "Speed",
+    "accuracyLabel": "Accuracy",
+    "changeFile": "Change file",
+    "cachedRunHint": "{model} is already on this device and ready to use.",
+    "downloadRunHint": "The first run downloads {size}. It stays cached for later use.",
+    "chooseModelHint": "Choose a quality level to continue.",
+    "recommended": "Recommended",
+    "selected": "चुना गया",
+    "cached": "Cached",
+    "cachedHint": "पहले से इस डिवाइस पर है। तुरंत रन के लिए तैयार।",
+    "needsDownload": "{size} डाउनलोड",
+    "select": "चुनें",
+    "downloadAndRun": "डाउनलोड करें और ट्रांसक्राइब करें",
+    "downloadAndRunSized": "{size} डाउनलोड करें और ट्रांसक्राइब करें",
+    "transcribeNow": "ट्रांसक्राइब करें",
+    "downloading": "डाउनलोड हो रहा है…",
+    "downloadingPct": "{percent} डाउनलोड हो रहा है",
+    "initializingModel": "मॉडल initialize हो रहा है…",
+    "loadingCached": "Cached मॉडल लोड हो रहा है…",
+    "transcribingShort": "ट्रांसक्राइब हो रहा है…",
+    "transcribingPct": "{percent} ट्रांसक्राइब हो रहा है",
+    "deleteRemoveAria": "इस डिवाइस से हटाएं",
+    "deleteConfirmQuestion": "इस डिवाइस से हटाएं?",
+    "deleteConfirmHint": "~{size} खाली होगा। आप कभी भी फिर डाउनलोड कर सकते हैं।",
+    "deleteConfirmYes": "हाँ, हटाएं",
+    "deleteConfirmCancel": "रद्द करें",
+    "deleting": "हटाया जा रहा है…",
+    "deleteSuccess": "हटाया गया · {size} खाली हुआ",
+    "deleteFailed": "हटाने में विफल",
+    "warningWebgpuMissing": "आपके ब्राउज़र में WebGPU नहीं है। यह मॉडल CPU (WASM) पर चलेगा और धीमा हो सकता है।",
+    "warningRamLow": "आपके डिवाइस में {available} GB RAM है। इस मॉडल के लिए कम से कम {required} GB RAM चाहिए और कम मेमोरी वाले डिवाइस पर क्रैश हो सकता है।",
+    "deviceCapability": "आपका डिवाइस",
+    "webgpuOn": "WebGPU उपलब्ध है",
+    "webgpuOff": "WebGPU उपलब्ध नहीं — केवल CPU",
+    "memoryReport": "{gb} GB RAM",
+    "memoryUnknown": "RAM अज्ञात",
+    "cores": "{cores} CPU cores"
+  },
+  "models": {
+    "tiny": {
+      "name": "Whisper Tiny",
+      "tagline": "सबसे तेज़, सबसे छोटा। कम accuracy।",
+      "pros": "सबसे छोटा डाउनलोड। पुराने फोन पर भी चलता है।",
+      "cons": "शोरगुल वाले ऑडियो में शब्द छूट जाते हैं, accent पहचानने में दिक्कत।"
+    },
+    "base": {
+      "name": "Whisper Base",
+      "tagline": "स्पीड और accuracy का सबसे अच्छा बैलेंस।",
+      "pros": "साफ़ आवाज़ के लिए अच्छी accuracy। किसी भी डिवाइस पर चलता है।",
+      "cons": "भारी accent या शोर वाले ऑडियो में कुछ शब्द छूट सकते हैं।"
+    },
+    "small": {
+      "name": "Whisper Small",
+      "tagline": "ज़्यादा accuracy, थोड़ा धीमा।",
+      "pros": "Accent और शोर में काफी बेहतर।",
+      "cons": "WebGPU के बिना धीमा। बड़ा डाउनलोड।"
+    },
+    "turbo": {
+      "name": "Whisper Large v3 Turbo",
+      "tagline": "सबसे ज़्यादा accuracy। WebGPU recommended।",
+      "pros": "सबसे बेहतरीन ट्रांसक्रिप्शन क्वालिटी, WebGPU पर तेज़।",
+      "cons": "बड़ा डाउनलोड और ज़्यादा मेमोरी चाहिए। कम-पावर डिवाइस पर क्रैश हो सकता है।"
+    }
+  },
+  "progress": {
+    "downloadingModel": "मॉडल डाउनलोड हो रहा है… {percent}",
+    "downloadingFile": "{file} — {total} में से {loaded}",
+    "decodingAudio": "ऑडियो decode हो रहा है…",
+    "transcribing": "ट्रांसक्राइब हो रहा है… {percent}",
+    "preparing": "तैयार हो रहा है…",
+    "cancel": "रद्द करें"
+  },
+  "result": {
+    "title": "ट्रांसक्रिप्ट",
+    "detectedLanguage": "पहचानी गई भाषा: {language}",
+    "wordCount": "{count} शब्द",
+    "duration": "{duration}",
+    "copy": "टेक्स्ट कॉपी करें",
+    "copied": "कॉपी हो गया",
+    "export": "एक्सपोर्ट",
+    "exportTxt": "Plain text (.txt)",
+    "exportSrt": "Subtitles (.srt)",
+    "exportVtt": "Subtitles (.vtt)",
+    "exportJson": "Raw JSON (.json)",
+    "newFile": "दूसरी फ़ाइल ट्रांसक्राइब करें",
+    "playFromHere": "यहाँ से प्ले करें",
+    "play": "प्ले",
+    "pause": "पॉज़",
+    "workspaceLabel": "Transcript workspace",
+    "tabTranscript": "Review transcript",
+    "tabSubtitles": "Subtitle check",
+    "searchPlaceholder": "Search the transcript",
+    "editTranscript": "Edit text",
+    "finishEditing": "Finish editing",
+    "savedOnDevice": "Edits are saved on this device",
+    "restoredDraft": "Saved edits restored from this device",
+    "noSearchResults": "No matching text found.",
+    "qaTitle": "Subtitle check",
+    "qaBody": "Review cues that may be hard to read or need a quick listen before export.",
+    "qaIssueCount": "{count} items may need attention",
+    "qaNoIssues": "No common subtitle issues found",
+    "qaCleanTitle": "Ready for a final watch-through",
+    "qaCleanBody": "No empty, repeated, overlapping, overly long, or unusually fast cues were detected.",
+    "qaHint": "Automatic layout changes use the current timestamps. Listen through important sections before publishing.",
+    "qaEmptyCue": "Empty subtitle cue",
+    "qaType_empty": "Empty",
+    "qaType_long": "Too long",
+    "qaType_fast": "Fast reading",
+    "qaType_overlap": "Time overlap",
+    "qaType_repeated": "Repeated",
+    "optimizeSubtitles": "Improve line breaks"
+  },
+  "errors": {
+    "modelLoadFailed": "मॉडल लोड नहीं हो सका। अपना नेटवर्क कनेक्शन चेक करें और दोबारा कोशिश करें।",
+    "audioDecodeFailed": "यह ऑडियो फ़ाइल decode नहीं हो सकी। कोई दूसरा फॉर्मेट (MP3 / WAV / M4A) आज़माएं।",
+    "transcribeFailed": "ट्रांसक्रिप्शन फेल हो गया। आपके डिवाइस की मेमोरी कम हो सकती है — कोई छोटा मॉडल आज़माएं।",
+    "browserUnsupported": "आपके ब्राउज़र में ज़रूरी फीचर्स नहीं हैं (Web Workers, AudioContext)। लेटेस्ट Chrome, Edge या Safari आज़माएं।"
+  },
+  "faq": {
+    "title": "मुफ़्त असीमित ऑडियो टू टेक्स्ट — FAQ",
+    "items": [
+      {
+        "q": "क्या EarScribe सच में 100% मुफ़्त और बिना किसी लिमिट के है?",
+        "a": "हाँ — 100% मुफ़्त, असीमित, कोई साइन-अप और लॉगिन नहीं चाहिए। कोई paid plan नहीं, कोई क्रेडिट कार्ड नहीं, कोई per-minute फीस नहीं, और न ही कोई daily या monthly quota। Whisper स्पीच टू टेक्स्ट मॉडल आपके खुद के हार्डवेयर पर चलता है, इसलिए कोई cloud compute cost नहीं। बिना किसी शर्त के मुफ़्त ऑडियो टू टेक्स्ट।"
+      },
+      {
+        "q": "क्या मेरा ऑडियो प्राइवेट और सुरक्षित है?",
+        "a": "पूरी तरह प्राइवेट। EarScribe एक local-first ऑडियो टू टेक्स्ट कन्वर्टर है — आपकी ऑडियो फ़ाइल आपके डिवाइस से कभी नहीं जाती और किसी सर्वर पर अपलोड नहीं होती। कोई अकाउंट नहीं मतलब आपका कोई डेटा collect नहीं होता। मॉडल डाउनलोड होने के बाद आप इसे offline भी इस्तेमाल कर सकते हैं।"
+      },
+      {
+        "q": "क्या मेरा ऑडियो कहीं अपलोड होता है?",
+        "a": "नहीं। मुफ़्त ऑडियो टू टेक्स्ट पूरी तरह locally होता है — ऑडियो आपके डिवाइस पर decode होता है और Web Worker में चलने वाले Whisper मॉडल को दिया जाता है। कुछ भी सर्वर पर नहीं भेजा जाता।"
+      },
+      {
+        "q": "पहली बार धीमा क्यों होता है?",
+        "a": "जब आप पहली बार ऑडियो टू टेक्स्ट के लिए कोई मॉडल चुनते हैं, तो ब्राउज़र उसे डाउनलोड करता है (साइज़ के आधार पर 80 MB से 800 MB तक)। उसके बाद मुफ़्त ऑडियो टू टेक्स्ट मॉडल cache हो जाता है और दोबारा उपयोग होता है — फिर से डाउनलोड करने की ज़रूरत नहीं।"
+      },
+      {
+        "q": "कौन-कौन सी भाषाएं सपोर्ट हैं?",
+        "a": "मुफ़्त ऑडियो टू टेक्स्ट Whisper के ज़रिए 99 भाषाओं को सपोर्ट करता है। भाषा अपने आप detect हो जाती है — आपको कुछ चुनने की ज़रूरत नहीं।"
+      },
+      {
+        "q": "क्या मैं वीडियो ट्रांसक्राइब कर सकता/सकती हूँ?",
+        "a": "सीधे नहीं। वीडियो ऑडियो टू टेक्स्ट के लिए पहले ऑडियो extract करें (कोई भी टूल जो MP3 या WAV export कर सके वो काम आएगा) और फिर यहाँ ड्रॉप करें।"
+      },
+      {
+        "q": "क्या यह offline काम करता है?",
+        "a": "मॉडल एक बार डाउनलोड होने के बाद, हाँ — मुफ़्त ऑडियो टू टेक्स्ट offline काम करता है। पहले पेज लोड करना ज़रूरी है, लेकिन उसके बाद ऑडियो टू टेक्स्ट बिना इंटरनेट के भी चलता है।"
+      },
+      {
+        "q": "MP3 को मुफ़्त में टेक्स्ट में कैसे बदलूं?",
+        "a": "MP3 को EarScribe पर ड्रॉप करें — मुफ़्त MP3 टू टेक्स्ट। फ़ाइल आपके ब्राउज़र में decode होती है, Whisper locally ट्रांसक्राइब करता है, और आप MP3 टू टेक्स्ट output कॉपी कर सकते हैं या SRT, VTT, TXT या JSON में export कर सकते हैं। कोई अपलोड नहीं, कोई अकाउंट नहीं।"
+      },
+      {
+        "q": "क्या Otter.ai या Rev का कोई मुफ़्त विकल्प है?",
+        "a": "EarScribe, Otter.ai, Rev और HappyScribe जैसी cloud ट्रांसक्रिप्शन सर्विस का एक मुफ़्त ऑडियो टू टेक्स्ट alternative है। फर्क यह है: आप अपनी मशीन पर compute करते हैं और मुफ़्त स्पीच टू टेक्स्ट पाते हैं, लेकिन ऑडियो कहीं नहीं जाता और कोई per-minute fee या subscription नहीं है।"
+      },
+      {
+        "q": "क्या मैं ऑडियो से SRT या VTT सबटाइटल बना सकता/सकती हूँ?",
+        "a": "हाँ। ऑडियो टू टेक्स्ट के बाद, Export → .srt या .vtt पर क्लिक करें। Cue timing Whisper के timestamp से आती है, इसलिए सबटाइटल ऑडियो टू टेक्स्ट output से align होते हैं — manual splitting की ज़रूरत नहीं।"
+      },
+      {
+        "q": "क्या यह ब्राउज़र में OpenAI Whisper चलाता है?",
+        "a": "हाँ — EarScribe Whisper (Tiny, Base, Small, और Large v3 Turbo) के ज़रिए सीधे ब्राउज़र में मुफ़्त ऑडियो टू टेक्स्ट चलाता है, Transformers.js पर WebGPU के साथ, और जब यह उपलब्ध नहीं हो तो WebAssembly पर fallback होता है।"
+      }
+    ]
+  },
+  "about": {
+    "title": "EarScribe के बारे में",
+    "intro": "EarScribe एक static web app है जो Transformers.js और WebGPU / WebAssembly runtimes का इस्तेमाल करके OpenAI के Whisper speech-recognition मॉडल सीधे आपके ब्राउज़र में चलाता है।",
+    "noServer": "कोई backend नहीं है जो आपके ऑडियो को छूए। Cloudflare Pages host केवल static HTML, JS और CSS serve करता है। Whisper मॉडल weights पहली बार use होने पर Hugging Face CDN से fetch होते हैं और ब्राउज़र cache करता है।",
+    "credits": "Transformers.js, ONNX Runtime Web और OpenAI के open-source Whisper मॉडल पर बना है।"
+  },
+  "footer": {
+    "tagline": "100% मुफ़्त ऑडियो टू टेक्स्ट और स्पीच टू टेक्स्ट। साइन-अप नहीं, लॉगिन नहीं।",
+    "links": {
+      "about": "About",
+      "privacy": "Privacy",
+      "github": "GitHub"
+    },
+    "builtWith": "Transformers.js, ONNX Runtime Web, Whisper के साथ बना है।"
+  },
+  "seo": {
+    "showcase": {
+      "kicker": "ऑडियो टू टेक्स्ट — देखें क्या मिलता है",
+      "title": "एक असली ट्रांसक्रिप्ट, टाइमस्टैंप, waveform और one-click सबटाइटल export के साथ।",
+      "subtitle": "मुफ़्त ऑडियो टू टेक्स्ट — कोई podcast, lecture या interview ड्रॉप करें। EarScribe आपको ऑडियो से sync पूरा ट्रांसक्रिप्ट दिखाता है — किसी भी लाइन पर क्लिक करके वहाँ जाएं, या एक क्लिक में SRT / VTT / TXT export करें।",
+      "fakeUrl": "earscribe.app — interview-acme-q3.mp3",
+      "badges": {
+        "onDevice": "ऑन-डिवाइस",
+        "autoLanguage": "English (auto-detected)",
+        "duration": "12:48",
+        "wordCount": "1,842 words"
+      },
+      "pauseAria": "पॉज़",
+      "playbackTime": "00:01:14 / 00:12:48",
+      "playbackRate": "1.0x",
+      "transcript": [
+        {
+          "ts": "00:00:08",
+          "speaker": "Host",
+          "text": "Welcome back — today we're talking with someone who studies attention."
+        },
+        {
+          "ts": "00:00:24",
+          "speaker": "Guest",
+          "text": "Interruption isn't actually the problem people think it is."
+        }
+      ],
+      "exportHeading": "एक्सपोर्ट",
+      "copyText": "टेक्स्ट कॉपी करें",
+      "tiles": [
+        {
+          "label": ".srt",
+          "sub": "सबटाइटल"
+        },
+        {
+          "label": ".vtt",
+          "sub": "वेब सबटाइटल"
+        },
+        {
+          "label": ".txt",
+          "sub": "Plain text"
+        },
+        {
+          "label": ".json",
+          "sub": "Raw + timing"
+        }
+      ],
+      "srtFilename": "interview-acme-q3.srt",
+      "srtPreview": "1\n00:00:08,120 --> 00:00:18,640\nWelcome back — we're talking attention research.",
+      "exportNote": "ऑडियो टू टेक्स्ट सबटाइटल cue-aligned हैं और Premiere, Final Cut, DaVinci Resolve, YouTube या किसी भी web player में सीधे इस्तेमाल के लिए तैयार हैं।"
+    },
+    "howItWorks": {
+      "kicker": "मुफ़्त असीमित ऑडियो टू टेक्स्ट कैसे काम करता है",
+      "title": "तीन स्टेप्स। साइन-अप नहीं, लॉगिन नहीं, 100% मुफ़्त, असीमित।",
+      "subtitle": "100% मुफ़्त और प्राइवेट ऑडियो टू टेक्स्ट — कोई साइन-अप, कोई लॉगिन नहीं। आपका ऑडियो आपके डिवाइस पर locally process होता है; इसके leak होने की कोई संभावना नहीं।",
+      "steps": [
+        {
+          "title": "अपना ऑडियो ड्रॉप करें",
+          "body": "MP3, WAV, M4A, OGG, FLAC या WebM ड्रॉप करें — प्रति फ़ाइल लगभग दो घंटे तक। फ़ाइल आपकी मशीन से कभी नहीं जाती।"
+        },
+        {
+          "title": "Whisper मॉडल चुनें",
+          "body": "जल्दी नोट्स के लिए Tiny (40 MB), studio-grade accuracy के लिए Turbo (~800 MB)। मॉडल पहली बार के बाद cache हो जाते हैं।"
+        },
+        {
+          "title": "पढ़ें, एडिट करें, एक्सपोर्ट करें",
+          "body": "ऑडियो टू टेक्स्ट एक timestamped ट्रांसक्रिप्ट के रूप में पाएं जो waveform से sync हो। सबटाइटल के लिए SRT / VTT या नोट्स के लिए plain text में export करें।"
+        }
+      ]
+    },
+    "whatYouCanDo": {
+      "kicker": "क्या कर सकते हैं — 100% मुफ़्त, साइन-अप नहीं, असीमित",
+      "title": "मुफ़्त असीमित ऑडियो टू टेक्स्ट कन्वर्टर — साइन-अप नहीं, लॉगिन नहीं।",
+      "prose": "EarScribe एक 100% मुफ़्त <kw>ऑडियो टू टेक्स्ट</kw> कन्वर्टर है — <kw>साइन-अप नहीं</kw>, कोई लॉगिन नहीं, <kw>असीमित</kw> उपयोग। <kw>MP3 टू टेक्स्ट</kw>, <kw>WAV टू टेक्स्ट</kw> या <kw>M4A टू टेक्स्ट</kw> कन्वर्ट करें, किसी भी ऑडियो से <kw>SRT या VTT सबटाइटल</kw> बनाएं, या बिना API key के <kw>OpenAI Whisper online</kw> चलाएं। 100% मुफ़्त <kw>स्पीच टू टेक्स्ट</kw> — कोई अकाउंट नहीं, कोई quota नहीं, कोई per-minute fee नहीं — प्राइवेट, आपका ऑडियो आपके डिवाइस से नहीं जाता।",
+      "jobs": [
+        {
+          "from": "MP3",
+          "to": ".txt",
+          "label": "MP3 टू टेक्स्ट"
+        },
+        {
+          "from": "WAV",
+          "to": ".txt",
+          "label": "WAV टू टेक्स्ट"
+        },
+        {
+          "from": "M4A",
+          "to": ".txt",
+          "label": "M4A टू टेक्स्ट"
+        },
+        {
+          "from": "Audio",
+          "to": ".srt",
+          "label": "ऑडियो टू SRT"
+        },
+        {
+          "from": "Audio",
+          "to": ".vtt",
+          "label": "ऑडियो टू VTT"
+        },
+        {
+          "from": "Podcast",
+          "to": ".txt",
+          "label": "Podcast टू टेक्स्ट"
+        }
+      ]
+    },
+    "useCases": {
+      "kicker": "मुफ़्त, असीमित, बिना लॉगिन ऑडियो टू टेक्स्ट — सबके लिए",
+      "title": "EarScribe कौन इस्तेमाल करता है।",
+      "subtitle": "100% मुफ़्त, असीमित ऑडियो टू टेक्स्ट — बिना साइन-अप के — छह बिल्कुल अलग ज़रूरतों के लिए। अगर आपका ऑडियो किसी और के सर्वर पर नहीं जाना चाहिए, तो आप सही जगह हैं।",
+      "items": [
+        {
+          "title": "Podcasters और creators",
+          "body": "Podcasters के लिए मुफ़्त ऑडियो टू टेक्स्ट — एपिसोड जल्दी edit करें: ट्रांसक्रिप्ट अपने editor में paste करें, ज़रूरी moment खोजें, और उसी दिन show notes ship करें।",
+          "tag": "Podcasting"
+        },
+        {
+          "title": "पत्रकार और शोधकर्ता",
+          "body": "सोर्स इंटरव्यू के लिए MP3 टू टेक्स्ट — प्राइवेट, कोई साइन-अप नहीं, कोई अकाउंट नहीं। आपका ऑडियो आपके लैपटॉप पर रहता है। कोई third-party server नहीं, कोई audit log नहीं।",
+          "tag": "Journalism"
+        },
+        {
+          "title": "छात्र और लेक्चर",
+          "body": "छात्रों के लिए मुफ़्त ऑडियो टू टेक्स्ट — रिकॉर्ड किया हुआ lecture ड्रॉप करें और अगली क्लास से पहले searchable ट्रांसक्रिप्ट पाएं।",
+          "tag": "Education"
+        },
+        {
+          "title": "मीटिंग और यूज़र इंटरव्यू",
+          "body": "Research sessions के लिए ऑडियो टू टेक्स्ट — ऑडियो डालें, मुफ़्त स्पीच टू टेक्स्ट पाएं, और tagged ट्रांसक्रिप्ट अपनी टीम को भेजें। डिवाइस से कुछ नहीं जाता।",
+          "tag": "Research"
+        },
+        {
+          "title": "वीडियो सबटाइटल",
+          "body": "मुफ़्त ऑडियो टू टेक्स्ट .srt या .vtt में export करें — Premiere, Resolve, Final Cut, या YouTube में सीधे डालें। Cue times ऑडियो से align हैं।",
+          "tag": "Subtitles"
+        },
+        {
+          "title": "Audiobooks और long-form",
+          "body": "दो घंटे का MP3 टू टेक्स्ट? कोई बात नहीं। Turbo audiobook-length ऑडियो handle करता है — असीमित, कोई API quota नहीं, कोई per-minute fee नहीं, कोई लॉगिन नहीं।",
+          "tag": "Long-form"
+        }
+      ]
+    },
+    "features": {
+      "kicker": "हमारा मुफ़्त असीमित ऑडियो टू टेक्स्ट कन्वर्टर क्यों चुनें",
+      "title": "Open Whisper, privacy-first, बेहतरीन user experience के साथ।",
+      "items": [
+        {
+          "title": "प्राइवेट, कोई अपलोड नहीं",
+          "body": "सभी मुफ़्त ऑडियो टू टेक्स्ट प्राइवेट है — locally decode होता है, किसी सर्वर पर अपलोड नहीं होता। आपका डेटा आपका रहता है, किसी third party को leak होने का कोई खतरा नहीं।"
+        },
+        {
+          "title": "WebGPU जब उपलब्ध हो, WASM जब नहीं",
+          "body": "Turbo WebGPU पर ~10× तेज़ चलता है। पुराने डिवाइस पर हम automatically WebAssembly पर fall back करते हैं।"
+        },
+        {
+          "title": "99 भाषाएं, auto-detect",
+          "body": "French podcast, Mandarin lecture, या Hindi इंटरव्यू ड्रॉप करें — 99 भाषाओं में मुफ़्त ऑडियो टू टेक्स्ट, सब auto-detected।"
+        },
+        {
+          "title": "SRT, VTT, JSON, TXT",
+          "body": "One-click MP3 टू टेक्स्ट या ऑडियो टू SRT export। SRT और VTT cues मॉडल के timestamps से align हैं, heuristic chunking से नहीं।"
+        },
+        {
+          "title": "Offline काम करता है — असीमित, इंटरनेट नहीं चाहिए",
+          "body": "मॉडल locally cache होते हैं। एक बार डाउनलोड होने के बाद, असीमित ऑडियो टू टेक्स्ट — कोई इंटरनेट नहीं, कोई quota नहीं, कोई per-minute billing नहीं।"
+        },
+        {
+          "title": "100% मुफ़्त। कोई अकाउंट नहीं। कोई API key नहीं।",
+          "body": "100% मुफ़्त और असीमित — कोई क्रेडिट कार्ड नहीं, कोई साइन-अप नहीं, कोई लॉगिन नहीं, कोई usage cap नहीं। पेज खोलते ही मुफ़्त ऑडियो टू टेक्स्ट और मुफ़्त स्पीच टू टेक्स्ट।"
+        }
+      ]
+    },
+    "sampleOutput": {
+      "kicker": "ऑडियो टू टेक्स्ट — sample output",
+      "title": "एक ही ऑडियो टू टेक्स्ट ट्रांसक्रिप्ट, तीन फॉर्मेट में, ship के लिए तैयार।",
+      "subtitle": "exported MP3 टू टेक्स्ट या ऑडियो टू SRT फ़ाइल असल में कैसी दिखती है — अपने editor में paste करें या YouTube पर upload करें।",
+      "files": [
+        {
+          "name": "transcript.srt",
+          "lang": "SubRip",
+          "code": "1\n00:00:08,120 --> 00:00:18,640\nWelcome back — we're talking attention research."
+        },
+        {
+          "name": "transcript.vtt",
+          "lang": "WebVTT",
+          "code": "WEBVTT\n\n00:00:08.120 --> 00:00:18.640\nWelcome back — we're talking attention research."
+        },
+        {
+          "name": "transcript.txt",
+          "lang": "Plain text",
+          "code": "[00:00:08] Host: Welcome back — we're talking attention research."
+        }
+      ]
+    },
+    "testimonials": {
+      "kicker": "100% मुफ़्त, बिना लॉगिन ऑडियो टू टेक्स्ट — असली यूज़र्स से",
+      "title": "शांत, तेज़, और पूरी तरह आपका।",
+      "subtitle": "कुछ representative लोग जिन्होंने मुफ़्त, असीमित, बिना लॉगिन ऑडियो टू टेक्स्ट अपनाया। (Placeholder quotes — जब असली हों तो बदल दें।)",
+      "quotes": [
+        {
+          "name": "Maya R.",
+          "role": "Podcast producer",
+          "quote": "$19/mo का subscription हट गया — 100% मुफ़्त, कोई लॉगिन नहीं, असीमित ऑडियो टू टेक्स्ट। M2 पर Turbo मॉडल hotel wifi पर cloud upload का इंतज़ार करने से भी तेज़ है।"
+        },
+        {
+          "name": "Daniel K.",
+          "role": "Investigative reporter",
+          "quote": "Source confidentiality पर कोई समझौता नहीं। इस मुफ़्त स्पीच टू टेक्स्ट टूल से — कोई अकाउंट नहीं, कोई अपलोड नहीं — ऑडियो लैपटॉप से कभी नहीं जाता। यही फर्क है इस्तेमाल करने और न करने में।"
+        },
+        {
+          "name": "Priya S.",
+          "role": "PhD student, linguistics",
+          "quote": "फील्डवर्क ऑडियो का असीमित ऑडियो टू टेक्स्ट, प्लेन में, बिना quota और बिना लॉगिन। मुफ़्त स्पीच टू टेक्स्ट जो बस काम करता रहता है।"
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "100% मुफ़्त, असीमित, बिना लॉगिन ऑडियो टू टेक्स्ट — तुलना",
+      "title": "EarScribe बनाम Otter.ai, Rev और Whisper API।",
+      "subtitle": "Cloud ट्रांसक्रिप्शन का 100% मुफ़्त, असीमित, बिना लॉगिन ऑडियो टू टेक्स्ट विकल्प — एक ही Whisper मॉडल फैमिली, तीन बिल्कुल अलग deployment। (कीमतें indicative हैं।)",
+      "headers": {
+        "capability": "फीचर",
+        "earscribe": "EarScribe",
+        "you": "आप",
+        "cloudApi": "Whisper API",
+        "saas": "Hosted SaaS"
+      },
+      "yes": "हाँ",
+      "no": "नहीं",
+      "rows": [
+        {
+          "label": "100% मुफ़्त, कोई क्रेडिट कार्ड नहीं",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "असीमित उपयोग, कोई quota नहीं",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "अकाउंट / लॉगिन ज़रूरी",
+          "earscribe": false,
+          "cloudApi": true,
+          "saas": true
+        },
+        {
+          "label": "Per-minute pricing",
+          "earscribe": "मुफ़्त",
+          "cloudApi": "$0.006/min",
+          "saas": "$10–25/mo"
+        },
+        {
+          "label": "प्राइवेट, ऑडियो डिवाइस पर रहता है",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Offline काम करता है",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Whisper-quality accuracy",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": "अलग-अलग"
+        },
+        {
+          "label": "Open source मॉडल",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "SRT / VTT export",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "Setup का समय",
+          "earscribe": "0s",
+          "cloudApi": "API key + कोड",
+          "saas": "साइन-अप प्रक्रिया"
+        }
+      ]
+    },
+    "stats": {
+      "srTitle": "EarScribe मुफ़्त ऑडियो टू टेक्स्ट — numbers में",
+      "items": [
+        {
+          "v": "99",
+          "unit": "भाषाएं",
+          "body": "Auto-detected, कोई manual selection नहीं।"
+        },
+        {
+          "v": "0",
+          "unit": "bytes अपलोड",
+          "body": "प्राइवेट ऑडियो टू टेक्स्ट — आपका ऑडियो आपके डिवाइस से नहीं जाता।"
+        },
+        {
+          "v": "$0",
+          "unit": "/ माह",
+          "body": "100% मुफ़्त और असीमित — कोई साइन-अप नहीं, कोई लॉगिन नहीं, कोई usage cap नहीं।"
+        },
+        {
+          "v": "~2h",
+          "unit": "अधिकतम लंबाई",
+          "body": "Long-form MP3 टू टेक्स्ट एक ही pass में।"
+        }
+      ]
+    },
+    "formatsLanguages": {
+      "audioFormatsTitle": "ऑडियो टू टेक्स्ट — सपोर्टेड फॉर्मेट",
+      "audioFormatsDesc": "मुफ़्त असीमित ऑडियो टू टेक्स्ट कन्वर्टर — कोई साइन-अप नहीं, कोई अकाउंट नहीं। अगर आप इसे play कर सकते हैं, EarScribe आपके ऑडियो को टेक्स्ट में बदलता है: MP3, WAV, M4A टू टेक्स्ट और भी बहुत कुछ।",
+      "formats": [
+        "MP3",
+        "WAV",
+        "M4A",
+        "OGG",
+        "FLAC",
+        "WebM",
+        "Opus",
+        "AAC"
+      ],
+      "languagesTitle": "99 भाषाओं में मुफ़्त ऑडियो टू टेक्स्ट (auto-detected)",
+      "languagesDesc": "Whisper की 99 सपोर्टेड भाषाओं में मुफ़्त ऑडियो टू टेक्स्ट। मॉडल ऑडियो के पहले कुछ सेकंड से सही भाषा पहचान लेता है।",
+      "languages": [
+        "अंग्रेज़ी",
+        "मंदारिन",
+        "स्पेनिश",
+        "हिंदी",
+        "अरबी",
+        "पुर्तगाली",
+        "बांग्ला",
+        "रूसी",
+        "जापानी",
+        "पंजाबी",
+        "जर्मन",
+        "जावानीज़",
+        "कोरियाई",
+        "फ्रेंच",
+        "तेलुगू",
+        "वियतनामी",
+        "तमिल",
+        "इतालवी",
+        "तुर्की",
+        "पोलिश",
+        "यूक्रेनी",
+        "डच",
+        "फ़ारसी",
+        "थाई",
+        "स्वीडिश",
+        "चेक",
+        "ग्रीक",
+        "हिब्रू",
+        "फिनिश",
+        "नॉर्वेजियन",
+        "हंगेरियन"
+      ],
+      "more": "+68 और"
+    },
+    "finalCta": {
+      "tag": "100% मुफ़्त, साइन-अप नहीं, असीमित",
+      "title": "100% मुफ़्त ऑडियो टू टेक्स्ट के लिए ऑडियो फ़ाइल ड्रॉप करें — साइन-अप नहीं, लॉगिन नहीं, असीमित।",
+      "subtitle": "ऊपर स्क्रॉल करें, फ़ाइल चुनें, और दस सेकंड में टाइमस्टैंप के साथ असीमित मुफ़्त ऑडियो टू टेक्स्ट पाएं। 100% मुफ़्त स्पीच टू टेक्स्ट और MP3 टू टेक्स्ट — कोई अकाउंट नहीं चाहिए।",
+      "tryNow": "शुरू करें, साइन-अप नहीं",
+      "howItWorks": "ऑडियो टू टेक्स्ट कैसे काम करता है"
+    }
+  }
+}

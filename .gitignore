@@ -1,0 +1,15 @@
+node_modules
+.next
+.open-next
+.wrangler
+.env*.local
+.env.local
+.env.production
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+.gstack/
+out/
+public-release/
+.release-artifacts/

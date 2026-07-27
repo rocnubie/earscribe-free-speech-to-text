@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "title": "Audio ke teks gratis tanpa batas, tanpa daftar | EarScribe",
+    "description": "Ubah audio menjadi teks bertanda waktu dan subtitle secara gratis tanpa batas, tanpa perlu daftar. Ekspor SRT, VTT, TXT, atau JSON.",
+    "ogTitle": "EarScribe — Audio ke teks gratis tanpa batas",
+    "ogDescription": "Ubah audio menjadi teks bertanda waktu dan subtitle secara gratis tanpa batas, tanpa perlu daftar. Ekspor SRT, VTT, TXT, atau JSON."
+  },
+  "header": {
+    "product": "EarScribe",
+    "about": "Tentang",
+    "github": "GitHub"
+  },
+  "hero": {
+    "tag": "100% gratis, tanpa daftar",
+    "title": "Ubah audio menjadi teks bertanda waktu dan subtitle, gratis tanpa batas.",
+    "subtitle": "Konverter audio ke teks 100% gratis — tanpa daftar, tanpa login, penggunaan tanpa batas. Seret file MP3 ke teks, WAV atau M4A — dapatkan transkrip dengan cap waktu dan subtitle SRT / VTT. Suara ke teks gratis didukung oleh OpenAI Whisper. Privat, audio Anda tidak pernah meninggalkan perangkat Anda.",
+    "cta": "Pilih file audio"
+  },
+  "trust": {
+    "private": "100% gratis, tanpa batas",
+    "free": "Tanpa daftar, tanpa login",
+    "openModels": "Privat, tanpa unggah",
+    "subtitles": "Ekspor SRT & VTT"
+  },
+  "dropzone": {
+    "idle": "Seret file audio atau klik untuk mencari",
+    "hint": "MP3, WAV, M4A, OGG, FLAC, WebM — hingga sekitar 2 jam per file",
+    "dragging": "Lepas untuk menggunakan file ini",
+    "rejected": "Jenis file tidak didukung. Gunakan file audio.",
+    "tooLarge": "File terlalu besar. Audio panjang mungkin melebihi memori browser.",
+    "changeFile": "Gunakan file lain"
+  },
+  "modelPicker": {
+    "title": "Pilih model",
+    "subtitle": "Model yang lebih besar lebih akurat tetapi membutuhkan waktu lebih lama untuk diunduh dan dijalankan. Pilih sekali — model tersimpan di cache browser Anda.",
+    "advancedShow": "Compare all models",
+    "advancedHide": "Hide model details",
+    "speedLabel": "Speed",
+    "accuracyLabel": "Accuracy",
+    "changeFile": "Change file",
+    "cachedRunHint": "{model} is already on this device and ready to use.",
+    "downloadRunHint": "The first run downloads {size}. It stays cached for later use.",
+    "chooseModelHint": "Choose a quality level to continue.",
+    "recommended": "Direkomendasikan",
+    "selected": "Dipilih",
+    "cached": "Tersimpan",
+    "cachedHint": "Sudah ada di perangkat ini. Siap dijalankan seketika.",
+    "needsDownload": "Unduh {size}",
+    "select": "Pilih",
+    "downloadAndRun": "Unduh & transkripsi",
+    "downloadAndRunSized": "Unduh {size} & transkripsi",
+    "transcribeNow": "Transkripsi",
+    "downloading": "Mengunduh…",
+    "downloadingPct": "Mengunduh {percent}",
+    "initializingModel": "Menginisialisasi model…",
+    "loadingCached": "Memuat model tersimpan…",
+    "transcribingShort": "Mentranskrip…",
+    "transcribingPct": "Mentranskrip {percent}",
+    "deleteRemoveAria": "Hapus dari perangkat ini",
+    "deleteConfirmQuestion": "Hapus dari perangkat ini?",
+    "deleteConfirmHint": "Mengosongkan ~{size}. Anda dapat mengunduh ulang kapan saja.",
+    "deleteConfirmYes": "Ya, hapus",
+    "deleteConfirmCancel": "Batal",
+    "deleting": "Menghapus…",
+    "deleteSuccess": "Dihapus · mengosongkan {size}",
+    "deleteFailed": "Gagal menghapus",
+    "warningWebgpuMissing": "Browser Anda tidak memiliki WebGPU. Model ini akan berjalan di CPU (WASM) dan mungkin lambat.",
+    "warningRamLow": "Perangkat Anda melaporkan {available} GB RAM. Model ini membutuhkan setidaknya {required} GB dan mungkin crash pada perangkat dengan memori rendah.",
+    "deviceCapability": "Perangkat Anda",
+    "webgpuOn": "WebGPU tersedia",
+    "webgpuOff": "WebGPU tidak tersedia — hanya CPU",
+    "memoryReport": "{gb} GB RAM",
+    "memoryUnknown": "RAM tidak diketahui",
+    "cores": "{cores} inti CPU"
+  },
+  "models": {
+    "tiny": {
+      "name": "Whisper Tiny",
+      "tagline": "Tercepat, terkecil. Akurasi lebih rendah.",
+      "pros": "Unduhan terkecil. Berjalan di perangkat apa pun, termasuk ponsel lama.",
+      "cons": "Melewatkan kata-kata pada audio berisik, kesulitan dengan aksen."
+    },
+    "base": {
+      "name": "Whisper Base",
+      "tagline": "Keseimbangan terbaik antara kecepatan dan akurasi.",
+      "pros": "Akurasi baik untuk sebagian besar ucapan yang jelas. Berjalan di perangkat apa pun.",
+      "cons": "Masih melewatkan beberapa kata pada audio beraksen kuat atau berisik."
+    },
+    "small": {
+      "name": "Whisper Small",
+      "tagline": "Akurasi lebih tinggi, lebih lambat.",
+      "pros": "Jauh lebih baik pada aksen dan kebisingan.",
+      "cons": "Lambat tanpa WebGPU. Unduhan lebih besar."
+    },
+    "turbo": {
+      "name": "Whisper Large v3 Turbo",
+      "tagline": "Akurasi tertinggi. WebGPU direkomendasikan.",
+      "pros": "Kualitas transkripsi terbaik, cepat pada WebGPU.",
+      "cons": "Unduhan besar dan jejak memori besar. Mungkin crash pada perangkat kelas bawah."
+    }
+  },
+  "progress": {
+    "downloadingModel": "Mengunduh model… {percent}",
+    "downloadingFile": "{file} — {loaded} dari {total}",
+    "decodingAudio": "Mendekode audio…",
+    "transcribing": "Mentranskrip… {percent}",
+    "preparing": "Mempersiapkan…",
+    "cancel": "Batal"
+  },
+  "result": {
+    "title": "Transkrip",
+    "detectedLanguage": "Bahasa terdeteksi: {language}",
+    "wordCount": "{count} kata",
+    "duration": "{duration}",
+    "copy": "Salin teks",
+    "copied": "Disalin",
+    "export": "Ekspor",
+    "exportTxt": "Teks biasa (.txt)",
+    "exportSrt": "Subtitle (.srt)",
+    "exportVtt": "Subtitle (.vtt)",
+    "exportJson": "JSON mentah (.json)",
+    "newFile": "Transkripsi file lain",
+    "playFromHere": "Putar dari sini",
+    "play": "Putar",
+    "pause": "Jeda",
+    "workspaceLabel": "Transcript workspace",
+    "tabTranscript": "Review transcript",
+    "tabSubtitles": "Subtitle check",
+    "searchPlaceholder": "Search the transcript",
+    "editTranscript": "Edit text",
+    "finishEditing": "Finish editing",
+    "savedOnDevice": "Edits are saved on this device",
+    "restoredDraft": "Saved edits restored from this device",
+    "noSearchResults": "No matching text found.",
+    "qaTitle": "Subtitle check",
+    "qaBody": "Review cues that may be hard to read or need a quick listen before export.",
+    "qaIssueCount": "{count} items may need attention",
+    "qaNoIssues": "No common subtitle issues found",
+    "qaCleanTitle": "Ready for a final watch-through",
+    "qaCleanBody": "No empty, repeated, overlapping, overly long, or unusually fast cues were detected.",
+    "qaHint": "Automatic layout changes use the current timestamps. Listen through important sections before publishing.",
+    "qaEmptyCue": "Empty subtitle cue",
+    "qaType_empty": "Empty",
+    "qaType_long": "Too long",
+    "qaType_fast": "Fast reading",
+    "qaType_overlap": "Time overlap",
+    "qaType_repeated": "Repeated",
+    "optimizeSubtitles": "Improve line breaks"
+  },
+  "errors": {
+    "modelLoadFailed": "Tidak dapat memuat model. Periksa koneksi jaringan Anda dan coba lagi.",
+    "audioDecodeFailed": "Tidak dapat mendekode file audio ini. Coba format lain (MP3 / WAV / M4A).",
+    "transcribeFailed": "Transkripsi gagal. Perangkat Anda mungkin kehabisan memori — coba model yang lebih kecil.",
+    "browserUnsupported": "Browser Anda tidak memiliki fitur yang diperlukan (Web Workers, AudioContext). Coba Chrome, Edge, atau Safari versi terbaru."
+  },
+  "faq": {
+    "title": "Audio ke teks gratis tanpa batas — FAQ",
+    "items": [
+      {
+        "q": "Apakah EarScribe benar-benar 100% gratis tanpa batasan?",
+        "a": "Ya — 100% gratis, tanpa batas, tanpa daftar dan tanpa login. Tidak ada paket berbayar, tidak ada kartu kredit, tidak ada biaya per menit, dan tidak ada kuota harian atau bulanan. Model Whisper berjalan di perangkat keras Anda sendiri, sehingga tidak ada biaya komputasi cloud yang dibebankan. Audio ke teks gratis tanpa syarat apa pun."
+      },
+      {
+        "q": "Apakah audio saya privat dan aman?",
+        "a": "Sepenuhnya privat. EarScribe adalah konverter audio ke teks yang mengutamakan lokal: file audio Anda tidak pernah meninggalkan perangkat Anda dan tidak pernah diunggah ke server mana pun. Tanpa akun berarti tidak ada data yang dikumpulkan tentang Anda. Anda bahkan dapat menggunakannya secara offline setelah model diunduh."
+      },
+      {
+        "q": "Apakah audio saya diunggah ke mana pun?",
+        "a": "Tidak. Audio ke teks gratis terjadi sepenuhnya secara lokal — audio didekode di perangkat Anda dan diproses oleh model Whisper yang berjalan di Web Worker. Tidak ada yang dikirim ke server."
+      },
+      {
+        "q": "Mengapa proses pertama kali lambat?",
+        "a": "Pertama kali Anda memilih model untuk audio ke teks, browser Anda mengunduhnya (80 MB hingga 800 MB tergantung ukurannya). Setelah itu model audio ke teks gratis tersimpan dalam cache dan digunakan kembali — tidak perlu mengunduh ulang."
+      },
+      {
+        "q": "Bahasa apa saja yang didukung?",
+        "a": "Audio ke teks gratis mendukung 99 bahasa melalui Whisper. Bahasa terdeteksi secara otomatis — Anda tidak perlu memilihnya."
+      },
+      {
+        "q": "Bisakah saya mentranskripsi video?",
+        "a": "Tidak secara langsung. Untuk audio ke teks dari video, ekstrak audio terlebih dahulu (alat apa pun yang dapat menghasilkan MP3 atau WAV akan berhasil) lalu seret ke sini."
+      },
+      {
+        "q": "Apakah ini bekerja offline?",
+        "a": "Setelah model diunduh sekali, ya — audio ke teks gratis bekerja offline. Halaman itu sendiri perlu dimuat terlebih dahulu, tetapi proses audio ke teks berikutnya bekerja tanpa internet."
+      },
+      {
+        "q": "Bagaimana cara mengubah MP3 ke teks secara gratis?",
+        "a": "Seret MP3 ke EarScribe untuk MP3 ke teks gratis. File didekode di browser Anda, Whisper mentranskrip secara lokal, dan Anda dapat menyalin hasil MP3 ke teks atau mengekspornya sebagai SRT, VTT, TXT, atau JSON. Tidak ada langkah unggah dan tidak perlu akun."
+      },
+      {
+        "q": "Apakah ada alternatif gratis untuk Otter.ai atau Rev?",
+        "a": "EarScribe adalah alternatif audio ke teks gratis untuk layanan transkripsi cloud seperti Otter.ai, Rev, dan HappyScribe. Kompromisnya: Anda melakukan komputasi di mesin Anda sendiri untuk suara ke teks gratis, tetapi audio tidak pernah meninggalkannya dan tidak ada biaya per menit atau langganan."
+      },
+      {
+        "q": "Bisakah saya membuat subtitle SRT atau VTT dari audio?",
+        "a": "Bisa. Setelah audio ke teks, klik Ekspor → .srt atau .vtt. Waktu cue berasal dari cap waktu yang dihasilkan Whisper, sehingga subtitle selaras dengan hasil audio ke teks tanpa pemisahan manual."
+      },
+      {
+        "q": "Apakah ini menjalankan OpenAI Whisper di browser?",
+        "a": "Ya — EarScribe menjalankan audio ke teks gratis melalui Whisper (Tiny, Base, Small, dan Large v3 Turbo) langsung di browser melalui Transformers.js pada WebGPU, dengan fallback ke WebAssembly jika tidak tersedia."
+      }
+    ]
+  },
+  "about": {
+    "title": "Tentang EarScribe",
+    "intro": "EarScribe adalah aplikasi web statis yang menjalankan model pengenalan suara Whisper dari OpenAI langsung di browser Anda menggunakan Transformers.js dan runtime WebGPU / WebAssembly.",
+    "noServer": "Tidak ada backend yang menyentuh audio Anda. Host Cloudflare Pages hanya menyajikan HTML, JS, dan CSS statis. Bobot model Whisper diambil dari CDN Hugging Face saat pertama kali digunakan dan disimpan dalam cache oleh browser Anda.",
+    "credits": "Dibangun di atas Transformers.js, ONNX Runtime Web, dan model Whisper open-source dari OpenAI."
+  },
+  "footer": {
+    "tagline": "Audio ke teks dan suara ke teks 100% gratis. Tanpa daftar, tanpa login.",
+    "links": {
+      "about": "Tentang",
+      "privacy": "Privasi",
+      "github": "GitHub"
+    },
+    "builtWith": "Dibangun dengan Transformers.js, ONNX Runtime Web, Whisper."
+  },
+  "seo": {
+    "showcase": {
+      "kicker": "Audio ke teks — lihat hasilnya",
+      "title": "Transkrip nyata, dengan cap waktu, gelombang suara, dan ekspor subtitle satu klik.",
+      "subtitle": "Audio ke teks gratis — seret podcast, kuliah, atau wawancara. EarScribe menampilkan transkrip lengkap yang tersinkronisasi dengan audio — klik baris mana pun untuk melompat ke sana, atau ekspor ke SRT / VTT / TXT dalam satu klik.",
+      "fakeUrl": "earscribe.app — interview-acme-q3.mp3",
+      "badges": {
+        "onDevice": "Di perangkat",
+        "autoLanguage": "Bahasa Inggris (terdeteksi otomatis)",
+        "duration": "12:48",
+        "wordCount": "1.842 kata"
+      },
+      "pauseAria": "Jeda",
+      "playbackTime": "00:01:14 / 00:12:48",
+      "playbackRate": "1.0x",
+      "transcript": [
+        {
+          "ts": "00:00:08",
+          "speaker": "Host",
+          "text": "Selamat datang kembali — hari ini kita berbicara dengan seseorang yang meneliti perhatian."
+        },
+        {
+          "ts": "00:00:24",
+          "speaker": "Tamu",
+          "text": "Gangguan sebenarnya bukan masalah yang orang pikirkan."
+        }
+      ],
+      "exportHeading": "Ekspor",
+      "copyText": "Salin teks",
+      "tiles": [
+        {
+          "label": ".srt",
+          "sub": "Subtitle"
+        },
+        {
+          "label": ".vtt",
+          "sub": "Subtitle web"
+        },
+        {
+          "label": ".txt",
+          "sub": "Teks biasa"
+        },
+        {
+          "label": ".json",
+          "sub": "Mentah + waktu"
+        }
+      ],
+      "srtFilename": "interview-acme-q3.srt",
+      "srtPreview": "1\n00:00:08,120 --> 00:00:18,640\nSelamat datang kembali — kita sedang membahas riset perhatian.",
+      "exportNote": "Subtitle audio ke teks sudah selaras dengan cue dan siap dimasukkan ke Premiere, Final Cut, DaVinci Resolve, YouTube, atau pemutar web apa pun."
+    },
+    "howItWorks": {
+      "kicker": "Cara kerja audio ke teks gratis tanpa batas",
+      "title": "Tiga langkah. Tanpa daftar, tanpa login, 100% gratis, tanpa batas.",
+      "subtitle": "Audio ke teks 100% gratis dan privat — tanpa daftar, tanpa login. Audio Anda diproses secara lokal di perangkat Anda; tidak ada tempat bagi audio itu untuk bocor.",
+      "steps": [
+        {
+          "title": "Seret audio Anda",
+          "body": "Seret MP3 ke teks, WAV, M4A, OGG, FLAC, atau WebM — hingga sekitar dua jam per file. File tidak pernah meninggalkan perangkat Anda."
+        },
+        {
+          "title": "Pilih model Whisper",
+          "body": "Tiny (40 MB) untuk catatan cepat, Turbo (~800 MB) untuk akurasi kelas studio. Model disimpan dalam cache setelah proses pertama."
+        },
+        {
+          "title": "Baca, edit, ekspor",
+          "body": "Dapatkan audio ke teks Anda sebagai transkrip bercap waktu yang tersinkronisasi dengan gelombang suara. Ekspor sebagai SRT / VTT untuk subtitle atau teks biasa untuk catatan."
+        }
+      ]
+    },
+    "whatYouCanDo": {
+      "kicker": "Apa yang bisa Anda lakukan — 100% gratis, tanpa daftar, tanpa batas",
+      "title": "Konverter audio ke teks gratis tanpa batas — tanpa daftar, tanpa login.",
+      "prose": "EarScribe adalah konverter <kw>audio ke teks</kw> 100% gratis — <kw>tanpa daftar</kw>, tanpa login, penggunaan <kw>tanpa batas</kw>. Ubah <kw>MP3 ke teks</kw>, <kw>WAV ke teks</kw>, atau <kw>M4A ke teks</kw>, buat <kw>subtitle SRT atau VTT</kw> dari audio apa pun, atau jalankan <kw>OpenAI Whisper online</kw> tanpa API key. <kw>Suara ke teks</kw> 100% gratis tanpa akun, tanpa kuota, tanpa biaya per menit — privat, audio Anda tidak pernah meninggalkan perangkat Anda.",
+      "jobs": [
+        {
+          "from": "MP3",
+          "to": ".txt",
+          "label": "MP3 ke teks"
+        },
+        {
+          "from": "WAV",
+          "to": ".txt",
+          "label": "WAV ke teks"
+        },
+        {
+          "from": "M4A",
+          "to": ".txt",
+          "label": "M4A ke teks"
+        },
+        {
+          "from": "Audio",
+          "to": ".srt",
+          "label": "Audio ke SRT"
+        },
+        {
+          "from": "Audio",
+          "to": ".vtt",
+          "label": "Audio ke VTT"
+        },
+        {
+          "from": "Podcast",
+          "to": ".txt",
+          "label": "Podcast ke teks"
+        }
+      ]
+    },
+    "useCases": {
+      "kicker": "Audio ke teks gratis, tanpa batas, tanpa login — untuk semua orang",
+      "title": "Siapa yang menggunakan EarScribe.",
+      "subtitle": "Audio ke teks 100% gratis, tanpa batas, tanpa daftar — enam kebutuhan yang sangat berbeda. Jika audio Anda tidak seharusnya berakhir di server orang lain, Anda berada di tempat yang tepat.",
+      "items": [
+        {
+          "title": "Podcaster & kreator",
+          "body": "Audio ke teks gratis untuk podcaster — edit episode lebih cepat: tempelkan transkrip ke editor Anda, cari momen yang dibutuhkan, dan kirim catatan acara di hari yang sama.",
+          "tag": "Podcasting"
+        },
+        {
+          "title": "Jurnalis & peneliti",
+          "body": "MP3 ke teks untuk wawancara sumber — privat, tanpa daftar, tanpa akun. Audio Anda tetap di laptop Anda. Tidak ada server pihak ketiga, tidak ada log audit untuk disita.",
+          "tag": "Jurnalisme"
+        },
+        {
+          "title": "Mahasiswa & kuliah",
+          "body": "Audio ke teks gratis untuk mahasiswa — seret rekaman kuliah dan dapatkan transkrip yang bisa dicari sebelum kelas berikutnya.",
+          "tag": "Pendidikan"
+        },
+        {
+          "title": "Rapat & wawancara pengguna",
+          "body": "Audio ke teks untuk sesi riset — seret audio, dapatkan suara ke teks gratis, dan kirim transkrip yang sudah ditandai ke tim Anda. Tidak ada yang keluar dari perangkat Anda.",
+          "tag": "Riset"
+        },
+        {
+          "title": "Subtitle video",
+          "body": "Audio ke teks yang diekspor sebagai .srt atau .vtt — langsung masuk ke Premiere, Resolve, Final Cut, atau YouTube. Waktu cue sudah selaras dengan audio.",
+          "tag": "Subtitle"
+        },
+        {
+          "title": "Buku audio & konten panjang",
+          "body": "MP3 dua jam ke teks? Tidak masalah. Turbo menangani audio sepanjang buku audio — tanpa batas, tanpa kuota API, tanpa biaya per menit, tanpa login.",
+          "tag": "Konten panjang"
+        }
+      ]
+    },
+    "features": {
+      "kicker": "Mengapa konverter audio ke teks gratis kami",
+      "title": "Whisper terbuka, mengutamakan privasi, dengan antarmuka yang halus.",
+      "items": [
+        {
+          "title": "Privat, tanpa unggah",
+          "body": "Semua audio ke teks gratis bersifat privat — didekode secara lokal, tidak pernah diunggah ke server mana pun. Data Anda tetap milik Anda, tanpa risiko bocor ke pihak ketiga."
+        },
+        {
+          "title": "WebGPU jika tersedia, WASM jika tidak",
+          "body": "Turbo berjalan ~10× lebih cepat pada WebGPU. Pada perangkat lama kami beralih ke WebAssembly secara otomatis."
+        },
+        {
+          "title": "99 bahasa, terdeteksi otomatis",
+          "body": "Seret podcast berbahasa Prancis, kuliah berbahasa Mandarin, atau wawancara berbahasa Hindi — audio ke teks gratis dalam 99 bahasa, semuanya terdeteksi otomatis."
+        },
+        {
+          "title": "SRT, VTT, JSON, TXT",
+          "body": "Ekspor MP3 ke teks atau audio ke SRT dengan satu klik. Cue SRT dan VTT diselaraskan dengan cap waktu yang dihasilkan model, bukan penggalan heuristik."
+        },
+        {
+          "title": "Bekerja offline — tanpa batas, tanpa internet",
+          "body": "Model disimpan dalam cache secara lokal. Setelah diunduh, audio ke teks tanpa batas — tanpa internet, tanpa kuota, tanpa tagihan per menit."
+        },
+        {
+          "title": "100% gratis. Tanpa akun. Tanpa API key.",
+          "body": "100% gratis dan tanpa batas — tanpa kartu kredit, tanpa daftar, tanpa login, tanpa batas penggunaan. Audio ke teks gratis dan suara ke teks gratis begitu Anda membuka halaman."
+        }
+      ]
+    },
+    "sampleOutput": {
+      "kicker": "Audio ke teks — contoh hasil",
+      "title": "Transkrip audio ke teks yang sama, tiga format, siap digunakan.",
+      "subtitle": "Tampilan file MP3 ke teks atau audio ke SRT yang diekspor — tempel langsung ke editor Anda atau unggah ke YouTube.",
+      "files": [
+        {
+          "name": "transcript.srt",
+          "lang": "SubRip",
+          "code": "1\n00:00:08,120 --> 00:00:18,640\nSelamat datang kembali — kita sedang membahas riset perhatian."
+        },
+        {
+          "name": "transcript.vtt",
+          "lang": "WebVTT",
+          "code": "WEBVTT\n\n00:00:08.120 --> 00:00:18.640\nSelamat datang kembali — kita sedang membahas riset perhatian."
+        },
+        {
+          "name": "transcript.txt",
+          "lang": "Plain text",
+          "code": "[00:00:08] Host: Selamat datang kembali — kita sedang membahas riset perhatian."
+        }
+      ]
+    },
+    "testimonials": {
+      "kicker": "Audio ke teks 100% gratis, tanpa login — dari pengguna nyata",
+      "title": "Tenang, cepat, dan sepenuhnya milik Anda.",
+      "subtitle": "Beberapa orang representatif yang beralih ke audio ke teks gratis, tanpa batas, tanpa login. (Kutipan placeholder — ganti dengan yang nyata jika sudah ada.)",
+      "quotes": [
+        {
+          "name": "Maya R.",
+          "role": "Produser podcast",
+          "quote": "Menggantikan langganan $19/bulan — 100% gratis, tanpa login, audio ke teks tanpa batas. Model Turbo di M2 saya lebih cepat daripada menunggu unggahan cloud melalui wifi hotel."
+        },
+        {
+          "name": "Daniel K.",
+          "role": "Reporter investigasi",
+          "quote": "Kerahasiaan sumber tidak bisa ditawar. Dengan alat suara ke teks gratis ini — tanpa akun, tanpa unggah — audio tidak pernah meninggalkan laptop. Itulah perbedaan antara menggunakannya dan tidak."
+        },
+        {
+          "name": "Priya S.",
+          "role": "Mahasiswa doktoral, linguistik",
+          "quote": "Audio ke teks tanpa batas dari audio lapangan, di pesawat, tanpa kuota dan tanpa login. Suara ke teks gratis yang terus bekerja."
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "Audio ke teks 100% gratis, tanpa batas, tanpa login — perbandingan",
+      "title": "EarScribe vs Otter.ai, Rev, dan Whisper API.",
+      "subtitle": "Alternatif audio ke teks 100% gratis, tanpa batas, tanpa login untuk transkripsi cloud — keluarga model Whisper yang sama, tiga bentuk deployment yang sangat berbeda. (Harga bersifat indikatif.)",
+      "headers": {
+        "capability": "Kemampuan",
+        "earscribe": "EarScribe",
+        "you": "Anda",
+        "cloudApi": "Whisper API",
+        "saas": "Hosted SaaS"
+      },
+      "yes": "Ya",
+      "no": "Tidak",
+      "rows": [
+        {
+          "label": "100% gratis, tanpa kartu kredit",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Penggunaan tanpa batas, tanpa kuota",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Akun / login diperlukan",
+          "earscribe": false,
+          "cloudApi": true,
+          "saas": true
+        },
+        {
+          "label": "Harga per menit",
+          "earscribe": "Free",
+          "cloudApi": "$0.006/min",
+          "saas": "$10–25/mo"
+        },
+        {
+          "label": "Privat, audio tetap di perangkat",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Bekerja offline",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Akurasi kualitas Whisper",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": "Varies"
+        },
+        {
+          "label": "Model open source",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Ekspor SRT / VTT",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "Waktu setup",
+          "earscribe": "0s",
+          "cloudApi": "API key + code",
+          "saas": "Sign-up flow"
+        }
+      ]
+    },
+    "stats": {
+      "srTitle": "EarScribe audio ke teks gratis dalam angka",
+      "items": [
+        {
+          "v": "99",
+          "unit": "bahasa",
+          "body": "Terdeteksi otomatis, tidak perlu memilih secara manual."
+        },
+        {
+          "v": "0",
+          "unit": "byte diunggah",
+          "body": "Audio ke teks privat — audio Anda tidak pernah meninggalkan perangkat."
+        },
+        {
+          "v": "$0",
+          "unit": "/ bulan",
+          "body": "100% gratis dan tanpa batas — tanpa daftar, tanpa login, tanpa batas penggunaan."
+        },
+        {
+          "v": "~2j",
+          "unit": "panjang maks",
+          "body": "MP3 panjang ke teks ditangani dalam satu proses."
+        }
+      ]
+    },
+    "formatsLanguages": {
+      "audioFormatsTitle": "Audio ke teks — format yang didukung",
+      "audioFormatsDesc": "Konverter audio ke teks gratis tanpa batas — tanpa daftar, tanpa akun. Jika Anda bisa memutarnya, EarScribe mengubah audio Anda ke teks: MP3 ke teks, WAV ke teks, M4A ke teks, dan lainnya.",
+      "formats": [
+        "MP3",
+        "WAV",
+        "M4A",
+        "OGG",
+        "FLAC",
+        "WebM",
+        "Opus",
+        "AAC"
+      ],
+      "languagesTitle": "Audio ke teks gratis dalam 99 bahasa (terdeteksi otomatis)",
+      "languagesDesc": "Audio ke teks gratis dalam 99 bahasa yang didukung Whisper. Model memilih bahasa yang tepat dari beberapa detik pertama audio.",
+      "languages": [
+        "Inggris",
+        "Mandarin",
+        "Spanyol",
+        "Hindi",
+        "Arab",
+        "Portugis",
+        "Bengali",
+        "Rusia",
+        "Jepang",
+        "Punjabi",
+        "Jerman",
+        "Jawa",
+        "Korea",
+        "Prancis",
+        "Telugu",
+        "Vietnam",
+        "Tamil",
+        "Italia",
+        "Turki",
+        "Polandia",
+        "Ukraina",
+        "Belanda",
+        "Persia",
+        "Thai",
+        "Swedia",
+        "Ceko",
+        "Yunani",
+        "Ibrani",
+        "Finlandia",
+        "Norwegia",
+        "Hungaria"
+      ],
+      "more": "+68 lainnya"
+    },
+    "finalCta": {
+      "tag": "100% gratis, tanpa daftar, tanpa batas",
+      "title": "Seret file audio untuk audio ke teks 100% gratis — tanpa daftar, tanpa login, tanpa batas.",
+      "subtitle": "Gulir kembali ke atas, pilih file, dan Anda hanya selangkah dari audio ke teks gratis tanpa batas dengan cap waktu. Suara ke teks dan MP3 ke teks 100% gratis — tanpa akun.",
+      "tryNow": "Mulai gratis, tanpa daftar",
+      "howItWorks": "Cara kerja audio ke teks"
+    }
+  }
+}

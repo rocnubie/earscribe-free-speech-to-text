@@ -1,0 +1,10 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "earscribe"
+pages_build_output_dir = "out"
+compatibility_date = "2025-05-05"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+NEXT_PUBLIC_SITE_URL = "https://earscribe.app"
+NEXT_PUBLIC_PLAUSIBLE_DOMAIN = "earscribe.app"
+NEXT_PUBLIC_PLAUSIBLE_SCRIPT_URL = "https://click.pageview.click/js/script.js"

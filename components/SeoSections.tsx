@@ -15,17 +15,13 @@ import {
   Mic,
   Newspaper,
   Play,
-  Quote,
   RotateCcw,
-  ShieldCheck,
   Sparkles,
   Subtitles,
   Upload,
-  WifiOff,
   X,
-  Zap,
 } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 import { Link } from "@/i18n/routing";
 
@@ -33,16 +29,14 @@ import { Link } from "@/i18n/routing";
 /*  1. UI Showcase — real done-state UI with static demo data        */
 /* ------------------------------------------------------------------ */
 
-const DEMO_CHUNKS: { ts: string; text: string; active?: boolean }[] = [
-  { ts: "0:08", text: "Welcome back — today we're talking with someone who studies attention and focus in the modern workplace." },
-  { ts: "0:24", text: "Interruption isn't actually the problem people think it is. The real issue is recovery time.", active: true },
-  { ts: "0:39", text: "Our studies show workers take over 23 minutes to fully refocus after a single interruption." },
-  { ts: "0:54", text: "So what are the practical strategies that actually work? Let's dig into the evidence." },
-  { ts: "1:08", text: "The first thing is environment design — physical and digital both matter enormously." },
-];
-
 export function UIShowcase() {
   const t = useTranslations("seo.showcase");
+  const tr = useTranslations("result");
+  const demoChunks = t.raw("transcript") as {
+    ts: string;
+    speaker: string;
+    text: string;
+  }[];
 
   return (
     <section
@@ -81,13 +75,13 @@ export function UIShowcase() {
             className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700"
           >
             <RotateCcw className="h-4 w-4" />
-            New file
+              {tr("newFile")}
           </button>
         </section>
 
         {/* Waveform — matches Waveform component layout */}
         <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-          <div className="flex items-center gap-4">
+          <div className="flex min-w-0 items-center gap-3 sm:gap-4">
             <button
               type="button"
               aria-hidden="true"
@@ -96,10 +90,10 @@ export function UIShowcase() {
             >
               <Play className="h-5 w-5 translate-x-0.5" />
             </button>
-            <div className="flex flex-1 flex-col gap-1">
+            <div className="flex min-w-0 flex-1 flex-col gap-1">
               {/* Static bar waveform in place of canvas */}
-              <div className="flex h-16 items-center gap-[2px] overflow-hidden rounded-lg bg-slate-50 px-2">
-                {Array.from({ length: 120 }).map((_, i) => {
+              <div className="grid h-16 min-w-0 grid-cols-[repeat(60,minmax(1px,1fr))] items-center gap-px overflow-hidden rounded-lg bg-slate-50 px-2">
+                {Array.from({ length: 60 }).map((_, i) => {
                   const h = Math.round(
                     4 + Math.abs(Math.sin(i * 0.37 + 0.5) * 52) + (i % 5) * 2,
                   );
@@ -109,7 +103,7 @@ export function UIShowcase() {
                       key={i}
                       style={{ height: `${Math.min(h, 56)}px` }}
                       className={
-                        "w-[2px] shrink-0 rounded-sm " +
+                        "w-full rounded-sm " +
                         (played ? "bg-sky-600" : "bg-slate-300")
                       }
                     />
@@ -128,9 +122,9 @@ export function UIShowcase() {
         <section className="space-y-4">
           <header className="flex flex-wrap items-center justify-between gap-3">
             <div>
-              <h3 className="text-xl font-semibold text-slate-900">Transcript</h3>
+              <h3 className="text-xl font-semibold text-slate-900">{tr("title")}</h3>
               <p className="mt-1 text-sm text-slate-600">
-                English · 1,842 words
+                {t("badges.autoLanguage")} · {t("badges.wordCount")}
               </p>
             </div>
             <div className="flex items-center gap-2">
@@ -141,7 +135,7 @@ export function UIShowcase() {
                 className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700"
               >
                 <Copy className="h-4 w-4" />
-                Copy
+                {tr("copy")}
               </button>
               <button
                 type="button"
@@ -150,25 +144,25 @@ export function UIShowcase() {
                 className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-3 py-1.5 text-sm font-medium text-white"
               >
                 <Download className="h-4 w-4" />
-                Export
+                {tr("export")}
               </button>
             </div>
           </header>
 
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
             <ol className="divide-y divide-slate-100">
-              {DEMO_CHUNKS.map((chunk, i) => (
+              {demoChunks.map((chunk, i) => (
                 <li
                   key={i}
                   className={[
                     "flex gap-4 px-4 py-3",
-                    chunk.active ? "bg-sky-50" : "",
+                    i === 1 ? "bg-sky-50" : "",
                   ].join(" ")}
                 >
                   <span
                     className={[
                       "shrink-0 font-mono text-xs tabular-nums",
-                      chunk.active ? "text-sky-700" : "text-sky-600",
+                      i === 1 ? "text-sky-700" : "text-sky-600",
                     ].join(" ")}
                   >
                     {chunk.ts}
@@ -176,7 +170,7 @@ export function UIShowcase() {
                   <p
                     className={[
                       "text-sm leading-relaxed",
-                      chunk.active
+                      i === 1
                         ? "font-medium text-slate-900"
                         : "text-slate-800",
                     ].join(" ")}
@@ -348,7 +342,7 @@ export function UseCases() {
 export function Features() {
   const t = useTranslations("seo.features");
   const items = t.raw("items") as { title: string; body: string }[];
-  const icons = [ShieldCheck, Zap, Languages, Subtitles, WifiOff, Sparkles];
+  const icons = [FileAudio, Cpu, Languages, FileText, Subtitles, Sparkles];
 
   return (
     <section
@@ -461,7 +455,7 @@ function CodeCard({
 }
 
 /* ------------------------------------------------------------------ */
-/*  6. Testimonials — sample users so visitors can self-identify      */
+/*  6. Workflow paths — progressive tools for different outcomes      */
 /* ------------------------------------------------------------------ */
 
 export function Testimonials() {
@@ -472,17 +466,7 @@ export function Testimonials() {
     quote: string;
   }[];
 
-  const visuals = [
-    { mono: "M", tone: "sky" },
-    { mono: "D", tone: "emerald" },
-    { mono: "P", tone: "violet" },
-  ];
-
-  const toneMap: Record<string, string> = {
-    sky: "bg-sky-100 text-sky-800",
-    emerald: "bg-emerald-100 text-emerald-800",
-    violet: "bg-violet-100 text-violet-800",
-  };
+  const icons = [Subtitles, Mic, GraduationCap];
 
   return (
     <section
@@ -506,24 +490,15 @@ export function Testimonials() {
 
       <div className="mt-12 grid gap-4 md:grid-cols-3">
         {quotes.map((q, i) => {
-          const v = visuals[i] ?? visuals[0]!;
+          const Icon = icons[i] ?? FileText;
           return (
-            <figure
+            <article
               key={q.name}
-              className="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+              className="flex flex-col rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
             >
-              <Quote className="h-5 w-5 text-slate-300" />
-              <blockquote className="mt-3 flex-1 text-sm leading-relaxed text-slate-700">
-                {q.quote}
-              </blockquote>
-              <figcaption className="mt-5 flex items-center gap-3 border-t border-slate-100 pt-4">
-                <span
-                  className={
-                    "flex h-9 w-9 items-center justify-center rounded-full text-sm font-semibold " +
-                    toneMap[v.tone]
-                  }
-                >
-                  {v.mono}
+              <div className="flex items-center gap-3">
+                <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-sky-50 text-sky-700">
+                  <Icon className="h-5 w-5" />
                 </span>
                 <div>
                   <p className="text-sm font-semibold text-slate-900">
@@ -531,8 +506,11 @@ export function Testimonials() {
                   </p>
                   <p className="text-xs text-slate-500">{q.role}</p>
                 </div>
-              </figcaption>
-            </figure>
+              </div>
+              <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-700">
+                {q.quote}
+              </p>
+            </article>
           );
         })}
       </div>
@@ -805,7 +783,17 @@ export function FinalCTA() {
 
 export function WhatYouCanDo() {
   const t = useTranslations("seo.whatYouCanDo");
+  const locale = useLocale();
   const jobs = t.raw("jobs") as { from: string; to: string; label: string }[];
+  const hasToolPages = ["en", "zh-CN", "ja"].includes(locale);
+  const jobLinks = [
+    "/mp3-to-text",
+    "/audio-to-text",
+    "/audio-to-text",
+    "/audio-to-srt",
+    "/audio-to-srt",
+    "/audio-to-text",
+  ];
 
   return (
     <section
@@ -832,25 +820,42 @@ export function WhatYouCanDo() {
       </div>
 
       <ul className="mx-auto mt-10 grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {jobs.map((j) => (
+        {jobs.map((j, index) => (
           <li
             key={j.label}
-            className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3 shadow-sm"
+            className="rounded-xl border border-slate-200 bg-white shadow-sm"
           >
-            <span className="inline-flex items-center rounded-md border border-slate-200 bg-slate-50 px-2 py-1 font-mono text-xs font-medium text-slate-700">
-              {j.from}
-            </span>
-            <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
-            <span className="inline-flex items-center rounded-md border border-sky-200 bg-sky-50 px-2 py-1 font-mono text-xs font-medium text-sky-800">
-              {j.to}
-            </span>
-            <span className="ml-auto text-sm font-medium text-slate-700">
-              {j.label}
-            </span>
+            {hasToolPages ? (
+              <Link
+                href={jobLinks[index] ?? "/audio-to-text"}
+                className="flex items-center gap-3 px-4 py-3 hover:bg-sky-50"
+              >
+                <JobLabel job={j} />
+              </Link>
+            ) : (
+              <div className="flex items-center gap-3 px-4 py-3">
+                <JobLabel job={j} />
+              </div>
+            )}
           </li>
         ))}
       </ul>
     </section>
+  );
+}
+
+function JobLabel({ job }: { job: { from: string; to: string; label: string } }) {
+  return (
+    <>
+      <span className="inline-flex items-center rounded-md border border-slate-200 bg-slate-50 px-2 py-1 font-mono text-xs font-medium text-slate-700">
+        {job.from}
+      </span>
+      <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
+      <span className="inline-flex items-center rounded-md border border-sky-200 bg-sky-50 px-2 py-1 font-mono text-xs font-medium text-sky-800">
+        {job.to}
+      </span>
+      <span className="ml-auto text-sm font-medium text-slate-700">{job.label}</span>
+    </>
   );
 }
 

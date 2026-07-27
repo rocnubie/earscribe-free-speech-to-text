@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "title": "Chuyển âm thanh thành văn bản miễn phí, không giới hạn, không cần đăng ký | EarScribe",
+    "description": "Chuyển âm thanh thành văn bản có mốc thời gian và phụ đề miễn phí, không giới hạn, không cần đăng ký. Xuất SRT, VTT, TXT hoặc JSON.",
+    "ogTitle": "EarScribe — Chuyển âm thanh thành văn bản miễn phí, không giới hạn",
+    "ogDescription": "Chuyển âm thanh thành văn bản có mốc thời gian và phụ đề miễn phí, không giới hạn, không cần đăng ký. Xuất SRT, VTT, TXT hoặc JSON."
+  },
+  "header": {
+    "product": "EarScribe",
+    "about": "Giới thiệu",
+    "github": "GitHub"
+  },
+  "hero": {
+    "tag": "Miễn phí 100%, không đăng ký",
+    "title": "Chuyển âm thanh thành văn bản có mốc thời gian và phụ đề, miễn phí không giới hạn.",
+    "subtitle": "Công cụ chuyển âm thanh thành văn bản miễn phí 100% — không đăng ký, không đăng nhập, sử dụng không giới hạn. Kéo thả MP3 sang văn bản, WAV hoặc M4A — nhận bản ghi với dấu thời gian và phụ đề SRT / VTT. Chuyển giọng nói thành văn bản miễn phí bởi OpenAI Whisper. Riêng tư, âm thanh của bạn không bao giờ rời khỏi thiết bị.",
+    "cta": "Chọn tệp âm thanh"
+  },
+  "trust": {
+    "private": "Miễn phí 100%, không giới hạn",
+    "free": "Không đăng ký, không đăng nhập",
+    "openModels": "Riêng tư, không tải lên",
+    "subtitles": "Xuất SRT & VTT"
+  },
+  "dropzone": {
+    "idle": "Kéo thả tệp âm thanh hoặc nhấp để duyệt",
+    "hint": "MP3, WAV, M4A, OGG, FLAC, WebM — tối đa khoảng 2 giờ mỗi tệp",
+    "dragging": "Thả để sử dụng tệp này",
+    "rejected": "Định dạng tệp không được hỗ trợ. Vui lòng dùng tệp âm thanh.",
+    "tooLarge": "Tệp quá lớn. Âm thanh dài có thể vượt quá bộ nhớ trình duyệt.",
+    "changeFile": "Dùng tệp khác"
+  },
+  "modelPicker": {
+    "title": "Chọn mô hình",
+    "subtitle": "Mô hình lớn hơn chính xác hơn nhưng tải xuống và chạy lâu hơn. Chọn một lần — mô hình được lưu trong bộ nhớ đệm trình duyệt của bạn.",
+    "advancedShow": "Compare all models",
+    "advancedHide": "Hide model details",
+    "speedLabel": "Speed",
+    "accuracyLabel": "Accuracy",
+    "changeFile": "Change file",
+    "cachedRunHint": "{model} is already on this device and ready to use.",
+    "downloadRunHint": "The first run downloads {size}. It stays cached for later use.",
+    "chooseModelHint": "Choose a quality level to continue.",
+    "recommended": "Được đề xuất",
+    "selected": "Đã chọn",
+    "cached": "Đã lưu",
+    "cachedHint": "Đã có trên thiết bị này. Sẵn sàng chạy ngay.",
+    "needsDownload": "Tải xuống {size}",
+    "select": "Chọn",
+    "downloadAndRun": "Tải xuống & phiên âm",
+    "downloadAndRunSized": "Tải xuống {size} & phiên âm",
+    "transcribeNow": "Phiên âm",
+    "downloading": "Đang tải xuống…",
+    "downloadingPct": "Đang tải xuống {percent}",
+    "initializingModel": "Đang khởi tạo mô hình…",
+    "loadingCached": "Đang tải mô hình đã lưu…",
+    "transcribingShort": "Đang phiên âm…",
+    "transcribingPct": "Đang phiên âm {percent}",
+    "deleteRemoveAria": "Xóa khỏi thiết bị này",
+    "deleteConfirmQuestion": "Xóa khỏi thiết bị này?",
+    "deleteConfirmHint": "Giải phóng ~{size}. Bạn có thể tải lại bất cứ lúc nào.",
+    "deleteConfirmYes": "Có, xóa",
+    "deleteConfirmCancel": "Hủy",
+    "deleting": "Đang xóa…",
+    "deleteSuccess": "Đã xóa · giải phóng {size}",
+    "deleteFailed": "Xóa thất bại",
+    "warningWebgpuMissing": "Trình duyệt của bạn không có WebGPU. Mô hình này sẽ chạy trên CPU (WASM) và có thể chậm.",
+    "warningRamLow": "Thiết bị của bạn có {available} GB RAM. Mô hình này cần ít nhất {required} GB và có thể bị crash trên thiết bị ít bộ nhớ.",
+    "deviceCapability": "Thiết bị của bạn",
+    "webgpuOn": "WebGPU khả dụng",
+    "webgpuOff": "WebGPU không khả dụng — chỉ CPU",
+    "memoryReport": "{gb} GB RAM",
+    "memoryUnknown": "RAM không xác định",
+    "cores": "{cores} lõi CPU"
+  },
+  "models": {
+    "tiny": {
+      "name": "Whisper Tiny",
+      "tagline": "Nhanh nhất, nhỏ nhất. Độ chính xác thấp hơn.",
+      "pros": "Tải xuống nhỏ nhất. Chạy được trên mọi thiết bị, kể cả điện thoại cũ.",
+      "cons": "Bỏ sót từ trong âm thanh ồn, khó xử lý giọng địa phương."
+    },
+    "base": {
+      "name": "Whisper Base",
+      "tagline": "Cân bằng tốt nhất giữa tốc độ và độ chính xác.",
+      "pros": "Độ chính xác tốt với hầu hết giọng nói rõ ràng. Chạy được trên mọi thiết bị.",
+      "cons": "Vẫn bỏ sót một số từ trong âm thanh có giọng mạnh hoặc ồn."
+    },
+    "small": {
+      "name": "Whisper Small",
+      "tagline": "Độ chính xác cao hơn, chậm hơn.",
+      "pros": "Tốt hơn đáng kể với giọng địa phương và tiếng ồn.",
+      "cons": "Chậm khi không có WebGPU. Tải xuống lớn hơn."
+    },
+    "turbo": {
+      "name": "Whisper Large v3 Turbo",
+      "tagline": "Độ chính xác cao nhất. Khuyến nghị dùng WebGPU.",
+      "pros": "Chất lượng phiên âm tốt nhất, nhanh trên WebGPU.",
+      "cons": "Tải xuống lớn và chiếm nhiều bộ nhớ. Có thể crash trên thiết bị cấu hình thấp."
+    }
+  },
+  "progress": {
+    "downloadingModel": "Đang tải mô hình… {percent}",
+    "downloadingFile": "{file} — {loaded} / {total}",
+    "decodingAudio": "Đang giải mã âm thanh…",
+    "transcribing": "Đang phiên âm… {percent}",
+    "preparing": "Đang chuẩn bị…",
+    "cancel": "Hủy"
+  },
+  "result": {
+    "title": "Bản ghi",
+    "detectedLanguage": "Ngôn ngữ phát hiện: {language}",
+    "wordCount": "{count} từ",
+    "duration": "{duration}",
+    "copy": "Sao chép văn bản",
+    "copied": "Đã sao chép",
+    "export": "Xuất",
+    "exportTxt": "Văn bản thuần (.txt)",
+    "exportSrt": "Phụ đề (.srt)",
+    "exportVtt": "Phụ đề (.vtt)",
+    "exportJson": "JSON gốc (.json)",
+    "newFile": "Phiên âm tệp khác",
+    "playFromHere": "Phát từ đây",
+    "play": "Phát",
+    "pause": "Dừng",
+    "workspaceLabel": "Transcript workspace",
+    "tabTranscript": "Review transcript",
+    "tabSubtitles": "Subtitle check",
+    "searchPlaceholder": "Search the transcript",
+    "editTranscript": "Edit text",
+    "finishEditing": "Finish editing",
+    "savedOnDevice": "Edits are saved on this device",
+    "restoredDraft": "Saved edits restored from this device",
+    "noSearchResults": "No matching text found.",
+    "qaTitle": "Subtitle check",
+    "qaBody": "Review cues that may be hard to read or need a quick listen before export.",
+    "qaIssueCount": "{count} items may need attention",
+    "qaNoIssues": "No common subtitle issues found",
+    "qaCleanTitle": "Ready for a final watch-through",
+    "qaCleanBody": "No empty, repeated, overlapping, overly long, or unusually fast cues were detected.",
+    "qaHint": "Automatic layout changes use the current timestamps. Listen through important sections before publishing.",
+    "qaEmptyCue": "Empty subtitle cue",
+    "qaType_empty": "Empty",
+    "qaType_long": "Too long",
+    "qaType_fast": "Fast reading",
+    "qaType_overlap": "Time overlap",
+    "qaType_repeated": "Repeated",
+    "optimizeSubtitles": "Improve line breaks"
+  },
+  "errors": {
+    "modelLoadFailed": "Không thể tải mô hình. Kiểm tra kết nối mạng của bạn và thử lại.",
+    "audioDecodeFailed": "Không thể giải mã tệp âm thanh này. Thử định dạng khác (MP3 / WAV / M4A).",
+    "transcribeFailed": "Phiên âm thất bại. Thiết bị của bạn có thể hết bộ nhớ — thử mô hình nhỏ hơn.",
+    "browserUnsupported": "Trình duyệt của bạn thiếu các tính năng cần thiết (Web Workers, AudioContext). Thử Chrome, Edge hoặc Safari phiên bản mới nhất."
+  },
+  "faq": {
+    "title": "Chuyển âm thanh thành văn bản miễn phí không giới hạn — FAQ",
+    "items": [
+      {
+        "q": "EarScribe có thực sự miễn phí 100% không giới hạn không?",
+        "a": "Có — miễn phí 100%, không giới hạn, không cần đăng ký và đăng nhập. Không có gói trả phí, không có thẻ tín dụng, không có phí theo phút, và không có hạn mức ngày hay tháng. Mô hình Whisper chạy trên phần cứng của bạn, nên không có chi phí điện toán đám mây nào. Chuyển âm thanh thành văn bản miễn phí hoàn toàn."
+      },
+      {
+        "q": "Âm thanh của tôi có riêng tư và an toàn không?",
+        "a": "Hoàn toàn riêng tư. EarScribe là công cụ chuyển âm thanh thành văn bản ưu tiên cục bộ: tệp âm thanh của bạn không bao giờ rời khỏi thiết bị và không bao giờ được tải lên bất kỳ máy chủ nào. Không có tài khoản nghĩa là không có dữ liệu nào được thu thập về bạn. Bạn thậm chí có thể dùng ngoại tuyến sau khi mô hình được tải xuống."
+      },
+      {
+        "q": "Âm thanh của tôi có bị tải lên đâu không?",
+        "a": "Không. Chuyển âm thanh thành văn bản miễn phí diễn ra hoàn toàn cục bộ — âm thanh được giải mã trên thiết bị của bạn và đưa vào mô hình Whisper chạy trong Web Worker. Không có gì được gửi đến máy chủ."
+      },
+      {
+        "q": "Tại sao lần chạy đầu tiên chậm?",
+        "a": "Lần đầu tiên bạn chọn mô hình để chuyển âm thanh thành văn bản, trình duyệt của bạn sẽ tải xuống nó (80 MB đến 800 MB tùy kích thước). Sau đó mô hình được lưu trong bộ nhớ đệm và tái sử dụng — không cần tải lại."
+      },
+      {
+        "q": "Những ngôn ngữ nào được hỗ trợ?",
+        "a": "Chuyển âm thanh thành văn bản miễn phí hỗ trợ 99 ngôn ngữ qua Whisper. Ngôn ngữ được phát hiện tự động — bạn không cần chọn."
+      },
+      {
+        "q": "Tôi có thể phiên âm video không?",
+        "a": "Không trực tiếp. Để chuyển âm thanh video thành văn bản, hãy trích xuất âm thanh trước (bất kỳ công cụ nào xuất MP3 hoặc WAV đều được) rồi kéo thả vào đây."
+      },
+      {
+        "q": "Có hoạt động ngoại tuyến không?",
+        "a": "Sau khi mô hình đã được tải xuống một lần, có — chuyển âm thanh thành văn bản miễn phí hoạt động ngoại tuyến. Trang cần được tải trước, nhưng các lần chuyển đổi tiếp theo hoạt động mà không cần internet."
+      },
+      {
+        "q": "Làm thế nào để chuyển MP3 thành văn bản miễn phí?",
+        "a": "Kéo MP3 vào EarScribe để chuyển MP3 thành văn bản miễn phí. Tệp được giải mã trong trình duyệt, Whisper phiên âm cục bộ, và bạn có thể sao chép kết quả hoặc xuất ra SRT, VTT, TXT hoặc JSON. Không có bước tải lên và không cần tài khoản."
+      },
+      {
+        "q": "Có giải pháp thay thế miễn phí cho Otter.ai hay Rev không?",
+        "a": "EarScribe là giải pháp thay thế miễn phí cho các dịch vụ phiên âm đám mây như Otter.ai, Rev và HappyScribe. Sự đánh đổi: bạn xử lý trên máy của mình để có giọng nói thành văn bản miễn phí, nhưng âm thanh không bao giờ rời khỏi máy và không có phí theo phút hay đăng ký."
+      },
+      {
+        "q": "Tôi có thể tạo phụ đề SRT hay VTT từ âm thanh không?",
+        "a": "Có. Sau khi chuyển âm thanh thành văn bản, nhấp Xuất → .srt hoặc .vtt. Thời gian cue đến từ dấu thời gian do Whisper tạo ra, nên phụ đề khớp với kết quả mà không cần cắt thủ công."
+      },
+      {
+        "q": "Đây có chạy OpenAI Whisper trên trình duyệt không?",
+        "a": "Có — EarScribe chạy chuyển âm thanh thành văn bản miễn phí qua Whisper (Tiny, Base, Small, và Large v3 Turbo) trực tiếp trên trình duyệt thông qua Transformers.js trên WebGPU, chuyển sang WebAssembly khi không có sẵn."
+      }
+    ]
+  },
+  "about": {
+    "title": "Giới thiệu EarScribe",
+    "intro": "EarScribe là ứng dụng web tĩnh chạy các mô hình nhận dạng giọng nói Whisper của OpenAI trực tiếp trong trình duyệt của bạn bằng Transformers.js và runtime WebGPU / WebAssembly.",
+    "noServer": "Không có backend nào xử lý âm thanh của bạn. Máy chủ Cloudflare Pages chỉ phục vụ HTML, JS và CSS tĩnh. Trọng số mô hình Whisper được lấy từ CDN Hugging Face trong lần sử dụng đầu tiên và được lưu trong bộ nhớ đệm của trình duyệt.",
+    "credits": "Được xây dựng trên Transformers.js, ONNX Runtime Web và các mô hình Whisper mã nguồn mở từ OpenAI."
+  },
+  "footer": {
+    "tagline": "Chuyển âm thanh thành văn bản và giọng nói thành văn bản miễn phí 100%. Không đăng ký, không đăng nhập.",
+    "links": {
+      "about": "Giới thiệu",
+      "privacy": "Quyền riêng tư",
+      "github": "GitHub"
+    },
+    "builtWith": "Được xây dựng với Transformers.js, ONNX Runtime Web, Whisper."
+  },
+  "seo": {
+    "showcase": {
+      "kicker": "Âm thanh thành văn bản — xem kết quả",
+      "title": "Bản ghi thực, có dấu thời gian, sóng âm, và xuất phụ đề một cú nhấp.",
+      "subtitle": "Chuyển âm thanh thành văn bản miễn phí — kéo thả podcast, bài giảng hoặc cuộc phỏng vấn. EarScribe hiển thị bản ghi đầy đủ đồng bộ với âm thanh — nhấp vào bất kỳ dòng nào để nhảy đến đó, hoặc xuất sang SRT / VTT / TXT chỉ một cú nhấp.",
+      "fakeUrl": "earscribe.app — interview-acme-q3.mp3",
+      "badges": {
+        "onDevice": "Trên thiết bị",
+        "autoLanguage": "Tiếng Anh (tự động phát hiện)",
+        "duration": "12:48",
+        "wordCount": "1.842 từ"
+      },
+      "pauseAria": "Dừng",
+      "playbackTime": "00:01:14 / 00:12:48",
+      "playbackRate": "1.0x",
+      "transcript": [
+        {
+          "ts": "00:00:08",
+          "speaker": "Người dẫn",
+          "text": "Chào mừng trở lại — hôm nay chúng ta nói chuyện với người nghiên cứu về sự chú ý."
+        },
+        {
+          "ts": "00:00:24",
+          "speaker": "Khách",
+          "text": "Sự gián đoạn thực ra không phải vấn đề như người ta nghĩ."
+        }
+      ],
+      "exportHeading": "Xuất",
+      "copyText": "Sao chép văn bản",
+      "tiles": [
+        {
+          "label": ".srt",
+          "sub": "Phụ đề"
+        },
+        {
+          "label": ".vtt",
+          "sub": "Phụ đề web"
+        },
+        {
+          "label": ".txt",
+          "sub": "Văn bản thuần"
+        },
+        {
+          "label": ".json",
+          "sub": "Gốc + thời gian"
+        }
+      ],
+      "srtFilename": "interview-acme-q3.srt",
+      "srtPreview": "1\n00:00:08,120 --> 00:00:18,640\nChào mừng trở lại — chúng ta đang nói về nghiên cứu sự chú ý.",
+      "exportNote": "Phụ đề âm thanh thành văn bản đã căn chỉnh cue và sẵn sàng đưa vào Premiere, Final Cut, DaVinci Resolve, YouTube, hoặc bất kỳ trình phát web nào."
+    },
+    "howItWorks": {
+      "kicker": "Cách hoạt động của chuyển âm thanh thành văn bản miễn phí không giới hạn",
+      "title": "Ba bước. Không đăng ký, không đăng nhập, miễn phí 100%, không giới hạn.",
+      "subtitle": "Chuyển âm thanh thành văn bản miễn phí 100% và riêng tư — không đăng ký, không đăng nhập. Âm thanh của bạn được xử lý cục bộ trên thiết bị; không có nơi nào để rò rỉ.",
+      "steps": [
+        {
+          "title": "Kéo thả âm thanh của bạn",
+          "body": "Kéo thả MP3 sang văn bản, WAV, M4A, OGG, FLAC hoặc WebM — tối đa khoảng hai giờ mỗi tệp. Tệp không bao giờ rời khỏi máy của bạn."
+        },
+        {
+          "title": "Chọn mô hình Whisper",
+          "body": "Tiny (40 MB) cho ghi chú nhanh, Turbo (~800 MB) cho độ chính xác chuyên nghiệp. Các mô hình được lưu đệm sau lần chạy đầu tiên."
+        },
+        {
+          "title": "Đọc, chỉnh sửa, xuất",
+          "body": "Nhận âm thanh của bạn dưới dạng bản ghi có dấu thời gian đồng bộ với sóng âm. Xuất dưới dạng SRT / VTT cho phụ đề hoặc văn bản thuần cho ghi chú."
+        }
+      ]
+    },
+    "whatYouCanDo": {
+      "kicker": "Bạn có thể làm gì — miễn phí 100%, không đăng ký, không giới hạn",
+      "title": "Công cụ chuyển âm thanh thành văn bản miễn phí không giới hạn — không đăng ký, không đăng nhập.",
+      "prose": "EarScribe là công cụ chuyển <kw>âm thanh thành văn bản</kw> miễn phí 100% — <kw>không đăng ký</kw>, không đăng nhập, sử dụng <kw>không giới hạn</kw>. Chuyển <kw>MP3 thành văn bản</kw>, <kw>WAV thành văn bản</kw> hoặc <kw>M4A thành văn bản</kw>, tạo <kw>phụ đề SRT hoặc VTT</kw> từ bất kỳ âm thanh nào, hoặc chạy <kw>OpenAI Whisper online</kw> mà không cần API key. <kw>Giọng nói thành văn bản</kw> miễn phí 100% không cần tài khoản, không hạn mức, không phí theo phút — riêng tư, âm thanh của bạn không bao giờ rời khỏi thiết bị.",
+      "jobs": [
+        {
+          "from": "MP3",
+          "to": ".txt",
+          "label": "MP3 thành văn bản"
+        },
+        {
+          "from": "WAV",
+          "to": ".txt",
+          "label": "WAV thành văn bản"
+        },
+        {
+          "from": "M4A",
+          "to": ".txt",
+          "label": "M4A thành văn bản"
+        },
+        {
+          "from": "Audio",
+          "to": ".srt",
+          "label": "Âm thanh thành SRT"
+        },
+        {
+          "from": "Audio",
+          "to": ".vtt",
+          "label": "Âm thanh thành VTT"
+        },
+        {
+          "from": "Podcast",
+          "to": ".txt",
+          "label": "Podcast thành văn bản"
+        }
+      ]
+    },
+    "useCases": {
+      "kicker": "Âm thanh thành văn bản miễn phí, không giới hạn, không đăng nhập — dành cho mọi người",
+      "title": "Ai dùng EarScribe.",
+      "subtitle": "Chuyển âm thanh thành văn bản miễn phí 100%, không giới hạn, không đăng ký — sáu nhu cầu rất khác nhau. Nếu âm thanh của bạn không nên đến máy chủ của người khác, bạn đang ở đúng nơi.",
+      "items": [
+        {
+          "title": "Podcaster & nhà sáng tạo",
+          "body": "Chuyển âm thanh thành văn bản miễn phí cho podcaster — biên tập tập nhanh hơn: dán bản ghi vào editor, tìm khoảnh khắc cần thiết, và gửi ghi chú chương trình ngay trong ngày.",
+          "tag": "Podcasting"
+        },
+        {
+          "title": "Nhà báo & nhà nghiên cứu",
+          "body": "MP3 thành văn bản cho phỏng vấn nguồn — riêng tư, không đăng ký, không tài khoản. Âm thanh của bạn ở lại máy tính xách tay. Không có máy chủ bên thứ ba, không có nhật ký kiểm tra để tịch thu.",
+          "tag": "Báo chí"
+        },
+        {
+          "title": "Sinh viên & bài giảng",
+          "body": "Chuyển âm thanh thành văn bản miễn phí cho sinh viên — kéo thả bài giảng đã ghi và nhận bản ghi có thể tìm kiếm trước buổi học tiếp theo.",
+          "tag": "Giáo dục"
+        },
+        {
+          "title": "Cuộc họp & phỏng vấn người dùng",
+          "body": "Âm thanh thành văn bản cho buổi nghiên cứu — kéo âm thanh vào, nhận giọng nói thành văn bản miễn phí, và gửi bản ghi đã gắn nhãn cho nhóm. Không có gì rời khỏi thiết bị của bạn.",
+          "tag": "Nghiên cứu"
+        },
+        {
+          "title": "Phụ đề video",
+          "body": "Âm thanh thành văn bản xuất ra .srt hoặc .vtt — đưa thẳng vào Premiere, Resolve, Final Cut, hoặc YouTube. Thời gian cue khớp với âm thanh.",
+          "tag": "Phụ đề"
+        },
+        {
+          "title": "Sách nói & nội dung dài",
+          "body": "MP3 hai giờ thành văn bản? Không vấn đề. Turbo xử lý âm thanh dài như sách nói — không giới hạn, không hạn mức API, không phí theo phút, không cần đăng nhập.",
+          "tag": "Nội dung dài"
+        }
+      ]
+    },
+    "features": {
+      "kicker": "Tại sao chọn công cụ chuyển âm thanh thành văn bản miễn phí của chúng tôi",
+      "title": "Whisper mã nguồn mở, ưu tiên quyền riêng tư, giao diện mượt mà.",
+      "items": [
+        {
+          "title": "Riêng tư, không tải lên",
+          "body": "Tất cả chuyển âm thanh thành văn bản miễn phí đều riêng tư — giải mã cục bộ, không bao giờ tải lên máy chủ nào. Dữ liệu của bạn luôn là của bạn, không có rủi ro rò rỉ cho bên thứ ba."
+        },
+        {
+          "title": "WebGPU khi có sẵn, WASM khi không có",
+          "body": "Turbo chạy nhanh hơn ~10× trên WebGPU. Trên thiết bị cũ hơn chúng tôi tự động chuyển sang WebAssembly."
+        },
+        {
+          "title": "99 ngôn ngữ, tự động phát hiện",
+          "body": "Kéo podcast tiếng Pháp, bài giảng tiếng Quan Thoại, hoặc phỏng vấn tiếng Hindi — chuyển âm thanh thành văn bản miễn phí bằng 99 ngôn ngữ, tất cả tự động phát hiện."
+        },
+        {
+          "title": "SRT, VTT, JSON, TXT",
+          "body": "Xuất MP3 thành văn bản hoặc âm thanh thành SRT một cú nhấp. Cue SRT và VTT khớp với dấu thời gian do mô hình tạo ra, không phải phân đoạn heuristic."
+        },
+        {
+          "title": "Hoạt động ngoại tuyến — không giới hạn, không cần internet",
+          "body": "Các mô hình được lưu cục bộ. Sau khi tải xuống, chuyển âm thanh thành văn bản không giới hạn — không internet, không hạn mức, không tính phí theo phút."
+        },
+        {
+          "title": "Miễn phí 100%. Không tài khoản. Không API key.",
+          "body": "Miễn phí 100% và không giới hạn — không thẻ tín dụng, không đăng ký, không đăng nhập, không giới hạn sử dụng. Chuyển âm thanh thành văn bản miễn phí và giọng nói thành văn bản miễn phí ngay khi bạn mở trang."
+        }
+      ]
+    },
+    "sampleOutput": {
+      "kicker": "Âm thanh thành văn bản — kết quả mẫu",
+      "title": "Cùng một bản ghi âm thanh thành văn bản, ba định dạng, sẵn sàng sử dụng.",
+      "subtitle": "Tệp MP3 thành văn bản hoặc âm thanh thành SRT đã xuất trông như thế nào — dán thẳng vào editor hoặc tải lên YouTube.",
+      "files": [
+        {
+          "name": "transcript.srt",
+          "lang": "SubRip",
+          "code": "1\n00:00:08,120 --> 00:00:18,640\nChào mừng trở lại — chúng ta đang nói về nghiên cứu sự chú ý."
+        },
+        {
+          "name": "transcript.vtt",
+          "lang": "WebVTT",
+          "code": "WEBVTT\n\n00:00:08.120 --> 00:00:18.640\nChào mừng trở lại — chúng ta đang nói về nghiên cứu sự chú ý."
+        },
+        {
+          "name": "transcript.txt",
+          "lang": "Plain text",
+          "code": "[00:00:08] Host: Chào mừng trở lại — chúng ta đang nói về nghiên cứu sự chú ý."
+        }
+      ]
+    },
+    "testimonials": {
+      "kicker": "Âm thanh thành văn bản miễn phí 100%, không đăng nhập — từ người dùng thực",
+      "title": "Yên tĩnh, nhanh, và hoàn toàn của bạn.",
+      "subtitle": "Một số người đại diện đã chuyển sang chuyển âm thanh thành văn bản miễn phí, không giới hạn, không đăng nhập. (Trích dẫn giữ chỗ — thay bằng trích dẫn thực khi có.)",
+      "quotes": [
+        {
+          "name": "Maya R.",
+          "role": "Nhà sản xuất podcast",
+          "quote": "Thay thế gói đăng ký $19/tháng — miễn phí 100%, không đăng nhập, chuyển âm thanh thành văn bản không giới hạn. Mô hình Turbo trên M2 của tôi nhanh hơn chờ tải lên đám mây qua wifi khách sạn."
+        },
+        {
+          "name": "Daniel K.",
+          "role": "Phóng viên điều tra",
+          "quote": "Bảo mật nguồn tin là điều không thể thương lượng. Với công cụ giọng nói thành văn bản miễn phí này — không tài khoản, không tải lên — âm thanh không bao giờ rời khỏi máy tính xách tay. Đó là sự khác biệt giữa dùng được và không."
+        },
+        {
+          "name": "Priya S.",
+          "role": "Nghiên cứu sinh tiến sĩ, ngôn ngữ học",
+          "quote": "Chuyển âm thanh thực địa thành văn bản không giới hạn, trên máy bay, không hạn mức và không đăng nhập. Giọng nói thành văn bản miễn phí cứ thế chạy mãi."
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "Âm thanh thành văn bản miễn phí 100%, không giới hạn, không đăng nhập — so sánh",
+      "title": "EarScribe vs Otter.ai, Rev và Whisper API.",
+      "subtitle": "Giải pháp thay thế miễn phí 100%, không giới hạn, không đăng nhập cho phiên âm đám mây — cùng họ mô hình Whisper, ba hình thức triển khai rất khác nhau. (Giá chỉ mang tính tham khảo.)",
+      "headers": {
+        "capability": "Tính năng",
+        "earscribe": "EarScribe",
+        "you": "Bạn",
+        "cloudApi": "Whisper API",
+        "saas": "Hosted SaaS"
+      },
+      "yes": "Có",
+      "no": "Không",
+      "rows": [
+        {
+          "label": "Miễn phí 100%, không thẻ tín dụng",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Dùng không giới hạn, không hạn mức",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Cần tài khoản / đăng nhập",
+          "earscribe": false,
+          "cloudApi": true,
+          "saas": true
+        },
+        {
+          "label": "Giá theo phút",
+          "earscribe": "Free",
+          "cloudApi": "$0.006/min",
+          "saas": "$10–25/mo"
+        },
+        {
+          "label": "Riêng tư, âm thanh ở lại thiết bị",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Hoạt động ngoại tuyến",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Độ chính xác chất lượng Whisper",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": "Varies"
+        },
+        {
+          "label": "Mô hình mã nguồn mở",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Xuất SRT / VTT",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "Thời gian cài đặt",
+          "earscribe": "0s",
+          "cloudApi": "API key + code",
+          "saas": "Sign-up flow"
+        }
+      ]
+    },
+    "stats": {
+      "srTitle": "EarScribe chuyển âm thanh thành văn bản miễn phí qua các con số",
+      "items": [
+        {
+          "v": "99",
+          "unit": "ngôn ngữ",
+          "body": "Tự động phát hiện, không cần chọn thủ công."
+        },
+        {
+          "v": "0",
+          "unit": "byte tải lên",
+          "body": "Âm thanh thành văn bản riêng tư — âm thanh của bạn không bao giờ rời khỏi thiết bị."
+        },
+        {
+          "v": "$0",
+          "unit": "/ tháng",
+          "body": "Miễn phí 100% và không giới hạn — không đăng ký, không đăng nhập, không giới hạn sử dụng."
+        },
+        {
+          "v": "~2h",
+          "unit": "độ dài tối đa",
+          "body": "MP3 dài thành văn bản xử lý trong một lần."
+        }
+      ]
+    },
+    "formatsLanguages": {
+      "audioFormatsTitle": "Âm thanh thành văn bản — định dạng được hỗ trợ",
+      "audioFormatsDesc": "Công cụ chuyển âm thanh thành văn bản miễn phí không giới hạn — không đăng ký, không tài khoản. Nếu bạn có thể phát nó, EarScribe chuyển âm thanh của bạn thành văn bản: MP3 thành văn bản, WAV thành văn bản, M4A thành văn bản, và nhiều hơn nữa.",
+      "formats": [
+        "MP3",
+        "WAV",
+        "M4A",
+        "OGG",
+        "FLAC",
+        "WebM",
+        "Opus",
+        "AAC"
+      ],
+      "languagesTitle": "Chuyển âm thanh thành văn bản miễn phí bằng 99 ngôn ngữ (tự động phát hiện)",
+      "languagesDesc": "Chuyển âm thanh thành văn bản miễn phí bằng 99 ngôn ngữ được Whisper hỗ trợ. Mô hình chọn đúng ngôn ngữ từ vài giây đầu của âm thanh.",
+      "languages": [
+        "Tiếng Anh",
+        "Tiếng Quan Thoại",
+        "Tiếng Tây Ban Nha",
+        "Tiếng Hindi",
+        "Tiếng Ả Rập",
+        "Tiếng Bồ Đào Nha",
+        "Tiếng Bengali",
+        "Tiếng Nga",
+        "Tiếng Nhật",
+        "Tiếng Punjabi",
+        "Tiếng Đức",
+        "Tiếng Java",
+        "Tiếng Hàn",
+        "Tiếng Pháp",
+        "Tiếng Telugu",
+        "Tiếng Việt",
+        "Tiếng Tamil",
+        "Tiếng Ý",
+        "Tiếng Thổ Nhĩ Kỳ",
+        "Tiếng Ba Lan",
+        "Tiếng Ukraina",
+        "Tiếng Hà Lan",
+        "Tiếng Ba Tư",
+        "Tiếng Thái",
+        "Tiếng Thụy Điển",
+        "Tiếng Séc",
+        "Tiếng Hy Lạp",
+        "Tiếng Do Thái",
+        "Tiếng Phần Lan",
+        "Tiếng Na Uy",
+        "Tiếng Hungary"
+      ],
+      "more": "+68 ngôn ngữ khác"
+    },
+    "finalCta": {
+      "tag": "Miễn phí 100%, không đăng ký, không giới hạn",
+      "title": "Kéo thả tệp âm thanh để chuyển thành văn bản miễn phí 100% — không đăng ký, không đăng nhập, không giới hạn.",
+      "subtitle": "Cuộn lên đầu trang, chọn tệp, và bạn chỉ cách mười giây để có bản ghi không giới hạn với dấu thời gian. Giọng nói thành văn bản và MP3 thành văn bản miễn phí 100% — không cần tài khoản.",
+      "tryNow": "Bắt đầu miễn phí, không đăng ký",
+      "howItWorks": "Cách chuyển âm thanh thành văn bản"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+name: Build Cloudflare Pages artifact
+
+on:
+  push:
+    branches:
+      - "codex/release-*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_PUBLIC_SITE_URL: https://earscribe.app
+      NEXT_PUBLIC_PLAUSIBLE_DOMAIN: earscribe.app
+      NEXT_PUBLIC_PLAUSIBLE_SCRIPT_URL: https://click.pageview.click/js/script.js
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8.9.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec next build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: earscribe-pages-${{ github.sha }}
+          path: out
+          if-no-files-found: error
+          retention-days: 1

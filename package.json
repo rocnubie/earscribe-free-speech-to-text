@@ -1,17 +1,16 @@
 {
-  "name": "earscribe-ui",
+  "name": "earscribe",
   "version": "0.1.0",
-  "private": false,
-  "description": "Public UI shell for EarScribe — the in-browser audio-to-text transcription app at earscribe.app.",
-  "homepage": "https://earscribe.app",
-  "license": "MIT",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "pages:deploy": "next build && wrangler pages deploy"
   },
   "dependencies": {
+    "@huggingface/transformers": "^3.7.6",
     "lucide-react": "^0.469.0",
     "next": "15.2.9",
     "next-intl": "^4.1.0",
@@ -19,6 +18,7 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260310.1",
     "@tailwindcss/postcss": "^4.1.4",
     "@types/node": "^20.17.10",
     "@types/react": "^19.0.0",
@@ -27,6 +27,8 @@
     "eslint-config-next": "^15.2.3",
     "postcss": "^8.4.49",
     "tailwindcss": "^4.1.4",
-    "typescript": "^5.7.2"
-  }
+    "typescript": "^5.7.2",
+    "wrangler": "^4.71.0"
+  },
+  "packageManager": "pnpm@8.9.0"
 }

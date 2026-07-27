@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
 
-import { FAQ } from "@/components/FAQ";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
-import { alternatesFor } from "@/lib/seo";
+import { AboutPageBody } from "@/components/pages/AboutPageBody";
+import { defaultLocale, locales } from "@/i18n/locale";
+import { buildAboutMetadata } from "@/lib/seo/root-metadata";
 
-export async function generateStaticParams() {
-  const { locales } = await import("@/i18n/locale");
-  return locales.map((locale) => ({ locale }));
+export function generateStaticParams() {
+  return locales
+    .filter((locale) => locale !== defaultLocale)
+    .map((locale) => ({ locale }));
 }
 
 export async function generateMetadata({
@@ -17,13 +18,7 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "about" });
-  return {
-    title: t("title"),
-    description: t("intro"),
-    alternates: alternatesFor(locale, "/about"),
-  };
+  return buildAboutMetadata(locale);
 }
 
 export default async function AboutPage({
@@ -32,26 +27,7 @@ export default async function AboutPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  if (locale === defaultLocale) notFound();
   setRequestLocale(locale);
-  const t = await getTranslations({ locale, namespace: "about" });
-
-  return (
-    <>
-      <Header />
-      <main className="mx-auto max-w-3xl px-6 py-12 sm:py-16">
-        <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-          {t("title")}
-        </h1>
-        <div className="mt-6 space-y-4 text-slate-700">
-          <p className="text-lg">{t("intro")}</p>
-          <p>{t("noServer")}</p>
-          <p>{t("credits")}</p>
-        </div>
-        <div className="mt-16">
-          <FAQ />
-        </div>
-      </main>
-      <Footer />
-    </>
-  );
+  return <AboutPageBody locale={locale} />;
 }

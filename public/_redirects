@@ -1,9 +1,4 @@
-# Redirect /en/* to canonical clean URLs (avoid duplicate content)
-/en         /         301
-/en/        /         301
-/en/about   /about    301
-/en/about/  /about    301
-
-# Serve locale-prefixed static files at clean URLs (200 = invisible rewrite)
-/           /en       200
-/about      /en/about 200
+# Collapse any legacy /en/* links onto canonical root URLs (avoid duplicates).
+/en          /           301
+/en/         /           301
+/en/*        /:splat     301

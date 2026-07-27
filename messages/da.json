@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "title": "Gratis og ubegrænset lyd til tekst, uden tilmelding | EarScribe",
+    "description": "Konvertér lyd til tidsstemplet tekst og undertekster gratis og uden begrænsninger. Ingen tilmelding; eksportér SRT, VTT, TXT eller JSON.",
+    "ogTitle": "EarScribe — Gratis og ubegrænset lyd til tekst",
+    "ogDescription": "Konvertér lyd til tidsstemplet tekst og undertekster gratis og uden begrænsninger. Ingen tilmelding; eksportér SRT, VTT, TXT eller JSON."
+  },
+  "header": {
+    "product": "EarScribe",
+    "about": "Om",
+    "github": "GitHub"
+  },
+  "hero": {
+    "tag": "100% gratis, ingen tilmelding",
+    "title": "Konvertér lyd til tidsstemplet tekst og undertekster, gratis og uden begrænsninger.",
+    "subtitle": "100% gratis lydkonverter til tekst — ingen tilmelding, ingen login, ubegrænset brug. Slip en MP3, WAV eller M4A ind — få et transskript med tidsstempler og SRT / VTT-undertekster. Gratis tale til tekst drevet af OpenAI Whisper. Privat, din lyd forlader aldrig din enhed.",
+    "cta": "Vælg en lydfil"
+  },
+  "trust": {
+    "private": "100% gratis, ubegrænset",
+    "free": "Ingen tilmelding, ingen login",
+    "openModels": "Privat, ingen upload",
+    "subtitles": "SRT- og VTT-eksport"
+  },
+  "dropzone": {
+    "idle": "Slip en lydfil ind eller klik for at gennemse",
+    "hint": "MP3, WAV, M4A, OGG, FLAC, WebM — op til ca. 2 timer pr. fil",
+    "dragging": "Slip for at bruge denne fil",
+    "rejected": "Filtypen understøttes ikke. Brug en lydfil.",
+    "tooLarge": "Filen er usædvanlig stor. Lang lyd kan overstige browserens hukommelse.",
+    "changeFile": "Brug en anden fil"
+  },
+  "modelPicker": {
+    "title": "Vælg en model",
+    "subtitle": "Større modeller er mere præcise, men tager længere tid at downloade og køre. Vælg én gang — modellen gemmes i din browser.",
+    "advancedShow": "Compare all models",
+    "advancedHide": "Hide model details",
+    "speedLabel": "Speed",
+    "accuracyLabel": "Accuracy",
+    "changeFile": "Change file",
+    "cachedRunHint": "{model} is already on this device and ready to use.",
+    "downloadRunHint": "The first run downloads {size}. It stays cached for later use.",
+    "chooseModelHint": "Choose a quality level to continue.",
+    "recommended": "Anbefalet",
+    "selected": "Valgt",
+    "cached": "Gemt",
+    "cachedHint": "Findes allerede på denne enhed. Klar til at køre med det samme.",
+    "needsDownload": "{size} download",
+    "select": "Vælg",
+    "downloadAndRun": "Download og transskriber",
+    "downloadAndRunSized": "Download {size} og transskriber",
+    "transcribeNow": "Transskriber",
+    "downloading": "Downloader…",
+    "downloadingPct": "Downloader {percent}",
+    "initializingModel": "Initialiserer model…",
+    "loadingCached": "Indlæser gemt model…",
+    "transcribingShort": "Transskriberer…",
+    "transcribingPct": "Transskriberer {percent}",
+    "deleteRemoveAria": "Fjern fra denne enhed",
+    "deleteConfirmQuestion": "Fjern fra denne enhed?",
+    "deleteConfirmHint": "Frigør ca. {size}. Du kan downloade igen når som helst.",
+    "deleteConfirmYes": "Ja, fjern",
+    "deleteConfirmCancel": "Annuller",
+    "deleting": "Fjerner…",
+    "deleteSuccess": "Fjernet · frigjorde {size}",
+    "deleteFailed": "Kunne ikke fjerne",
+    "warningWebgpuMissing": "Din browser mangler WebGPU. Denne model kører på CPU (WASM) og kan være langsom.",
+    "warningRamLow": "Din enhed rapporterer {available} GB RAM. Denne model anbefaler mindst {required} GB og kan crashe på enheder med lidt hukommelse.",
+    "deviceCapability": "Din enhed",
+    "webgpuOn": "WebGPU tilgængeligt",
+    "webgpuOff": "WebGPU ikke tilgængeligt — kun CPU",
+    "memoryReport": "{gb} GB RAM",
+    "memoryUnknown": "RAM ukendt",
+    "cores": "{cores} CPU-kerner"
+  },
+  "models": {
+    "tiny": {
+      "name": "Whisper Tiny",
+      "tagline": "Hurtigst, mindst. Lavere præcision.",
+      "pros": "Mindste download. Kører på alle enheder, selv ældre telefoner.",
+      "cons": "Går glip af ord i støjende lyd, kæmper med accenter."
+    },
+    "base": {
+      "name": "Whisper Base",
+      "tagline": "Bedste balance mellem hastighed og præcision.",
+      "pros": "God præcision til de fleste tydelige taler. Kører på alle enheder.",
+      "cons": "Går stadig glip af nogle ord ved kraftig accent eller støjende lyd."
+    },
+    "small": {
+      "name": "Whisper Small",
+      "tagline": "Højere præcision, langsommere.",
+      "pros": "Mærkbart bedre på accenter og støj.",
+      "cons": "Langsom uden WebGPU. Større download."
+    },
+    "turbo": {
+      "name": "Whisper Large v3 Turbo",
+      "tagline": "Højeste præcision. WebGPU anbefales.",
+      "pros": "Bedste transskriptionskvalitet, hurtig med WebGPU.",
+      "cons": "Stor download og hukommelsesaftryk. Kan crashe på svagere enheder."
+    }
+  },
+  "progress": {
+    "downloadingModel": "Downloader model… {percent}",
+    "downloadingFile": "{file} — {loaded} af {total}",
+    "decodingAudio": "Afkoder lyd…",
+    "transcribing": "Transskriberer… {percent}",
+    "preparing": "Forbereder…",
+    "cancel": "Annuller"
+  },
+  "result": {
+    "title": "Transskript",
+    "detectedLanguage": "Registreret sprog: {language}",
+    "wordCount": "{count} ord",
+    "duration": "{duration}",
+    "copy": "Kopiér tekst",
+    "copied": "Kopieret",
+    "export": "Eksporter",
+    "exportTxt": "Ren tekst (.txt)",
+    "exportSrt": "Undertekster (.srt)",
+    "exportVtt": "Undertekster (.vtt)",
+    "exportJson": "Rå JSON (.json)",
+    "newFile": "Transskriber en anden fil",
+    "playFromHere": "Afspil herfra",
+    "play": "Afspil",
+    "pause": "Pause",
+    "workspaceLabel": "Transcript workspace",
+    "tabTranscript": "Review transcript",
+    "tabSubtitles": "Subtitle check",
+    "searchPlaceholder": "Search the transcript",
+    "editTranscript": "Edit text",
+    "finishEditing": "Finish editing",
+    "savedOnDevice": "Edits are saved on this device",
+    "restoredDraft": "Saved edits restored from this device",
+    "noSearchResults": "No matching text found.",
+    "qaTitle": "Subtitle check",
+    "qaBody": "Review cues that may be hard to read or need a quick listen before export.",
+    "qaIssueCount": "{count} items may need attention",
+    "qaNoIssues": "No common subtitle issues found",
+    "qaCleanTitle": "Ready for a final watch-through",
+    "qaCleanBody": "No empty, repeated, overlapping, overly long, or unusually fast cues were detected.",
+    "qaHint": "Automatic layout changes use the current timestamps. Listen through important sections before publishing.",
+    "qaEmptyCue": "Empty subtitle cue",
+    "qaType_empty": "Empty",
+    "qaType_long": "Too long",
+    "qaType_fast": "Fast reading",
+    "qaType_overlap": "Time overlap",
+    "qaType_repeated": "Repeated",
+    "optimizeSubtitles": "Improve line breaks"
+  },
+  "errors": {
+    "modelLoadFailed": "Kunne ikke indlæse modellen. Tjek din netværksforbindelse og prøv igen.",
+    "audioDecodeFailed": "Kunne ikke afkode denne lydfil. Prøv et andet format (MP3 / WAV / M4A).",
+    "transcribeFailed": "Transskriptionen mislykkedes. Din enhed kan have løbet tør for hukommelse — prøv en mindre model.",
+    "browserUnsupported": "Din browser mangler nødvendige funktioner (Web Workers, AudioContext). Prøv den nyeste Chrome, Edge eller Safari."
+  },
+  "faq": {
+    "title": "Gratis ubegrænset lyd til tekst — ofte stillede spørgsmål",
+    "items": [
+      {
+        "q": "Er EarScribe virkelig 100% gratis uden begrænsninger?",
+        "a": "Ja — 100% gratis, ubegrænset, ingen tilmelding og ingen login kræves. Ingen betalte niveauer, intet kreditkort, ingen afgifter pr. minut og ingen daglig eller månedlig kvote. Whisper tale-til-tekst-modellen kører på din egen hardware, så der er ingen cloud-computeromkostninger at videresende. Gratis lyd til tekst uden skjulte betingelser."
+      },
+      {
+        "q": "Er min lyd privat og sikker?",
+        "a": "Fuldt privat. EarScribe er en lokal-først-konverter til lyd til tekst: din lydfil forlader aldrig din enhed og uploades aldrig til nogen server. Ingen konto betyder, at ingen data indsamles om dig. Du kan endda bruge det offline, når modellen er downloadet."
+      },
+      {
+        "q": "Uploades min lyd nogen steder?",
+        "a": "Nej. Gratis lyd til tekst sker helt lokalt — lyden afkodes på din enhed og føres til en Whisper-model, der kører i en Web Worker. Intet sendes til en server."
+      },
+      {
+        "q": "Hvorfor er første kørsel langsom?",
+        "a": "Første gang du vælger en model til lyd til tekst, downloader din browser den (80 MB til 800 MB afhængigt af størrelsen). Derefter gemmes den gratis lyd-til-tekst-model og genbruges — ingen ny download nødvendig."
+      },
+      {
+        "q": "Hvilke sprog understøttes?",
+        "a": "Gratis lyd til tekst understøtter 99 sprog via Whisper. Sproget registreres automatisk — du behøver ikke vælge ét."
+      },
+      {
+        "q": "Kan jeg transskribere en video?",
+        "a": "Ikke direkte. Til video til lyd til tekst skal du først udtrække lyden (et hvilket som helst værktøj, der kan eksportere MP3 eller WAV, fungerer) og slippe den ind her."
+      },
+      {
+        "q": "Virker det offline?",
+        "a": "Når modellen er downloadet én gang, ja — gratis lyd til tekst virker offline. Siden skal indlæses først, men efterfølgende lyd-til-tekst-kørsler fungerer uden internet."
+      },
+      {
+        "q": "Hvordan konverterer jeg en MP3 til tekst gratis?",
+        "a": "Slip MP3'en ind i EarScribe til gratis MP3 til tekst. Filen afkodes i din browser, Whisper transskriberer den lokalt, og du kan kopiere MP3-til-tekst-resultatet eller eksportere det som SRT, VTT, TXT eller JSON. Intet upload-trin og ingen konto kræves."
+      },
+      {
+        "q": "Er der et gratis alternativ til Otter.ai eller Rev?",
+        "a": "EarScribe er et gratis lyd-til-tekst-alternativ til cloud-transskriptionstjenester som Otter.ai, Rev og HappyScribe. Afvejningen: du udfører beregningen på din egen maskine til gratis tale til tekst, men lyden forlader den aldrig, og der er ingen afgifter pr. minut eller abonnementer."
+      },
+      {
+        "q": "Kan jeg generere SRT- eller VTT-undertekster fra lyd?",
+        "a": "Ja. Efter lyd til tekst skal du klikke på Eksporter → .srt eller .vtt. Cue-timing kommer fra Whispers udsendte tidsstempler, så underteksterne er synkroniserede med lyd-til-tekst-resultatet uden manuel opdeling."
+      },
+      {
+        "q": "Kører dette OpenAI Whisper i browseren?",
+        "a": "Ja — EarScribe kører gratis lyd til tekst via Whisper (Tiny, Base, Small og Large v3 Turbo) direkte i browseren via Transformers.js på WebGPU, med tilbagefald til WebAssembly når det ikke er tilgængeligt."
+      }
+    ]
+  },
+  "about": {
+    "title": "Om EarScribe",
+    "intro": "EarScribe er en statisk webapp, der kører OpenAIs Whisper tale-genkendelsesmodeller direkte i din browser ved hjælp af Transformers.js og WebGPU / WebAssembly-kørselsmiljøerne.",
+    "noServer": "Der er ingen backend, der rører ved din lyd. Cloudflare Pages-værten serverer kun statisk HTML, JS og CSS. Whisper-modelvægtene hentes fra Hugging Face CDN ved første brug og gemmes i din browser.",
+    "credits": "Bygget på Transformers.js, ONNX Runtime Web og de åbne Whisper-modeller fra OpenAI."
+  },
+  "footer": {
+    "tagline": "100% gratis lyd til tekst og tale til tekst. Ingen tilmelding, ingen login.",
+    "links": {
+      "about": "Om",
+      "privacy": "Privatliv",
+      "github": "GitHub"
+    },
+    "builtWith": "Bygget med Transformers.js, ONNX Runtime Web, Whisper."
+  },
+  "seo": {
+    "showcase": {
+      "kicker": "Lyd til tekst — se hvad du får",
+      "title": "Et rigtigt transskript med tidsstempler, bølgeform og underteksteksport med ét klik.",
+      "subtitle": "Gratis lyd til tekst — slip en podcast, forelæsning eller et interview ind. EarScribe viser dig hele transskriptet synkroniseret med lyden — klik på en hvilken som helst linje for at hoppe dertil, eller eksporter til SRT / VTT / TXT med ét klik.",
+      "fakeUrl": "earscribe.app — interview-acme-q3.mp3",
+      "badges": {
+        "onDevice": "På enheden",
+        "autoLanguage": "English (auto-detected)",
+        "duration": "12:48",
+        "wordCount": "1,842 words"
+      },
+      "pauseAria": "Pause",
+      "playbackTime": "00:01:14 / 00:12:48",
+      "playbackRate": "1.0x",
+      "transcript": [
+        {
+          "ts": "00:00:08",
+          "speaker": "Host",
+          "text": "Welcome back — today we're talking with someone who studies attention."
+        },
+        {
+          "ts": "00:00:24",
+          "speaker": "Guest",
+          "text": "Interruption isn't actually the problem people think it is."
+        }
+      ],
+      "exportHeading": "Eksporter",
+      "copyText": "Kopiér tekst",
+      "tiles": [
+        {
+          "label": ".srt",
+          "sub": "Undertekster"
+        },
+        {
+          "label": ".vtt",
+          "sub": "Webundertekster"
+        },
+        {
+          "label": ".txt",
+          "sub": "Ren tekst"
+        },
+        {
+          "label": ".json",
+          "sub": "Rådata + timing"
+        }
+      ],
+      "srtFilename": "interview-acme-q3.srt",
+      "srtPreview": "1\n00:00:08,120 --> 00:00:18,640\nVelkommen tilbage — vi taler om opmærksomhedsforskning.",
+      "exportNote": "Lyd-til-tekst-undertekster er cue-justerede og klar til at lægge ind i Premiere, Final Cut, DaVinci Resolve, YouTube eller en hvilken som helst webafspiller."
+    },
+    "howItWorks": {
+      "kicker": "Sådan fungerer gratis ubegrænset lyd til tekst",
+      "title": "Tre trin. Ingen tilmelding, ingen login, 100% gratis, ubegrænset.",
+      "subtitle": "100% gratis og privat lyd til tekst — ingen tilmelding, ingen login kræves. Din lyd behandles lokalt på din enhed; der er bogstaveligt talt ingen steder, den kan lække til.",
+      "steps": [
+        {
+          "title": "Slip din lyd ind",
+          "body": "Slip en MP3, WAV, M4A, OGG, FLAC eller WebM ind — op til ca. to timer pr. fil. Filen forlader aldrig din maskine."
+        },
+        {
+          "title": "Vælg en Whisper-model",
+          "body": "Tiny (40 MB) til hurtige notater, Turbo (~800 MB) til studiekvalitetspræcision. Modeller gemmes efter første kørsel."
+        },
+        {
+          "title": "Læs, rediger, eksporter",
+          "body": "Få din lyd til tekst som et tidsstemplet transskript synkroniseret med en bølgeform. Eksporter som SRT / VTT til undertekster eller ren tekst til notater."
+        }
+      ]
+    },
+    "whatYouCanDo": {
+      "kicker": "Hvad du kan gøre — 100% gratis, ingen tilmelding, ubegrænset",
+      "title": "Gratis ubegrænset lyd-til-tekst-konverter — ingen tilmelding, ingen login.",
+      "prose": "EarScribe er en 100% gratis <kw>lyd til tekst</kw>-konverter — <kw>ingen tilmelding</kw>, ingen login, <kw>ubegrænset</kw> brug. Konverter <kw>MP3 til tekst</kw>, <kw>WAV til tekst</kw> eller <kw>M4A til tekst</kw>, generer <kw>SRT- eller VTT-undertekster</kw> fra enhver lyd, eller kør <kw>OpenAI Whisper online</kw> uden API-nøgle. 100% gratis <kw>tale til tekst</kw> uden konto, kvote eller afgifter pr. minut — privat, din lyd forlader aldrig din enhed.",
+      "jobs": [
+        {
+          "from": "MP3",
+          "to": ".txt",
+          "label": "MP3 til tekst"
+        },
+        {
+          "from": "WAV",
+          "to": ".txt",
+          "label": "WAV til tekst"
+        },
+        {
+          "from": "M4A",
+          "to": ".txt",
+          "label": "M4A til tekst"
+        },
+        {
+          "from": "Audio",
+          "to": ".srt",
+          "label": "Lyd til SRT"
+        },
+        {
+          "from": "Audio",
+          "to": ".vtt",
+          "label": "Lyd til VTT"
+        },
+        {
+          "from": "Podcast",
+          "to": ".txt",
+          "label": "Podcast til tekst"
+        }
+      ]
+    },
+    "useCases": {
+      "kicker": "Gratis, ubegrænset, loginFri lyd til tekst — bygget til alle",
+      "title": "Hvem bruger EarScribe.",
+      "subtitle": "100% gratis, ubegrænset lyd til tekst uden tilmelding — seks meget forskellige brugssituationer. Hvis din lyd ikke bør ende op på en andens server, er du det rette sted.",
+      "items": [
+        {
+          "title": "Podcast-skabere og kreative",
+          "body": "Gratis lyd til tekst til podcastere — klip episoder hurtigere: indsæt transskriptet i din editor, søg efter det øjeblik du har brug for, og send shownotes samme dag.",
+          "tag": "Podcasting"
+        },
+        {
+          "title": "Journalister og forskere",
+          "body": "MP3 til tekst til kildeinterviews — privat, ingen tilmelding, ingen konto. Din lyd bliver på bærbar computeren. Ingen tredjeparts-server, ingen revisionslog at udlevere.",
+          "tag": "Journalistik"
+        },
+        {
+          "title": "Studerende og forelæsninger",
+          "body": "Gratis lyd til tekst til studerende — slip en optaget forelæsning ind og få et søgbart transskript inden næste lektion.",
+          "tag": "Uddannelse"
+        },
+        {
+          "title": "Møder og brugerinterviews",
+          "body": "Lyd til tekst til research-sessioner — slip lyden ind, få gratis tale til tekst, og send et tagget transskript til dit team. Intet forlader din enhed.",
+          "tag": "Forskning"
+        },
+        {
+          "title": "Videoondertekster",
+          "body": "Gratis lyd til tekst eksporteret som .srt eller .vtt — går direkte ind i Premiere, Resolve, Final Cut eller YouTube. Cue-tider er justeret til lyden.",
+          "tag": "Undertekster"
+        },
+        {
+          "title": "Lydbøger og langt indhold",
+          "body": "To-times MP3 til tekst? Intet problem. Turbo håndterer lydbogslang lyd — ubegrænset, ingen API-kvote, ingen afgift pr. minut, ingen login kræves.",
+          "tag": "Langt format"
+        }
+      ]
+    },
+    "features": {
+      "kicker": "Hvorfor vores gratis ubegrænsede lyd-til-tekst-konverter",
+      "title": "Åben Whisper, privatliv i centrum, med de ru kanter slebet af.",
+      "items": [
+        {
+          "title": "Privat, ingen upload",
+          "body": "Al gratis lyd til tekst er privat — afkodes lokalt, uploades aldrig til nogen server. Dine data forbliver dine, med nul risiko for lækage til tredjepart."
+        },
+        {
+          "title": "WebGPU når tilgængeligt, WASM ellers",
+          "body": "Turbo kører ca. 10× hurtigere med WebGPU. På ældre enheder falder vi automatisk tilbage til WebAssembly."
+        },
+        {
+          "title": "99 sprog, automatisk registreret",
+          "body": "Slip en fransk podcast, en mandarin-forelæsning eller et hindi-interview ind — gratis lyd til tekst på 99 sprog, alle automatisk registreret."
+        },
+        {
+          "title": "SRT, VTT, JSON, TXT",
+          "body": "MP3 til tekst eller lyd til SRT-eksport med ét klik. SRT- og VTT-cues er justeret til modellens tidsstempler, ikke heuristisk opdeling."
+        },
+        {
+          "title": "Virker offline — ubegrænset, intet internet nødvendigt",
+          "body": "Modeller gemmes lokalt. Når de er downloadet, ubegrænset lyd til tekst — intet internet, ingen kvote, ingen pr.-minut-fakturering."
+        },
+        {
+          "title": "100% gratis. Ingen konto. Ingen API-nøgle.",
+          "body": "100% gratis og ubegrænset — intet kreditkort, ingen tilmelding, ingen login, ingen brugsgrænser. Gratis lyd til tekst og tale til tekst fra det øjeblik du åbner siden."
+        }
+      ]
+    },
+    "sampleOutput": {
+      "kicker": "Lyd til tekst — eksempeloutput",
+      "title": "Samme lyd-til-tekst-transskript, tre formater, klar til brug.",
+      "subtitle": "Sådan ser en eksporteret MP3-til-tekst- eller lyd-til-SRT-fil faktisk ud — indsæt direkte i din editor eller upload til YouTube.",
+      "files": [
+        {
+          "name": "transcript.srt",
+          "lang": "SubRip",
+          "code": "1\n00:00:08,120 --> 00:00:18,640\nVelkommen tilbage — vi taler om opmærksomhedsforskning."
+        },
+        {
+          "name": "transcript.vtt",
+          "lang": "WebVTT",
+          "code": "WEBVTT\n\n00:00:08.120 --> 00:00:18.640\nVelkommen tilbage — vi taler om opmærksomhedsforskning."
+        },
+        {
+          "name": "transcript.txt",
+          "lang": "Ren tekst",
+          "code": "[00:00:08] Host: Velkommen tilbage — vi taler om opmærksomhedsforskning."
+        }
+      ]
+    },
+    "testimonials": {
+      "kicker": "100% gratis, loginfri lyd til tekst — fra rigtige brugere",
+      "title": "Stille, hurtig og helt dit.",
+      "subtitle": "Nogle repræsentative folk, der skiftede til gratis, ubegrænset, loginfri lyd til tekst. (Pladsholdercitater — udskift med rigtige, når du har dem.)",
+      "quotes": [
+        {
+          "name": "Maya R.",
+          "role": "Podcast-producent",
+          "quote": "Erstattede et abonnement på $19/md — 100% gratis, ingen login, ubegrænset lyd til tekst. Turbo-modellen på min M2 er hurtigere end at vente på en cloud-upload over hotellets wifi."
+        },
+        {
+          "name": "Daniel K.",
+          "role": "Undersøgende journalist",
+          "quote": "Kildebeskyttelse er ikke til forhandling. Med dette gratis tale-til-tekst-værktøj — ingen konto, ingen upload — forlader lyden aldrig bærbar computeren. Det er forskellen på at bruge det og ikke."
+        },
+        {
+          "name": "Priya S.",
+          "role": "Ph.d.-studerende, lingvistik",
+          "quote": "Ubegrænset transskription af feltoptagelser, i et fly, uden kvote og uden login. Gratis tale til tekst, der bare bliver ved med at virke."
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "100% gratis, ubegrænset, loginfri lyd til tekst — sammenligning",
+      "title": "EarScribe vs Otter.ai, Rev og Whisper API.",
+      "subtitle": "Et 100% gratis, ubegrænset, loginfrit alternativ til cloud-transskription — samme Whisper-modelfamilie, tre meget forskellige driftsformer. (Priser er vejledende.)",
+      "headers": {
+        "capability": "Funktion",
+        "earscribe": "EarScribe",
+        "you": "Dig",
+        "cloudApi": "Whisper API",
+        "saas": "Hosted SaaS"
+      },
+      "yes": "Ja",
+      "no": "Nej",
+      "rows": [
+        {
+          "label": "100% gratis, intet kreditkort",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Ubegrænset brug, ingen kvote",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Konto / login kræves",
+          "earscribe": false,
+          "cloudApi": true,
+          "saas": true
+        },
+        {
+          "label": "Pris pr. minut",
+          "earscribe": "Gratis",
+          "cloudApi": "$0.006/min",
+          "saas": "$10–25/mo"
+        },
+        {
+          "label": "Privat, lyden forbliver på enheden",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Virker offline",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Whisper-kvalitetspræcision",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": "Varierer"
+        },
+        {
+          "label": "Open source-modeller",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "SRT / VTT-eksport",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "Opsætningstid",
+          "earscribe": "0s",
+          "cloudApi": "API key + code",
+          "saas": "Sign-up flow"
+        }
+      ]
+    },
+    "stats": {
+      "srTitle": "EarScribe gratis lyd til tekst i tal",
+      "items": [
+        {
+          "v": "99",
+          "unit": "sprog",
+          "body": "Automatisk registreret, intet manuelt valg nødvendigt."
+        },
+        {
+          "v": "0",
+          "unit": "byte uploadet",
+          "body": "Privat lyd til tekst — din lyd forlader aldrig din enhed."
+        },
+        {
+          "v": "$0",
+          "unit": "/ måned",
+          "body": "100% gratis og ubegrænset — ingen tilmelding, ingen login, ingen brugsgrænse."
+        },
+        {
+          "v": "~2h",
+          "unit": "maks. længde",
+          "body": "Langt MP3 til tekst håndteret i ét pas."
+        }
+      ]
+    },
+    "formatsLanguages": {
+      "audioFormatsTitle": "Lyd til tekst — understøttede formater",
+      "audioFormatsDesc": "Gratis ubegrænset lyd-til-tekst-konverter — ingen tilmelding, ingen konto. Hvis du kan afspille det, konverterer EarScribe din lyd til tekst: MP3 til tekst, WAV til tekst, M4A til tekst og mere.",
+      "formats": [
+        "MP3",
+        "WAV",
+        "M4A",
+        "OGG",
+        "FLAC",
+        "WebM",
+        "Opus",
+        "AAC"
+      ],
+      "languagesTitle": "Gratis lyd til tekst på 99 sprog (automatisk registreret)",
+      "languagesDesc": "Gratis lyd til tekst på Whispers 99 understøttede sprog. Modellen vælger det rigtige fra de første sekunder af lyden.",
+      "languages": [
+        "Engelsk",
+        "Mandarin",
+        "Spansk",
+        "Hindi",
+        "Arabisk",
+        "Portugisisk",
+        "Bengali",
+        "Russisk",
+        "Japansk",
+        "Punjabi",
+        "Tysk",
+        "Javanesisk",
+        "Koreansk",
+        "Fransk",
+        "Telugu",
+        "Vietnamesisk",
+        "Tamil",
+        "Italiensk",
+        "Tyrkisk",
+        "Polsk",
+        "Ukrainsk",
+        "Hollandsk",
+        "Persisk",
+        "Thai",
+        "Svensk",
+        "Tjekkisk",
+        "Græsk",
+        "Hebraisk",
+        "Finsk",
+        "Norsk",
+        "Ungarsk"
+      ],
+      "more": "+68 mere"
+    },
+    "finalCta": {
+      "tag": "100% gratis, ingen tilmelding, ubegrænset",
+      "title": "Slip en lydfil ind til 100% gratis lyd til tekst — ingen tilmelding, ingen login, ubegrænset.",
+      "subtitle": "Rul op, vælg en fil, og du er ti sekunder fra ubegrænset gratis lyd til tekst med tidsstempler. 100% gratis tale til tekst og MP3 til tekst — ingen konto kræves.",
+      "tryNow": "Kom i gang gratis, ingen tilmelding",
+      "howItWorks": "Sådan fungerer lyd til tekst"
+    }
+  }
+}

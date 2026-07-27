@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "title": "Audio a texto gratis e ilimitado, sin registro | EarScribe",
+    "description": "Audio a texto gratis e ilimitado, sin registro. Convierte MP3, WAV o M4A en texto con marcas de tiempo y subtítulos; exporta SRT, VTT, TXT o JSON.",
+    "ogTitle": "EarScribe — Audio a texto gratis e ilimitado, sin registro",
+    "ogDescription": "Audio a texto gratis e ilimitado, sin registro. Convierte audio en transcripciones con marcas de tiempo y subtítulos; exporta SRT, VTT, TXT o JSON."
+  },
+  "header": {
+    "product": "EarScribe",
+    "about": "Acerca de",
+    "github": "GitHub"
+  },
+  "hero": {
+    "tag": "100% gratis, sin registro",
+    "title": "Convierte audio en texto con marcas de tiempo y subtítulos, gratis y sin límites.",
+    "subtitle": "Transcribe audio a texto con marcas de tiempo y genera subtítulos SRT o VTT. El idioma se detecta automáticamente; copia el texto o expórtalo como SRT, VTT o TXT. Gratis, sin registro ni inicio de sesión y con uso ilimitado. Tu audio no se sube a internet.",
+    "cta": "Elige un archivo de audio"
+  },
+  "trust": {
+    "private": "100% gratis, ilimitado",
+    "free": "Sin registro ni inicio de sesión",
+    "openModels": "Transcripción con marcas de tiempo",
+    "subtitles": "Exportación SRT y VTT"
+  },
+  "dropzone": {
+    "idle": "Arrastra un archivo de audio o haz clic para buscar",
+    "hint": "MP3, WAV, M4A, OGG, FLAC, WebM — la duración práctica depende de la memoria del dispositivo",
+    "dragging": "Suelta para usar este archivo",
+    "rejected": "Formato de archivo no compatible. Usa un archivo de audio.",
+    "tooLarge": "El archivo es demasiado grande. El audio largo puede superar la memoria del navegador.",
+    "changeFile": "Usar otro archivo"
+  },
+  "modelPicker": {
+    "title": "Elige la calidad de transcripción",
+    "subtitle": "La opción equilibrada funciona bien para la mayoría de las grabaciones. Compara modelos solo si necesitas más rapidez o precisión.",
+    "advancedShow": "Comparar todos los modelos",
+    "advancedHide": "Ocultar detalles de los modelos",
+    "speedLabel": "Rapidez",
+    "accuracyLabel": "Precisión",
+    "changeFile": "Cambiar archivo",
+    "cachedRunHint": "{model} ya está disponible en este dispositivo.",
+    "downloadRunHint": "La primera vez se descargarán {size}. El modelo quedará disponible para usarlo después.",
+    "chooseModelHint": "Elige un nivel de calidad para continuar.",
+    "recommended": "Recomendado",
+    "selected": "Seleccionado",
+    "cached": "En caché",
+    "cachedHint": "Ya está en este dispositivo. Listo para ejecutar al instante.",
+    "needsDownload": "Descarga de {size}",
+    "select": "Seleccionar",
+    "downloadAndRun": "Descargar y transcribir",
+    "downloadAndRunSized": "Descargar {size} y transcribir",
+    "transcribeNow": "Transcribir",
+    "downloading": "Descargando…",
+    "downloadingPct": "Descargando {percent}",
+    "initializingModel": "Inicializando el modelo…",
+    "loadingCached": "Cargando modelo en caché…",
+    "transcribingShort": "Transcribiendo…",
+    "transcribingPct": "Transcribiendo {percent}",
+    "deleteRemoveAria": "Eliminar de este dispositivo",
+    "deleteConfirmQuestion": "¿Eliminar de este dispositivo?",
+    "deleteConfirmHint": "Libera ~{size}. Puedes volver a descargarlo cuando quieras.",
+    "deleteConfirmYes": "Sí, eliminar",
+    "deleteConfirmCancel": "Cancelar",
+    "deleting": "Eliminando…",
+    "deleteSuccess": "Eliminado · se liberaron {size}",
+    "deleteFailed": "No se pudo eliminar",
+    "warningWebgpuMissing": "Este nivel de calidad puede ir lento en este dispositivo.",
+    "warningRamLow": "Este nivel de calidad necesita unos {required} GB de memoria. Tu dispositivo indica {available} GB; una opción más ligera será más adecuada.",
+    "deviceCapability": "Tu dispositivo",
+    "webgpuOn": "WebGPU disponible",
+    "webgpuOff": "WebGPU no disponible — solo CPU",
+    "memoryReport": "{gb} GB de RAM",
+    "memoryUnknown": "RAM desconocida",
+    "cores": "{cores} núcleos de CPU"
+  },
+  "models": {
+    "tiny": {
+      "name": "Whisper Tiny",
+      "tagline": "El más rápido y ligero. Menor precisión.",
+      "pros": "La descarga más pequeña. Funciona en muchos dispositivos; la velocidad depende de la capacidad del equipo.",
+      "cons": "Puede perder palabras en audio con ruido o con acentos marcados."
+    },
+    "base": {
+      "name": "Whisper Base",
+      "tagline": "El mejor equilibrio entre velocidad y precisión.",
+      "pros": "Buena precisión con voces claras. Funciona en la mayoría de ordenadores y móviles actuales.",
+      "cons": "Puede perder algunas palabras con acentos fuertes o mucho ruido."
+    },
+    "small": {
+      "name": "Whisper Small",
+      "tagline": "Mayor precisión, más lento.",
+      "pros": "Notablemente mejor con acentos y ruido de fondo.",
+      "cons": "Lento sin WebGPU. Descarga más grande."
+    },
+    "turbo": {
+      "name": "Whisper Large v3 Turbo",
+      "tagline": "Máxima precisión. Se recomienda WebGPU.",
+      "pros": "La mejor calidad de transcripción, rápido con WebGPU.",
+      "cons": "Descarga grande y alto consumo de memoria. Puede fallar en dispositivos de gama baja."
+    }
+  },
+  "progress": {
+    "downloadingModel": "Descargando modelo… {percent}",
+    "downloadingFile": "{file} — {loaded} de {total}",
+    "decodingAudio": "Decodificando audio…",
+    "transcribing": "Transcribiendo… {percent}",
+    "preparing": "Preparando…",
+    "cancel": "Cancelar"
+  },
+  "result": {
+    "title": "Transcripción",
+    "detectedLanguage": "Idioma detectado: {language}",
+    "wordCount": "{count} palabras",
+    "duration": "{duration}",
+    "copy": "Copiar texto",
+    "copied": "Copiado",
+    "export": "Exportar",
+    "exportTxt": "Texto plano (.txt)",
+    "exportSrt": "Subtítulos (.srt)",
+    "exportVtt": "Subtítulos (.vtt)",
+    "exportJson": "JSON sin procesar (.json)",
+    "newFile": "Transcribir otro archivo",
+    "playFromHere": "Reproducir desde aquí",
+    "play": "Reproducir",
+    "pause": "Pausar",
+    "workspaceLabel": "Espacio de transcripción",
+    "tabTranscript": "Revisar transcripción",
+    "tabSubtitles": "Revisar subtítulos",
+    "searchPlaceholder": "Buscar en la transcripción",
+    "editTranscript": "Editar texto",
+    "finishEditing": "Terminar edición",
+    "savedOnDevice": "Los cambios se guardan en este dispositivo",
+    "restoredDraft": "Se restauraron los cambios guardados en este dispositivo",
+    "noSearchResults": "No se encontró texto coincidente.",
+    "qaTitle": "Revisar subtítulos",
+    "qaBody": "Antes de exportar, revisa los subtítulos que pueden ser difíciles de leer o que conviene escuchar de nuevo.",
+    "qaIssueCount": "{count} elementos pueden necesitar atención",
+    "qaNoIssues": "No se detectaron problemas frecuentes de subtitulado",
+    "qaCleanTitle": "Listo para una última revisión",
+    "qaCleanBody": "No se detectaron subtítulos vacíos, repetidos, solapados, demasiado largos ni con lectura inusualmente rápida.",
+    "qaHint": "La mejora de los saltos de línea conserva las marcas de tiempo actuales. Escucha las partes importantes antes de publicar.",
+    "qaEmptyCue": "Subtítulo vacío",
+    "qaType_empty": "Vacío",
+    "qaType_long": "Demasiado largo",
+    "qaType_fast": "Lectura rápida",
+    "qaType_overlap": "Solapamiento de tiempo",
+    "qaType_repeated": "Repetido",
+    "optimizeSubtitles": "Mejorar saltos de línea"
+  },
+  "errors": {
+    "modelLoadFailed": "No se pudo cargar el modelo. Verifica tu conexión a internet e inténtalo de nuevo.",
+    "audioDecodeFailed": "No se pudo decodificar este archivo de audio. Prueba con otro formato (MP3 / WAV / M4A).",
+    "transcribeFailed": "La transcripción falló. Es posible que tu dispositivo se haya quedado sin memoria — prueba con un modelo más pequeño.",
+    "browserUnsupported": "A tu navegador le faltan funciones necesarias (Web Workers, AudioContext). Prueba con la última versión de Chrome, Edge o Safari."
+  },
+  "faq": {
+    "title": "Audio a texto gratis e ilimitado — Preguntas frecuentes",
+    "items": [
+      {
+        "q": "¿EarScribe es realmente 100% gratis sin límites?",
+        "a": "Sí — 100% gratis, ilimitado, sin registro ni inicio de sesión. No hay niveles de pago, ni tarjeta de crédito, ni tarifas por minuto, ni cuotas diarias o mensuales. El modelo de voz a texto Whisper se ejecuta en tu propio hardware, así que no hay costes de cómputo en la nube que repercutir. Audio a texto gratis sin ningún tipo de condición."
+      },
+      {
+        "q": "¿Puedo corregir la transcripción antes de exportarla?",
+        "a": "Sí. Activa la edición para corregir nombres, citas, cifras o términos técnicos. El texto editado se usa al copiar y en todos los formatos de exportación, y el borrador queda guardado en este navegador."
+      },
+      {
+        "q": "¿Qué comprueba la revisión de subtítulos?",
+        "a": "Marca segmentos vacíos, demasiado largos, rápidos, repetidos o superpuestos. Puedes mejorar los saltos de línea y volver a escuchar las partes importantes antes de exportar SRT o VTT."
+      },
+      {
+        "q": "¿Por qué la primera ejecución es lenta?",
+        "a": "La primera vez que seleccionas un modelo para audio a texto, tu navegador lo descarga (entre 80 MB y 800 MB según el tamaño). A partir de ahí, el modelo de audio a texto queda en caché y se reutiliza — sin necesidad de volver a descargarlo."
+      },
+      {
+        "q": "¿Qué idiomas admite?",
+        "a": "La conversión de audio a texto admite 99 idiomas gracias a Whisper. El idioma se detecta automáticamente — no necesitas elegir ninguno."
+      },
+      {
+        "q": "¿Puedo transcribir un vídeo?",
+        "a": "No directamente. Para extraer texto de un vídeo, extrae primero el audio (cualquier herramienta que genere MP3 o WAV sirve) y arrástralo aquí."
+      },
+      {
+        "q": "¿Qué modelo Whisper debería elegir?",
+        "a": "Empieza con el modelo equilibrado recomendado. Tiny reduce la descarga, Small ayuda con audio difícil si el dispositivo tiene memoria suficiente y Turbo prioriza la precisión en equipos compatibles."
+      },
+      {
+        "q": "¿Cómo convierto un MP3 a texto gratis?",
+        "a": "Elige el MP3, mantén el ajuste equilibrado recomendado y revisa la transcripción con marcas de tiempo. Corrige los datos importantes y copia el texto o exporta SRT, VTT, TXT o JSON, sin cuenta."
+      },
+      {
+        "q": "¿Es una alternativa gratuita a Otter.ai o Rev?",
+        "a": "EarScribe sirve para trabajar gratis y sin cuenta con una grabación: transcribir, buscar, volver a escuchar, editar, revisar subtítulos y exportar. Un servicio alojado puede encajar mejor si necesitas espacios compartidos o colaboración en equipo."
+      },
+      {
+        "q": "¿Puedo generar subtítulos SRT o VTT desde audio?",
+        "a": "Sí. Tras convertir el audio a texto, haz clic en Exportar → .srt o .vtt. El tiempo de los subtítulos proviene de las marcas de tiempo de Whisper, por lo que se sincronizan con el texto sin necesidad de ajuste manual."
+      },
+      {
+        "q": "¿Ejecuta OpenAI Whisper en el navegador?",
+        "a": "Sí — EarScribe ejecuta audio a texto gratis mediante Whisper (Tiny, Base, Small y Large v3 Turbo) directamente en el navegador a través de Transformers.js en WebGPU, con retroceso a WebAssembly cuando no está disponible."
+      }
+    ]
+  },
+  "about": {
+    "title": "Acerca de EarScribe",
+    "intro": "EarScribe convierte una grabación en texto con marcas de tiempo, búsqueda y edición, sin poner la creación de una cuenta antes del resultado.",
+    "noServer": "El ajuste recomendado basta para empezar. La comparación de modelos, la edición y la revisión de subtítulos aparecen cuando realmente hacen falta.",
+    "credits": "Construido sobre Transformers.js, ONNX Runtime Web y los modelos Whisper de código abierto de OpenAI."
+  },
+  "footer": {
+    "tagline": "Audio a texto y voz a texto 100% gratis. Sin registro ni inicio de sesión.",
+    "links": {
+      "about": "Acerca de",
+      "privacy": "Privacidad",
+      "github": "GitHub"
+    },
+    "builtWith": "Hecho con Transformers.js, ONNX Runtime Web, Whisper."
+  },
+  "seo": {
+    "showcase": {
+      "kicker": "Audio a texto — esto es lo que obtienes",
+      "title": "Una transcripción real, con marcas de tiempo, forma de onda y exportación de subtítulos con un clic.",
+      "subtitle": "Audio a texto gratis — arrastra un pódcast, una clase o una entrevista. EarScribe te muestra la transcripción completa sincronizada con el audio — haz clic en cualquier línea para saltar allí, o exporta a SRT / VTT / TXT con un solo clic.",
+      "fakeUrl": "earscribe.app — interview-acme-q3.mp3",
+      "badges": {
+        "onDevice": "En dispositivo",
+        "autoLanguage": "English (detectado automáticamente)",
+        "duration": "12:48",
+        "wordCount": "1.842 palabras"
+      },
+      "pauseAria": "Pausar",
+      "playbackTime": "00:01:14 / 00:12:48",
+      "playbackRate": "1.0x",
+      "transcript": [
+        {
+          "ts": "00:00:08",
+          "speaker": "Presentador",
+          "text": "Bienvenido de vuelta — hoy hablamos con alguien que estudia la atención."
+        },
+        {
+          "ts": "00:00:24",
+          "speaker": "Invitado",
+          "text": "Las interrupciones no son el problema que la gente cree que son."
+        }
+      ],
+      "exportHeading": "Exportar",
+      "copyText": "Copiar texto",
+      "tiles": [
+        {
+          "label": ".srt",
+          "sub": "Subtítulos"
+        },
+        {
+          "label": ".vtt",
+          "sub": "Subtítulos web"
+        },
+        {
+          "label": ".txt",
+          "sub": "Texto plano"
+        },
+        {
+          "label": ".json",
+          "sub": "JSON + tiempos"
+        }
+      ],
+      "srtFilename": "interview-acme-q3.srt",
+      "srtPreview": "1\n00:00:08,120 --> 00:00:18,640\nBienvenidos; hablamos de investigación sobre la atención.",
+      "exportNote": "Los subtítulos de audio a texto están alineados con las pistas y listos para importar en Premiere, Final Cut, DaVinci Resolve, YouTube o cualquier reproductor web."
+    },
+    "howItWorks": {
+      "kicker": "Cómo funciona el audio a texto gratis e ilimitado",
+      "title": "Tres pasos. Sin registro, sin inicio de sesión, 100% gratis, ilimitado.",
+      "subtitle": "Gratis e ilimitado, sin registro. Empieza con el ajuste recomendado, revisa la transcripción y exporta el formato que necesites después.",
+      "steps": [
+        {
+          "title": "Arrastra tu audio",
+          "body": "Usa un archivo MP3, WAV, M4A, OGG, FLAC o WebM. La duración práctica depende del navegador y de la memoria disponible en el dispositivo."
+        },
+        {
+          "title": "Elige un modelo Whisper",
+          "body": "El ajuste equilibrado recomendado sirve para la mayoría de grabaciones. Abre los modelos avanzados si necesitas una descarga menor o más precisión."
+        },
+        {
+          "title": "Lee, edita, exporta",
+          "body": "Revisa y corrige la transcripción con marcas de tiempo, comprueba la legibilidad de los subtítulos y exporta SRT, VTT, TXT o JSON."
+        }
+      ]
+    },
+    "whatYouCanDo": {
+      "kicker": "Qué puedes hacer — 100% gratis, sin registro, ilimitado",
+      "title": "Conversor de audio a texto gratis e ilimitado — sin registro ni inicio de sesión.",
+      "prose": "EarScribe es un conversor de <kw>audio a texto</kw> gratuito, <kw>sin registro</kw> ni inicio de sesión, con uso <kw>ilimitado</kw>. Convierte <kw>MP3 a texto</kw>, <kw>WAV a texto</kw> o <kw>M4A a texto</kw>, crea <kw>subtítulos SRT o VTT</kw>, busca y corrige la transcripción, vuelve al audio desde una marca de tiempo y exporta TXT, SRT, VTT o JSON.",
+      "jobs": [
+        {
+          "from": "MP3",
+          "to": ".txt",
+          "label": "MP3 a texto"
+        },
+        {
+          "from": "WAV",
+          "to": ".txt",
+          "label": "WAV a texto"
+        },
+        {
+          "from": "M4A",
+          "to": ".txt",
+          "label": "M4A a texto"
+        },
+        {
+          "from": "Audio",
+          "to": ".srt",
+          "label": "Audio a SRT"
+        },
+        {
+          "from": "Audio",
+          "to": ".vtt",
+          "label": "Audio a VTT"
+        },
+        {
+          "from": "Podcast",
+          "to": ".txt",
+          "label": "Pódcast a texto"
+        }
+      ]
+    },
+    "useCases": {
+      "kicker": "Audio a texto gratis, ilimitado, sin inicio de sesión — hecho para todos",
+      "title": "Casos de uso de EarScribe.",
+      "subtitle": "Seis usos, un mismo flujo: busca la transcripción, escucha la fuente, corrige el texto y exporta el formato que necesitas.",
+      "items": [
+        {
+          "title": "Podcasters y creadores",
+          "body": "Audio a texto gratis para podcasters — edita episodios más rápido: pega la transcripción en tu editor, busca el momento que necesitas y publica las notas del episodio el mismo día.",
+          "tag": "Pódcast"
+        },
+        {
+          "title": "Periodistas e investigadores",
+          "body": "Convierte una entrevista en texto con marcas de tiempo, localiza una cita y vuelve a la grabación cuando necesites comprobarla.",
+          "tag": "Periodismo"
+        },
+        {
+          "title": "Estudiantes y clases",
+          "body": "Audio a texto gratis para estudiantes — arrastra una clase grabada y obtén una transcripción con búsqueda antes de tu próxima sesión.",
+          "tag": "Educación"
+        },
+        {
+          "title": "Reuniones y entrevistas de usuarios",
+          "body": "Convierte sesiones de investigación en texto consultable, resume decisiones y exporta una transcripción limpia para el equipo.",
+          "tag": "Investigación"
+        },
+        {
+          "title": "Subtítulos para vídeo",
+          "body": "Audio a texto exportado como .srt o .vtt — listo para importar directamente en Premiere, Resolve, Final Cut o YouTube. Los tiempos de las pistas están alineados con el audio.",
+          "tag": "Subtítulos"
+        },
+        {
+          "title": "Audiolibros y contenido largo",
+          "body": "Los MP3 largos y los audiolibros pueden procesarse según la memoria y el rendimiento del dispositivo. Dividir grabaciones muy largas mejora la fiabilidad.",
+          "tag": "Contenido largo"
+        }
+      ]
+    },
+    "features": {
+      "kicker": "Del archivo de audio a un resultado útil",
+      "title": "Un espacio para revisar la transcripción, no solo un bloque de texto.",
+      "items": [
+        {
+          "title": "Vuelve del texto al audio",
+          "body": "Busca en la transcripción y pulsa una marca de tiempo para escuchar el fragmento correspondiente."
+        },
+        {
+          "title": "Elige calidad sin adivinar",
+          "body": "Empieza con el ajuste equilibrado y abre los modelos avanzados solo si necesitas una descarga menor o más precisión."
+        },
+        {
+          "title": "99 idiomas, detección automática",
+          "body": "Entrevistas, clases y pódcasts detectan el idioma automáticamente, sin elegirlo antes."
+        },
+        {
+          "title": "Edita antes de compartir",
+          "body": "Corrige nombres, citas, cifras y terminología antes de copiar o exportar el resultado."
+        },
+        {
+          "title": "Revisa la legibilidad de los subtítulos",
+          "body": "Detecta segmentos vacíos, largos, rápidos, repetidos o superpuestos y mejora los saltos de línea."
+        },
+        {
+          "title": "Exporta para el siguiente paso",
+          "body": "Copia el texto o descarga TXT, SRT, VTT o JSON. Gratis, ilimitado y sin cuenta."
+        }
+      ]
+    },
+    "sampleOutput": {
+      "kicker": "Audio a texto — ejemplo de salida",
+      "title": "La misma transcripción de audio a texto, en tres formatos, lista para usar.",
+      "subtitle": "Así es como queda un archivo exportado de MP3 a texto o audio a SRT — pégalo directamente en tu editor o súbelo a YouTube.",
+      "files": [
+        {
+          "name": "transcript.srt",
+          "lang": "SubRip",
+          "code": "1\n00:00:08,120 --> 00:00:18,640\nBienvenidos; hablamos de investigación sobre la atención."
+        },
+        {
+          "name": "transcript.vtt",
+          "lang": "WebVTT",
+          "code": "WEBVTT\n\n00:00:08.120 --> 00:00:18.640\nBienvenidos; hablamos de investigación sobre la atención."
+        },
+        {
+          "name": "transcript.txt",
+          "lang": "Texto plano",
+          "code": "[00:00:08] Presentador: Bienvenidos; hablamos de investigación sobre la atención."
+        }
+      ]
+    },
+    "testimonials": {
+      "kicker": "Una transcripción, distintos resultados",
+      "title": "Empieza por lo esencial y abre las herramientas que necesites después.",
+      "subtitle": "Para mucha gente basta con texto legible y un botón de exportar. Las herramientas para subtítulos, entrevistas y estudio están disponibles sin complicar el primer paso.",
+      "quotes": [
+        {
+          "name": "Flujo de subtítulos",
+          "role": "Para vídeos y clips de redes sociales",
+          "quote": "Antes de exportar SRT o VTT, revisa la longitud de las líneas, la velocidad de lectura, los subtítulos repetidos y los solapamientos de tiempo."
+        },
+        {
+          "name": "Flujo de entrevista",
+          "role": "Para investigación y periodismo",
+          "quote": "Busca en la transcripción, pulsa una marca de tiempo para comprobar la grabación original y edita nombres o citas en el texto."
+        },
+        {
+          "name": "Flujo de estudio",
+          "role": "Para clases y lecciones grabadas",
+          "quote": "Encuentra un tema rápidamente, limpia la transcripción y exporta el texto para apuntes, referencias o repaso."
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "Elige el flujo que encaja con la tarea",
+      "title": "Tres formas de convertir audio a texto.",
+      "subtitle": "Compara un espacio de trabajo en el navegador, una API de transcripción y un programa alojado según el trabajo que resuelve cada uno.",
+      "headers": {
+        "capability": "Característica",
+        "earscribe": "EarScribe",
+        "you": "Tú",
+        "cloudApi": "API de transcripción",
+        "saas": "Programa alojado"
+      },
+      "yes": "Sí",
+      "no": "No",
+      "rows": [
+        {
+          "label": "Empezar sin cuenta",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Usar sin integración API",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "Espacio de transcripción editable incluido",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "Dónde trabajas",
+          "earscribe": "En el navegador",
+          "cloudApi": "En tu producto",
+          "saas": "En una aplicación alojada"
+        },
+        {
+          "label": "Texto con marcas de tiempo incluido",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": true
+        },
+        {
+          "label": "Volver al audio desde una marca de tiempo",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "Elección del modelo",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": "Varía"
+        },
+        {
+          "label": "Cinco controles de subtítulos integrados",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Uso gratuito e ilimitado",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Mejor para",
+          "earscribe": "Revisar y exportar una grabación",
+          "cloudApi": "Integración en un producto",
+          "saas": "Colaboración en equipo"
+        }
+      ]
+    },
+    "stats": {
+      "srTitle": "EarScribe: audio a texto gratis en cifras",
+      "items": [
+        {
+          "v": "99",
+          "unit": "idiomas",
+          "body": "Detectados automáticamente, sin selección manual."
+        },
+        {
+          "v": "4",
+          "unit": "formatos de exportación",
+          "body": "Descarga TXT, SRT, VTT o JSON cuando la transcripción esté lista."
+        },
+        {
+          "v": "$0",
+          "unit": "/ mes",
+          "body": "100% gratis e ilimitado — sin registro, sin inicio de sesión, sin límite de uso."
+        },
+        {
+          "v": "1",
+          "unit": "espacio de revisión",
+          "body": "Busca, escucha, edita y revisa subtítulos en un solo lugar."
+        }
+      ]
+    },
+    "formatsLanguages": {
+      "audioFormatsTitle": "Audio a texto — formatos compatibles",
+      "audioFormatsDesc": "Conversor de audio a texto gratis e ilimitado — sin registro ni cuenta. Si puedes reproducirlo, EarScribe lo convierte a texto: MP3 a texto, WAV a texto, M4A a texto y más.",
+      "formats": [
+        "MP3",
+        "WAV",
+        "M4A",
+        "OGG",
+        "FLAC",
+        "WebM",
+        "Opus",
+        "AAC"
+      ],
+      "languagesTitle": "Audio a texto gratis en 99 idiomas (detección automática)",
+      "languagesDesc": "Audio a texto gratis en los 99 idiomas compatibles con Whisper. El modelo identifica el correcto a partir de los primeros segundos del audio.",
+      "languages": [
+        "Inglés",
+        "Mandarín",
+        "Español",
+        "Hindi",
+        "Árabe",
+        "Portugués",
+        "Bengalí",
+        "Ruso",
+        "Japonés",
+        "Punjabi",
+        "Alemán",
+        "Javanés",
+        "Coreano",
+        "Francés",
+        "Telugu",
+        "Vietnamita",
+        "Tamil",
+        "Italiano",
+        "Turco",
+        "Polaco",
+        "Ucraniano",
+        "Neerlandés",
+        "Persa",
+        "Tailandés",
+        "Sueco",
+        "Checo",
+        "Griego",
+        "Hebreo",
+        "Finlandés",
+        "Noruego",
+        "Húngaro"
+      ],
+      "more": "+68 más"
+    },
+    "finalCta": {
+      "tag": "100% gratis, sin registro, ilimitado",
+      "title": "Arrastra un archivo de audio para transcribirlo gratis — sin registro, sin inicio de sesión, ilimitado.",
+      "subtitle": "Vuelve al inicio y elige un archivo para obtener una transcripción con marcas de tiempo. Convierte un MP3 u otro audio a texto gratis, sin necesidad de crear una cuenta.",
+      "tryNow": "Empezar gratis, sin registro",
+      "howItWorks": "Cómo funciona el audio a texto"
+    }
+  }
+}

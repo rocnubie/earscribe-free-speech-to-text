@@ -14,4 +14,4 @@ export function getSiteUrl(): string {
 
 export const SITE_NAME = "EarScribe";
 export const SITE_DOMAIN = "earscribe.app";
-export const GITHUB_URL = "https://github.com/";
+export const GITHUB_URL = "https://github.com/rocnubie/earscribe-free-speech-to-text";

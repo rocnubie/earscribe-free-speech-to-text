@@ -1,0 +1,597 @@
+{
+  "meta": {
+    "title": "Ilmainen ja rajaton ääni tekstiksi, ilman rekisteröitymistä | EarScribe",
+    "description": "Muunna ääni aikaleimatuksi tekstiksi ja tekstityksiksi ilmaiseksi ja ilman rajoituksia. Ei rekisteröitymistä; vie SRT-, VTT-, TXT- tai JSON-muodossa.",
+    "ogTitle": "EarScribe — Ilmainen ja rajaton ääni tekstiksi",
+    "ogDescription": "Muunna ääni aikaleimatuksi tekstiksi ja tekstityksiksi ilmaiseksi ja ilman rajoituksia. Ei rekisteröitymistä; vie SRT-, VTT-, TXT- tai JSON-muodossa."
+  },
+  "header": {
+    "product": "EarScribe",
+    "about": "Tietoja",
+    "github": "GitHub"
+  },
+  "hero": {
+    "tag": "100% ilmainen, ei rekisteröintiä",
+    "title": "Muunna ääni aikaleimatuksi tekstiksi ja tekstityksiksi ilmaiseksi ja rajattomasti.",
+    "subtitle": "100% ilmainen äänimuunnin tekstiksi — ei rekisteröintiä, ei kirjautumista, rajoittamaton käyttö. Pudota MP3, WAV tai M4A — saat litteraatin aikaleimoineen sekä SRT / VTT-tekstitykset. Ilmainen puhe tekstiksi OpenAI Whisperillä. Yksityinen, äänesi ei koskaan poistu laitteeltasi.",
+    "cta": "Valitse äänitiedosto"
+  },
+  "trust": {
+    "private": "100% ilmainen, rajoittamaton",
+    "free": "Ei rekisteröintiä, ei kirjautumista",
+    "openModels": "Yksityinen, ei latausta palvelimelle",
+    "subtitles": "SRT- ja VTT-vienti"
+  },
+  "dropzone": {
+    "idle": "Pudota äänitiedosto tähän tai selaa klikkaamalla",
+    "hint": "MP3, WAV, M4A, OGG, FLAC, WebM — enintään noin 2 tuntia tiedostoa kohti",
+    "dragging": "Vapauta käyttääksesi tätä tiedostoa",
+    "rejected": "Tiedostotyyppiä ei tueta. Käytä äänitiedostoa.",
+    "tooLarge": "Tiedosto on poikkeuksellisen suuri. Pitkä ääni voi ylittää selaimen muistin.",
+    "changeFile": "Käytä eri tiedostoa"
+  },
+  "modelPicker": {
+    "title": "Valitse malli",
+    "subtitle": "Suuremmat mallit ovat tarkempia, mutta niiden lataaminen ja ajaminen kestää kauemmin. Valitse kerran — malli tallentuu selaimeesi välimuistiin.",
+    "advancedShow": "Compare all models",
+    "advancedHide": "Hide model details",
+    "speedLabel": "Speed",
+    "accuracyLabel": "Accuracy",
+    "changeFile": "Change file",
+    "cachedRunHint": "{model} is already on this device and ready to use.",
+    "downloadRunHint": "The first run downloads {size}. It stays cached for later use.",
+    "chooseModelHint": "Choose a quality level to continue.",
+    "recommended": "Suositeltu",
+    "selected": "Valittu",
+    "cached": "Välimuistissa",
+    "cachedHint": "Jo tällä laitteella. Valmis ajettavaksi heti.",
+    "needsDownload": "{size} lataus",
+    "select": "Valitse",
+    "downloadAndRun": "Lataa ja litteroi",
+    "downloadAndRunSized": "Lataa {size} ja litteroi",
+    "transcribeNow": "Litteroi",
+    "downloading": "Ladataan…",
+    "downloadingPct": "Ladataan {percent}",
+    "initializingModel": "Alustetaan mallia…",
+    "loadingCached": "Ladataan välimuistissa olevaa mallia…",
+    "transcribingShort": "Litteroidaan…",
+    "transcribingPct": "Litteroidaan {percent}",
+    "deleteRemoveAria": "Poista tältä laitteelta",
+    "deleteConfirmQuestion": "Poistetaanko tältä laitteelta?",
+    "deleteConfirmHint": "Vapauttaa noin {size}. Voit ladata uudelleen milloin tahansa.",
+    "deleteConfirmYes": "Kyllä, poista",
+    "deleteConfirmCancel": "Peruuta",
+    "deleting": "Poistetaan…",
+    "deleteSuccess": "Poistettu · vapautti {size}",
+    "deleteFailed": "Poistaminen epäonnistui",
+    "warningWebgpuMissing": "Selaimessasi ei ole WebGPU:ta. Tämä malli toimii CPU:lla (WASM) ja saattaa olla hidas.",
+    "warningRamLow": "Laitteesi ilmoittaa {available} GB RAM. Tämä malli suosittelee vähintään {required} GB ja saattaa kaatua vähämuistisilla laitteilla.",
+    "deviceCapability": "Laitteesi",
+    "webgpuOn": "WebGPU käytettävissä",
+    "webgpuOff": "WebGPU ei käytettävissä — vain CPU",
+    "memoryReport": "{gb} GB RAM",
+    "memoryUnknown": "RAM tuntematon",
+    "cores": "{cores} CPU-ydintä"
+  },
+  "models": {
+    "tiny": {
+      "name": "Whisper Tiny",
+      "tagline": "Nopein, pienin. Alhaisempi tarkkuus.",
+      "pros": "Pienin lataus. Toimii kaikilla laitteilla, myös vanhoilla puhelimilla.",
+      "cons": "Jättää sanoja väliin meluisessa äänessä, kamppailussa aksenttien kanssa."
+    },
+    "base": {
+      "name": "Whisper Base",
+      "tagline": "Paras tasapaino nopeuden ja tarkkuuden välillä.",
+      "pros": "Hyvä tarkkuus useimmille selkeille puheille. Toimii kaikilla laitteilla.",
+      "cons": "Jättää silti joitakin sanoja väliin voimakkaasti aksentoituneessa tai meluisessa äänessä."
+    },
+    "small": {
+      "name": "Whisper Small",
+      "tagline": "Parempi tarkkuus, hitaampi.",
+      "pros": "Huomattavasti parempi aksenteilla ja melussa.",
+      "cons": "Hidas ilman WebGPU:ta. Suurempi lataus."
+    },
+    "turbo": {
+      "name": "Whisper Large v3 Turbo",
+      "tagline": "Paras tarkkuus. WebGPU suositeltu.",
+      "pros": "Paras litteraatin laatu, nopea WebGPU:lla.",
+      "cons": "Suuri lataus ja muistijalanjälki. Saattaa kaatua heikoilla laitteilla."
+    }
+  },
+  "progress": {
+    "downloadingModel": "Ladataan mallia… {percent}",
+    "downloadingFile": "{file} — {loaded} / {total}",
+    "decodingAudio": "Puretaan ääntä…",
+    "transcribing": "Litteroidaan… {percent}",
+    "preparing": "Valmistellaan…",
+    "cancel": "Peruuta"
+  },
+  "result": {
+    "title": "Litteraatti",
+    "detectedLanguage": "Tunnistettu kieli: {language}",
+    "wordCount": "{count} sanaa",
+    "duration": "{duration}",
+    "copy": "Kopioi teksti",
+    "copied": "Kopioitu",
+    "export": "Vie",
+    "exportTxt": "Pelkkä teksti (.txt)",
+    "exportSrt": "Tekstitykset (.srt)",
+    "exportVtt": "Tekstitykset (.vtt)",
+    "exportJson": "Raaka JSON (.json)",
+    "newFile": "Litteroi toinen tiedosto",
+    "playFromHere": "Toista tästä",
+    "play": "Toista",
+    "pause": "Tauko",
+    "workspaceLabel": "Transcript workspace",
+    "tabTranscript": "Review transcript",
+    "tabSubtitles": "Subtitle check",
+    "searchPlaceholder": "Search the transcript",
+    "editTranscript": "Edit text",
+    "finishEditing": "Finish editing",
+    "savedOnDevice": "Edits are saved on this device",
+    "restoredDraft": "Saved edits restored from this device",
+    "noSearchResults": "No matching text found.",
+    "qaTitle": "Subtitle check",
+    "qaBody": "Review cues that may be hard to read or need a quick listen before export.",
+    "qaIssueCount": "{count} items may need attention",
+    "qaNoIssues": "No common subtitle issues found",
+    "qaCleanTitle": "Ready for a final watch-through",
+    "qaCleanBody": "No empty, repeated, overlapping, overly long, or unusually fast cues were detected.",
+    "qaHint": "Automatic layout changes use the current timestamps. Listen through important sections before publishing.",
+    "qaEmptyCue": "Empty subtitle cue",
+    "qaType_empty": "Empty",
+    "qaType_long": "Too long",
+    "qaType_fast": "Fast reading",
+    "qaType_overlap": "Time overlap",
+    "qaType_repeated": "Repeated",
+    "optimizeSubtitles": "Improve line breaks"
+  },
+  "errors": {
+    "modelLoadFailed": "Mallin lataaminen epäonnistui. Tarkista verkkoyhteytesi ja yritä uudelleen.",
+    "audioDecodeFailed": "Tätä äänitiedostoa ei voitu purkaa. Kokeile eri muotoa (MP3 / WAV / M4A).",
+    "transcribeFailed": "Litterointi epäonnistui. Laitteesi muisti saattaa olla lopussa — kokeile pienempää mallia.",
+    "browserUnsupported": "Selaimestasi puuttuu tarvittavia ominaisuuksia (Web Workers, AudioContext). Kokeile uusinta Chrome-, Edge- tai Safari-versiota."
+  },
+  "faq": {
+    "title": "Ilmainen rajoittamaton ääni tekstiksi — usein kysytyt kysymykset",
+    "items": [
+      {
+        "q": "Onko EarScribe todella 100% ilmainen ilman rajoituksia?",
+        "a": "Kyllä — 100% ilmainen, rajoittamaton, ei rekisteröintiä eikä kirjautumista tarvita. Ei maksullisia tasoja, ei luottokorttia, ei minuuttikohtaisia maksuja eikä päivittäistä tai kuukausittaista kiintiötä. Whisper-puhetekstimalli toimii omalla laitteistollasi, joten pilvilaskennan kustannuksia ei siirretä sinulle. Ilmainen ääni tekstiksi ilman mitään ehtoja."
+      },
+      {
+        "q": "Onko ääneni yksityinen ja turvallinen?",
+        "a": "Täysin yksityinen. EarScribe on paikallinen ääni-tekstiksi-muunnin: äänitiedostosi ei koskaan poistu laitteeltasi eikä sitä koskaan ladata palvelimelle. Ei tiliä tarkoittaa, ettei sinusta kerätä tietoja. Voit jopa käyttää sitä offline-tilassa, kun malli on ladattu."
+      },
+      {
+        "q": "Ladataanko ääneni johonkin?",
+        "a": "Ei. Ilmainen ääni tekstiksi tapahtuu kokonaan paikallisesti — ääni puretaan laitteellasi ja syötetään Web Workerissa toimivalle Whisper-mallille. Mitään ei lähetetä palvelimelle."
+      },
+      {
+        "q": "Miksi ensimmäinen kerta on hidas?",
+        "a": "Kun valitset mallin ensimmäistä kertaa ääni-tekstiksi-muunnosta varten, selaimesi lataa sen (80 MB–800 MB koosta riippuen). Sen jälkeen ilmainen ääni-tekstiksi-malli on välimuistissa ja sitä käytetään uudelleen — uutta latausta ei tarvita."
+      },
+      {
+        "q": "Mitä kieliä tuetaan?",
+        "a": "Ilmainen ääni tekstiksi tukee 99 kieltä Whisperin kautta. Kieli tunnistetaan automaattisesti — sinun ei tarvitse valita sitä."
+      },
+      {
+        "q": "Voinko litteroida videon?",
+        "a": "Ei suoraan. Videon äänen muuntamiseksi tekstiksi erota ensin ääni (mikä tahansa työkalu, joka voi tuottaa MP3- tai WAV-tiedostoja, toimii) ja pudota se tähän."
+      },
+      {
+        "q": "Toimiiko se offline-tilassa?",
+        "a": "Kun malli on ladattu kerran, kyllä — ilmainen ääni tekstiksi toimii offline-tilassa. Sivu täytyy ladata ensin, mutta myöhemmät ääni-tekstiksi-ajot toimivat ilman internettiä."
+      },
+      {
+        "q": "Kuinka muunnan MP3:n tekstiksi ilmaiseksi?",
+        "a": "Pudota MP3 EarScribeen ilmaista MP3-tekstiksi-muunnosta varten. Tiedosto puretaan selaimessasi, Whisper litteroi sen paikallisesti ja voit kopioida tuloksen tai viedä sen SRT-, VTT-, TXT- tai JSON-muodossa. Ei latausta palvelimelle eikä tiliä tarvita."
+      },
+      {
+        "q": "Onko olemassa ilmainen vaihtoehto Otter.ai:lle tai Rev:lle?",
+        "a": "EarScribe on ilmainen ääni-tekstiksi-vaihtoehto pilvilitterointipalveluille, kuten Otter.ai, Rev ja HappyScribe. Kompromissi: teet laskennan omalla koneellasi ilmaista puhe-tekstiksi-muunnosta varten, mutta ääni ei koskaan poistu sieltä eikä minuuttikohtaisia maksuja tai tilauksia ole."
+      },
+      {
+        "q": "Voinko luoda SRT- tai VTT-tekstityksiä äänestä?",
+        "a": "Kyllä. Ääni-tekstiksi-muunnoksen jälkeen napsauta Vie → .srt tai .vtt. Cue-ajoitus tulee Whisperin lähettämistä aikaleimoista, joten tekstitykset synkronoituvat ääni-tekstiksi-tuloksen kanssa ilman manuaalista jakamista."
+      },
+      {
+        "q": "Suorittaako tämä OpenAI Whisperin selaimessa?",
+        "a": "Kyllä — EarScribe suorittaa ilmaisen ääni tekstiksi -muunnoksen Whisperin (Tiny, Base, Small ja Large v3 Turbo) kautta suoraan selaimessa Transformers.js:n avulla WebGPU:lla, ja palaa WebAssemblyyn kun se ei ole käytettävissä."
+      }
+    ]
+  },
+  "about": {
+    "title": "Tietoja EarScribesta",
+    "intro": "EarScribe on staattinen verkkosovellus, joka suorittaa OpenAI:n Whisper-puhentunnistusmallit suoraan selaimessasi Transformers.js:n sekä WebGPU / WebAssembly-ajoympäristöjen avulla.",
+    "noServer": "Taustajärjestelmää, joka käsittelee ääntäsi, ei ole. Cloudflare Pages -isäntä tarjoilee vain staattista HTML:ää, JS:ää ja CSS:ää. Whisper-mallin painot haetaan Hugging Face CDN:stä ensimmäisellä käyttökerralla ja selain tallentaa ne välimuistiin.",
+    "credits": "Rakennettu Transformers.js:n, ONNX Runtime Webin ja OpenAI:n avoimen lähdekoodin Whisper-mallien varaan."
+  },
+  "footer": {
+    "tagline": "100% ilmainen ääni tekstiksi ja puhe tekstiksi. Ei rekisteröintiä, ei kirjautumista.",
+    "links": {
+      "about": "Tietoja",
+      "privacy": "Tietosuoja",
+      "github": "GitHub"
+    },
+    "builtWith": "Rakennettu Transformers.js:llä, ONNX Runtime Webillä ja Whisperillä."
+  },
+  "seo": {
+    "showcase": {
+      "kicker": "Ääni tekstiksi — katso mitä saat",
+      "title": "Aito litteraatti aikaleimoineen, aaltomuotoineen ja tekstitysvienti yhdellä napsautuksella.",
+      "subtitle": "Ilmainen ääni tekstiksi — pudota podcast, luento tai haastattelu. EarScribe näyttää koko litteraatin synkronoituna ääneen — napsauta mitä tahansa riviä hypätäksesi sinne tai vie SRT / VTT / TXT-muodossa yhdellä napsautuksella.",
+      "fakeUrl": "earscribe.app — interview-acme-q3.mp3",
+      "badges": {
+        "onDevice": "Laitteella",
+        "autoLanguage": "English (auto-detected)",
+        "duration": "12:48",
+        "wordCount": "1,842 words"
+      },
+      "pauseAria": "Tauko",
+      "playbackTime": "00:01:14 / 00:12:48",
+      "playbackRate": "1.0x",
+      "transcript": [
+        {
+          "ts": "00:00:08",
+          "speaker": "Host",
+          "text": "Welcome back — today we're talking with someone who studies attention."
+        },
+        {
+          "ts": "00:00:24",
+          "speaker": "Guest",
+          "text": "Interruption isn't actually the problem people think it is."
+        }
+      ],
+      "exportHeading": "Vie",
+      "copyText": "Kopioi teksti",
+      "tiles": [
+        {
+          "label": ".srt",
+          "sub": "Tekstitykset"
+        },
+        {
+          "label": ".vtt",
+          "sub": "Verkkotekstitykset"
+        },
+        {
+          "label": ".txt",
+          "sub": "Pelkkä teksti"
+        },
+        {
+          "label": ".json",
+          "sub": "Raaka + ajoitus"
+        }
+      ],
+      "srtFilename": "interview-acme-q3.srt",
+      "srtPreview": "1\n00:00:08,120 --> 00:00:18,640\nTervetuloa takaisin — puhumme tarkkaavaisuustutkimuksesta.",
+      "exportNote": "Ääni-tekstiksi-tekstitykset ovat cue-kohdistettuja ja valmiita lisättäväksi Premiereen, Final Cutiin, DaVinci Resolveen, YouTubeen tai mihin tahansa verkkosoittimeen."
+    },
+    "howItWorks": {
+      "kicker": "Näin ilmainen rajoittamaton ääni tekstiksi toimii",
+      "title": "Kolme vaihetta. Ei rekisteröintiä, ei kirjautumista, 100% ilmainen, rajoittamaton.",
+      "subtitle": "100% ilmainen ja yksityinen ääni tekstiksi — ei rekisteröintiä, ei kirjautumista. Äänesi käsitellään paikallisesti laitteellasi; sillä ei kirjaimellisesti ole paikkaa, johon vuotaa.",
+      "steps": [
+        {
+          "title": "Pudota äänitiedostosi",
+          "body": "Pudota MP3, WAV, M4A, OGG, FLAC tai WebM — enintään noin kaksi tuntia tiedostoa kohti. Tiedosto ei koskaan poistu koneeltasi."
+        },
+        {
+          "title": "Valitse Whisper-malli",
+          "body": "Tiny (40 MB) pikaisiin muistiinpanoihin, Turbo (~800 MB) studiolaatuiseen tarkkuuteen. Mallit tallentuvat välimuistiin ensimmäisen ajon jälkeen."
+        },
+        {
+          "title": "Lue, muokkaa, vie",
+          "body": "Saat ääni-tekstiksi-muunnoksen aikaleimattuna litteraattina synkronoituna aaltomuotoon. Vie SRT / VTT-muodossa tekstityksiä varten tai pelkkänä tekstinä muistiinpanoja varten."
+        }
+      ]
+    },
+    "whatYouCanDo": {
+      "kicker": "Mitä voit tehdä — 100% ilmainen, ei rekisteröintiä, rajoittamaton",
+      "title": "Ilmainen rajoittamaton äänimuunnin tekstiksi — ei rekisteröintiä, ei kirjautumista.",
+      "prose": "EarScribe on 100% ilmainen <kw>ääni tekstiksi</kw> -muunnin — <kw>ei rekisteröintiä</kw>, ei kirjautumista, <kw>rajoittamaton</kw> käyttö. Muunna <kw>MP3 tekstiksi</kw>, <kw>WAV tekstiksi</kw> tai <kw>M4A tekstiksi</kw>, luo <kw>SRT- tai VTT-tekstityksiä</kw> mistä tahansa äänestä tai suorita <kw>OpenAI Whisper verkossa</kw> ilman API-avainta. 100% ilmainen <kw>puhe tekstiksi</kw> ilman tiliä, kiintiötä tai minuuttikohtaisia maksuja — yksityinen, äänesi ei koskaan poistu laitteeltasi.",
+      "jobs": [
+        {
+          "from": "MP3",
+          "to": ".txt",
+          "label": "MP3 tekstiksi"
+        },
+        {
+          "from": "WAV",
+          "to": ".txt",
+          "label": "WAV tekstiksi"
+        },
+        {
+          "from": "M4A",
+          "to": ".txt",
+          "label": "M4A tekstiksi"
+        },
+        {
+          "from": "Audio",
+          "to": ".srt",
+          "label": "Ääni SRT:ksi"
+        },
+        {
+          "from": "Audio",
+          "to": ".vtt",
+          "label": "Ääni VTT:ksi"
+        },
+        {
+          "from": "Podcast",
+          "to": ".txt",
+          "label": "Podcast tekstiksi"
+        }
+      ]
+    },
+    "useCases": {
+      "kicker": "Ilmainen, rajoittamaton, kirjautumiseton ääni tekstiksi — rakennettu kaikille",
+      "title": "Kuka käyttää EarScribea.",
+      "subtitle": "100% ilmainen, rajoittamaton ääni tekstiksi ilman rekisteröintiä — kuusi hyvin erilaista käyttötarkoitusta. Jos äänesi ei saisi päätyä jonkun muun palvelimelle, olet oikeassa paikassa.",
+      "items": [
+        {
+          "title": "Podcast-tekijät ja sisällönluojat",
+          "body": "Ilmainen ääni tekstiksi podcast-tekijöille — leikkaa jaksot nopeammin: liitä litteraatti editoriisi, etsi tarvitsemasi hetki ja lähetä show notes samana päivänä.",
+          "tag": "Podcastaus"
+        },
+        {
+          "title": "Toimittajat ja tutkijat",
+          "body": "MP3 tekstiksi lähdehaastattluille — yksityinen, ei rekisteröintiä, ei tiliä. Äänesi pysyy kannettavallasi. Ei kolmannen osapuolen palvelinta, ei luovutettavaa tarkastuslokia.",
+          "tag": "Journalismi"
+        },
+        {
+          "title": "Opiskelijat ja luennot",
+          "body": "Ilmainen ääni tekstiksi opiskelijoille — pudota tallennettu luento ja saat haettavan litteraatin ennen seuraavaa tuntia.",
+          "tag": "Koulutus"
+        },
+        {
+          "title": "Kokoukset ja käyttäjähaastattelut",
+          "body": "Ääni tekstiksi tutkimussessioille — pudota ääni, saat ilmaisen puhe tekstiksi -muunnoksen ja lähetä merkitty litteraatti tiimillesi. Mikään ei poistu laitteeltasi.",
+          "tag": "Tutkimus"
+        },
+        {
+          "title": "Videotekstitykset",
+          "body": "Ilmainen ääni tekstiksi vietynä .srt- tai .vtt-muodossa — menee suoraan Premiereen, Resolveen, Final Cutiin tai YouTubeen. Cue-ajat on kohdistettu ääneen.",
+          "tag": "Tekstitykset"
+        },
+        {
+          "title": "Äänikirjat ja pitkä sisältö",
+          "body": "Kahden tunnin MP3 tekstiksi? Ei ongelma. Turbo käsittelee äänikirjan pituisen äänen — rajoittamaton, ei API-kiintiötä, ei minuuttimaksua, ei kirjautumista tarvita.",
+          "tag": "Pitkä muoto"
+        }
+      ]
+    },
+    "features": {
+      "kicker": "Miksi valita ilmainen rajoittamaton äänimuuntimemme tekstiksi",
+      "title": "Avoin Whisper, yksityisyys ensin, karkeat reunat hiottuna pois.",
+      "items": [
+        {
+          "title": "Yksityinen, ei latausta palvelimelle",
+          "body": "Kaikki ilmainen ääni tekstiksi on yksityistä — puretaan paikallisesti, ei koskaan ladata palvelimelle. Tietosi pysyvät sinulla, vuotamisriski kolmannelle osapuolelle on nolla."
+        },
+        {
+          "title": "WebGPU kun saatavilla, WASM muulloin",
+          "body": "Turbo toimii noin 10× nopeammin WebGPU:lla. Vanhemmilla laitteilla palaamme automaattisesti WebAssemblyyn."
+        },
+        {
+          "title": "99 kieltä, tunnistetaan automaattisesti",
+          "body": "Pudota ranskalainen podcast, mandariiniluento tai hindihaastattelu — ilmainen ääni tekstiksi 99 kielellä, kaikki tunnistetaan automaattisesti."
+        },
+        {
+          "title": "SRT, VTT, JSON, TXT",
+          "body": "MP3 tekstiksi tai ääni SRT:ksi yhdellä napsautuksella. SRT- ja VTT-cue:t on kohdistettu mallin lähettämiin aikaleimeihin, ei heuristiseen jakamiseen."
+        },
+        {
+          "title": "Toimii offline-tilassa — rajoittamaton, ei internettiä tarvita",
+          "body": "Mallit tallennetaan paikallisesti välimuistiin. Kun ne on ladattu, rajoittamaton ääni tekstiksi — ei internettiä, ei kiintiötä, ei minuuttilaskutusta."
+        },
+        {
+          "title": "100% ilmainen. Ei tiliä. Ei API-avainta.",
+          "body": "100% ilmainen ja rajoittamaton — ei luottokorttia, ei rekisteröintiä, ei kirjautumista, ei käyttörajoituksia. Ilmainen ääni tekstiksi ja puhe tekstiksi heti kun avaat sivun."
+        }
+      ]
+    },
+    "sampleOutput": {
+      "kicker": "Ääni tekstiksi — esimerkkitulostus",
+      "title": "Sama ääni-tekstiksi-litteraatti kolmessa muodossa, valmis käytettäväksi.",
+      "subtitle": "Miltä viety MP3-tekstiksi- tai ääni-SRT-tiedosto näyttää — liitä suoraan editoriin tai lataa YouTubeen.",
+      "files": [
+        {
+          "name": "transcript.srt",
+          "lang": "SubRip",
+          "code": "1\n00:00:08,120 --> 00:00:18,640\nTervetuloa takaisin — puhumme tarkkaavaisuustutkimuksesta."
+        },
+        {
+          "name": "transcript.vtt",
+          "lang": "WebVTT",
+          "code": "WEBVTT\n\n00:00:08.120 --> 00:00:18.640\nTervetuloa takaisin — puhumme tarkkaavaisuustutkimuksesta."
+        },
+        {
+          "name": "transcript.txt",
+          "lang": "Pelkkä teksti",
+          "code": "[00:00:08] Host: Tervetuloa takaisin — puhumme tarkkaavaisuustutkimuksesta."
+        }
+      ]
+    },
+    "testimonials": {
+      "kicker": "100% ilmainen, kirjautumiseton ääni tekstiksi — oikeilta käyttäjiltä",
+      "title": "Hiljainen, nopea ja täysin sinun.",
+      "subtitle": "Muutamia edustavia ihmisiä, jotka siirtyivät ilmaiseen, rajoittamattomaan, kirjautumisettomaan ääni tekstiksi -muunnokseen. (Paikkamerkkisitaatit — vaihda oikeisiin kun sinulla on niitä.)",
+      "quotes": [
+        {
+          "name": "Maya R.",
+          "role": "Podcast-tuottaja",
+          "quote": "Korvasin 19 $/kk tilauksen — 100% ilmainen, ei kirjautumista, rajoittamaton ääni tekstiksi. Turbo-malli M2:llani on nopeampi kuin hotellin wifin kautta tapahtuvan pilvilatauksen odottaminen."
+        },
+        {
+          "name": "Daniel K.",
+          "role": "Tutkiva toimittaja",
+          "quote": "Lähteen luottamuksellisuus ei ole neuvoteltavissa. Tällä ilmaisella puhe tekstiksi -työkalulla — ei tiliä, ei latausta — ääni ei koskaan poistu kannettavalta. Se on ero käyttämisen ja käyttämättä jättämisen välillä."
+        },
+        {
+          "name": "Priya S.",
+          "role": "Tohtorikoulutettava, kielitiede",
+          "quote": "Rajoittamaton kenttätyöäänen litterointi, lentokoneessa, ilman kiintiötä ja ilman kirjautumista. Ilmainen puhe tekstiksi, joka vain toimii."
+        }
+      ]
+    },
+    "comparison": {
+      "kicker": "100% ilmainen, rajoittamaton, kirjautumiseton ääni tekstiksi — vertailu",
+      "title": "EarScribe vs Otter.ai, Rev ja Whisper API.",
+      "subtitle": "100% ilmainen, rajoittamaton, kirjautumiseton vaihtoehto pilvilitteraatiolle — sama Whisper-malliperhne, kolme hyvin erilaista käyttöönottotapaa. (Hinnat ovat ohjeellisia.)",
+      "headers": {
+        "capability": "Ominaisuus",
+        "earscribe": "EarScribe",
+        "you": "Sinä",
+        "cloudApi": "Whisper API",
+        "saas": "Hosted SaaS"
+      },
+      "yes": "Kyllä",
+      "no": "Ei",
+      "rows": [
+        {
+          "label": "100% ilmainen, ei luottokorttia",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Rajoittamaton käyttö, ei kiintiötä",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Tili / kirjautuminen vaaditaan",
+          "earscribe": false,
+          "cloudApi": true,
+          "saas": true
+        },
+        {
+          "label": "Minuuttihinnoittelu",
+          "earscribe": "Ilmainen",
+          "cloudApi": "$0.006/min",
+          "saas": "$10–25/mo"
+        },
+        {
+          "label": "Yksityinen, ääni pysyy laitteella",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Toimii offline-tilassa",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "Whisper-laatutarkkuus",
+          "earscribe": true,
+          "cloudApi": true,
+          "saas": "Vaihtelee"
+        },
+        {
+          "label": "Avoimen lähdekoodin mallit",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": false
+        },
+        {
+          "label": "SRT / VTT-vienti",
+          "earscribe": true,
+          "cloudApi": false,
+          "saas": true
+        },
+        {
+          "label": "Asennusaika",
+          "earscribe": "0s",
+          "cloudApi": "API key + code",
+          "saas": "Sign-up flow"
+        }
+      ]
+    },
+    "stats": {
+      "srTitle": "EarScribe ilmainen ääni tekstiksi numeroina",
+      "items": [
+        {
+          "v": "99",
+          "unit": "kieltä",
+          "body": "Tunnistetaan automaattisesti, manuaalista valintaa ei tarvita."
+        },
+        {
+          "v": "0",
+          "unit": "tavua ladattu",
+          "body": "Yksityinen ääni tekstiksi — äänesi ei koskaan poistu laitteeltasi."
+        },
+        {
+          "v": "$0",
+          "unit": "/ kuukausi",
+          "body": "100% ilmainen ja rajoittamaton — ei rekisteröintiä, ei kirjautumista, ei käyttörajoitusta."
+        },
+        {
+          "v": "~2h",
+          "unit": "enimmäispituus",
+          "body": "Pitkä MP3 tekstiksi käsitellään yhdessä ajossa."
+        }
+      ]
+    },
+    "formatsLanguages": {
+      "audioFormatsTitle": "Ääni tekstiksi — tuetut muodot",
+      "audioFormatsDesc": "Ilmainen rajoittamaton äänimuunnin tekstiksi — ei rekisteröintiä, ei tiliä. Jos pystyt toistamaan sen, EarScribe muuntaa äänesi tekstiksi: MP3 tekstiksi, WAV tekstiksi, M4A tekstiksi ja paljon muuta.",
+      "formats": [
+        "MP3",
+        "WAV",
+        "M4A",
+        "OGG",
+        "FLAC",
+        "WebM",
+        "Opus",
+        "AAC"
+      ],
+      "languagesTitle": "Ilmainen ääni tekstiksi 99 kielellä (tunnistetaan automaattisesti)",
+      "languagesDesc": "Ilmainen ääni tekstiksi Whisperin 99 tuetussa kielessä. Malli valitsee oikean kielen äänen ensimmäisten sekuntien perusteella.",
+      "languages": [
+        "Englanti",
+        "Mandariini",
+        "Espanja",
+        "Hindi",
+        "Arabia",
+        "Portugali",
+        "Bengali",
+        "Venäjä",
+        "Japani",
+        "Punjabi",
+        "Saksa",
+        "Jaava",
+        "Korea",
+        "Ranska",
+        "Telugu",
+        "Vietnam",
+        "Tamili",
+        "Italia",
+        "Turkki",
+        "Puola",
+        "Ukraina",
+        "Hollanti",
+        "Persia",
+        "Thai",
+        "Ruotsi",
+        "Tšekki",
+        "Kreikka",
+        "Heprea",
+        "Suomi",
+        "Norja",
+        "Unkari"
+      ],
+      "more": "+68 lisää"
+    },
+    "finalCta": {
+      "tag": "100% ilmainen, ei rekisteröintiä, rajoittamaton",
+      "title": "Pudota äänitiedosto 100% ilmaista ääni tekstiksi -muunnosta varten — ei rekisteröintiä, ei kirjautumista, rajoittamaton.",
+      "subtitle": "Vieritä ylös, valitse tiedosto ja olet kymmenen sekunnin päässä rajoittamattomasta ilmaisesta ääni tekstiksi -muunnoksesta aikaleimoineen. 100% ilmainen puhe tekstiksi ja MP3 tekstiksi — tiliä ei tarvita.",
+      "tryNow": "Aloita ilmaiseksi, ei rekisteröintiä",
+      "howItWorks": "Näin ääni tekstiksi toimii"
+    }
+  }
+}

@@ -127,10 +127,10 @@ export function getNavigationTarget(
 
   if (item.id === "privacy" && !supportsPrivacyPage(locale)) {
     return {
-      href: "/privacy",
+      href: "/",
       available: false,
       fallback: true,
-      localeAware: false,
+      localeAware: true,
     };
   }
 

@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 
 import { alternatesFor, urlFor } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
+import { getAboutGuide } from "@/lib/about-page-seo";
 
 const HOME_KEYWORDS: Record<string, string[]> = {
   en: ["free audio to text converter", "free unlimited audio to text", "audio to text no sign up", "browser audio transcription"],
@@ -52,10 +53,13 @@ export async function buildHomeMetadata(locale: string): Promise<Metadata> {
 
 export async function buildAboutMetadata(locale: string): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "about" });
+  const guide = getAboutGuide(locale);
   return {
     title: { absolute: t("title") },
     description: t("intro"),
-    keywords: ["EarScribe", "browser audio transcription", "local audio transcription"],
+    keywords: guide
+      ? ["EarScribe", guide.primaryKeyword, ...guide.supportingKeywords]
+      : ["EarScribe"],
     alternates: alternatesFor(locale, "/about"),
     openGraph: {
       title: t("title"),

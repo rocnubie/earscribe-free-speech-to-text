@@ -263,9 +263,6 @@ export function HowItWorks() {
 /*  3. Use cases — 6 cards with photos                                */
 /* ------------------------------------------------------------------ */
 
-const UNSPLASH = (id: string, w = 800) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`;
-
 export function UseCases() {
   const t = useTranslations("seo.useCases");
   const locale = useLocale();
@@ -276,12 +273,12 @@ export function UseCases() {
   }[];
 
   const visuals = [
-    { img: UNSPLASH("photo-1590602847861-f357a9332bbc"), icon: Mic },
-    { img: UNSPLASH("photo-1455390582262-044cdead277a"), icon: Newspaper },
-    { img: UNSPLASH("photo-1434030216411-0b793f4b4173"), icon: GraduationCap },
-    { img: UNSPLASH("photo-1521737711867-e3b97375f902"), icon: Briefcase },
-    { img: UNSPLASH("photo-1505740420928-5e560c06d30e"), icon: Subtitles },
-    { img: UNSPLASH("photo-1512820790803-83ca734da794"), icon: BookOpenText },
+    { img: "/screenshots/05-use-cases.webp", icon: Mic },
+    { img: "/screenshots/02-transcript-showcase.webp", icon: Newspaper },
+    { img: "/screenshots/03-how-it-works.webp", icon: GraduationCap },
+    { img: "/screenshots/04-features.webp", icon: Briefcase },
+    { img: "/screenshots/06-comparison.webp", icon: Subtitles },
+    { img: "/screenshots/07-faq.webp", icon: BookOpenText },
   ];
 
   return (
@@ -319,6 +316,8 @@ export function UseCases() {
                 <img
                   src={v.img}
                   alt={c.title}
+                  width={1280}
+                  height={800}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                 />

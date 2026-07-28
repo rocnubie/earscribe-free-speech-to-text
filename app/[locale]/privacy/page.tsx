@@ -7,6 +7,7 @@ import { defaultLocale, locales } from "@/i18n/locale";
 import { getPrivacyCopy } from "@/lib/privacy-content";
 import { PRIVACY_LOCALES } from "@/lib/site-routes";
 import { alternatesForLocales, urlFor } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/site";
 
 export function generateStaticParams() {
   return PRIVACY_LOCALES.filter((locale) => locale !== defaultLocale).map((locale) => ({ locale }));
@@ -19,7 +20,14 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: { absolute: copy.title },
     description: copy.description,
     alternates: alternatesForLocales(locale, "/privacy", PRIVACY_LOCALES),
-    openGraph: { title: copy.title, description: copy.description, type: "website", url: urlFor(locale, "/privacy") },
+    robots: { index: false, follow: true },
+    openGraph: {
+      title: copy.title,
+      description: copy.description,
+      type: "website",
+      url: urlFor(locale, "/privacy"),
+      images: [{ url: `${getSiteUrl()}/screenshots/04-features.webp`, width: 1280, height: 800 }],
+    },
     twitter: { card: "summary", title: copy.title, description: copy.description },
   };
 }

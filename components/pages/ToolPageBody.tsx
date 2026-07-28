@@ -18,7 +18,9 @@ import {
   type ToolLocale,
   type ToolSlug,
 } from "@/lib/tool-pages";
+import { getToolGuide } from "@/lib/tool-page-seo";
 import { urlFor } from "@/lib/seo";
+import { getSiteUrl } from "@/lib/site";
 
 export function ToolPageBody({
   locale,
@@ -28,18 +30,32 @@ export function ToolPageBody({
   slug: ToolSlug;
 }) {
   const page = getToolPage(locale, slug);
+  const guide = getToolGuide(locale, slug);
   const related = TOOL_SLUGS.filter((candidate) => candidate !== slug);
   const pageUrl = urlFor(locale, `/${slug}`);
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name: page.text.title,
-    description: page.text.description,
-    url: pageUrl,
-    applicationCategory: "MultimediaApplication",
-    operatingSystem: "Web",
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        name: page.text.title,
+        description: page.text.description,
+        url: pageUrl,
+        applicationCategory: "MultimediaApplication",
+        operatingSystem: "Web",
+        keywords: [guide.primaryKeyword, ...guide.supportingKeywords],
+        image: `${getSiteUrl()}/screenshots/02-transcript-showcase.webp`,
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "EarScribe", item: urlFor(locale) },
+          { "@type": "ListItem", position: 2, name: page.text.title, item: pageUrl },
+        ],
+      },
+    ],
   };
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -121,6 +137,78 @@ export function ToolPageBody({
                 className="h-auto w-full"
               />
             </figure>
+          </section>
+
+          <section className="mt-24 grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">
+                {guide.primaryKeyword}
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight text-slate-950">
+                {guide.guideTitle}
+              </h2>
+              <p className="mt-4 text-base leading-relaxed text-slate-600">
+                {guide.guideIntro}
+              </p>
+              <div className="mt-8 space-y-8">
+                {guide.sections.map((section) => (
+                  <article key={section.title}>
+                    <h3 className="text-xl font-semibold text-slate-900">{section.title}</h3>
+                    <div className="mt-3 space-y-3 text-sm leading-relaxed text-slate-700">
+                      {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+            <figure className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={guide.imageSrc}
+                alt={guide.imageAlt}
+                width={1280}
+                height={800}
+                loading="lazy"
+                className="h-auto w-full"
+              />
+              <figcaption className="border-t border-slate-200 px-4 py-3 text-xs leading-relaxed text-slate-500">
+                {guide.imageAlt}
+              </figcaption>
+            </figure>
+          </section>
+
+          <section className="mt-24 grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-700">
+                {page.ui.previewTitle}
+              </p>
+              <h2 className="mt-4 text-2xl font-semibold text-slate-950">{guide.checklistTitle}</h2>
+            </div>
+            <ol className="grid gap-4 sm:grid-cols-2">
+              {guide.checklist.map((item, index) => (
+                <li key={item.title} className="rounded-lg border border-slate-200 bg-slate-50 p-5">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-7 w-7 items-center justify-center rounded-md bg-slate-900 text-xs font-semibold text-white">
+                      {index + 1}
+                    </span>
+                    <h3 className="font-semibold text-slate-900">{item.title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">{item.body}</p>
+                </li>
+              ))}
+            </ol>
+          </section>
+
+          <section className="mt-24 border-y border-amber-200 bg-amber-50/60 px-6 py-10 sm:px-8">
+            <h2 className="text-2xl font-semibold text-slate-950">{guide.limitsTitle}</h2>
+            <ul className="mt-5 grid gap-3 text-sm leading-relaxed text-slate-700 sm:grid-cols-2">
+              {guide.limits.map((limit) => (
+                <li key={limit} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-600" />
+                  <span>{limit}</span>
+                </li>
+              ))}
+            </ul>
           </section>
 
           <section className="mt-24 border-y border-slate-200 py-14">

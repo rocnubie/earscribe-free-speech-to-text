@@ -2,14 +2,27 @@ import { Database, HardDriveDownload, ShieldCheck } from "lucide-react";
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { urlFor } from "@/lib/seo";
 import { getPrivacyCopy } from "@/lib/privacy-content";
 
 const icons = [ShieldCheck, HardDriveDownload, Database, ShieldCheck];
 
 export function PrivacyPageBody({ locale }: { locale: string }) {
   const copy = getPrivacyCopy(locale);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: copy.title,
+    description: copy.description,
+    url: urlFor(locale, "/privacy"),
+    isPartOf: { "@type": "WebSite", name: "EarScribe", url: urlFor(locale) },
+  };
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
       <main className="mx-auto max-w-4xl px-6 py-12 sm:py-16">
         <p className="text-sm font-medium text-sky-700">{copy.updated}</p>

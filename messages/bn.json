@@ -10,6 +10,18 @@
     "about": "পরিচিতি",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "বিনামূল্যে ট্রান্সক্রাইব শুরু করুন",
+    "startFreeShort": "ফ্রি শুরু করুন",
+    "audioToText": "অডিও থেকে টেক্সট",
+    "mp3ToText": "MP3 থেকে টেক্সট",
+    "audioToSrt": "অডিও থেকে SRT",
+    "interviewTranscription": "সাক্ষাৎকার ট্রান্সক্রিপশন",
+    "lectureTranscription": "লেকচার ট্রান্সক্রিপশন",
+    "productLinks": "পণ্য",
+    "companyLinks": "কোম্পানি",
+    "switchLanguage": "ভাষা নির্বাচন করুন"
+  },
   "hero": {
     "tag": "১০০% বিনামূল্যে, কোনো সাইন-আপ নেই",
     "title": "বিনামূল্যে ও সীমাহীনভাবে অডিওকে টাইমস্ট্যাম্পসহ টেক্সট ও সাবটাইটেলে রূপান্তর করুন।",

@@ -10,6 +10,18 @@
     "about": "O nas",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Zacznij transkrypcję za darmo",
+    "startFreeShort": "Zacznij za darmo",
+    "audioToText": "Audio na tekst",
+    "mp3ToText": "MP3 na tekst",
+    "audioToSrt": "Audio na SRT",
+    "interviewTranscription": "Transkrypcja wywiadu",
+    "lectureTranscription": "Transkrypcja wykładu",
+    "productLinks": "Produkt",
+    "companyLinks": "Firma",
+    "switchLanguage": "Wybierz język"
+  },
   "hero": {
     "tag": "100% za darmo, bez rejestracji",
     "title": "Zamieniaj audio w tekst ze znacznikami czasu i napisy, za darmo i bez limitów.",

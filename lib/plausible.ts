@@ -37,4 +37,6 @@ export const Events = {
   SubtitleQaUsed: "Subtitle QA Used",
   CopyTranscript: "Copy Transcript",
   ExportFormat: "Export",
+  NavigationClick: "Navigation Click",
+  LocaleChanged: "Locale Changed",
 } as const;

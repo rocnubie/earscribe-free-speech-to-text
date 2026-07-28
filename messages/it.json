@@ -10,6 +10,18 @@
     "about": "Chi siamo",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Inizia a trascrivere gratis",
+    "startFreeShort": "Inizia gratis",
+    "audioToText": "Audio in testo",
+    "mp3ToText": "MP3 in testo",
+    "audioToSrt": "Audio in SRT",
+    "interviewTranscription": "Trascrizione di interviste",
+    "lectureTranscription": "Trascrizione di lezioni",
+    "productLinks": "Prodotto",
+    "companyLinks": "Azienda",
+    "switchLanguage": "Seleziona lingua"
+  },
   "hero": {
     "tag": "100% gratis, senza registrazione",
     "title": "Trasforma l'audio in testo con timestamp e sottotitoli, gratis e senza limiti.",

@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 
 import { alternatesForLocales, urlFor } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
-import { getToolPage, TOOL_LOCALES, type ToolLocale, type ToolSlug } from "@/lib/tool-pages";
+import { getToolPage } from "@/lib/tool-pages";
+import {
+  TOOL_LOCALES,
+  type ToolLocale,
+  type ToolSlug,
+} from "@/lib/site-routes";
 
 export function buildToolPageMetadata(
   locale: ToolLocale,

@@ -10,6 +10,18 @@
     "about": "Acerca de",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Transcribir gratis",
+    "startFreeShort": "Empezar gratis",
+    "audioToText": "Audio a texto",
+    "mp3ToText": "MP3 a texto",
+    "audioToSrt": "Audio a SRT",
+    "interviewTranscription": "Transcripción de entrevistas",
+    "lectureTranscription": "Transcripción de clases",
+    "productLinks": "Producto",
+    "companyLinks": "Empresa",
+    "switchLanguage": "Seleccionar idioma"
+  },
   "hero": {
     "tag": "100% gratis, sin registro",
     "title": "Convierte audio en texto con marcas de tiempo y subtítulos, gratis y sin límites.",

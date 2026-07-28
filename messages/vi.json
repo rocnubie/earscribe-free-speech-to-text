@@ -10,6 +10,18 @@
     "about": "Giới thiệu",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Bắt đầu chép lời miễn phí",
+    "startFreeShort": "Bắt đầu miễn phí",
+    "audioToText": "Âm thanh thành văn bản",
+    "mp3ToText": "MP3 thành văn bản",
+    "audioToSrt": "Âm thanh thành SRT",
+    "interviewTranscription": "Chép lời phỏng vấn",
+    "lectureTranscription": "Chép lời bài giảng",
+    "productLinks": "Sản phẩm",
+    "companyLinks": "Công ty",
+    "switchLanguage": "Chọn ngôn ngữ"
+  },
   "hero": {
     "tag": "Miễn phí 100%, không đăng ký",
     "title": "Chuyển âm thanh thành văn bản có mốc thời gian và phụ đề, miễn phí không giới hạn.",

@@ -10,6 +10,18 @@
     "about": "關於",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "免費開始轉寫",
+    "startFreeShort": "免費開始",
+    "audioToText": "音訊轉文字",
+    "mp3ToText": "MP3 轉文字",
+    "audioToSrt": "音訊轉 SRT",
+    "interviewTranscription": "訪談錄音轉寫",
+    "lectureTranscription": "課堂錄音轉寫",
+    "productLinks": "產品",
+    "companyLinks": "公司",
+    "switchLanguage": "選擇語言"
+  },
   "hero": {
     "tag": "100% 免費，無需註冊",
     "title": "免費無限次音訊轉文字，產生附時間戳的文字與字幕。",

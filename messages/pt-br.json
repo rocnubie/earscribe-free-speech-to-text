@@ -10,6 +10,18 @@
     "about": "Sobre",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Comece a transcrever grátis",
+    "startFreeShort": "Começar grátis",
+    "audioToText": "Áudio para texto",
+    "mp3ToText": "MP3 para texto",
+    "audioToSrt": "Áudio para SRT",
+    "interviewTranscription": "Transcrição de entrevistas",
+    "lectureTranscription": "Transcrição de aulas",
+    "productLinks": "Produto",
+    "companyLinks": "Empresa",
+    "switchLanguage": "Selecionar idioma"
+  },
   "hero": {
     "tag": "100% grátis, sem cadastro",
     "title": "Transforme áudio em texto com marcações de tempo e legendas, grátis e sem limites.",

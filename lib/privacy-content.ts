@@ -1,7 +1,5 @@
 import type { Locale } from "@/i18n/locale";
-
-type PrivacyLocale = "en" | "zh-CN" | "ja" | "fr" | "es" | "ko";
-export const PRIVACY_LOCALES = ["en", "zh-CN", "ja", "fr", "es", "ko"] as const;
+import type { PrivacyLocale } from "@/lib/site-routes";
 
 interface PrivacyCopy {
   title: string;

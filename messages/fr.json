@@ -10,6 +10,18 @@
     "about": "À propos",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Transcrire gratuitement",
+    "startFreeShort": "Essayer gratuitement",
+    "audioToText": "Audio en texte",
+    "mp3ToText": "MP3 en texte",
+    "audioToSrt": "Audio en SRT",
+    "interviewTranscription": "Transcription d'interview",
+    "lectureTranscription": "Transcription de cours",
+    "productLinks": "Produit",
+    "companyLinks": "Entreprise",
+    "switchLanguage": "Choisir la langue"
+  },
   "hero": {
     "tag": "100 % gratuit, sans inscription",
     "title": "Transcrivez vos audios et créez des sous-titres, gratuitement et sans limite.",

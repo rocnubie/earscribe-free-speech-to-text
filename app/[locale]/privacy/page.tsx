@@ -4,7 +4,8 @@ import { setRequestLocale } from "next-intl/server";
 
 import { PrivacyPageBody } from "@/components/pages/PrivacyPageBody";
 import { defaultLocale, locales } from "@/i18n/locale";
-import { getPrivacyCopy, PRIVACY_LOCALES } from "@/lib/privacy-content";
+import { getPrivacyCopy } from "@/lib/privacy-content";
+import { PRIVACY_LOCALES } from "@/lib/site-routes";
 import { alternatesForLocales, urlFor } from "@/lib/seo";
 
 export function generateStaticParams() {

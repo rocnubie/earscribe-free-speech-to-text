@@ -1,25 +1,23 @@
 "use client";
 
 import { Globe } from "lucide-react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState, useTransition } from "react";
 
 import { localeNames, locales } from "@/i18n/locale";
 import { usePathname, useRouter } from "@/i18n/routing";
-import { PRIVACY_LOCALES } from "@/lib/privacy-content";
-import { TOOL_LOCALES, TOOL_SLUGS } from "@/lib/tool-pages";
+import { Events, track } from "@/lib/plausible";
+import { getLocaleSwitchDestination } from "@/lib/site-navigation";
 
-const switcherLabels: Record<string, string> = {
-  en: "Switch language",
-  "zh-CN": "切换语言",
-  ja: "言語を切り替える",
-  fr: "Changer de langue",
-  es: "Cambiar idioma",
-  ko: "언어 변경",
-};
-
-export function LocaleSwitcher({ dropUp = false }: { dropUp?: boolean }) {
+export function LocaleSwitcher({
+  dropUp = false,
+  compactOnMobile = false,
+}: {
+  dropUp?: boolean;
+  compactOnMobile?: boolean;
+}) {
   const locale = useLocale();
+  const t = useTranslations("navigation");
   const router = useRouter();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -39,17 +37,12 @@ export function LocaleSwitcher({ dropUp = false }: { dropUp?: boolean }) {
   function switchLocale(next: string) {
     setOpen(false);
     startTransition(() => {
-      const isToolPage = TOOL_SLUGS.some((slug) => pathname === `/${slug}`);
-      const isPrivacyPage = pathname === "/privacy";
-      const destination =
-        isToolPage && !TOOL_LOCALES.includes(next as (typeof TOOL_LOCALES)[number])
-          ? "/"
-          : isPrivacyPage &&
-              !PRIVACY_LOCALES.includes(
-                next as (typeof PRIVACY_LOCALES)[number],
-              )
-            ? "/"
-          : pathname;
+      const destination = getLocaleSwitchDestination(pathname, next);
+      track(Events.LocaleChanged, {
+        from: locale,
+        to: next,
+        fallback: destination !== pathname,
+      });
       router.replace(destination, { locale: next });
     });
   }
@@ -59,11 +52,13 @@ export function LocaleSwitcher({ dropUp = false }: { dropUp?: boolean }) {
       <button
         onClick={() => setOpen((v) => !v)}
         disabled={isPending}
-        aria-label={switcherLabels[locale] ?? switcherLabels.en}
-        className="inline-flex items-center gap-1.5 rounded px-1 py-0.5 text-sm text-slate-600 hover:text-slate-900 disabled:opacity-50"
+        aria-label={t("switchLanguage")}
+        className="inline-flex min-h-9 items-center gap-1.5 rounded-md px-2 text-sm text-slate-600 hover:bg-slate-50 hover:text-slate-900 disabled:opacity-50"
       >
         <Globe className="h-4 w-4 shrink-0" />
-        <span>{localeNames[locale as keyof typeof localeNames] ?? locale}</span>
+        <span className={compactOnMobile ? "hidden sm:inline" : undefined}>
+          {localeNames[locale as keyof typeof localeNames] ?? locale}
+        </span>
       </button>
       {open && (
         <div
@@ -75,7 +70,7 @@ export function LocaleSwitcher({ dropUp = false }: { dropUp?: boolean }) {
             <button
               key={l}
               onClick={() => switchLocale(l)}
-              className={`block w-full px-3 py-1.5 text-left text-sm hover:bg-slate-50 ${
+              className={`block w-full px-3 py-1.5 text-start text-sm hover:bg-slate-50 ${
                 l === locale ? "font-semibold text-slate-900" : "text-slate-600"
               }`}
             >

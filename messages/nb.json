@@ -10,6 +10,18 @@
     "about": "Om",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Start gratis transkribering",
+    "startFreeShort": "Start gratis",
+    "audioToText": "Lyd til tekst",
+    "mp3ToText": "MP3 til tekst",
+    "audioToSrt": "Lyd til SRT",
+    "interviewTranscription": "Intervjutranskribering",
+    "lectureTranscription": "Forelesningstranskribering",
+    "productLinks": "Produkt",
+    "companyLinks": "Selskap",
+    "switchLanguage": "Velg språk"
+  },
   "hero": {
     "tag": "100% gratis, ingen registrering",
     "title": "Gjør lyd om til tidsstemplet tekst og undertekster, gratis og uten begrensninger.",

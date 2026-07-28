@@ -11,7 +11,7 @@ export async function HomePageBody({ locale }: { locale: string }) {
     <>
       <JsonLd locale={locale} />
       <Header />
-      <main id="top" className="mx-auto max-w-6xl px-6 py-10 sm:py-16">
+      <main id="transcribe" className="mx-auto max-w-6xl scroll-mt-4 px-6 py-10 sm:py-16">
         <Transcriber />
         <div className="mt-24 sm:mt-32">
           <SeoSections />

@@ -10,6 +10,18 @@
     "about": "About",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "मुफ़्त ट्रांसक्रिप्शन शुरू करें",
+    "startFreeShort": "मुफ़्त शुरू करें",
+    "audioToText": "ऑडियो से टेक्स्ट",
+    "mp3ToText": "MP3 से टेक्स्ट",
+    "audioToSrt": "ऑडियो से SRT",
+    "interviewTranscription": "इंटरव्यू ट्रांसक्रिप्शन",
+    "lectureTranscription": "लेक्चर ट्रांसक्रिप्शन",
+    "productLinks": "उत्पाद",
+    "companyLinks": "कंपनी",
+    "switchLanguage": "भाषा चुनें"
+  },
   "hero": {
     "tag": "100% मुफ़्त, साइन-अप नहीं",
     "title": "ऑडियो को मुफ़्त और असीमित रूप से टाइमस्टैम्प वाले टेक्स्ट और सबटाइटल में बदलें।",

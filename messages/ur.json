@@ -10,6 +10,18 @@
     "about": "تعارف",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "مفت ٹرانسکرپشن شروع کریں",
+    "startFreeShort": "مفت شروع کریں",
+    "audioToText": "آڈیو سے متن",
+    "mp3ToText": "MP3 سے متن",
+    "audioToSrt": "آڈیو سے SRT",
+    "interviewTranscription": "انٹرویو کی ٹرانسکرپشن",
+    "lectureTranscription": "لیکچر کی ٹرانسکرپشن",
+    "productLinks": "پروڈکٹ",
+    "companyLinks": "کمپنی",
+    "switchLanguage": "زبان منتخب کریں"
+  },
   "hero": {
     "tag": "۱۰۰٪ مفت، بغیر سائن اپ",
     "title": "آڈیو کو مفت اور لامحدود طور پر ٹائم اسٹیمپ والے متن اور سب ٹائٹلز میں تبدیل کریں۔",

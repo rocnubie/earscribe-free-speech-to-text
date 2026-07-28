@@ -10,6 +10,18 @@
     "about": "关于",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "免费开始转写",
+    "startFreeShort": "免费开始",
+    "audioToText": "音频转文字",
+    "mp3ToText": "MP3 转文字",
+    "audioToSrt": "音频转 SRT",
+    "interviewTranscription": "访谈录音转写",
+    "lectureTranscription": "课堂录音转写",
+    "productLinks": "产品",
+    "companyLinks": "公司",
+    "switchLanguage": "选择语言"
+  },
   "hero": {
     "tag": "100% 免费，无需注册",
     "title": "免费无限音频转文字，生成带时间戳的文字和字幕。",

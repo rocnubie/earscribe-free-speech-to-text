@@ -10,6 +10,18 @@
     "about": "소개",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "무료로 전사 시작",
+    "startFreeShort": "무료로 시작",
+    "audioToText": "음성 텍스트 변환",
+    "mp3ToText": "MP3를 텍스트로",
+    "audioToSrt": "오디오를 SRT로",
+    "interviewTranscription": "인터뷰 전사",
+    "lectureTranscription": "강의 전사",
+    "productLinks": "제품",
+    "companyLinks": "회사",
+    "switchLanguage": "언어 선택"
+  },
   "hero": {
     "tag": "100% 무료, 회원가입 불필요",
     "title": "무료·무제한으로 음성을 타임스탬프 전사본과 자막으로 변환하세요.",

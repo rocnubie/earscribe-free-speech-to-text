@@ -10,6 +10,18 @@
     "about": "حول",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "ابدأ النسخ مجانًا",
+    "startFreeShort": "ابدأ مجانًا",
+    "audioToText": "تحويل الصوت إلى نص",
+    "mp3ToText": "تحويل MP3 إلى نص",
+    "audioToSrt": "تحويل الصوت إلى SRT",
+    "interviewTranscription": "نسخ المقابلات",
+    "lectureTranscription": "نسخ المحاضرات",
+    "productLinks": "المنتج",
+    "companyLinks": "الشركة",
+    "switchLanguage": "اختيار اللغة"
+  },
   "hero": {
     "tag": "مجاني 100%، بدون تسجيل",
     "title": "حوّل الصوت إلى نص وترجمات بتوقيتات، مجاناً وبلا حدود.",

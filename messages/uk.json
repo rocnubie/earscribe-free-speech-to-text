@@ -10,6 +10,18 @@
     "about": "Про сервіс",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Почати розшифровку безкоштовно",
+    "startFreeShort": "Почати безкоштовно",
+    "audioToText": "Аудіо в текст",
+    "mp3ToText": "MP3 у текст",
+    "audioToSrt": "Аудіо в SRT",
+    "interviewTranscription": "Розшифровка інтерв'ю",
+    "lectureTranscription": "Розшифровка лекцій",
+    "productLinks": "Продукт",
+    "companyLinks": "Компанія",
+    "switchLanguage": "Вибрати мову"
+  },
   "hero": {
     "tag": "100% безкоштовно, без реєстрації",
     "title": "Перетворюйте аудіо на текст із часовими мітками та субтитри безкоштовно й без обмежень.",

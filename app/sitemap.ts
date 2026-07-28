@@ -4,8 +4,11 @@ import type { MetadataRoute } from "next";
 
 import { defaultLocale, locales } from "@/i18n/locale";
 import { urlFor } from "@/lib/seo";
-import { PRIVACY_LOCALES } from "@/lib/privacy-content";
-import { TOOL_LOCALES, TOOL_SLUGS } from "@/lib/tool-pages";
+import {
+  PRIVACY_LOCALES,
+  TOOL_LOCALES,
+  TOOL_SLUGS,
+} from "@/lib/site-routes";
 
 /**
  * Static sitemap, generated at build time. Update by editing the `pages`

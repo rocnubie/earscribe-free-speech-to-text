@@ -23,7 +23,13 @@ import {
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
-import { Link } from "@/i18n/routing";
+import { TrackedNavigationLink } from "@/components/TrackedNavigationLink";
+import {
+  getContextualToolTarget,
+  getJobNavigationTarget,
+  JOB_NAVIGATION,
+  USE_CASE_NAVIGATION,
+} from "@/lib/site-navigation";
 
 /* ------------------------------------------------------------------ */
 /*  1. UI Showcase — real done-state UI with static demo data        */
@@ -202,8 +208,9 @@ export function HowItWorks() {
 
   return (
     <section
+      id="how-it-works"
       aria-labelledby="how-heading"
-      className="mx-auto max-w-6xl"
+      className="mx-auto max-w-6xl scroll-mt-6"
     >
       <div className="mx-auto max-w-3xl text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-700">
@@ -261,6 +268,7 @@ const UNSPLASH = (id: string, w = 800) =>
 
 export function UseCases() {
   const t = useTranslations("seo.useCases");
+  const locale = useLocale();
   const items = t.raw("items") as {
     title: string;
     body: string;
@@ -321,7 +329,18 @@ export function UseCases() {
               </div>
               <div className="p-5">
                 <h3 className="text-base font-semibold text-slate-900">
-                  {c.title}
+                  <TrackedNavigationLink
+                    navigationTarget={getContextualToolTarget(
+                      USE_CASE_NAVIGATION[i]?.id ?? "longForm",
+                      locale,
+                    )}
+                    surface="home_use_case"
+                    targetId={USE_CASE_NAVIGATION[i]?.id ?? "longForm"}
+                    className="inline-flex items-center gap-1.5 hover:text-sky-700"
+                  >
+                    {c.title}
+                    <ChevronRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
+                  </TrackedNavigationLink>
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-600">
                   {c.body}
@@ -758,19 +777,23 @@ export function FinalCTA() {
           {t("subtitle")}
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <a
-            href="#top"
+          <TrackedNavigationLink
+            navigationTarget={{ href: "#transcribe", available: true, fallback: false, localeAware: false }}
+            surface="home_final_cta"
+            targetId="startFree"
             className="inline-flex items-center gap-2 rounded-lg bg-sky-500 px-5 py-2.5 text-sm font-semibold text-white hover:bg-sky-400"
           >
             {t("tryNow")}
             <ChevronRight className="h-4 w-4" />
-          </a>
-          <Link
-            href="/about"
+          </TrackedNavigationLink>
+          <TrackedNavigationLink
+            navigationTarget={{ href: "#how-it-works", available: true, fallback: false, localeAware: false }}
+            surface="home_final_cta"
+            targetId="howItWorks"
             className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/5 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10"
           >
             {t("howItWorks")}
-          </Link>
+          </TrackedNavigationLink>
         </div>
       </div>
     </section>
@@ -785,15 +808,6 @@ export function WhatYouCanDo() {
   const t = useTranslations("seo.whatYouCanDo");
   const locale = useLocale();
   const jobs = t.raw("jobs") as { from: string; to: string; label: string }[];
-  const hasToolPages = ["en", "zh-CN", "ja"].includes(locale);
-  const jobLinks = [
-    "/mp3-to-text",
-    "/audio-to-text",
-    "/audio-to-text",
-    "/audio-to-srt",
-    "/audio-to-srt",
-    "/audio-to-text",
-  ];
 
   return (
     <section
@@ -825,18 +839,17 @@ export function WhatYouCanDo() {
             key={j.label}
             className="rounded-xl border border-slate-200 bg-white shadow-sm"
           >
-            {hasToolPages ? (
-              <Link
-                href={jobLinks[index] ?? "/audio-to-text"}
-                className="flex items-center gap-3 px-4 py-3 hover:bg-sky-50"
-              >
-                <JobLabel job={j} />
-              </Link>
-            ) : (
-              <div className="flex items-center gap-3 px-4 py-3">
-                <JobLabel job={j} />
-              </div>
-            )}
+            <TrackedNavigationLink
+              navigationTarget={getJobNavigationTarget(
+                JOB_NAVIGATION[index]?.id ?? "podcastToText",
+                locale,
+              )}
+              surface="home_job"
+              targetId={JOB_NAVIGATION[index]?.id ?? "podcastToText"}
+              className="flex items-center gap-3 px-4 py-3 hover:bg-sky-50"
+            >
+              <JobLabel job={j} />
+            </TrackedNavigationLink>
           </li>
         ))}
       </ul>

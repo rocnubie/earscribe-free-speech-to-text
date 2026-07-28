@@ -10,6 +10,18 @@
     "about": "Über uns",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Kostenlos transkribieren",
+    "startFreeShort": "Kostenlos starten",
+    "audioToText": "Audio zu Text",
+    "mp3ToText": "MP3 zu Text",
+    "audioToSrt": "Audio zu SRT",
+    "interviewTranscription": "Interview-Transkription",
+    "lectureTranscription": "Vorlesung transkribieren",
+    "productLinks": "Produkt",
+    "companyLinks": "Unternehmen",
+    "switchLanguage": "Sprache auswählen"
+  },
   "hero": {
     "tag": "100 % kostenlos, ohne Anmeldung",
     "title": "Audio kostenlos und unbegrenzt in Text mit Zeitstempeln und Untertitel umwandeln.",

@@ -10,6 +10,18 @@
     "about": "About",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Start transcribing free",
+    "startFreeShort": "Start free",
+    "audioToText": "Audio to Text",
+    "mp3ToText": "MP3 to Text",
+    "audioToSrt": "Audio to SRT",
+    "interviewTranscription": "Interview Transcription",
+    "lectureTranscription": "Lecture Transcription",
+    "productLinks": "Product",
+    "companyLinks": "Company",
+    "switchLanguage": "Select language"
+  },
   "hero": {
     "tag": "Free, unlimited, no sign-up",
     "title": "Free, unlimited audio to timestamped text and subtitles.",

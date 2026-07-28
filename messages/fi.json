@@ -10,6 +10,18 @@
     "about": "Tietoja",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Aloita litterointi ilmaiseksi",
+    "startFreeShort": "Aloita ilmaiseksi",
+    "audioToText": "Ääni tekstiksi",
+    "mp3ToText": "MP3 tekstiksi",
+    "audioToSrt": "Ääni SRT:ksi",
+    "interviewTranscription": "Haastattelun litterointi",
+    "lectureTranscription": "Luentotallenteen litterointi",
+    "productLinks": "Tuote",
+    "companyLinks": "Yritys",
+    "switchLanguage": "Valitse kieli"
+  },
   "hero": {
     "tag": "100% ilmainen, ei rekisteröintiä",
     "title": "Muunna ääni aikaleimatuksi tekstiksi ja tekstityksiksi ilmaiseksi ja rajattomasti.",

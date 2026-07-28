@@ -10,6 +10,18 @@
     "about": "Over",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Gratis transcriberen",
+    "startFreeShort": "Start gratis",
+    "audioToText": "Audio naar tekst",
+    "mp3ToText": "MP3 naar tekst",
+    "audioToSrt": "Audio naar SRT",
+    "interviewTranscription": "Interviewtranscriptie",
+    "lectureTranscription": "College transcriberen",
+    "productLinks": "Product",
+    "companyLinks": "Bedrijf",
+    "switchLanguage": "Taal selecteren"
+  },
   "hero": {
     "tag": "100% gratis, geen aanmelding",
     "title": "Zet audio gratis en onbeperkt om in tekst met tijdcodes en ondertitels.",

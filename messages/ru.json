@@ -10,6 +10,18 @@
     "about": "О сервисе",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Начать расшифровку бесплатно",
+    "startFreeShort": "Начать бесплатно",
+    "audioToText": "Аудио в текст",
+    "mp3ToText": "MP3 в текст",
+    "audioToSrt": "Аудио в SRT",
+    "interviewTranscription": "Расшифровка интервью",
+    "lectureTranscription": "Расшифровка лекций",
+    "productLinks": "Продукт",
+    "companyLinks": "Компания",
+    "switchLanguage": "Выбрать язык"
+  },
   "hero": {
     "tag": "100% бесплатно, без регистрации",
     "title": "Преобразуйте аудио в текст с таймкодами и субтитры бесплатно, без ограничений.",

@@ -10,6 +10,18 @@
     "about": "EarScribeについて",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "無料で文字起こしを始める",
+    "startFreeShort": "無料で始める",
+    "audioToText": "音声文字起こし",
+    "mp3ToText": "MP3をテキストに",
+    "audioToSrt": "音声をSRTに",
+    "interviewTranscription": "インタビュー文字起こし",
+    "lectureTranscription": "講義の文字起こし",
+    "productLinks": "機能",
+    "companyLinks": "会社情報",
+    "switchLanguage": "言語を選択"
+  },
   "hero": {
     "tag": "100%無料・登録不要",
     "title": "無料・回数無制限で、音声をタイムスタンプ付きの文字起こしと字幕に。",

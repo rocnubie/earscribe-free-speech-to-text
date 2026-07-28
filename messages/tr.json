@@ -10,6 +10,18 @@
     "about": "Hakkında",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Ücretsiz transkripsiyona başla",
+    "startFreeShort": "Ücretsiz başla",
+    "audioToText": "Sesi metne dönüştür",
+    "mp3ToText": "MP3'ü metne dönüştür",
+    "audioToSrt": "Sesi SRT'ye dönüştür",
+    "interviewTranscription": "Röportaj deşifresi",
+    "lectureTranscription": "Ders kaydı deşifresi",
+    "productLinks": "Ürün",
+    "companyLinks": "Şirket",
+    "switchLanguage": "Dil seçin"
+  },
   "hero": {
     "tag": "%100 ücretsiz, kayıt gerekmez",
     "title": "Sesi zaman damgalı metne ve altyazıya ücretsiz ve sınırsız dönüştürün.",

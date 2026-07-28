@@ -10,6 +10,18 @@
     "about": "Om",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Börja transkribera gratis",
+    "startFreeShort": "Börja gratis",
+    "audioToText": "Ljud till text",
+    "mp3ToText": "MP3 till text",
+    "audioToSrt": "Ljud till SRT",
+    "interviewTranscription": "Intervjutranskribering",
+    "lectureTranscription": "Föreläsningstranskribering",
+    "productLinks": "Produkt",
+    "companyLinks": "Företag",
+    "switchLanguage": "Välj språk"
+  },
   "hero": {
     "tag": "100% gratis, ingen registrering",
     "title": "Omvandla ljud till tidsstämplad text och undertexter, gratis och utan begränsningar.",

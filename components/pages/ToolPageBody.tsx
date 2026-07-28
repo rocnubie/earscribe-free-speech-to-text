@@ -84,7 +84,7 @@ export function ToolPageBody({
             </ul>
           </section>
 
-          <section aria-label={page.ui.toolLabel} className="mt-10 border-y border-slate-200 bg-white px-0 py-8 sm:px-8">
+          <section id="transcribe" aria-label={page.ui.toolLabel} className="mt-10 scroll-mt-4 border-y border-slate-200 bg-white px-0 py-8 sm:px-8">
             <Transcriber embedded initialResultTab={page.resultTab} />
           </section>
 

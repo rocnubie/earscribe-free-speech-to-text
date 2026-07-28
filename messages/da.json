@@ -10,6 +10,18 @@
     "about": "Om",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Start gratis transskribering",
+    "startFreeShort": "Start gratis",
+    "audioToText": "Lyd til tekst",
+    "mp3ToText": "MP3 til tekst",
+    "audioToSrt": "Lyd til SRT",
+    "interviewTranscription": "Interviewtransskribering",
+    "lectureTranscription": "Forelæsningsudskrift",
+    "productLinks": "Produkt",
+    "companyLinks": "Virksomhed",
+    "switchLanguage": "Vælg sprog"
+  },
   "hero": {
     "tag": "100% gratis, ingen tilmelding",
     "title": "Konvertér lyd til tidsstemplet tekst og undertekster, gratis og uden begrænsninger.",

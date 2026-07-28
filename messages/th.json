@@ -10,6 +10,18 @@
     "about": "เกี่ยวกับ",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "เริ่มถอดเสียงฟรี",
+    "startFreeShort": "เริ่มฟรี",
+    "audioToText": "แปลงเสียงเป็นข้อความ",
+    "mp3ToText": "แปลง MP3 เป็นข้อความ",
+    "audioToSrt": "แปลงเสียงเป็น SRT",
+    "interviewTranscription": "ถอดเสียงบทสัมภาษณ์",
+    "lectureTranscription": "ถอดเสียงการบรรยาย",
+    "productLinks": "ผลิตภัณฑ์",
+    "companyLinks": "บริษัท",
+    "switchLanguage": "เลือกภาษา"
+  },
   "hero": {
     "tag": "ฟรี 100% ไม่ต้องสมัครสมาชิก",
     "title": "แปลงเสียงเป็นข้อความพร้อมเวลาและซับไตเติลได้ฟรี ใช้ได้ไม่จำกัด",

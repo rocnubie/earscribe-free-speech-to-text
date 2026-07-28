@@ -10,6 +10,18 @@
     "about": "Tentang",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "Mulai transkripsi gratis",
+    "startFreeShort": "Mulai gratis",
+    "audioToText": "Audio ke teks",
+    "mp3ToText": "MP3 ke teks",
+    "audioToSrt": "Audio ke SRT",
+    "interviewTranscription": "Transkripsi wawancara",
+    "lectureTranscription": "Transkripsi kuliah",
+    "productLinks": "Produk",
+    "companyLinks": "Perusahaan",
+    "switchLanguage": "Pilih bahasa"
+  },
   "hero": {
     "tag": "100% gratis, tanpa daftar",
     "title": "Ubah audio menjadi teks bertanda waktu dan subtitle, gratis tanpa batas.",

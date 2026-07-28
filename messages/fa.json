@@ -10,6 +10,18 @@
     "about": "درباره",
     "github": "GitHub"
   },
+  "navigation": {
+    "startFree": "رونویسی رایگان را شروع کنید",
+    "startFreeShort": "رایگان شروع کنید",
+    "audioToText": "تبدیل صدا به متن",
+    "mp3ToText": "تبدیل MP3 به متن",
+    "audioToSrt": "تبدیل صدا به SRT",
+    "interviewTranscription": "رونویسی مصاحبه",
+    "lectureTranscription": "رونویسی درس",
+    "productLinks": "محصول",
+    "companyLinks": "شرکت",
+    "switchLanguage": "انتخاب زبان"
+  },
   "hero": {
     "tag": "۱۰۰٪ رایگان، بدون ثبت‌نام",
     "title": "صدا را رایگان و نامحدود به متن زمان‌دار و زیرنویس تبدیل کنید.",

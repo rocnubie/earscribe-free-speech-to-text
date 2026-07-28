@@ -1,14 +1,10 @@
-export const TOOL_SLUGS = [
-  "audio-to-text",
-  "mp3-to-text",
-  "audio-to-srt",
-  "interview-transcription",
-  "lecture-transcription",
-] as const;
+import {
+  TOOL_SLUGS,
+  type ToolLocale,
+  type ToolSlug,
+} from "@/lib/site-routes";
 
-export type ToolSlug = (typeof TOOL_SLUGS)[number];
-export type ToolLocale = "en" | "zh-CN" | "ja";
-export const TOOL_LOCALES = ["en", "zh-CN", "ja"] as const;
+export { TOOL_SLUGS, type ToolLocale, type ToolSlug };
 
 interface ToolCopy {
   title: string;

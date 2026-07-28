@@ -6,10 +6,12 @@ import { ToolPageBody } from "@/components/pages/ToolPageBody";
 import { buildToolPageMetadata } from "@/lib/tool-page-metadata";
 import {
   isToolSlug,
+} from "@/lib/tool-pages";
+import {
   TOOL_LOCALES,
   TOOL_SLUGS,
   type ToolLocale,
-} from "@/lib/tool-pages";
+} from "@/lib/site-routes";
 
 export const dynamicParams = false;
 

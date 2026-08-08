@@ -55,6 +55,21 @@ export function PrivacyPageBody({ locale }: { locale: string }) {
                       ))}
                     </ul>
                   )}
+                  {section.links && (
+                    <nav className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm" aria-label={section.title}>
+                      {section.links.map((link) => (
+                        <a
+                          key={link.href}
+                          href={link.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-medium text-sky-700 underline decoration-sky-300 underline-offset-2 hover:text-sky-900"
+                        >
+                          {link.label}
+                        </a>
+                      ))}
+                    </nav>
+                  )}
                 </div>
               </section>
             );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 
+import { GoogleAdSenseScript } from "@/components/GoogleAdSense";
 import { PlausibleScript } from "@/components/Plausible";
 import { defaultLocale } from "@/i18n/locale";
 import { buildHomeMetadata } from "@/lib/seo/root-metadata";
@@ -25,6 +26,7 @@ export default async function DefaultLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <GoogleAdSenseScript />
         <PlausibleScript />
       </head>
       <body className="min-h-screen antialiased">

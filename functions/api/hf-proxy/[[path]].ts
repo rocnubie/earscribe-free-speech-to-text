@@ -4,9 +4,31 @@
  * Browser fetches /api/hf-proxy/{repo}/resolve/{rev}/{file} instead of
  * https://huggingface.co/... to avoid CORS issues and enable edge caching.
  * Models are immutable per-revision, so CF caches them for a year.
+ *
+ * Only the model repos in lib/models.ts are proxied, and only at `main`.
+ * Everything else is a 404, so nobody can serve arbitrary Hugging Face files
+ * from our domain.
  */
 
+import { MODELS } from "../../../lib/models";
+
 const UPSTREAM = "https://huggingface.co";
+
+const ALLOWED_REPOS = new Set(MODELS.map((m) => m.repo));
+
+/**
+ * The worker never sets a `revision`, so Transformers.js always requests
+ * `main`. Don't widen this to other refs or commit SHAs: anyone can open a PR
+ * on a public repo, and its files resolve under the PR's ref and commit SHA.
+ */
+const ALLOWED_REVISION = "main";
+
+/**
+ * One plain file path segment (`config.json`, `onnx`, `encoder_model.onnx_data`).
+ * Rejects empty and dot segments and %-escapes, so the upstream URL can't be
+ * normalized onto a different path.
+ */
+const FILE_SEGMENT = /^[\w-][\w.-]*$/;
 
 const FORWARD_REQUEST_HEADERS = new Set([
   "range",
@@ -25,22 +47,37 @@ const FORWARD_RESPONSE_HEADERS = new Set([
 
 type Ctx = { request: Request; params: Record<string, string | string[]> };
 
-export async function onRequestGet({ request, params }: Ctx): Promise<Response> {
-  return proxy(request, params);
+export async function onRequest({ request, params }: Ctx): Promise<Response> {
+  const target =
+    request.method === "GET" || request.method === "HEAD"
+      ? upstreamUrl(params["path"])
+      : null;
+  if (!target) {
+    return new Response("Not found", { status: 404 });
+  }
+  return proxy(request, target);
 }
 
-export async function onRequestHead({ request, params }: Ctx): Promise<Response> {
-  return proxy(request, params);
+/**
+ * Maps `{org}/{repo}/resolve/main/{file...}` for an allowed repo to its
+ * huggingface.co URL, or returns null. The query string is dropped:
+ * Transformers.js never sends one.
+ */
+function upstreamUrl(path: string | string[] | undefined): string | null {
+  const [org, repo, resolve, revision, ...file] = Array.isArray(path) ? path : [];
+  if (
+    !ALLOWED_REPOS.has(`${org}/${repo}`) ||
+    resolve !== "resolve" ||
+    revision !== ALLOWED_REVISION ||
+    file.length === 0 ||
+    !file.every((segment) => FILE_SEGMENT.test(segment))
+  ) {
+    return null;
+  }
+  return `${UPSTREAM}/${org}/${repo}/resolve/${revision}/${file.join("/")}`;
 }
 
-async function proxy(
-  request: Request,
-  params: Record<string, string | string[]>,
-): Promise<Response> {
-  const pathSegments = (params["path"] as string[] | undefined) ?? [];
-  const url = new URL(request.url);
-  const target = `${UPSTREAM}/${pathSegments.map(encodeURIComponent).join("/")}${url.search}`;
-
+async function proxy(request: Request, target: string): Promise<Response> {
   const upstreamHeaders = new Headers();
   request.headers.forEach((value, key) => {
     if (FORWARD_REQUEST_HEADERS.has(key.toLowerCase())) {

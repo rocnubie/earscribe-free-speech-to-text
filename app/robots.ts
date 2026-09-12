@@ -19,8 +19,8 @@ export default function robots(): MetadataRoute.Robots {
       // Block training-only crawlers.
       { userAgent: "GPTBot", disallow: "/" },
       { userAgent: "CCBot", disallow: "/" },
-      // Everyone else.
-      { userAgent: "*", allow: "/" },
+      // Everyone else. /api/ is only the model-file proxy, nothing to index.
+      { userAgent: "*", allow: "/", disallow: "/api/" },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
   };

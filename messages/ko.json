@@ -218,7 +218,10 @@
     "title": "EarScribe 소개",
     "intro": "EarScribe는 녹음을 검색·편집 가능한 타임스탬프 전사본과 자막으로 바꾸며, 계정 생성보다 결과를 먼저 보여 줍니다.",
     "noServer": "추천 설정으로 바로 시작하고, 모델 비교·텍스트 편집·자막 검사는 필요한 단계에서만 열 수 있습니다.",
-    "credits": "Transformers.js, ONNX Runtime Web, 그리고 OpenAI의 오픈소스 Whisper 모델을 기반으로 제작되었습니다."
+    "credits": "Transformers.js, ONNX Runtime Web, 그리고 OpenAI의 오픈소스 Whisper 모델을 기반으로 제작되었습니다.",
+    "operatorTitle": "EarScribe를 운영하는 사람",
+    "operatorBody": "EarScribe는 개발자 한 명이 만들고 운영하는 작은 독립 프로젝트입니다. 녹음을 업로드하거나 계정을 만들지 않고도 텍스트로 변환할 수 있도록 2026년 5월에 시작했습니다. 소스 코드는 GitHub에 공개되어 있으며, 사이트의 광고가 무료 서비스를 유지하는 데 도움이 됩니다.",
+    "contactLabel": "문의, 의견, 버그 신고:"
   },
   "footer": {
     "tagline": "100% 무료 음성 텍스트 변환 및 음성 받아쓰기. 회원가입·로그인 불필요.",

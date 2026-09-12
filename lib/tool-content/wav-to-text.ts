@@ -9,9 +9,9 @@ export const WAV_TO_TEXT_PAGE: ToolPageDefinition = {
   resultTab: "transcript",
   copy: {
     en: {
-      title: "Convert WAV recordings to text",
+      title: "Free WAV to text converter for large recordings",
       description:
-        "Transcribe WAV files from recorders, DAWs and Audacity into timestamped text in your browser. Large files are never uploaded; export TXT, SRT, VTT or JSON.",
+        "Free WAV to text in your browser: transcribe recorder, DAW and Audacity files into timestamped text. Nothing is uploaded; export TXT, SRT or VTT.",
       eyebrow: "WAV to text converter",
       intro:
         "WAV is what field recorders, DAWs and Audacity produce: uncompressed and large. EarScribe reads the WAV on your own device, so a big file never has to be uploaded, and turns it into timestamped text you can check and export.",
@@ -20,7 +20,7 @@ export const WAV_TO_TEXT_PAGE: ToolPageDefinition = {
         "Timestamped segments you can replay",
         "Export TXT, SRT, VTT or JSON",
       ],
-      workflowTitle: "Handling a WAV recording",
+      workflowTitle: "Transcribe a WAV recording for free",
       workflow: [
         { title: "Check the file size", body: "An hour of CD-quality stereo WAV is about 635 MB, and files over 1 GB are refused. Split long recordings or export a mono copy first." },
         { title: "Pick a model that fits the device", body: "The balanced model works for most recordings. Tiny is lighter when memory is tight; larger models need more of it." },
@@ -41,12 +41,12 @@ export const WAV_TO_TEXT_PAGE: ToolPageDefinition = {
       screenshotAlt: "WAV recording converted into timestamped text with waveform and export controls",
     },
     "zh-CN": {
-      title: "WAV 转文字：大文件不用上传",
-      description: "在浏览器里把录音笔、音频软件和 Audacity 导出的 WAV 转成带时间戳的文字。大文件不上传，可导出 TXT、SRT、VTT 或 JSON。",
+      title: "免费 WAV 转文字：大文件不用上传",
+      description: "免费在浏览器里把录音笔、音频软件和 Audacity 导出的 WAV 转成带时间戳的文字。大文件不上传，可导出 TXT、SRT、VTT 或 JSON。",
       eyebrow: "WAV 转文字工具",
       intro: "录音笔、音频工作站和 Audacity 导出的通常是 WAV：不压缩，体积很大。EarScribe 在你自己的设备上读取 WAV，大文件不必上传，直接生成可以核对和导出的带时间戳文字。",
       benefits: ["大 WAV 文件留在本机", "每段文字都能按时间戳回听", "导出 TXT、SRT、VTT 或 JSON"],
-      workflowTitle: "处理 WAV 录音的步骤",
+      workflowTitle: "免费转写 WAV 录音的步骤",
       workflow: [
         { title: "先看文件大小", body: "一小时 CD 音质的立体声 WAV 约 635 MB，超过 1 GB 的文件会被拒绝。长录音请先拆分，或导出一份单声道副本。" },
         { title: "选适合设备的模型", body: "大多数录音用均衡模型即可。内存紧张时用 Tiny，大模型需要更多内存。" },
@@ -67,12 +67,12 @@ export const WAV_TO_TEXT_PAGE: ToolPageDefinition = {
       screenshotAlt: "WAV 录音转成的带时间戳文字，含波形和导出按钮",
     },
     ja: {
-      title: "WAVファイルを文字起こし（アップロード不要）",
-      description: "録音機・DAW・Audacityで作ったWAVを、ブラウザ内でタイムスタンプ付きテキストに変換。大きなファイルもアップロードせず、TXT・SRT・VTT・JSONで書き出せます。",
+      title: "WAVファイルを無料で文字起こし（アップロード不要）",
+      description: "録音機・DAW・Audacityで作ったWAVを、ブラウザ内で無料でタイムスタンプ付きテキストに変換。大きなファイルもアップロードせず、TXT・SRT・VTT・JSONで書き出せます。",
       eyebrow: "WAV 文字起こし",
       intro: "フィールドレコーダー、DAW、Audacityが書き出すWAVは非圧縮で容量が大きい形式です。EarScribeはWAVを手元の端末で読み込むので、大きなファイルをアップロードする必要がありません。確認して書き出せるタイムスタンプ付きの文字にします。",
       benefits: ["大きなWAVも端末から出さない", "区間ごとにタイムスタンプから再生", "TXT・SRT・VTT・JSONで書き出し"],
-      workflowTitle: "WAV録音の扱い方",
+      workflowTitle: "WAV録音を無料で文字起こしする手順",
       workflow: [
         { title: "ファイルサイズを確認する", body: "CD音質のステレオWAVは1時間で約635 MBになり、1 GBを超えるファイルは受け付けません。長い録音は分割するか、モノラル版を書き出してください。" },
         { title: "端末に合うモデルを選ぶ", body: "多くの録音はバランス型で十分です。メモリが少ない場合はTinyを。大きいモデルほどメモリを使います。" },

@@ -9,9 +9,9 @@ export const WHISPER_ONLINE_PAGE: ToolPageDefinition = {
   resultTab: "transcript",
   copy: {
     en: {
-      title: "Run OpenAI Whisper online in your browser",
+      title: "Use OpenAI Whisper online for free, in your browser",
       description:
-        "Use OpenAI's Whisper speech recognition online without an API key: Tiny, Base, Small or Large v3 Turbo, running in your browser. No upload, no sign-up.",
+        "Use OpenAI's Whisper speech recognition online for free, with no API key: Tiny, Base, Small or Large v3 Turbo run in your browser. No upload, no sign-up.",
       eyebrow: "Whisper online",
       intro:
         "EarScribe runs OpenAI's open-source Whisper models directly in your browser tab with Transformers.js and ONNX Runtime Web. Pick a model, choose an audio file, and get Whisper's timestamped transcript without installing Python or paying for an API.",
@@ -20,7 +20,7 @@ export const WHISPER_ONLINE_PAGE: ToolPageDefinition = {
         "Tiny, Base, Small or Large v3 Turbo",
         "WebGPU when available, CPU otherwise",
       ],
-      workflowTitle: "Using Whisper in the browser",
+      workflowTitle: "Using Whisper for free in the browser",
       workflow: [
         { title: "Choose an audio file", body: "EarScribe decodes MP3, WAV, M4A, OGG, FLAC and WebM in the browser and hands Whisper a 16 kHz mono copy." },
         { title: "Pick a Whisper model", body: "Base is recommended for most recordings. Compare all four to trade download size and speed for accuracy." },
@@ -41,12 +41,12 @@ export const WHISPER_ONLINE_PAGE: ToolPageDefinition = {
       screenshotAlt: "Whisper transcript with timestamps produced in the browser",
     },
     "zh-CN": {
-      title: "在浏览器里在线使用 OpenAI Whisper",
-      description: "不用 API Key 也能在线使用 OpenAI Whisper 语音转文字：Tiny、Base、Small、Large v3 Turbo 都在浏览器里运行。不上传、无需注册。",
+      title: "免费在线使用 OpenAI Whisper 语音转文字",
+      description: "不用 API Key，免费在线使用 OpenAI Whisper 语音转文字：Tiny、Base、Small、Large v3 Turbo 都在浏览器里运行。不上传、无需注册。",
       eyebrow: "Whisper 在线",
       intro: "EarScribe 借助 Transformers.js 和 ONNX Runtime Web，直接在浏览器标签页里运行 OpenAI 开源的 Whisper 模型。选好模型和音频文件，就能得到 Whisper 带时间戳的转写结果，不用装 Python，也不用为 API 付费。",
       benefits: ["无需 API Key、Python 或安装", "Tiny、Base、Small、Large v3 Turbo 任选", "支持 WebGPU，没有时自动改用 CPU"],
-      workflowTitle: "在浏览器里使用 Whisper",
+      workflowTitle: "在浏览器里免费使用 Whisper",
       workflow: [
         { title: "选择音频文件", body: "EarScribe 在浏览器里解码 MP3、WAV、M4A、OGG、FLAC 和 WebM，再把 16 kHz 单声道音频交给 Whisper。" },
         { title: "选择 Whisper 模型", body: "大多数录音推荐 Base。也可以对比四个模型，在下载体积、速度和准确率之间取舍。" },
@@ -67,12 +67,12 @@ export const WHISPER_ONLINE_PAGE: ToolPageDefinition = {
       screenshotAlt: "在浏览器中由 Whisper 生成的带时间戳文字稿",
     },
     ja: {
-      title: "OpenAIのWhisperをブラウザで使って文字起こし",
-      description: "APIキーなしでOpenAIのWhisperをオンラインで。Tiny・Base・Small・Large v3 Turboがブラウザで動きます。アップロード不要・登録不要です。",
+      title: "OpenAIのWhisperをブラウザで無料で使って文字起こし",
+      description: "APIキーなしで、OpenAIのWhisperをオンラインで無料で使えます。Tiny・Base・Small・Large v3 Turboがブラウザで動き、アップロード不要・登録不要です。",
       eyebrow: "Whisper 文字起こし",
       intro: "EarScribeは、OpenAIがオープンソースで公開したWhisperモデルを、Transformers.jsとONNX Runtime Webでブラウザのタブ内で直接動かします。モデルと音声ファイルを選ぶだけで、Pythonのインストールや有料APIなしに、Whisperのタイムスタンプ付き文字起こしが得られます。",
       benefits: ["APIキー・Python・インストール不要", "Tiny・Base・Small・Large v3 Turboから選べる", "WebGPUがなければCPUで動作"],
-      workflowTitle: "ブラウザでWhisperを使う流れ",
+      workflowTitle: "ブラウザでWhisperを無料で使う流れ",
       workflow: [
         { title: "音声ファイルを選ぶ", body: "EarScribeがMP3・WAV・M4A・OGG・FLAC・WebMをブラウザでデコードし、16 kHzモノラルの音声をWhisperに渡します。" },
         { title: "Whisperのモデルを選ぶ", body: "多くの録音にはBaseがおすすめです。4つのモデルを比べて、ダウンロード容量・速度・精度のバランスを選べます。" },

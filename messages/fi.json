@@ -218,7 +218,10 @@
     "title": "Tietoja EarScribesta",
     "intro": "EarScribe on staattinen verkkosovellus, joka suorittaa OpenAI:n Whisper-puhentunnistusmallit suoraan selaimessasi Transformers.js:n sekä WebGPU / WebAssembly-ajoympäristöjen avulla.",
     "noServer": "Taustajärjestelmää, joka käsittelee ääntäsi, ei ole. Cloudflare Pages -isäntä tarjoilee vain staattista HTML:ää, JS:ää ja CSS:ää. Whisper-mallin painot haetaan Hugging Face CDN:stä ensimmäisellä käyttökerralla ja selain tallentaa ne välimuistiin.",
-    "credits": "Rakennettu Transformers.js:n, ONNX Runtime Webin ja OpenAI:n avoimen lähdekoodin Whisper-mallien varaan."
+    "credits": "Rakennettu Transformers.js:n, ONNX Runtime Webin ja OpenAI:n avoimen lähdekoodin Whisper-mallien varaan.",
+    "operatorTitle": "Kuka ylläpitää EarScribea",
+    "operatorBody": "EarScribe on pieni itsenäinen projekti, jota kehittää ja ylläpitää yksi kehittäjä. Se aloitettiin toukokuussa 2026, jotta tallenteita voisi litteroida lataamatta niitä palvelimelle ja luomatta tiliä. Lähdekoodi on julkinen GitHubissa, ja sivuston mainokset auttavat pitämään palvelun ilmaisena.",
+    "contactLabel": "Kysymykset, palaute ja virheilmoitukset:"
   },
   "footer": {
     "tagline": "100% ilmainen ääni tekstiksi ja puhe tekstiksi. Ei rekisteröintiä, ei kirjautumista.",

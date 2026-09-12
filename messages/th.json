@@ -218,7 +218,10 @@
     "title": "เกี่ยวกับ EarScribe",
     "intro": "EarScribe เป็นเว็บแอปแบบสแตติกที่รันโมเดลจดจำเสียงพูด Whisper ของ OpenAI โดยตรงในเบราว์เซอร์ของคุณโดยใช้ Transformers.js และ WebGPU / WebAssembly runtime",
     "noServer": "ไม่มีแบ็กเอนด์ใดที่แตะต้องเสียงของคุณ โฮสต์ Cloudflare Pages ให้บริการเพียง HTML, JS และ CSS แบบสแตติก น้ำหนักโมเดล Whisper ถูกดึงจาก CDN ของ Hugging Face ในการใช้งานครั้งแรกและถูกแคชโดยเบราว์เซอร์ของคุณ",
-    "credits": "สร้างบน Transformers.js, ONNX Runtime Web และโมเดล Whisper โอเพนซอร์สจาก OpenAI"
+    "credits": "สร้างบน Transformers.js, ONNX Runtime Web และโมเดล Whisper โอเพนซอร์สจาก OpenAI",
+    "operatorTitle": "ใครดูแล EarScribe",
+    "operatorBody": "EarScribe เป็นโปรเจกต์อิสระขนาดเล็กที่นักพัฒนาคนเดียวสร้างและดูแล เริ่มต้นเมื่อเดือนพฤษภาคม 2026 เพื่อให้ถอดเสียงจากไฟล์บันทึกได้โดยไม่ต้องอัปโหลดหรือสมัครบัญชี ซอร์สโค้ดเปิดเผยอยู่บน GitHub และโฆษณาบนเว็บไซต์ช่วยให้ใช้งานได้ฟรีต่อไป",
+    "contactLabel": "คำถาม ความคิดเห็น และการแจ้งปัญหา:"
   },
   "footer": {
     "tagline": "แปลงเสียงเป็นข้อความและเสียงพูดเป็นข้อความฟรี 100% ไม่ต้องสมัคร ไม่ต้องเข้าสู่ระบบ",

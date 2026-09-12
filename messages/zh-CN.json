@@ -218,7 +218,10 @@
     "title": "关于 EarScribe",
     "intro": "EarScribe 把录音整理成可搜索、可编辑、带时间戳的文字稿和字幕，让用户先拿到结果，不被注册流程打断。",
     "noServer": "默认推荐均衡设置，新手可以直接开始；模型对比、文字编辑和字幕检查按需展开，熟悉后再使用更多控制。",
-    "credits": "基于 Transformers.js、ONNX Runtime Web 和 OpenAI 开源 Whisper 模型构建。"
+    "credits": "基于 Transformers.js、ONNX Runtime Web 和 OpenAI 开源 Whisper 模型构建。",
+    "operatorTitle": "谁在运营 EarScribe",
+    "operatorBody": "EarScribe 是一个小型独立项目，由一位开发者开发和维护。它始于 2026 年 5 月，目的是让录音不必上传、也不用注册账号就能转成文字。源代码公开在 GitHub 上，网站上的广告帮助它保持免费。",
+    "contactLabel": "问题、反馈和错误报告："
   },
   "footer": {
     "tagline": "100% 免费音频转文字与语音转文字，无需注册，无需登录。",

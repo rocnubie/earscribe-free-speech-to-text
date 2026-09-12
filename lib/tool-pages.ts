@@ -91,7 +91,7 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
           "Click any timestamp to check the original recording",
           "Copy text or export TXT, SRT, VTT and JSON",
         ],
-        workflowTitle: "From recording to usable text",
+        workflowTitle: "Turn a recording into usable text for free",
         workflow: [
           { title: "Choose the recording", body: "Use a browser-supported audio file. On memory-limited devices, shorter files and the balanced model are more reliable." },
           { title: "Use the recommended quality", body: "Most users can keep the balanced setting. Advanced model choices stay hidden until you need them." },
@@ -116,7 +116,7 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
         eyebrow: "音频转文字工具",
         intro: "选择 MP3、WAV、M4A、FLAC、OGG 或 WebM 录音，EarScribe 会自动识别语言，生成带时间戳的文字。你可以搜索、修改、点击回听，再导出需要的格式；音频无需上传。",
         benefits: ["免费无限使用，无需注册，也没有按分钟额度", "点击任意时间戳，直接回听对应录音", "复制文字，或导出 TXT、SRT、VTT 和 JSON"],
-        workflowTitle: "从录音到可用文字",
+        workflowTitle: "免费从录音得到可用文字",
         workflow: [
           { title: "选择录音", body: "支持常见音频格式。手机或内存较小的电脑建议先处理较短文件，并使用均衡模式。" },
           { title: "使用推荐精度", body: "大多数录音直接使用均衡模式即可；需要更快或更高精度时，再展开高级选项。" },
@@ -137,7 +137,7 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
         eyebrow: "音声文字起こしツール",
         intro: "MP3、WAV、M4A、FLAC、OGG、WebMを選ぶと、EarScribeが言語を自動判定し、タイムスタンプ付きで文字起こしします。検索、修正、該当箇所の聞き直し、書き出しまで行え、音声ファイルのアップロードは不要です。",
         benefits: ["無料・回数無制限・アカウント登録不要", "タイムスタンプを押して該当箇所をすぐ聞き直せる", "テキストのコピーとTXT・SRT・VTT・JSON書き出し"],
-        workflowTitle: "録音から使えるテキストまで",
+        workflowTitle: "録音から使えるテキストまで無料で",
         workflow: [
           { title: "録音を選ぶ", body: "一般的な音声形式に対応しています。メモリの少ない端末では、短めのファイルとバランス設定が安定します。" },
           { title: "おすすめ設定で始める", body: "通常はバランス設定のままで十分です。速度や精度を調整したい場合だけ詳細設定を開きます。" },
@@ -164,7 +164,7 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
         eyebrow: "MP3 to text",
         intro: "Drop an MP3 from a voice recorder, podcast, meeting or phone. EarScribe decodes it locally, detects the spoken language, and creates text you can verify against the original audio.",
         benefits: ["No upload queue or account creation", "Works with long-form speech within your device limits", "Keeps timestamps for replay and subtitle export"],
-        workflowTitle: "A practical MP3 transcription workflow",
+        workflowTitle: "A free, practical MP3 transcription workflow",
         workflow: [
           { title: "Check the source MP3", body: "A clear mono or stereo recording is enough. Very low bitrates and aggressive noise reduction can remove speech detail." },
           { title: "Transcribe in the browser", body: "The first run downloads a speech model. Later recordings can reuse the cached model on the same browser." },
@@ -185,7 +185,7 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
         eyebrow: "MP3 转文字",
         intro: "选择录音笔、播客、会议或手机里的 MP3，EarScribe 会在浏览器中解码，自动识别语言，并生成可以和原音逐段核对的文字。",
         benefits: ["无需上传排队，也不用注册账号", "在设备承受范围内处理长录音", "保留时间戳，方便回听和导出字幕"],
-        workflowTitle: "实用的 MP3 转文字流程",
+        workflowTitle: "免费、实用的 MP3 转文字流程",
         workflow: [
           { title: "先检查原始录音", body: "普通单声道或立体声 MP3 都可以。码率过低、降噪过重可能已经损失部分人声细节。" },
           { title: "在浏览器中识别", body: "首次使用需要下载语音模型，之后同一浏览器可以复用缓存模型。" },
@@ -206,7 +206,7 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
         eyebrow: "MP3文字起こし",
         intro: "ボイスレコーダー、ポッドキャスト、会議、スマートフォンのMP3を選ぶだけで、ブラウザ内で音声を解析し、言語を自動判定して、元音声と照合できる文字起こしを作成します。",
         benefits: ["アップロード待ちもアカウント登録も不要", "端末の性能に合わせて長めの録音にも対応", "聞き直しと字幕書き出しに使えるタイムスタンプ"],
-        workflowTitle: "実用的なMP3文字起こしの流れ",
+        workflowTitle: "無料でできる実用的なMP3文字起こしの流れ",
         workflow: [
           { title: "元のMP3を確認", body: "一般的なモノラル・ステレオ録音に対応します。低すぎるビットレートや強いノイズ除去では、声の情報が失われている場合があります。" },
           { title: "ブラウザで文字起こし", body: "初回は音声認識モデルをダウンロードします。同じブラウザでは次回からキャッシュを再利用できます。" },
@@ -228,12 +228,12 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
     resultTab: "subtitles",
     copy: {
       en: {
-        title: "Convert audio to SRT subtitles",
+        title: "Convert audio to SRT subtitles for free",
         description: "Generate timestamped SRT subtitles from audio, check line length and timing issues, then export. Free, unlimited and no sign-up.",
         eyebrow: "Audio to SRT subtitle generator",
         intro: "Create SRT or VTT subtitles from MP3, WAV, M4A and other audio. EarScribe keeps Whisper timestamps, flags common readability problems, and lets you improve line breaks before export.",
         benefits: ["Subtitle check for long, fast, repeated or overlapping cues", "Click a cue to listen before changing the text", "Export SRT, VTT, TXT or JSON from the same result"],
-        workflowTitle: "From audio to publishable subtitles",
+        workflowTitle: "From audio to publishable subtitles for free",
         workflow: [
           { title: "Generate timestamped cues", body: "Transcribe the recording and keep the model-generated timing for each segment." },
           { title: "Run the subtitle check", body: "Review cues that are too long, unusually fast, repeated, empty or overlapping." },
@@ -249,12 +249,12 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
         screenshotAlt: "EarScribe subtitle check showing timestamped cues and SRT export",
       },
       "zh-CN": {
-        title: "把音频转换成 SRT 字幕",
+        title: "免费把音频转换成 SRT 字幕",
         description: "从音频生成带时间轴的 SRT 字幕，检查行长、阅读速度和时间重叠后再导出。免费无限使用，无需注册。",
         eyebrow: "音频转 SRT 字幕工具",
         intro: "从 MP3、WAV、M4A 等音频生成 SRT 或 VTT。EarScribe 会保留 Whisper 时间戳，标出常见的可读性问题，并在导出前帮助你优化断行。",
         benefits: ["检查过长、过快、重复、空白和时间重叠字幕", "点击字幕即可回听原音，再决定是否修改", "同一结果可导出 SRT、VTT、TXT 和 JSON"],
-        workflowTitle: "从音频到可发布字幕",
+        workflowTitle: "免费从音频做出可发布的字幕",
         workflow: [
           { title: "生成带时间轴的字幕", body: "识别音频，并保留模型为每个片段生成的时间范围。" },
           { title: "运行字幕体检", body: "集中检查过长、阅读过快、重复、空白或时间重叠的字幕。" },
@@ -270,12 +270,12 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
         screenshotAlt: "EarScribe 字幕体检界面，显示时间戳字幕和 SRT 导出",
       },
       ja: {
-        title: "音声からSRT字幕を作成",
+        title: "音声からSRT字幕を無料で作成",
         description: "音声からタイムコード付きSRT字幕を生成し、文字数や表示速度、時間の重なりを確認して書き出せます。無料・回数無制限・登録不要です。",
         eyebrow: "音声からSRT字幕を作成",
         intro: "MP3、WAV、M4Aなどの音声からSRTまたはVTT字幕を作成します。Whisperのタイムスタンプを保ち、読みにくい字幕を見つけ、書き出し前に改行を整えられます。",
         benefits: ["長すぎる・速すぎる・重複・空欄・時間重複の字幕を確認", "字幕を押して元音声を聞いてから修正", "同じ結果からSRT・VTT・TXT・JSONを書き出し"],
-        workflowTitle: "音声から公開できる字幕まで",
+        workflowTitle: "音声から公開できる字幕まで無料で",
         workflow: [
           { title: "タイムコード付き字幕を生成", body: "音声を文字起こしし、各区間に生成されたタイムスタンプを保ちます。" },
           { title: "字幕チェックを開く", body: "長すぎる、表示が速い、重複、空欄、時間が重なる字幕をまとめて確認します。" },
@@ -297,12 +297,12 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
     resultTab: "transcript",
     copy: {
       en: {
-        title: "Interview transcription you can verify against the recording",
-        description: "Transcribe interview audio into searchable, editable text with timestamps. Replay quotes, correct names and export without uploading the audio.",
+        title: "Free interview transcription you can verify against the recording",
+        description: "Free interview transcription: searchable, editable text with timestamps. Replay quotes, correct names and export without uploading the audio.",
         eyebrow: "Interview transcription",
         intro: "Turn research interviews, reporting calls, oral histories and customer conversations into timestamped text. Search for a topic, click back to the exact recording, correct important details and export a clean transcript.",
         benefits: ["Search long interviews instead of scrubbing the whole recording", "Verify quotes and names from the original audio", "Keep sensitive source audio on the current device"],
-        workflowTitle: "A safer interview review process",
+        workflowTitle: "A free, safer interview review process",
         workflow: [
           { title: "Transcribe the source recording", body: "Use the recommended model first. Noisy field recordings may benefit from a higher-accuracy option on capable hardware." },
           { title: "Find claims and quotations", body: "Search the text, click the timestamp and listen to the surrounding audio before relying on a quote." },
@@ -318,12 +318,12 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
         screenshotAlt: "Interview transcript with searchable timestamped sections and audio replay",
       },
       "zh-CN": {
-        title: "可以逐句回听核对的采访录音转文字",
-        description: "把采访录音转成可搜索、可编辑的带时间戳文字。核对引语、修改人名并导出，音频无需上传。",
+        title: "免费采访录音转文字，可逐句回听核对",
+        description: "免费把采访录音转成可搜索、可编辑的带时间戳文字。核对引语、修改人名并导出，音频无需上传。",
         eyebrow: "采访录音转文字",
         intro: "把媒体采访、用户访谈、口述历史和研究录音整理成带时间戳的文字。搜索主题，点击回到原录音，核对关键信息，再导出干净的文字稿。",
         benefits: ["直接搜索长采访，不用反复拖动整段录音", "从原音核对引语、人名和数字", "敏感采访音频保留在当前设备处理"],
-        workflowTitle: "更可靠的采访核对流程",
+        workflowTitle: "免费又可靠的采访核对流程",
         workflow: [
           { title: "先生成采访文字稿", body: "默认使用推荐模式。环境嘈杂的外采录音，在设备允许时可以尝试更高精度。" },
           { title: "定位观点和引语", body: "搜索文字，点击时间戳，并听取前后语境，再决定是否引用。" },
@@ -339,12 +339,12 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
         screenshotAlt: "可搜索、带时间戳并支持回听的采访文字稿",
       },
       ja: {
-        title: "録音を聞き直して確認できるインタビュー文字起こし",
-        description: "インタビュー音声を検索・編集できるタイムスタンプ付きテキストに変換。発言や人名を聞き直し、音声をアップロードせずに保存できます。",
+        title: "録音を聞き直して確認できる無料インタビュー文字起こし",
+        description: "インタビュー音声を無料で、検索・編集できるタイムスタンプ付きテキストに変換。発言や人名を聞き直し、音声をアップロードせずに保存できます。",
         eyebrow: "インタビュー文字起こし",
         intro: "取材、ユーザーインタビュー、オーラルヒストリー、調査録音をタイムスタンプ付きテキストにします。話題を検索し、元音声の該当箇所に戻って重要な情報を確認してから、整えた原稿を書き出せます。",
         benefits: ["長い録音を何度もシークせず、テキストから検索", "引用、人名、数字を元音声で確認", "機密性の高い録音を現在の端末内で処理"],
-        workflowTitle: "確実に確認するためのインタビュー整理",
+        workflowTitle: "無料で確実に確認するインタビュー整理",
         workflow: [
           { title: "録音を文字起こし", body: "まずはおすすめ設定を使います。雑音の多い現場録音では、端末性能に余裕があれば高精度設定も検討します。" },
           { title: "発言と引用を探す", body: "テキストを検索し、タイムスタンプから前後の音声を聞いて、引用に使えるか確認します。" },
@@ -366,12 +366,12 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
     resultTab: "transcript",
     copy: {
       en: {
-        title: "Turn lecture recordings into searchable notes",
+        title: "Turn lecture recordings into searchable notes for free",
         description: "Transcribe lectures and recorded lessons into searchable, editable text with timestamps. Free, unlimited and no sign-up.",
         eyebrow: "Lecture transcription",
         intro: "Convert a recorded lecture, seminar, webinar or revision session into text you can search and revisit. Use timestamps to hear the lecturer's explanation, correct course terminology, and export clean notes.",
         benefits: ["Search for a concept instead of replaying the full class", "Return to the exact explanation from a timestamp", "Edit course terms before exporting study notes"],
-        workflowTitle: "From a recorded class to useful study material",
+        workflowTitle: "Free lecture notes from a recorded class",
         workflow: [
           { title: "Choose the lesson recording", body: "Use the original recording when possible. Recordings captured close to the lecturer generally transcribe better than distant room audio." },
           { title: "Search and listen", body: "Find the topic, formula or term in the transcript, then replay the surrounding explanation from its timestamp." },
@@ -387,12 +387,12 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
         screenshotAlt: "Searchable lecture transcript with timestamps and editable study text",
       },
       "zh-CN": {
-        title: "把课堂录音整理成可搜索的文字笔记",
+        title: "免费把课堂录音整理成可搜索的文字笔记",
         description: "把课程、讲座和网课录音转成可搜索、可编辑的带时间戳文字。免费无限使用，无需注册。",
         eyebrow: "课堂录音转文字",
         intro: "把课堂、讲座、网课或复习录音转成可以搜索和反复查看的文字。通过时间戳回听老师的原始讲解，修正课程术语，再导出干净的学习笔记。",
         benefits: ["搜索知识点，不必从头重听整节课", "从时间戳回到老师的具体讲解", "修正课程术语后再导出学习笔记"],
-        workflowTitle: "从课堂录音到可用学习资料",
+        workflowTitle: "免费把课堂录音变成学习资料",
         workflow: [
           { title: "选择课程录音", body: "尽量使用原始录音。靠近老师录制的人声，通常比教室后排的远距离录音更容易识别。" },
           { title: "搜索并回听", body: "在文字稿中查找知识点、公式名称或术语，再从时间戳回听前后讲解。" },
@@ -408,12 +408,12 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
         screenshotAlt: "带搜索、时间戳和编辑功能的课堂录音文字稿",
       },
       ja: {
-        title: "講義録音を検索できる学習ノートに変換",
+        title: "講義録音を検索できる学習ノートに無料で変換",
         description: "講義や授業の録音を検索・編集できるタイムスタンプ付きテキストに変換。無料・回数無制限・登録不要です。",
         eyebrow: "講義・授業の文字起こし",
         intro: "講義、ゼミ、ウェビナー、復習用の録音を検索できるテキストにします。タイムスタンプから先生の説明を聞き直し、授業固有の用語を修正して、読みやすいノートとして保存できます。",
         benefits: ["授業全体を聞き直さず、知りたい概念を検索", "タイムスタンプから該当する説明へ戻れる", "授業用語を修正してから学習ノートを書き出し"],
-        workflowTitle: "授業録音から使える学習資料まで",
+        workflowTitle: "授業録音から使える学習資料まで無料で",
         workflow: [
           { title: "授業の録音を選ぶ", body: "できるだけ元の録音を使います。教室後方の遠い音声より、先生の近くで録った音声のほうが認識しやすくなります。" },
           { title: "検索して聞き直す", body: "概念、数式名、専門用語を検索し、タイムスタンプから前後の説明を再生します。" },

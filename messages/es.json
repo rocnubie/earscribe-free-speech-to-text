@@ -218,7 +218,10 @@
     "title": "Acerca de EarScribe",
     "intro": "EarScribe convierte una grabación en texto con marcas de tiempo, búsqueda y edición, sin poner la creación de una cuenta antes del resultado.",
     "noServer": "El ajuste recomendado basta para empezar. La comparación de modelos, la edición y la revisión de subtítulos aparecen cuando realmente hacen falta.",
-    "credits": "Construido sobre Transformers.js, ONNX Runtime Web y los modelos Whisper de código abierto de OpenAI."
+    "credits": "Construido sobre Transformers.js, ONNX Runtime Web y los modelos Whisper de código abierto de OpenAI.",
+    "operatorTitle": "Quién está detrás de EarScribe",
+    "operatorBody": "EarScribe es un pequeño proyecto independiente, creado y mantenido por un solo desarrollador. Empezó en mayo de 2026 para poder transcribir grabaciones sin subirlas ni crear una cuenta. El código fuente es público en GitHub, y la publicidad del sitio ayuda a que siga siendo gratis.",
+    "contactLabel": "Preguntas, comentarios y errores:"
   },
   "footer": {
     "tagline": "Audio a texto y voz a texto 100% gratis. Sin registro ni inicio de sesión.",

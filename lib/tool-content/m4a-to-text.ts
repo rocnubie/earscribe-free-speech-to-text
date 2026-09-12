@@ -9,7 +9,7 @@ export const M4A_TO_TEXT_PAGE: ToolPageDefinition = {
   resultTab: "transcript",
   copy: {
     en: {
-      title: "Convert M4A to text in your browser",
+      title: "Free M4A to text converter in your browser",
       description:
         "Turn M4A recordings from iPhone Voice Memos, Zoom and recorder apps into timestamped text. Free, no sign-up; export TXT, SRT, VTT or JSON.",
       eyebrow: "M4A to text converter",
@@ -20,7 +20,7 @@ export const M4A_TO_TEXT_PAGE: ToolPageDefinition = {
         "Click a timestamp to replay that part",
         "Export TXT, SRT, VTT or JSON",
       ],
-      workflowTitle: "From an M4A file to checked text",
+      workflowTitle: "Convert M4A to text for free in three steps",
       workflow: [
         { title: "Find the .m4a file", body: "Voice memos, Zoom audio-only files and recorder exports can be selected directly. On iPhone, save the recording to Files first so the browser can open it." },
         { title: "Keep the recommended model", body: "The balanced model suits most spoken M4A recordings. Choose a smaller one on older phones or for very long files." },
@@ -41,12 +41,12 @@ export const M4A_TO_TEXT_PAGE: ToolPageDefinition = {
       screenshotAlt: "Timestamped transcript of an M4A recording with waveform and export controls",
     },
     "zh-CN": {
-      title: "M4A 转文字：浏览器里直接识别录音",
+      title: "免费 M4A 转文字：浏览器里直接识别录音",
       description: "把 iPhone 语音备忘录、Zoom 和录音 App 导出的 M4A 录音转成带时间戳的文字。免费、无需注册，可导出 TXT、SRT、VTT 或 JSON。",
       eyebrow: "M4A 转文字工具",
       intro: "iPhone 语音备忘录、Zoom 的纯音频录制和很多手机录音 App 保存的都是 M4A。直接选择 .m4a 文件即可：EarScribe 在浏览器里解码并识别，生成带时间戳的文字，导出前可以逐句对照原录音核对。",
       benefits: ["不用先转成 MP3 或 WAV", "点击时间戳回听对应片段", "导出 TXT、SRT、VTT 或 JSON"],
-      workflowTitle: "从 M4A 文件到核对过的文字",
+      workflowTitle: "三步免费把 M4A 转成文字",
       workflow: [
         { title: "找到 .m4a 文件", body: "语音备忘录、Zoom 纯音频文件和录音 App 导出的文件都可以直接选择。在 iPhone 上，先把录音存储到“文件”App，浏览器才能读取。" },
         { title: "使用推荐模型", body: "大多数 M4A 人声录音用均衡模型就够了。旧手机或特别长的录音，可以换更小的模型。" },
@@ -67,12 +67,12 @@ export const M4A_TO_TEXT_PAGE: ToolPageDefinition = {
       screenshotAlt: "M4A 录音生成的带时间戳文字稿，含波形和导出按钮",
     },
     ja: {
-      title: "M4Aファイルをそのまま文字起こし",
+      title: "M4Aファイルを無料で文字起こし",
       description: "iPhoneのボイスメモ、Zoom、録音アプリのM4Aをタイムスタンプ付きテキストに変換。無料・登録不要で、TXT・SRT・VTT・JSONに書き出せます。",
       eyebrow: "M4A 文字起こし",
       intro: "M4Aは、iPhoneのボイスメモ、Zoomの音声のみの録音、多くの録音アプリで使われている形式です。.m4aファイルをそのまま選ぶと、EarScribeがブラウザ内でデコードしてタイムスタンプ付きの文字にします。書き出す前に、一文ずつ元の録音と照らし合わせて確認できます。",
       benefits: ["MP3やWAVへの変換は不要", "タイムスタンプから該当箇所を再生", "TXT・SRT・VTT・JSONで書き出し"],
-      workflowTitle: "M4Aファイルから確認済みテキストまで",
+      workflowTitle: "M4Aを無料で文字起こしする3ステップ",
       workflow: [
         { title: ".m4aファイルを用意する", body: "ボイスメモ、Zoomの音声ファイル、録音アプリの書き出しファイルをそのまま選べます。iPhoneでは先に「ファイル」アプリへ保存すると、ブラウザから開けます。" },
         { title: "おすすめのモデルを使う", body: "話し声中心のM4Aならバランス型のモデルで十分です。古いスマートフォンや長い録音では、小さいモデルを選んでください。" },

@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Link } from "@/i18n/routing";
 import { getAboutGuide } from "@/lib/about-page-seo";
+import { SUPPORT_EMAIL } from "@/lib/info-page-content";
 import { urlFor } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
 
@@ -78,6 +79,25 @@ export async function AboutPageBody({ locale }: { locale: string }) {
               {seo("showcase.subtitle")}
             </figcaption>
           </figure>
+        </section>
+
+        <section
+          className="mt-16 rounded-xl border border-slate-200 bg-white p-7 shadow-sm"
+          aria-labelledby="about-operator-heading"
+        >
+          <h2 id="about-operator-heading" className="text-2xl font-semibold text-slate-900">
+            {t("operatorTitle")}
+          </h2>
+          <p className="mt-3 max-w-3xl leading-relaxed text-slate-700">{t("operatorBody")}</p>
+          <p className="mt-4 text-sm text-slate-700">
+            {t("contactLabel")}{" "}
+            <a
+              href={`mailto:${SUPPORT_EMAIL}`}
+              className="font-medium text-sky-700 underline decoration-sky-300 underline-offset-2 hover:text-sky-900"
+            >
+              {SUPPORT_EMAIL}
+            </a>
+          </p>
         </section>
 
         <section className="mt-24" aria-labelledby="about-features-heading">

@@ -218,7 +218,10 @@
     "title": "About EarScribe",
     "intro": "EarScribe turns recordings into searchable, timestamped transcripts and subtitles without putting account setup before the result.",
     "noServer": "The workflow starts with a recommended quality setting. Search, replay, and editing stay simple, while model comparison and subtitle checks appear only when you need them.",
-    "credits": "Built on Transformers.js, ONNX Runtime Web and the open-source Whisper models from OpenAI."
+    "credits": "Built on Transformers.js, ONNX Runtime Web and the open-source Whisper models from OpenAI.",
+    "operatorTitle": "Who runs EarScribe",
+    "operatorBody": "EarScribe is a small independent project, built and maintained by one developer. It started in May 2026 to make transcription possible without uploading recordings or creating an account. The source code is public on GitHub, and advertising on the site helps keep it free.",
+    "contactLabel": "Questions, feedback and bug reports:"
   },
   "footer": {
     "tagline": "100% free audio to text and speech to text. No sign-up, no login.",

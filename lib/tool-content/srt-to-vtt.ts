@@ -128,7 +128,7 @@ export const SRT_TO_VTT_PAGE: ToolPageDefinition = {
   converter: { mode: "srt-vtt", examples: EXAMPLES },
   copy: {
     en: {
-      title: "Convert SRT to VTT, or VTT to SRT",
+      title: "Free SRT to VTT converter (and VTT to SRT)",
       description:
         "Convert subtitles between SRT and WebVTT in your browser. Paste text or drop a file and get the other format instantly; nothing is uploaded. Free, no sign-up.",
       eyebrow: "SRT ⇄ VTT converter",
@@ -139,7 +139,7 @@ export const SRT_TO_VTT_PAGE: ToolPageDefinition = {
         "Warns about positions and styles SRT can't keep",
         "Nothing uploaded, no account",
       ],
-      workflowTitle: "Converting in three steps",
+      workflowTitle: "Convert subtitles for free in three steps",
       workflow: [
         { title: "Add the subtitles", body: "Drop a .srt or .vtt file, choose one from your device, or paste the text. The format is detected automatically." },
         { title: "Check the output format", body: "The other format is selected for you. Check the number of cues and any warning about dropped settings." },
@@ -160,12 +160,12 @@ export const SRT_TO_VTT_PAGE: ToolPageDefinition = {
       screenshotAlt: "The same subtitle cues in SRT and WebVTT",
     },
     "zh-CN": {
-      title: "SRT 转 VTT、VTT 转 SRT 在线转换",
+      title: "免费 SRT 转 VTT、VTT 转 SRT 在线转换",
       description: "在浏览器里把字幕在 SRT 和 WebVTT 之间互相转换。粘贴文本或拖入文件，立刻得到另一种格式，文件不上传。免费、无需注册。",
       eyebrow: "SRT ⇄ VTT 转换",
       intro: "SRT 和 WebVTT 装的是同样的带时间字幕，只是写法略有不同。粘贴字幕或拖入 .srt、.vtt 文件，EarScribe 会自动识别格式，在浏览器里完成转换，并提醒你哪些内容无法保留。",
       benefits: ["双向转换：SRT 转 VTT，VTT 转 SRT", "提醒 SRT 保留不了的位置和样式", "文件不上传，无需账号"],
-      workflowTitle: "三步完成转换",
+      workflowTitle: "三步免费完成转换",
       workflow: [
         { title: "放入字幕", body: "拖入 .srt 或 .vtt 文件、从设备选择，或者直接粘贴文本，格式会自动识别。" },
         { title: "确认输出格式", body: "默认转成另一种格式。看一下字幕条数，以及有没有设置被去掉的提示。" },
@@ -186,12 +186,12 @@ export const SRT_TO_VTT_PAGE: ToolPageDefinition = {
       screenshotAlt: "同一组字幕的 SRT 和 WebVTT 写法",
     },
     ja: {
-      title: "SRTとVTTを相互変換（ブラウザで完結）",
-      description: "字幕をSRTとWebVTTの間でブラウザ上で相互変換。テキストを貼り付けるかファイルをドロップすると、すぐにもう一方の形式になります。アップロード不要・登録不要。",
+      title: "SRTとVTTを無料で相互変換（ブラウザで完結）",
+      description: "字幕をSRTとWebVTTの間でブラウザ上で無料で相互変換。テキストを貼り付けるかファイルをドロップすると、すぐにもう一方の形式になります。アップロード不要・登録不要。",
       eyebrow: "SRT ⇄ VTT 変換",
       intro: "SRTとWebVTTは、同じタイミング付きの字幕を少し違う書き方で持つ形式です。字幕を貼り付けるか.srt・.vttファイルをドロップすると、EarScribeが形式を判定してブラウザ内で変換し、引き継げなかった内容があれば知らせます。",
       benefits: ["SRT→VTTもVTT→SRTも対応", "SRTで保持できない位置やスタイルを警告", "アップロードなし・アカウント不要"],
-      workflowTitle: "3ステップで変換",
+      workflowTitle: "3ステップで無料変換",
       workflow: [
         { title: "字幕を入れる", body: ".srtか.vttファイルをドロップするか、端末から選ぶか、テキストを貼り付けます。形式は自動で判定されます。" },
         { title: "出力形式を確認する", body: "もう一方の形式が自動で選ばれます。字幕の件数と、設定が削除された場合の警告を確認してください。" },

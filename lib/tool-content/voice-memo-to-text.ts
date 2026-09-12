@@ -9,9 +9,9 @@ export const VOICE_MEMO_TO_TEXT_PAGE: ToolPageDefinition = {
   resultTab: "transcript",
   copy: {
     en: {
-      title: "Transcribe iPhone and Mac voice memos to text",
+      title: "Free voice memo to text for iPhone and Mac",
       description:
-        "Turn Voice Memos recordings into timestamped, editable text on iPhone, iPad or Mac. Nothing to install, no sign-up; export TXT, SRT or VTT.",
+        "Transcribe Voice Memos recordings into timestamped, editable text for free on iPhone, iPad or Mac. Nothing to install, no sign-up; export TXT, SRT or VTT.",
       eyebrow: "Voice memo to text",
       intro:
         "Voice Memos saves each recording as an .m4a file. Export it from the app, open it here, and EarScribe transcribes it in the browser with timestamps you can click to replay, edit and export.",
@@ -20,7 +20,7 @@ export const VOICE_MEMO_TO_TEXT_PAGE: ToolPageDefinition = {
         "Click a line to hear that part of the memo",
         "Export text or subtitles when you're done",
       ],
-      workflowTitle: "From Voice Memos to text",
+      workflowTitle: "From Voice Memos to free, editable text",
       workflow: [
         { title: "Export the memo", body: "On iPhone or iPad, open the recording, tap the More button (•••), choose Share, then Save to Files. On a Mac, drag the recording out of Voice Memos onto the desktop." },
         { title: "Open it in EarScribe", body: "Tap the upload area and pick the memo from Files or Finder. The first run downloads the speech model, which your browser then keeps." },
@@ -41,12 +41,12 @@ export const VOICE_MEMO_TO_TEXT_PAGE: ToolPageDefinition = {
       screenshotAlt: "Voice memo transcribed into timestamped text in EarScribe",
     },
     "zh-CN": {
-      title: "iPhone 语音备忘录转文字",
-      description: "在 iPhone、iPad 或 Mac 上把语音备忘录录音转成带时间戳、可编辑的文字。无需安装、无需注册，可导出 TXT、SRT 或 VTT。",
+      title: "免费把 iPhone 语音备忘录转成文字",
+      description: "免费在 iPhone、iPad 或 Mac 上把语音备忘录录音转成带时间戳、可编辑的文字。无需安装、无需注册，可导出 TXT、SRT 或 VTT。",
       eyebrow: "语音备忘录转文字",
       intro: "“语音备忘录”App 会把每条录音保存为 .m4a 文件。从 App 里导出后在这里打开，EarScribe 会在浏览器中转成文字，每一句都有时间戳，可以点击回听、修改和导出。",
       benefits: ["iPhone、iPad、Mac 的 Safari 都能用", "点击任意一句回听那段录音", "完成后导出文字或字幕"],
-      workflowTitle: "从语音备忘录到文字",
+      workflowTitle: "免费把语音备忘录变成文字",
       workflow: [
         { title: "导出录音", body: "在 iPhone 或 iPad 上打开录音，轻点“更多”（•••），选择“共享”，再选“存储到文件”。在 Mac 上，直接把录音从“语音备忘录”拖到桌面。" },
         { title: "在 EarScribe 打开", body: "轻点上传区域，从“文件”App 或访达里选择录音。第一次使用会下载语音模型，之后浏览器会保留缓存。" },
@@ -67,12 +67,12 @@ export const VOICE_MEMO_TO_TEXT_PAGE: ToolPageDefinition = {
       screenshotAlt: "语音备忘录在 EarScribe 中转成的带时间戳文字",
     },
     ja: {
-      title: "iPhoneのボイスメモを文字起こし",
-      description: "ボイスメモの録音を、iPhone・iPad・Macでタイムスタンプ付きの編集できるテキストに。インストール不要・登録不要で、TXT・SRT・VTTに書き出せます。",
+      title: "iPhoneのボイスメモを無料で文字起こし",
+      description: "ボイスメモの録音を、iPhone・iPad・Macで無料でタイムスタンプ付きの編集できるテキストに。インストール不要・登録不要で、TXT・SRT・VTTに書き出せます。",
       eyebrow: "ボイスメモ 文字起こし",
       intro: "ボイスメモは録音を.m4aファイルとして保存します。アプリから書き出してここで開けば、EarScribeがブラウザ内で文字起こしします。タイムスタンプから聞き直し、修正して書き出せます。",
       benefits: ["iPhone・iPad・MacのSafariで使える", "行をクリックするとその部分を再生", "終わったら文字や字幕として書き出し"],
-      workflowTitle: "ボイスメモから文字にするまで",
+      workflowTitle: "ボイスメモを無料で文字にするまで",
       workflow: [
         { title: "メモを書き出す", body: "iPhoneやiPadでは録音を開き、「その他」（•••）→「共有」→「“ファイル”に保存」を選びます。Macではボイスメモから録音をデスクトップへドラッグします。" },
         { title: "EarScribeで開く", body: "アップロード欄をタップし、「ファイル」アプリやFinderからメモを選びます。初回は音声モデルをダウンロードし、以降はブラウザに保存されます。" },

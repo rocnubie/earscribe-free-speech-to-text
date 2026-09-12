@@ -9,9 +9,9 @@ export const MEETING_RECORDING_TO_TEXT_PAGE: ToolPageDefinition = {
   resultTab: "transcript",
   copy: {
     en: {
-      title: "Transcribe a meeting recording after the call",
+      title: "Transcribe meeting recordings to text for free",
       description:
-        "Turn a recorded meeting into searchable, timestamped text in your browser. No bot joins the call and nothing is uploaded; export TXT, SRT or VTT.",
+        "Free meeting transcription after the call: turn a recording into searchable, timestamped text in your browser. No bot joins and nothing is uploaded.",
       eyebrow: "Meeting recording to text",
       intro:
         "EarScribe works on the recording after the meeting, not as a bot in the call. Choose the audio file, get a timestamped transcript on your device, then search it for decisions, action items and names before you share notes.",
@@ -20,7 +20,7 @@ export const MEETING_RECORDING_TO_TEXT_PAGE: ToolPageDefinition = {
         "Search for decisions and action items",
         "Timestamps to check who said what",
       ],
-      workflowTitle: "From recording to meeting notes",
+      workflowTitle: "Free meeting notes from a recording",
       workflow: [
         { title: "Get the audio file", body: "Zoom's local recording already includes an audio-only M4A. Teams and Google Meet save MP4 video, so export its audio track first." },
         { title: "Transcribe on your device", body: "Choose the file, keep the recommended model and let the browser work. Long meetings take longer on slower devices." },
@@ -41,12 +41,12 @@ export const MEETING_RECORDING_TO_TEXT_PAGE: ToolPageDefinition = {
       screenshotAlt: "Meeting recording transcript with searchable, timestamped segments",
     },
     "zh-CN": {
-      title: "会议录音转文字：会后处理，无需上传",
-      description: "在浏览器里把会议录音转成可搜索、带时间戳的文字。不需要机器人入会，录音不上传，可导出 TXT、SRT 或 VTT。",
+      title: "会议录音免费转文字：会后处理，无需上传",
+      description: "免费在浏览器里把会议录音转成可搜索、带时间戳的文字。不需要机器人入会，录音不上传，可导出 TXT、SRT 或 VTT。",
       eyebrow: "会议录音转文字",
       intro: "EarScribe 在会后处理录音，而不是派机器人进会议。选择音频文件，在你的设备上生成带时间戳的文字稿，再搜索决议、待办和人名，整理好再发纪要。",
       benefits: ["不用机器人入会，也不上传", "搜索决议和待办事项", "按时间戳核对谁说了什么"],
-      workflowTitle: "从会议录音到会议纪要",
+      workflowTitle: "免费从会议录音整理出纪要",
       workflow: [
         { title: "拿到音频文件", body: "Zoom 本地录制自带一个纯音频的 M4A。Teams、Google Meet、腾讯会议等导出的通常是 MP4 视频，需要先提取音轨。" },
         { title: "在本机转写", body: "选择文件，用推荐模型，让浏览器处理即可。设备越慢，长会议需要的时间越长。" },
@@ -67,12 +67,12 @@ export const MEETING_RECORDING_TO_TEXT_PAGE: ToolPageDefinition = {
       screenshotAlt: "可搜索、带时间戳的会议录音文字稿",
     },
     ja: {
-      title: "会議の録音を文字起こし（会議後・アップロード不要）",
-      description: "録音した会議を、ブラウザで検索できるタイムスタンプ付きテキストに。ボットは参加せず、音声もアップロードしません。TXT・SRT・VTTで書き出せます。",
+      title: "会議の録音を無料で文字起こし（会議後・アップロード不要）",
+      description: "録音した会議を、ブラウザで無料で検索できるタイムスタンプ付きテキストに。ボットは参加せず、音声もアップロードしません。TXT・SRT・VTTで書き出せます。",
       eyebrow: "会議 録音 文字起こし",
       intro: "EarScribeは会議にボットを参加させるのではなく、会議後の録音を処理します。音声ファイルを選ぶと端末内でタイムスタンプ付きの文字起こしができるので、決定事項・ToDo・人名を検索して確認してから議事録を共有できます。",
       benefits: ["会議ボットもアップロードも不要", "決定事項やToDoを検索", "タイムスタンプで発言を確認"],
-      workflowTitle: "録音から議事録まで",
+      workflowTitle: "録音から議事録まで無料で",
       workflow: [
         { title: "音声ファイルを用意する", body: "Zoomのローカル録画には音声のみのM4Aが含まれます。TeamsやGoogle MeetはMP4動画で保存されるので、先に音声を取り出してください。" },
         { title: "端末内で文字起こしする", body: "ファイルを選び、おすすめのモデルのままブラウザで処理します。長い会議ほど、低速な端末では時間がかかります。" },

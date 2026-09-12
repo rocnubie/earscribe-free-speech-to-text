@@ -218,7 +218,10 @@
     "title": "EarScribeについて",
     "intro": "EarScribeは、録音を検索・編集できるタイムスタンプ付き文字起こしと字幕に変え、登録より先に結果へ進めるツールです。",
     "noServer": "最初はおすすめ設定だけを表示し、モデル比較、文字編集、字幕チェックは必要になった段階で開けるようにしています。",
-    "credits": "Transformers.js、ONNX Runtime Web、およびOpenAIのオープンソースWhisperモデルを基盤に構築されています。"
+    "credits": "Transformers.js、ONNX Runtime Web、およびOpenAIのオープンソースWhisperモデルを基盤に構築されています。",
+    "operatorTitle": "EarScribeの運営について",
+    "operatorBody": "EarScribeは、1人の開発者が作り、運営している小さな個人プロジェクトです。録音をアップロードしたりアカウントを作ったりせずに文字起こしできるよう、2026年5月に始まりました。ソースコードはGitHubで公開しており、サイト上の広告が無料で使い続けられる支えになっています。",
+    "contactLabel": "ご質問・ご意見・不具合の報告："
   },
   "footer": {
     "tagline": "100%無料の音声テキスト変換・音声文字起こし。登録不要・ログイン不要。",

@@ -102,9 +102,9 @@ export const SRT_TO_TXT_PAGE: ToolPageDefinition = {
   converter: { mode: "to-txt", examples: EXAMPLES },
   copy: {
     en: {
-      title: "Convert SRT or VTT subtitles to plain text",
+      title: "Convert SRT or VTT subtitles to text for free",
       description:
-        "Turn SRT or WebVTT subtitles into clean text, with or without timestamps, as lines or paragraphs. Removes repeated auto-caption lines. Runs in your browser.",
+        "Free SRT and VTT to text converter: clean text with or without timestamps, as lines or paragraphs. Removes repeated auto-caption lines. Runs in your browser.",
       eyebrow: "Subtitles to text",
       intro:
         "Subtitle files are full of numbers, timing lines and tags. Paste an SRT or VTT file and get readable text back, with timestamps kept or removed and repeated auto-caption lines cleaned up. Nothing is uploaded.",
@@ -113,7 +113,7 @@ export const SRT_TO_TXT_PAGE: ToolPageDefinition = {
         "Cleans up repeated auto-caption lines",
         "Nothing uploaded, no account",
       ],
-      workflowTitle: "From subtitle file to readable text",
+      workflowTitle: "Free subtitle to text in three steps",
       workflow: [
         { title: "Add the subtitles", body: "Drop a .srt or .vtt file, choose one from your device, or paste the text." },
         { title: "Choose a layout", body: "One line per subtitle, the same with timestamps, or paragraphs that break where the speaker pauses." },
@@ -134,12 +134,12 @@ export const SRT_TO_TXT_PAGE: ToolPageDefinition = {
       screenshotAlt: "Subtitle file converted to plain text",
     },
     "zh-CN": {
-      title: "SRT、VTT 字幕转 TXT 文本",
-      description: "把 SRT 或 WebVTT 字幕转成干净的文本：可以保留或去掉时间戳，按行或合并成段落，还能去掉自动字幕的重复行。在浏览器里完成。",
+      title: "免费把 SRT、VTT 字幕转成 TXT 文本",
+      description: "免费把 SRT 或 WebVTT 字幕转成干净的文本：可以保留或去掉时间戳，按行或合并成段落，还能去掉自动字幕的重复行。在浏览器里完成。",
       eyebrow: "字幕转文本",
       intro: "字幕文件里满是序号、时间轴和标签。粘贴 SRT 或 VTT，就能得到可读的文本：时间戳可留可去，自动字幕的重复行会被清理，文件不上传。",
       benefits: ["可保留或去掉时间戳", "清理自动字幕的重复行", "文件不上传，无需账号"],
-      workflowTitle: "从字幕文件到可读文本",
+      workflowTitle: "免费把字幕文件变成可读文本",
       workflow: [
         { title: "放入字幕", body: "拖入 .srt 或 .vtt 文件、从设备选择，或者直接粘贴文本。" },
         { title: "选择排版", body: "每条字幕一行、每行带时间戳，或者在说话停顿处分段的段落。" },
@@ -160,12 +160,12 @@ export const SRT_TO_TXT_PAGE: ToolPageDefinition = {
       screenshotAlt: "字幕文件转成的纯文本",
     },
     ja: {
-      title: "SRT・VTT字幕をテキストに変換",
-      description: "SRTやWebVTTの字幕を読みやすいテキストに。タイムスタンプの有無、行ごとか段落かを選べ、自動字幕の重複行も削除します。ブラウザ内で完結。",
+      title: "SRT・VTT字幕を無料でテキストに変換",
+      description: "SRTやWebVTTの字幕を無料で読みやすいテキストに。タイムスタンプの有無、行ごとか段落かを選べ、自動字幕の重複行も削除します。ブラウザ内で完結。",
       eyebrow: "字幕 テキスト変換",
       intro: "字幕ファイルは番号、タイミング行、タグだらけです。SRTやVTTを貼り付けると読みやすいテキストになり、タイムスタンプは残すことも消すこともでき、自動字幕の重複行も整理されます。アップロードはしません。",
       benefits: ["タイムスタンプの有無を選べる", "自動字幕の重複行を整理", "アップロードなし・アカウント不要"],
-      workflowTitle: "字幕ファイルから読めるテキストまで",
+      workflowTitle: "字幕ファイルを無料で読めるテキストに",
       workflow: [
         { title: "字幕を入れる", body: ".srtか.vttファイルをドロップするか、端末から選ぶか、テキストを貼り付けます。" },
         { title: "レイアウトを選ぶ", body: "字幕ごとに1行、タイムスタンプ付きの行、または話の間で区切る段落から選びます。" },

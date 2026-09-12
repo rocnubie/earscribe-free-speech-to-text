@@ -9,7 +9,7 @@ export const PODCAST_TRANSCRIPTION_PAGE: ToolPageDefinition = {
   resultTab: "transcript",
   copy: {
     en: {
-      title: "Podcast transcription for show notes, quotes and captions",
+      title: "Free podcast transcription for show notes, quotes and captions",
       description:
         "Transcribe podcast episodes in your browser, then turn the text into show notes, chapter timestamps, quotes and SRT or VTT captions. Free, no sign-up.",
       eyebrow: "Podcast transcription",
@@ -20,7 +20,7 @@ export const PODCAST_TRANSCRIPTION_PAGE: ToolPageDefinition = {
         "Timestamps ready for chapters and captions",
         "Export TXT, SRT, VTT or JSON",
       ],
-      workflowTitle: "From finished episode to publishable text",
+      workflowTitle: "From finished episode to a free, publishable transcript",
       workflow: [
         { title: "Transcribe the final mix", body: "Use the exported episode (MP3, WAV or M4A) so the timestamps match what listeners hear." },
         { title: "Check names and sponsors", body: "Search for guest names, brands and URLs, replay each mention and correct the spelling." },
@@ -41,12 +41,12 @@ export const PODCAST_TRANSCRIPTION_PAGE: ToolPageDefinition = {
       screenshotAlt: "Podcast episode transcript with searchable, timestamped segments",
     },
     "zh-CN": {
-      title: "播客转文字稿：做节目笔记、时间轴和字幕",
+      title: "免费播客转文字稿：做节目笔记、时间轴和字幕",
       description: "在浏览器里把播客单集转成文字稿，再整理成节目笔记、章节时间轴、金句和 SRT/VTT 字幕。免费、无需注册。",
       eyebrow: "播客转文字",
       intro: "放入剪辑软件导出的单集音频，EarScribe 会在你的设备上生成带时间戳的文字稿：可以搜索金句、整理节目笔记和章节，也可以导出成视频版的字幕。",
       benefits: ["整期搜索，快速找到金句", "时间戳可直接用于章节和字幕", "导出 TXT、SRT、VTT 或 JSON"],
-      workflowTitle: "从成品单集到可以发布的文字",
+      workflowTitle: "免费把成品单集变成可发布的文字稿",
       workflow: [
         { title: "转写最终混音", body: "使用导出的成品（MP3、WAV 或 M4A），时间戳才会和听众听到的一致。" },
         { title: "核对嘉宾和品牌", body: "搜索嘉宾名字、品牌和网址，逐处回听并改正写法。" },
@@ -67,12 +67,12 @@ export const PODCAST_TRANSCRIPTION_PAGE: ToolPageDefinition = {
       screenshotAlt: "可搜索、带时间戳的播客单集文字稿",
     },
     ja: {
-      title: "ポッドキャストの文字起こし：概要欄・チャプター・字幕に",
+      title: "ポッドキャストを無料で文字起こし：概要欄・チャプター・字幕に",
       description: "ポッドキャストのエピソードをブラウザで文字起こしし、概要欄、チャプターのタイムスタンプ、引用、SRT・VTT字幕に活用。無料・登録不要です。",
       eyebrow: "ポッドキャスト 文字起こし",
       intro: "編集ソフトから書き出したエピソードを選ぶと、EarScribeが端末内でタイムスタンプ付きの文字起こしを作ります。引用を検索したり、概要欄やチャプターを書いたり、動画版の字幕として書き出したりできます。",
       benefits: ["エピソード全体を検索して引用を探せる", "チャプターや字幕にそのまま使えるタイムスタンプ", "TXT・SRT・VTT・JSONで書き出し"],
-      workflowTitle: "完成したエピソードから公開用テキストまで",
+      workflowTitle: "完成したエピソードから公開用テキストまで無料で",
       workflow: [
         { title: "最終ミックスを文字起こしする", body: "書き出したエピソード（MP3・WAV・M4A）を使うと、タイムスタンプがリスナーの聞く音声と一致します。" },
         { title: "ゲスト名とスポンサーを確認する", body: "ゲストの名前、ブランド名、URLを検索し、それぞれ聞き直して表記を直します。" },

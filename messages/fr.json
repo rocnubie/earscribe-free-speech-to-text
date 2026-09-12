@@ -218,7 +218,10 @@
     "title": "À propos d'EarScribe",
     "intro": "EarScribe transforme un enregistrement en transcription horodatée, consultable et modifiable, sans placer la création d'un compte avant le résultat.",
     "noServer": "Le réglage recommandé suffit pour commencer. La comparaison des modèles, l'édition et le contrôle des sous-titres apparaissent ensuite au moment où ils deviennent utiles.",
-    "credits": "Construit sur Transformers.js, ONNX Runtime Web et les modèles Whisper open source d'OpenAI."
+    "credits": "Construit sur Transformers.js, ONNX Runtime Web et les modèles Whisper open source d'OpenAI.",
+    "operatorTitle": "Qui est derrière EarScribe",
+    "operatorBody": "EarScribe est un petit projet indépendant, conçu et maintenu par un seul développeur. Il a démarré en mai 2026 pour permettre de transcrire des enregistrements sans les téléverser ni créer de compte. Le code source est public sur GitHub, et la publicité sur le site aide à le garder gratuit.",
+    "contactLabel": "Questions, retours et signalements de bugs :"
   },
   "footer": {
     "tagline": "Audio en texte et parole en texte 100 % gratuits. Sans inscription ni connexion.",

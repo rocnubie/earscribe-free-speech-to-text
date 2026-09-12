@@ -218,7 +218,10 @@
     "title": "EarScribe Hakkında",
     "intro": "EarScribe, Transformers.js ve WebGPU / WebAssembly çalışma zamanlarını kullanarak OpenAI'nin Whisper konuşma tanıma modellerini doğrudan tarayıcınızda çalıştıran statik bir web uygulamasıdır.",
     "noServer": "Sesinize dokunan herhangi bir arka uç yoktur. Cloudflare Pages sunucusu yalnızca statik HTML, JS ve CSS dosyalarını sunar. Whisper model ağırlıkları ilk kullanımda Hugging Face CDN'den alınır ve tarayıcınız tarafından önbelleğe alınır.",
-    "credits": "Transformers.js, ONNX Runtime Web ve OpenAI'nin açık kaynaklı Whisper modelleri kullanılarak geliştirilmiştir."
+    "credits": "Transformers.js, ONNX Runtime Web ve OpenAI'nin açık kaynaklı Whisper modelleri kullanılarak geliştirilmiştir.",
+    "operatorTitle": "EarScribe'ı kim yönetiyor",
+    "operatorBody": "EarScribe, tek bir geliştiricinin geliştirip sürdürdüğü küçük ve bağımsız bir projedir. Kayıtları yüklemeden ve hesap açmadan metne dönüştürebilmek için Mayıs 2026'da başladı. Kaynak kodu GitHub'da herkese açıktır ve sitedeki reklamlar hizmetin ücretsiz kalmasına yardımcı olur.",
+    "contactLabel": "Sorular, geri bildirim ve hata bildirimleri:"
   },
   "footer": {
     "tagline": "%100 ücretsiz ses metne ve konuşma metne dönüşüm. Kayıt yok, giriş yok.",

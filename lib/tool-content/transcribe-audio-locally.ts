@@ -9,9 +9,9 @@ export const TRANSCRIBE_AUDIO_LOCALLY_PAGE: ToolPageDefinition = {
   resultTab: "transcript",
   copy: {
     en: {
-      title: "Transcribe audio locally, without uploading it",
+      title: "Transcribe audio locally for free, without uploading it",
       description:
-        "Transcribe recordings on your own device: the audio is processed in your browser and never uploaded. See what stays local and how to check it yourself.",
+        "Free local transcription: your recording is processed in your browser and never uploaded. See what stays on your device and how to check it yourself.",
       eyebrow: "Local audio transcription",
       intro:
         "EarScribe decodes and transcribes your recording inside the browser tab. The file is never sent to a server; the only large download is the speech model, which your browser caches. This page explains what stays on your device, what the page does send, and how to verify it yourself.",
@@ -20,7 +20,7 @@ export const TRANSCRIBE_AUDIO_LOCALLY_PAGE: ToolPageDefinition = {
         "Nothing to install and no account",
         "Checkable in your browser's developer tools",
       ],
-      workflowTitle: "What happens when you transcribe locally",
+      workflowTitle: "Free local transcription, step by step",
       workflow: [
         { title: "The browser reads the file", body: "Your recording is opened from disk and decoded by the browser's own audio engine. It is not uploaded." },
         { title: "The model runs in a worker", body: "Whisper runs in a background Web Worker through Transformers.js and ONNX Runtime Web, on WebGPU or the CPU." },
@@ -41,12 +41,12 @@ export const TRANSCRIBE_AUDIO_LOCALLY_PAGE: ToolPageDefinition = {
       screenshotAlt: "Recording transcribed in the browser without being uploaded",
     },
     "zh-CN": {
-      title: "本地语音转文字：音频不上传",
-      description: "在自己的设备上把录音转成文字：音频在浏览器里处理，从不上传。说明哪些数据留在本机，以及怎样自己验证。",
+      title: "免费本地语音转文字：音频不上传",
+      description: "免费在自己的设备上把录音转成文字：音频在浏览器里处理，从不上传。说明哪些数据留在本机，以及怎样自己验证。",
       eyebrow: "本地语音转文字",
       intro: "EarScribe 在浏览器标签页里解码并转写你的录音，文件不会发送到任何服务器，唯一较大的下载是语音模型，浏览器会把它缓存起来。这里说明哪些内容留在你的设备上、页面会发送什么，以及怎样自己动手验证。",
       benefits: ["录音从不离开你的设备", "无需安装，无需账号", "可以在浏览器开发者工具里自行验证"],
-      workflowTitle: "本地转写时发生了什么",
+      workflowTitle: "免费本地转写时发生了什么",
       workflow: [
         { title: "浏览器读取文件", body: "录音从本地磁盘打开，由浏览器自带的音频引擎解码，不会上传。" },
         { title: "模型在 Worker 里运行", body: "Whisper 通过 Transformers.js 和 ONNX Runtime Web 在后台 Web Worker 中运行，使用 WebGPU 或 CPU。" },
@@ -67,12 +67,12 @@ export const TRANSCRIBE_AUDIO_LOCALLY_PAGE: ToolPageDefinition = {
       screenshotAlt: "录音在浏览器中转写、没有上传",
     },
     ja: {
-      title: "ローカルで文字起こし：音声をアップロードしない",
-      description: "録音を自分の端末で文字起こし。音声はブラウザ内で処理され、アップロードされません。端末に残るものと、自分で確かめる方法を説明します。",
+      title: "無料のローカル文字起こし：音声をアップロードしない",
+      description: "録音を自分の端末で無料で文字起こし。音声はブラウザ内で処理され、アップロードされません。端末に残るものと、自分で確かめる方法を説明します。",
       eyebrow: "ローカル 文字起こし",
       intro: "EarScribeは、ブラウザのタブの中で録音をデコードして文字起こしします。ファイルがサーバーに送られることはなく、大きなダウンロードは音声モデルだけで、ブラウザがキャッシュします。このページでは、端末に残るもの、ページが送信するもの、そして自分で確かめる方法を説明します。",
       benefits: ["録音は端末から出ない", "インストールもアカウントも不要", "ブラウザの開発者ツールで確認できる"],
-      workflowTitle: "ローカルで文字起こしするときに起きること",
+      workflowTitle: "無料のローカル文字起こしで起きること",
       workflow: [
         { title: "ブラウザがファイルを読む", body: "録音はディスクから開かれ、ブラウザ自身のオーディオ機能でデコードされます。アップロードはされません。" },
         { title: "モデルはWorkerで動く", body: "WhisperはTransformers.jsとONNX Runtime Webを通じ、バックグラウンドのWeb WorkerでWebGPUまたはCPUを使って動きます。" },

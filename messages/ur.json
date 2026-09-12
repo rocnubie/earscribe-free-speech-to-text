@@ -218,7 +218,10 @@
     "title": "EarScribe کے بارے میں",
     "intro": "EarScribe ایک سٹیٹک ویب ایپ ہے جو OpenAI کے Whisper اسپیچ ریکگنیشن ماڈلز کو Transformers.js اور WebGPU / WebAssembly رن ٹائمز کے ذریعے براہ راست آپ کے براؤزر میں چلاتی ہے۔",
     "noServer": "کوئی بیک اینڈ نہیں جو آپ کے آڈیو کو چھوئے۔ Cloudflare Pages ہوسٹ صرف سٹیٹک HTML، JS اور CSS پیش کرتا ہے۔ Whisper ماڈل ویٹس پہلی بار Hugging Face CDN سے لیے جاتے ہیں اور آپ کے براؤزر سے محفوظ ہو جاتے ہیں۔",
-    "credits": "Transformers.js، ONNX Runtime Web اور OpenAI کے اوپن سورس Whisper ماڈلز پر بنایا گیا۔"
+    "credits": "Transformers.js، ONNX Runtime Web اور OpenAI کے اوپن سورس Whisper ماڈلز پر بنایا گیا۔",
+    "operatorTitle": "EarScribe کون چلاتا ہے",
+    "operatorBody": "EarScribe ایک چھوٹا آزاد پروجیکٹ ہے جسے ایک ہی ڈویلپر نے بنایا ہے اور وہی اس کی دیکھ بھال کرتے ہیں۔ اس کا آغاز مئی 2026 میں ہوا تاکہ ریکارڈنگ کو اپ لوڈ کیے بغیر اور اکاؤنٹ بنائے بغیر متن میں بدلا جا سکے۔ اس کا سورس کوڈ GitHub پر عوامی ہے، اور سائٹ پر اشتہارات اسے مفت رکھنے میں مدد دیتے ہیں۔",
+    "contactLabel": "سوالات، رائے اور خرابی کی اطلاع:"
   },
   "footer": {
     "tagline": "۱۰۰٪ مفت آڈیو سے متن اور تقریر سے متن۔ بغیر سائن اپ، بغیر لاگ ان۔",

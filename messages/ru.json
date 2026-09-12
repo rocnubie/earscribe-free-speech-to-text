@@ -218,7 +218,10 @@
     "title": "О EarScribe",
     "intro": "EarScribe — статическое веб-приложение, которое запускает модели распознавания речи Whisper от OpenAI прямо в браузере с помощью Transformers.js и рантаймов WebGPU / WebAssembly.",
     "noServer": "Бэкенда, касающегося вашего аудио, нет. Хост на Cloudflare Pages отдаёт только статические HTML, JS и CSS. Веса модели Whisper загружаются с CDN Hugging Face при первом использовании и кэшируются браузером.",
-    "credits": "Создано на базе Transformers.js, ONNX Runtime Web и open-source моделей Whisper от OpenAI."
+    "credits": "Создано на базе Transformers.js, ONNX Runtime Web и open-source моделей Whisper от OpenAI.",
+    "operatorTitle": "Кто делает EarScribe",
+    "operatorBody": "EarScribe — небольшой независимый проект, который создаёт и поддерживает один разработчик. Он появился в мае 2026 года, чтобы записи можно было расшифровывать без загрузки на сервер и без регистрации. Исходный код открыт на GitHub, а реклама на сайте помогает оставлять его бесплатным.",
+    "contactLabel": "Вопросы, отзывы и сообщения об ошибках:"
   },
   "footer": {
     "tagline": "100% бесплатный перевод аудио в текст и речи в текст. Без регистрации и входа.",

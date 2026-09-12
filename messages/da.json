@@ -218,7 +218,10 @@
     "title": "Om EarScribe",
     "intro": "EarScribe er en statisk webapp, der kører OpenAIs Whisper tale-genkendelsesmodeller direkte i din browser ved hjælp af Transformers.js og WebGPU / WebAssembly-kørselsmiljøerne.",
     "noServer": "Der er ingen backend, der rører ved din lyd. Cloudflare Pages-værten serverer kun statisk HTML, JS og CSS. Whisper-modelvægtene hentes fra Hugging Face CDN ved første brug og gemmes i din browser.",
-    "credits": "Bygget på Transformers.js, ONNX Runtime Web og de åbne Whisper-modeller fra OpenAI."
+    "credits": "Bygget på Transformers.js, ONNX Runtime Web og de åbne Whisper-modeller fra OpenAI.",
+    "operatorTitle": "Hvem der driver EarScribe",
+    "operatorBody": "EarScribe er et lille, uafhængigt projekt, der bygges og vedligeholdes af én udvikler. Det startede i maj 2026, så man kan transskribere optagelser uden at uploade dem eller oprette en konto. Kildekoden er offentlig på GitHub, og annoncer på siden hjælper med at holde tjenesten gratis.",
+    "contactLabel": "Spørgsmål, feedback og fejlrapporter:"
   },
   "footer": {
     "tagline": "100% gratis lyd til tekst og tale til tekst. Ingen tilmelding, ingen login.",

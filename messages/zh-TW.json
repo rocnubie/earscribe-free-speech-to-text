@@ -218,7 +218,10 @@
     "title": "關於 EarScribe",
     "intro": "EarScribe 是一款靜態網頁應用程式，透過 Transformers.js 以及 WebGPU / WebAssembly 執行環境，直接在瀏覽器中執行 OpenAI 的 Whisper 語音辨識模型。",
     "noServer": "沒有任何後端會接觸你的音訊。Cloudflare Pages 託管僅提供靜態 HTML、JS 和 CSS 檔案。Whisper 模型權重在首次使用時從 Hugging Face CDN 下載，並由瀏覽器快取。",
-    "credits": "基於 Transformers.js、ONNX Runtime Web 和 OpenAI 開源 Whisper 模型建構。"
+    "credits": "基於 Transformers.js、ONNX Runtime Web 和 OpenAI 開源 Whisper 模型建構。",
+    "operatorTitle": "誰在經營 EarScribe",
+    "operatorBody": "EarScribe 是一個小型獨立專案，由一位開發者開發和維護。它始於 2026 年 5 月，目的是讓錄音不必上傳、也不用註冊帳號就能轉成文字。原始碼公開在 GitHub 上，網站上的廣告幫助它維持免費。",
+    "contactLabel": "問題、意見回饋和錯誤回報："
   },
   "footer": {
     "tagline": "100% 免費音訊轉文字與語音轉文字，無需註冊，無需登入。",

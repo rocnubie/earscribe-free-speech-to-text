@@ -218,7 +218,10 @@
     "title": "حول EarScribe",
     "intro": "EarScribe تطبيق ويب ثابت يشغّل نماذج Whisper للتعرف على الكلام من OpenAI مباشرةً في متصفحك باستخدام Transformers.js وبيئتَي تشغيل WebGPU / WebAssembly.",
     "noServer": "لا يوجد خادم خلفي يلمس صوتك. مضيف Cloudflare Pages يخدم ملفات HTML وJS وCSS الثابتة فحسب. تُجلب أوزان نموذج Whisper من شبكة توزيع Hugging Face عند الاستخدام الأول وتُخزَّن مؤقتًا بواسطة متصفحك.",
-    "credits": "مبني على Transformers.js وONNX Runtime Web ونماذج Whisper مفتوحة المصدر من OpenAI."
+    "credits": "مبني على Transformers.js وONNX Runtime Web ونماذج Whisper مفتوحة المصدر من OpenAI.",
+    "operatorTitle": "من يدير EarScribe",
+    "operatorBody": "EarScribe مشروع مستقل صغير يطوّره ويديره مطوّر واحد. بدأ في مايو 2026 ليتيح تحويل التسجيلات إلى نص دون رفعها أو إنشاء حساب. الشيفرة المصدرية منشورة على GitHub، والإعلانات على الموقع تساعد في إبقائه مجانيًا.",
+    "contactLabel": "للأسئلة والملاحظات والإبلاغ عن الأخطاء:"
   },
   "footer": {
     "tagline": "تحويل مجاني 100% للصوت إلى نص والكلام إلى نص. بدون تسجيل أو دخول.",

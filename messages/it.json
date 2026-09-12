@@ -218,7 +218,10 @@
     "title": "Informazioni su EarScribe",
     "intro": "EarScribe è un'app web statica che esegue i modelli di riconoscimento vocale Whisper di OpenAI direttamente nel browser usando Transformers.js e i runtime WebGPU / WebAssembly.",
     "noServer": "Non esiste un backend che accede al tuo audio. L'host Cloudflare Pages serve solo HTML, JS e CSS statici. I pesi del modello Whisper vengono scaricati dalla CDN di Hugging Face al primo utilizzo e memorizzati in cache dal browser.",
-    "credits": "Costruito su Transformers.js, ONNX Runtime Web e i modelli Whisper open source di OpenAI."
+    "credits": "Costruito su Transformers.js, ONNX Runtime Web e i modelli Whisper open source di OpenAI.",
+    "operatorTitle": "Chi gestisce EarScribe",
+    "operatorBody": "EarScribe è un piccolo progetto indipendente, creato e gestito da un solo sviluppatore. È nato a maggio 2026 per trascrivere le registrazioni senza caricarle e senza creare un account. Il codice sorgente è pubblico su GitHub e la pubblicità sul sito aiuta a mantenerlo gratuito.",
+    "contactLabel": "Domande, suggerimenti e segnalazioni di bug:"
   },
   "footer": {
     "tagline": "Da audio a testo e da voce a testo, 100% gratis. Senza registrazione, senza accesso.",

@@ -6,6 +6,8 @@ import { PODCAST_TRANSCRIPTION_GUIDES } from "@/lib/tool-content/podcast-transcr
 import { MEETING_RECORDING_TO_TEXT_GUIDES } from "@/lib/tool-content/meeting-recording-to-text";
 import { WHISPER_ONLINE_GUIDES } from "@/lib/tool-content/whisper-online";
 import { TRANSCRIBE_AUDIO_LOCALLY_GUIDES } from "@/lib/tool-content/transcribe-audio-locally";
+import { SRT_TO_VTT_GUIDES } from "@/lib/tool-content/srt-to-vtt";
+import { SRT_TO_TXT_GUIDES } from "@/lib/tool-content/srt-to-txt";
 
 export interface ToolGuideSection {
   title: string;
@@ -15,6 +17,11 @@ export interface ToolGuideSection {
 export interface ToolGuideCheck {
   title: string;
   body: string;
+}
+
+export interface CodeSample {
+  label: string;
+  code: string;
 }
 
 export interface ToolGuide {
@@ -29,6 +36,10 @@ export interface ToolGuide {
   limits: string[];
   imageSrc: string;
   imageAlt: string;
+  /** Shown instead of the transcript screenshot beside the workflow steps. */
+  workflowSamples?: CodeSample[];
+  /** Shown instead of `imageSrc` beside the guide sections. */
+  guideSamples?: CodeSample[];
 }
 
 export const TOOL_GUIDES: Record<
@@ -288,6 +299,8 @@ export const TOOL_GUIDES: Record<
     "meeting-recording-to-text": MEETING_RECORDING_TO_TEXT_GUIDES.en,
     "whisper-online": WHISPER_ONLINE_GUIDES.en,
     "transcribe-audio-locally": TRANSCRIBE_AUDIO_LOCALLY_GUIDES.en,
+    "srt-to-vtt": SRT_TO_VTT_GUIDES.en,
+    "srt-to-txt": SRT_TO_TXT_GUIDES.en,
   },
   "zh-CN": {
     "audio-to-text": {
@@ -382,6 +395,8 @@ export const TOOL_GUIDES: Record<
     "meeting-recording-to-text": MEETING_RECORDING_TO_TEXT_GUIDES["zh-CN"],
     "whisper-online": WHISPER_ONLINE_GUIDES["zh-CN"],
     "transcribe-audio-locally": TRANSCRIBE_AUDIO_LOCALLY_GUIDES["zh-CN"],
+    "srt-to-vtt": SRT_TO_VTT_GUIDES["zh-CN"],
+    "srt-to-txt": SRT_TO_TXT_GUIDES["zh-CN"],
   },
   ja: {
     "audio-to-text": {
@@ -476,6 +491,8 @@ export const TOOL_GUIDES: Record<
     "meeting-recording-to-text": MEETING_RECORDING_TO_TEXT_GUIDES.ja,
     "whisper-online": WHISPER_ONLINE_GUIDES.ja,
     "transcribe-audio-locally": TRANSCRIBE_AUDIO_LOCALLY_GUIDES.ja,
+    "srt-to-vtt": SRT_TO_VTT_GUIDES.ja,
+    "srt-to-txt": SRT_TO_TXT_GUIDES.ja,
   },
 };
 

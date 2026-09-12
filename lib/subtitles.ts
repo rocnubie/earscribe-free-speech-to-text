@@ -24,15 +24,16 @@ function pad(num: number, width: number): string {
 }
 
 /** seconds -> `HH:MM:SS,mmm` (SRT) or `HH:MM:SS.mmm` (VTT). */
-function formatTimestamp(
+export function formatTimestamp(
   seconds: number,
   separator: "," | ".",
 ): string {
-  const safe = Math.max(0, seconds);
-  const h = Math.floor(safe / 3600);
-  const m = Math.floor((safe % 3600) / 60);
-  const s = Math.floor(safe % 60);
-  const ms = Math.round((safe - Math.floor(safe)) * 1000);
+  // Round once to whole milliseconds so 1.9996 s becomes 00:00:02,000, not 00:00:01,1000.
+  const totalMs = Math.round(Math.max(0, seconds) * 1000);
+  const h = Math.floor(totalMs / 3_600_000);
+  const m = Math.floor((totalMs % 3_600_000) / 60_000);
+  const s = Math.floor((totalMs % 60_000) / 1000);
+  const ms = totalMs % 1000;
   return `${pad(h, 2)}:${pad(m, 2)}:${pad(s, 2)}${separator}${pad(ms, 3)}`;
 }
 

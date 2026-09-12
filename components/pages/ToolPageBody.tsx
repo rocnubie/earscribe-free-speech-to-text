@@ -9,6 +9,7 @@ import {
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { SubtitleConverter } from "@/components/SubtitleConverter";
 import { Transcriber } from "@/components/Transcriber";
 import { Link } from "@/i18n/routing";
 import {
@@ -18,9 +19,30 @@ import {
   type ToolLocale,
   type ToolSlug,
 } from "@/lib/tool-pages";
-import { getToolGuide } from "@/lib/tool-page-seo";
+import {
+  SUBTITLE_CONVERTER_UI,
+  SUBTITLE_FALLBACK_ENCODING,
+} from "@/lib/tool-content/subtitle-converter-ui";
+import { getToolGuide, type CodeSample } from "@/lib/tool-page-seo";
 import { urlFor } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
+
+function CodeSamples({ samples }: { samples: CodeSample[] }) {
+  return (
+    <div className="grid min-w-0 gap-4">
+      {samples.map((sample) => (
+        <figure key={sample.label} className="min-w-0 overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm">
+          <figcaption className="border-b border-slate-200 bg-slate-50 px-4 py-2 font-mono text-xs font-semibold text-slate-600">
+            {sample.label}
+          </figcaption>
+          <pre className="overflow-x-auto p-4 font-mono text-xs leading-relaxed text-slate-800">
+            <code>{sample.code}</code>
+          </pre>
+        </figure>
+      ))}
+    </div>
+  );
+}
 
 export function ToolPageBody({
   locale,
@@ -101,7 +123,16 @@ export function ToolPageBody({
           </section>
 
           <section id="transcribe" aria-label={page.ui.toolLabel} className="mt-10 scroll-mt-4 border-y border-slate-200 bg-white px-0 py-8 sm:px-8">
-            <Transcriber embedded initialResultTab={page.resultTab} />
+            {page.converter ? (
+              <SubtitleConverter
+                mode={page.converter.mode}
+                ui={SUBTITLE_CONVERTER_UI[locale]}
+                example={page.converter.examples[locale]}
+                fallbackEncoding={SUBTITLE_FALLBACK_ENCODING[locale]}
+              />
+            ) : (
+              <Transcriber embedded initialResultTab={page.resultTab} />
+            )}
           </section>
 
           <section className="mt-24 grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
@@ -126,17 +157,21 @@ export function ToolPageBody({
                 ))}
               </div>
             </div>
-            <figure className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/screenshots/02-transcript-showcase.webp"
-                alt={page.text.screenshotAlt}
-                width={1280}
-                height={800}
-                loading="lazy"
-                className="h-auto w-full"
-              />
-            </figure>
+            {guide.workflowSamples ? (
+              <CodeSamples samples={guide.workflowSamples} />
+            ) : (
+              <figure className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/screenshots/02-transcript-showcase.webp"
+                  alt={page.text.screenshotAlt}
+                  width={1280}
+                  height={800}
+                  loading="lazy"
+                  className="h-auto w-full"
+                />
+              </figure>
+            )}
           </section>
 
           <section className="mt-24 grid items-start gap-10 lg:grid-cols-[1.1fr_0.9fr]">
@@ -161,20 +196,24 @@ export function ToolPageBody({
                 ))}
               </div>
             </div>
-            <figure className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={guide.imageSrc}
-                alt={guide.imageAlt}
-                width={1280}
-                height={800}
-                loading="lazy"
-                className="h-auto w-full"
-              />
-              <figcaption className="border-t border-slate-200 px-4 py-3 text-xs leading-relaxed text-slate-500">
-                {guide.imageAlt}
-              </figcaption>
-            </figure>
+            {guide.guideSamples ? (
+              <CodeSamples samples={guide.guideSamples} />
+            ) : (
+              <figure className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-lg">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={guide.imageSrc}
+                  alt={guide.imageAlt}
+                  width={1280}
+                  height={800}
+                  loading="lazy"
+                  className="h-auto w-full"
+                />
+                <figcaption className="border-t border-slate-200 px-4 py-3 text-xs leading-relaxed text-slate-500">
+                  {guide.imageAlt}
+                </figcaption>
+              </figure>
+            )}
           </section>
 
           <section className="mt-24 grid gap-10 lg:grid-cols-[0.75fr_1.25fr]">

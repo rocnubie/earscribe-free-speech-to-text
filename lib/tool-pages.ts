@@ -1,3 +1,4 @@
+import type { SubtitleExample } from "@/components/SubtitleConverter";
 import {
   TOOL_SLUGS,
   type ToolLocale,
@@ -10,6 +11,8 @@ import { PODCAST_TRANSCRIPTION_PAGE } from "@/lib/tool-content/podcast-transcrip
 import { MEETING_RECORDING_TO_TEXT_PAGE } from "@/lib/tool-content/meeting-recording-to-text";
 import { WHISPER_ONLINE_PAGE } from "@/lib/tool-content/whisper-online";
 import { TRANSCRIBE_AUDIO_LOCALLY_PAGE } from "@/lib/tool-content/transcribe-audio-locally";
+import { SRT_TO_VTT_PAGE } from "@/lib/tool-content/srt-to-vtt";
+import { SRT_TO_TXT_PAGE } from "@/lib/tool-content/srt-to-txt";
 
 export { TOOL_SLUGS, type ToolLocale, type ToolSlug };
 
@@ -31,6 +34,11 @@ export interface ToolPageDefinition {
   slug: ToolSlug;
   resultTab: "transcript" | "subtitles";
   copy: Record<ToolLocale, ToolCopy>;
+  /** Subtitle-file tools embed the converter instead of the transcriber. */
+  converter?: {
+    mode: "srt-vtt" | "to-txt";
+    examples: Record<ToolLocale, SubtitleExample>;
+  };
 }
 
 export const TOOL_UI: Record<
@@ -429,6 +437,8 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
   "meeting-recording-to-text": MEETING_RECORDING_TO_TEXT_PAGE,
   "whisper-online": WHISPER_ONLINE_PAGE,
   "transcribe-audio-locally": TRANSCRIBE_AUDIO_LOCALLY_PAGE,
+  "srt-to-vtt": SRT_TO_VTT_PAGE,
+  "srt-to-txt": SRT_TO_TXT_PAGE,
 };
 
 export function isToolSlug(value: string): value is ToolSlug {

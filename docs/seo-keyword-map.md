@@ -1,6 +1,6 @@
 # EarScribe SEO keyword map
 
-更新时间：2026-09-12（新增 7 个长尾工具页，依据见 `docs/2026-09-12-长尾工具页规划.md`）
+更新时间：2026-09-12（新增 7 个长尾工具页和 2 个字幕小工具，依据见 `docs/2026-09-12-长尾工具页规划.md`）
 
 这份地图把一个页面绑定到一个主要搜索意图。它不把 Google Suggest 当作搜索量数据；关键词是否值得继续投入，要用 Search Console 的展示、点击和真实转化验证。
 
@@ -21,6 +21,8 @@
 | /meeting-recording-to-text | meeting recording to text | I have a recorded meeting and need notes | Zoom audio-only M4A, Teams/Meet MP4 audio extraction (QuickTime, ffmpeg), decisions search, consent, drafts on shared PCs |
 | /whisper-online | whisper online | I want to run OpenAI Whisper without an API key | Model parameters (39M/74M/244M/809M), Turbo's 4-layer decoder, WebGPU vs WASM, API differences, Whisper failure modes |
 | /transcribe-audio-locally | transcribe audio locally | I don't want my recording uploaded | What stays local vs what the page sends, Network-panel verification steps, not an offline app, honest limits |
+| /srt-to-vtt | srt to vtt | I need my subtitles in the other format | Two-way conversion, syntax differences, WebVTT features dropped in SRT (settings, STYLE, REGION, NOTE), voice spans, legacy encodings |
+| /srt-to-txt | srt to txt | I want readable text from a subtitle file | Three layouts (lines, timestamps, paragraphs), rolling auto-caption cleanup, CJK joining, what gets stripped |
 
 ## 简体中文
 
@@ -38,6 +40,8 @@
 | /zh-CN/meeting-recording-to-text | 会议录音转文字 | 会后把录音整理成纪要 | Zoom 纯音频 M4A、Teams/腾讯会议等 MP4 提取音频、决议检索、录音同意 |
 | /zh-CN/whisper-online | whisper 在线 | 不用 API Key 使用 Whisper | 各模型参数量、Turbo 解码器、WebGPU/WASM、与 API 的区别、Whisper 的弱点 |
 | /zh-CN/transcribe-audio-locally | 本地语音转文字 | 录音不想上传 | 本机与网络各有什么、用“网络”面板验证、不是离线软件、限制说明 |
+| /zh-CN/srt-to-vtt | srt转vtt | 字幕要换成另一种格式 | 双向转换、写法区别、SRT 保留不了的 WebVTT 功能、GB18030 等旧编码 |
+| /zh-CN/srt-to-txt | srt转txt | 从字幕文件拿到可读文本 | 三种排版、自动字幕重复行清理、中文合并不加空格、会去掉哪些内容 |
 
 ## 日本語
 
@@ -55,6 +59,8 @@
 | /ja/meeting-recording-to-text | 会議 録音 文字起こし | 録音した会議から議事録を作りたい | ZoomのM4A、Teams・MeetのMP4から音声を取り出す方法、決定事項の検索、録音の同意 |
 | /ja/whisper-online | whisper 文字起こし | APIキーなしでWhisperを使いたい | 各モデルのパラメータ数、Turboのデコーダ、WebGPUとWASM、APIとの違い、苦手なこと |
 | /ja/transcribe-audio-locally | 文字起こし ローカル | 情報漏洩が心配で音声をアップロードしたくない | 端末に残るもの・送信されるもの、ネットワークパネルでの確認、オフラインアプリではない点 |
+| /ja/srt-to-vtt | srt vtt 変換 | 字幕を別の形式にしたい | 相互変換、書き方の違い、SRTに引き継げないWebVTT機能、Shift_JISなどの文字コード |
+| /ja/srt-to-txt | vtt テキスト 抽出 | 字幕ファイルから読めるテキストがほしい | 3つのレイアウト、自動字幕の重複整理、日本語はスペースなしで結合、削除されるもの |
 
 ## Evidence and guardrails
 

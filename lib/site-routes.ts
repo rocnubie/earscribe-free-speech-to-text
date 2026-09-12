@@ -11,6 +11,8 @@ export const TOOL_SLUGS = [
   "meeting-recording-to-text",
   "whisper-online",
   "transcribe-audio-locally",
+  "srt-to-vtt",
+  "srt-to-txt",
 ] as const;
 
 export type ToolSlug = (typeof TOOL_SLUGS)[number];

@@ -2,6 +2,7 @@ import { defaultLocale } from "@/i18n/locale";
 import {
   PRIVACY_LOCALES,
   TOOL_LOCALES,
+  TOOL_SLUGS,
   type ToolSlug,
 } from "@/lib/site-routes";
 
@@ -236,9 +237,8 @@ export function getLocaleSwitchDestination(
   pathname: string,
   nextLocale: string,
 ): string {
-  const isToolPage = PRODUCT_NAVIGATION.some(
-    (item) => pathname === `/${item.slug}`,
-  );
+  // Every tool page, including the subtitle converters, exists only in TOOL_LOCALES.
+  const isToolPage = TOOL_SLUGS.some((slug) => pathname === `/${slug}`);
 
   if (isToolPage && !supportsToolPages(nextLocale)) {
     return "/#transcribe";

@@ -247,12 +247,13 @@ export function ToolPageBody({
 
           <section className="mt-24">
             <h2 className="text-2xl font-semibold text-slate-950">{page.ui.relatedTitle}</h2>
-            <nav className="mt-5 grid gap-px overflow-hidden rounded-lg border border-slate-200 bg-slate-200 md:grid-cols-2 lg:grid-cols-4">
+            {/* Per-cell rings draw the dividers, so an incomplete last row stays white. */}
+            <nav className="mt-5 grid gap-px overflow-hidden rounded-lg border border-slate-200 bg-white md:grid-cols-2 lg:grid-cols-4">
               {related.map((relatedSlug) => (
                 <Link
                   key={relatedSlug}
                   href={`/${relatedSlug}`}
-                  className="group flex items-center justify-between gap-3 bg-white px-5 py-4 text-sm font-medium text-slate-800 hover:bg-sky-50"
+                  className="group flex items-center justify-between gap-3 bg-white px-5 py-4 text-sm font-medium text-slate-800 ring-1 ring-slate-200 hover:bg-sky-50"
                 >
                   {TOOL_PAGES[relatedSlug].copy[locale].title}
                   <ArrowRight className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:text-sky-700" />

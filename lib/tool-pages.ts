@@ -3,10 +3,17 @@ import {
   type ToolLocale,
   type ToolSlug,
 } from "@/lib/site-routes";
+import { M4A_TO_TEXT_PAGE } from "@/lib/tool-content/m4a-to-text";
+import { WAV_TO_TEXT_PAGE } from "@/lib/tool-content/wav-to-text";
+import { VOICE_MEMO_TO_TEXT_PAGE } from "@/lib/tool-content/voice-memo-to-text";
+import { PODCAST_TRANSCRIPTION_PAGE } from "@/lib/tool-content/podcast-transcription";
+import { MEETING_RECORDING_TO_TEXT_PAGE } from "@/lib/tool-content/meeting-recording-to-text";
+import { WHISPER_ONLINE_PAGE } from "@/lib/tool-content/whisper-online";
+import { TRANSCRIBE_AUDIO_LOCALLY_PAGE } from "@/lib/tool-content/transcribe-audio-locally";
 
 export { TOOL_SLUGS, type ToolLocale, type ToolSlug };
 
-interface ToolCopy {
+export interface ToolCopy {
   title: string;
   description: string;
   eyebrow: string;
@@ -415,6 +422,13 @@ export const TOOL_PAGES: Record<ToolSlug, ToolPageDefinition> = {
       },
     },
   },
+  "m4a-to-text": M4A_TO_TEXT_PAGE,
+  "wav-to-text": WAV_TO_TEXT_PAGE,
+  "voice-memo-to-text": VOICE_MEMO_TO_TEXT_PAGE,
+  "podcast-transcription": PODCAST_TRANSCRIPTION_PAGE,
+  "meeting-recording-to-text": MEETING_RECORDING_TO_TEXT_PAGE,
+  "whisper-online": WHISPER_ONLINE_PAGE,
+  "transcribe-audio-locally": TRANSCRIBE_AUDIO_LOCALLY_PAGE,
 };
 
 export function isToolSlug(value: string): value is ToolSlug {

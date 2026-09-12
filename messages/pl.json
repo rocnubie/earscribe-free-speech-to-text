@@ -225,6 +225,8 @@
     "links": {
       "about": "O nas",
       "privacy": "Prywatność",
+      "contact": "Kontakt",
+      "terms": "Regulamin",
       "github": "GitHub"
     },
     "builtWith": "Zbudowany z Transformers.js, ONNX Runtime Web, Whisper."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "Na urządzeniu",
         "autoLanguage": "Angielski (wykryty automatycznie)",
-        "duration": "12:48",
-        "wordCount": "1 842 słowa"
+        "duration": "12:48"
       },
       "pauseAria": "Pauza",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Host",
-          "text": "Witamy z powrotem — dziś rozmawiamy z kimś, kto bada uwagę."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Guest",
-          "text": "Przeszkadzanie nie jest tak naprawdę problemem, za jaki ludzie je uważają."
-        }
-      ],
       "exportHeading": "Eksportuj",
       "copyText": "Kopiuj tekst",
       "tiles": [

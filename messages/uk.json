@@ -225,6 +225,8 @@
     "links": {
       "about": "Про сервіс",
       "privacy": "Конфіденційність",
+      "contact": "Контакти",
+      "terms": "Умови",
       "github": "GitHub"
     },
     "builtWith": "Побудовано за допомогою Transformers.js, ONNX Runtime Web, Whisper."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "На пристрої",
         "autoLanguage": "Англійська (визначено автоматично)",
-        "duration": "12:48",
-        "wordCount": "1 842 слова"
+        "duration": "12:48"
       },
       "pauseAria": "Пауза",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1,0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Ведучий",
-          "text": "З поверненням — сьогодні ми говоримо з дослідником уваги."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Гість",
-          "text": "Переривання насправді не є тією проблемою, якою люди його вважають."
-        }
-      ],
       "exportHeading": "Експорт",
       "copyText": "Копіювати текст",
       "tiles": [

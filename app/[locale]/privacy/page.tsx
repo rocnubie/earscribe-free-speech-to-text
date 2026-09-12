@@ -20,7 +20,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: { absolute: copy.title },
     description: copy.description,
     alternates: alternatesForLocales(locale, "/privacy", PRIVACY_LOCALES),
-    robots: { index: false, follow: true },
     openGraph: {
       title: copy.title,
       description: copy.description,

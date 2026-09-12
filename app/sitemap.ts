@@ -5,6 +5,7 @@ import type { MetadataRoute } from "next";
 import { defaultLocale, locales } from "@/i18n/locale";
 import { urlFor } from "@/lib/seo";
 import {
+  PRIVACY_LOCALES,
   TOOL_LOCALES,
   TOOL_SLUGS,
 } from "@/lib/site-routes";
@@ -18,8 +19,23 @@ const pages = [
   { path: "/about", changeFrequency: "monthly" as const, priority: 0.6 },
 ];
 
+/** English-only pages; other locales link to them with hreflang="en". */
+const englishOnlyPages = ["/contact", "/terms"];
+
+function languagesFor(
+  pageLocales: readonly string[],
+  path: string,
+): Record<string, string> {
+  const languages = Object.fromEntries(
+    pageLocales.map((locale) => [locale, urlFor(locale, path)]),
+  ) as Record<string, string>;
+  languages["x-default"] = urlFor(defaultLocale, path);
+  return languages;
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date("2026-07-28");
+  const companyPagesModified = new Date("2026-09-11");
   const entries: MetadataRoute.Sitemap = [];
 
   for (const page of pages) {
@@ -45,10 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const slug of TOOL_SLUGS) {
     const path = `/${slug}`;
-    const languages = Object.fromEntries(
-      TOOL_LOCALES.map((locale) => [locale, urlFor(locale, path)]),
-    ) as Record<string, string>;
-    languages["x-default"] = urlFor(defaultLocale, path);
+    const languages = languagesFor(TOOL_LOCALES, path);
 
     for (const locale of TOOL_LOCALES) {
       entries.push({
@@ -59,6 +72,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
         alternates: { languages },
       });
     }
+  }
+
+  const privacyLanguages = languagesFor(PRIVACY_LOCALES, "/privacy");
+  for (const locale of PRIVACY_LOCALES) {
+    entries.push({
+      url: urlFor(locale, "/privacy"),
+      lastModified: companyPagesModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+      alternates: { languages: privacyLanguages },
+    });
+  }
+
+  for (const path of englishOnlyPages) {
+    entries.push({
+      url: urlFor(defaultLocale, path),
+      lastModified: companyPagesModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    });
   }
 
   return entries;

@@ -225,6 +225,8 @@
     "links": {
       "about": "소개",
       "privacy": "개인정보처리방침",
+      "contact": "문의",
+      "terms": "이용약관",
       "github": "GitHub"
     },
     "builtWith": "Transformers.js, ONNX Runtime Web, Whisper로 제작되었습니다."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "기기 내 처리",
         "autoLanguage": "영어 (자동 감지)",
-        "duration": "12:48",
-        "wordCount": "1,842개 단어"
+        "duration": "12:48"
       },
       "pauseAria": "일시정지",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "진행자",
-          "text": "다시 찾아와 주셔서 감사합니다. 오늘은 주의력 연구를 하는 분과 이야기합니다."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "게스트",
-          "text": "중단 자체가 사람들이 생각하는 만큼 큰 문제는 아닙니다."
-        }
-      ],
       "exportHeading": "내보내기",
       "copyText": "텍스트 복사",
       "tiles": [

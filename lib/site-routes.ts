@@ -4,6 +4,13 @@ export const TOOL_SLUGS = [
   "audio-to-srt",
   "interview-transcription",
   "lecture-transcription",
+  "m4a-to-text",
+  "wav-to-text",
+  "voice-memo-to-text",
+  "podcast-transcription",
+  "meeting-recording-to-text",
+  "whisper-online",
+  "transcribe-audio-locally",
 ] as const;
 
 export type ToolSlug = (typeof TOOL_SLUGS)[number];

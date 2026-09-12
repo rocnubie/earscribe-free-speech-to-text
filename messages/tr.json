@@ -225,6 +225,8 @@
     "links": {
       "about": "Hakkında",
       "privacy": "Gizlilik",
+      "contact": "İletişim",
+      "terms": "Koşullar",
       "github": "GitHub"
     },
     "builtWith": "Transformers.js, ONNX Runtime Web, Whisper ile geliştirilmiştir."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "Cihaz üzerinde",
         "autoLanguage": "İngilizce (otomatik algılandı)",
-        "duration": "12:48",
-        "wordCount": "1.842 kelime"
+        "duration": "12:48"
       },
       "pauseAria": "Duraklat",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1,0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Sunucu",
-          "text": "Tekrar hoş geldiniz — bugün dikkat araştıran biriyle konuşuyoruz."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Konuk",
-          "text": "Kesinti, aslında insanların sandığı sorun değil."
-        }
-      ],
       "exportHeading": "Dışa Aktar",
       "copyText": "Metni kopyala",
       "tiles": [

@@ -4,9 +4,7 @@ import {
   Briefcase,
   Check,
   ChevronRight,
-  Copy,
   Cpu,
-  Download,
   FileAudio,
   FileText,
   GraduationCap,
@@ -14,8 +12,6 @@ import {
   Languages,
   Mic,
   Newspaper,
-  Play,
-  RotateCcw,
   Sparkles,
   Subtitles,
   Upload,
@@ -23,6 +19,7 @@ import {
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 
+import { ShowcaseDemo } from "@/components/ShowcaseDemo";
 import { TrackedNavigationLink } from "@/components/TrackedNavigationLink";
 import {
   getContextualToolTarget,
@@ -32,17 +29,11 @@ import {
 } from "@/lib/site-navigation";
 
 /* ------------------------------------------------------------------ */
-/*  1. UI Showcase — real done-state UI with static demo data        */
+/*  1. UI Showcase — real done-state UI driven by a real sample file  */
 /* ------------------------------------------------------------------ */
 
 export function UIShowcase() {
   const t = useTranslations("seo.showcase");
-  const tr = useTranslations("result");
-  const demoChunks = t.raw("transcript") as {
-    ts: string;
-    speaker: string;
-    text: string;
-  }[];
 
   return (
     <section
@@ -64,131 +55,7 @@ export function UIShowcase() {
         </p>
       </div>
 
-      {/* Done-state UI — matches Transcriber phase="done" exactly */}
-      <div className="mt-12 space-y-6">
-        {/* Phase strip — matches Transcriber done-phase strip */}
-        <section className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white px-5 py-3 shadow-sm">
-          <div className="min-w-0 text-sm">
-            <span className="block truncate font-medium text-slate-900">
-              interview-acme-q3.mp3
-            </span>
-            <span className="text-xs text-slate-500">24.3 MB · Whisper tiny</span>
-          </div>
-          <button
-            type="button"
-            aria-hidden="true"
-            tabIndex={-1}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700"
-          >
-            <RotateCcw className="h-4 w-4" />
-              {tr("newFile")}
-          </button>
-        </section>
-
-        {/* Waveform — matches Waveform component layout */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-          <div className="flex min-w-0 items-center gap-3 sm:gap-4">
-            <button
-              type="button"
-              aria-hidden="true"
-              tabIndex={-1}
-              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-slate-900 text-white"
-            >
-              <Play className="h-5 w-5 translate-x-0.5" />
-            </button>
-            <div className="flex min-w-0 flex-1 flex-col gap-1">
-              {/* Static bar waveform in place of canvas */}
-              <div className="grid h-16 min-w-0 grid-cols-[repeat(60,minmax(1px,1fr))] items-center gap-px overflow-hidden rounded-lg bg-slate-50 px-2">
-                {Array.from({ length: 60 }).map((_, i) => {
-                  const h = Math.round(
-                    4 + Math.abs(Math.sin(i * 0.37 + 0.5) * 52) + (i % 5) * 2,
-                  );
-                  const played = i < 50;
-                  return (
-                    <span
-                      key={i}
-                      style={{ height: `${Math.min(h, 56)}px` }}
-                      className={
-                        "w-full rounded-sm " +
-                        (played ? "bg-sky-600" : "bg-slate-300")
-                      }
-                    />
-                  );
-                })}
-              </div>
-              <div className="flex items-center justify-between font-mono text-xs tabular-nums text-slate-500">
-                <span>1:14</span>
-                <span>12:48</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* TranscriptViewer — matches TranscriptViewer component layout */}
-        <section className="space-y-4">
-          <header className="flex flex-wrap items-center justify-between gap-3">
-            <div>
-              <h3 className="text-xl font-semibold text-slate-900">{tr("title")}</h3>
-              <p className="mt-1 text-sm text-slate-600">
-                {t("badges.autoLanguage")} · {t("badges.wordCount")}
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                aria-hidden="true"
-                tabIndex={-1}
-                className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700"
-              >
-                <Copy className="h-4 w-4" />
-                {tr("copy")}
-              </button>
-              <button
-                type="button"
-                aria-hidden="true"
-                tabIndex={-1}
-                className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-3 py-1.5 text-sm font-medium text-white"
-              >
-                <Download className="h-4 w-4" />
-                {tr("export")}
-              </button>
-            </div>
-          </header>
-
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-            <ol className="divide-y divide-slate-100">
-              {demoChunks.map((chunk, i) => (
-                <li
-                  key={i}
-                  className={[
-                    "flex gap-4 px-4 py-3",
-                    i === 1 ? "bg-sky-50" : "",
-                  ].join(" ")}
-                >
-                  <span
-                    className={[
-                      "shrink-0 font-mono text-xs tabular-nums",
-                      i === 1 ? "text-sky-700" : "text-sky-600",
-                    ].join(" ")}
-                  >
-                    {chunk.ts}
-                  </span>
-                  <p
-                    className={[
-                      "text-sm leading-relaxed",
-                      i === 1
-                        ? "font-medium text-slate-900"
-                        : "text-slate-800",
-                    ].join(" ")}
-                  >
-                    {chunk.text}
-                  </p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-      </div>
+      <ShowcaseDemo />
     </section>
   );
 }

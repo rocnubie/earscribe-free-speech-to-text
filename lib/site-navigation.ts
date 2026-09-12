@@ -1,3 +1,4 @@
+import { defaultLocale } from "@/i18n/locale";
 import {
   PRIVACY_LOCALES,
   TOOL_LOCALES,
@@ -9,9 +10,21 @@ export type ProductNavigationId =
   | "mp3ToText"
   | "audioToSrt"
   | "interviewTranscription"
-  | "lectureTranscription";
+  | "lectureTranscription"
+  | "m4aToText"
+  | "wavToText"
+  | "voiceMemoToText"
+  | "podcastTranscription"
+  | "meetingRecordingToText"
+  | "whisperOnline"
+  | "transcribeAudioLocally";
 
-export type NavigationId = ProductNavigationId | "about" | "privacy";
+export type NavigationId =
+  | ProductNavigationId
+  | "about"
+  | "privacy"
+  | "contact"
+  | "terms";
 export type UseCaseNavigationId =
   | "podcast"
   | "interview"
@@ -35,7 +48,9 @@ type ProductNavigationItem = {
 type NavigationItem =
   | ProductNavigationItem
   | { id: "about"; path: "/about" }
-  | { id: "privacy"; path: "/privacy" };
+  | { id: "privacy"; path: "/privacy" }
+  | { id: "contact"; path: "/contact" }
+  | { id: "terms"; path: "/terms" };
 
 export type NavigationTarget = {
   href: string;
@@ -50,15 +65,22 @@ export const PRODUCT_NAVIGATION = [
   { id: "audioToSrt", slug: "audio-to-srt" },
   { id: "interviewTranscription", slug: "interview-transcription" },
   { id: "lectureTranscription", slug: "lecture-transcription" },
+  { id: "m4aToText", slug: "m4a-to-text" },
+  { id: "wavToText", slug: "wav-to-text" },
+  { id: "voiceMemoToText", slug: "voice-memo-to-text" },
+  { id: "podcastTranscription", slug: "podcast-transcription" },
+  { id: "meetingRecordingToText", slug: "meeting-recording-to-text" },
+  { id: "whisperOnline", slug: "whisper-online" },
+  { id: "transcribeAudioLocally", slug: "transcribe-audio-locally" },
 ] as const satisfies readonly ProductNavigationItem[];
 
 export const HEADER_PRODUCT_NAVIGATION = PRODUCT_NAVIGATION.slice(0, 3);
 
 export const USE_CASE_NAVIGATION = [
-  { id: "podcast", navigationId: "mp3ToText" },
+  { id: "podcast", navigationId: "podcastTranscription" },
   { id: "interview", navigationId: "interviewTranscription" },
   { id: "lecture", navigationId: "lectureTranscription" },
-  { id: "meeting", navigationId: "interviewTranscription" },
+  { id: "meeting", navigationId: "meetingRecordingToText" },
   { id: "subtitles", navigationId: "audioToSrt" },
   { id: "longForm", navigationId: "audioToText" },
 ] as const satisfies readonly {
@@ -68,11 +90,11 @@ export const USE_CASE_NAVIGATION = [
 
 export const JOB_NAVIGATION = [
   { id: "mp3ToText", navigationId: "mp3ToText" },
-  { id: "wavToText", navigationId: "audioToText" },
-  { id: "m4aToText", navigationId: "audioToText" },
+  { id: "wavToText", navigationId: "wavToText" },
+  { id: "m4aToText", navigationId: "m4aToText" },
   { id: "audioToSrt", navigationId: "audioToSrt" },
   { id: "audioToVtt", navigationId: "audioToSrt" },
-  { id: "podcastToText", navigationId: "audioToText" },
+  { id: "podcastToText", navigationId: "podcastTranscription" },
 ] as const satisfies readonly {
   id: JobNavigationId;
   navigationId: ProductNavigationId;
@@ -82,7 +104,12 @@ const NAVIGATION = [
   ...PRODUCT_NAVIGATION,
   { id: "about", path: "/about" },
   { id: "privacy", path: "/privacy" },
+  { id: "contact", path: "/contact" },
+  { id: "terms", path: "/terms" },
 ] as const satisfies readonly NavigationItem[];
+
+/** Pages published only at the English root URL. */
+const ENGLISH_ONLY_NAVIGATION: readonly NavigationId[] = ["contact", "terms"];
 
 function supportsToolPages(locale: string): boolean {
   return TOOL_LOCALES.includes(locale as (typeof TOOL_LOCALES)[number]);
@@ -126,11 +153,22 @@ export function getNavigationTarget(
   }
 
   if (item.id === "privacy" && !supportsPrivacyPage(locale)) {
+    // No localized policy: send readers to the English policy, never the home page.
     return {
-      href: "/",
+      href: item.path,
       available: false,
       fallback: true,
-      localeAware: true,
+      localeAware: false,
+    };
+  }
+
+  if (ENGLISH_ONLY_NAVIGATION.includes(item.id)) {
+    const isEnglish = locale === defaultLocale;
+    return {
+      href: item.path,
+      available: isEnglish,
+      fallback: !isEnglish,
+      localeAware: false,
     };
   }
 

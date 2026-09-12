@@ -18,6 +18,8 @@ export function Footer() {
   const products = getProductNavigation(locale).slice(0, 3);
   const aboutTarget = getNavigationTarget("about", locale);
   const privacyTarget = getNavigationTarget("privacy", locale);
+  const contactTarget = getNavigationTarget("contact", locale);
+  const termsTarget = getNavigationTarget("terms", locale);
   const startTarget = getNavigationTarget("audioToText", locale);
 
   return (
@@ -84,6 +86,24 @@ export function Footer() {
               className="hover:text-slate-950"
             >
               {t("links.privacy")}
+            </TrackedNavigationLink>
+            <TrackedNavigationLink
+              navigationTarget={contactTarget}
+              surface="footer"
+              targetId="contact"
+              hrefLang={contactTarget.available ? locale : "en"}
+              className="hover:text-slate-950"
+            >
+              {t("links.contact")}
+            </TrackedNavigationLink>
+            <TrackedNavigationLink
+              navigationTarget={termsTarget}
+              surface="footer"
+              targetId="terms"
+              hrefLang={termsTarget.available ? locale : "en"}
+              className="hover:text-slate-950"
+            >
+              {t("links.terms")}
             </TrackedNavigationLink>
             <a
               href={GITHUB_URL}

@@ -1,4 +1,11 @@
 import type { ToolLocale, ToolSlug } from "@/lib/site-routes";
+import { M4A_TO_TEXT_GUIDES } from "@/lib/tool-content/m4a-to-text";
+import { WAV_TO_TEXT_GUIDES } from "@/lib/tool-content/wav-to-text";
+import { VOICE_MEMO_TO_TEXT_GUIDES } from "@/lib/tool-content/voice-memo-to-text";
+import { PODCAST_TRANSCRIPTION_GUIDES } from "@/lib/tool-content/podcast-transcription";
+import { MEETING_RECORDING_TO_TEXT_GUIDES } from "@/lib/tool-content/meeting-recording-to-text";
+import { WHISPER_ONLINE_GUIDES } from "@/lib/tool-content/whisper-online";
+import { TRANSCRIBE_AUDIO_LOCALLY_GUIDES } from "@/lib/tool-content/transcribe-audio-locally";
 
 export interface ToolGuideSection {
   title: string;
@@ -274,6 +281,13 @@ export const TOOL_GUIDES: Record<
       imageSrc: "/screenshots/02-transcript-showcase.webp",
       imageAlt: "Lecture transcript workspace with searchable timestamps and editable text",
     },
+    "m4a-to-text": M4A_TO_TEXT_GUIDES.en,
+    "wav-to-text": WAV_TO_TEXT_GUIDES.en,
+    "voice-memo-to-text": VOICE_MEMO_TO_TEXT_GUIDES.en,
+    "podcast-transcription": PODCAST_TRANSCRIPTION_GUIDES.en,
+    "meeting-recording-to-text": MEETING_RECORDING_TO_TEXT_GUIDES.en,
+    "whisper-online": WHISPER_ONLINE_GUIDES.en,
+    "transcribe-audio-locally": TRANSCRIBE_AUDIO_LOCALLY_GUIDES.en,
   },
   "zh-CN": {
     "audio-to-text": {
@@ -361,6 +375,13 @@ export const TOOL_GUIDES: Record<
       imageSrc: "/screenshots/02-transcript-showcase.webp",
       imageAlt: "可搜索、可编辑并带时间戳的课堂录音文字稿工作台",
     },
+    "m4a-to-text": M4A_TO_TEXT_GUIDES["zh-CN"],
+    "wav-to-text": WAV_TO_TEXT_GUIDES["zh-CN"],
+    "voice-memo-to-text": VOICE_MEMO_TO_TEXT_GUIDES["zh-CN"],
+    "podcast-transcription": PODCAST_TRANSCRIPTION_GUIDES["zh-CN"],
+    "meeting-recording-to-text": MEETING_RECORDING_TO_TEXT_GUIDES["zh-CN"],
+    "whisper-online": WHISPER_ONLINE_GUIDES["zh-CN"],
+    "transcribe-audio-locally": TRANSCRIBE_AUDIO_LOCALLY_GUIDES["zh-CN"],
   },
   ja: {
     "audio-to-text": {
@@ -448,6 +469,13 @@ export const TOOL_GUIDES: Record<
       imageSrc: "/screenshots/02-transcript-showcase.webp",
       imageAlt: "検索、編集、タイムスタンプに対応した講義文字起こし画面",
     },
+    "m4a-to-text": M4A_TO_TEXT_GUIDES.ja,
+    "wav-to-text": WAV_TO_TEXT_GUIDES.ja,
+    "voice-memo-to-text": VOICE_MEMO_TO_TEXT_GUIDES.ja,
+    "podcast-transcription": PODCAST_TRANSCRIPTION_GUIDES.ja,
+    "meeting-recording-to-text": MEETING_RECORDING_TO_TEXT_GUIDES.ja,
+    "whisper-online": WHISPER_ONLINE_GUIDES.ja,
+    "transcribe-audio-locally": TRANSCRIBE_AUDIO_LOCALLY_GUIDES.ja,
   },
 };
 

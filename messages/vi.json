@@ -225,6 +225,8 @@
     "links": {
       "about": "Giới thiệu",
       "privacy": "Quyền riêng tư",
+      "contact": "Liên hệ",
+      "terms": "Điều khoản",
       "github": "GitHub"
     },
     "builtWith": "Được xây dựng với Transformers.js, ONNX Runtime Web, Whisper."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "Trên thiết bị",
         "autoLanguage": "Tiếng Anh (tự động phát hiện)",
-        "duration": "12:48",
-        "wordCount": "1.842 từ"
+        "duration": "12:48"
       },
       "pauseAria": "Dừng",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Người dẫn",
-          "text": "Chào mừng trở lại — hôm nay chúng ta nói chuyện với người nghiên cứu về sự chú ý."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Khách",
-          "text": "Sự gián đoạn thực ra không phải vấn đề như người ta nghĩ."
-        }
-      ],
       "exportHeading": "Xuất",
       "copyText": "Sao chép văn bản",
       "tiles": [

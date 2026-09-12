@@ -225,6 +225,8 @@
     "links": {
       "about": "Über uns",
       "privacy": "Datenschutz",
+      "contact": "Kontakt",
+      "terms": "Nutzungsbedingungen",
       "github": "GitHub"
     },
     "builtWith": "Entwickelt mit Transformers.js, ONNX Runtime Web, Whisper."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "Auf dem Gerät",
         "autoLanguage": "English (automatisch erkannt)",
-        "duration": "12:48",
-        "wordCount": "1.842 Wörter"
+        "duration": "12:48"
       },
       "pauseAria": "Pausieren",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Moderator",
-          "text": "Willkommen zurück – heute sprechen wir mit jemandem, der Aufmerksamkeit erforscht."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Gast",
-          "text": "Unterbrechungen sind eigentlich nicht das Problem, das die meisten Menschen darin sehen."
-        }
-      ],
       "exportHeading": "Exportieren",
       "copyText": "Text kopieren",
       "tiles": [

@@ -225,6 +225,8 @@
     "links": {
       "about": "Over",
       "privacy": "Privacy",
+      "contact": "Contact",
+      "terms": "Voorwaarden",
       "github": "GitHub"
     },
     "builtWith": "Gebouwd met Transformers.js, ONNX Runtime Web, Whisper."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "Op apparaat",
         "autoLanguage": "Engels (automatisch gedetecteerd)",
-        "duration": "12:48",
-        "wordCount": "1.842 woorden"
+        "duration": "12:48"
       },
       "pauseAria": "Pauzeren",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Host",
-          "text": "Welkom terug — vandaag spreken we met iemand die aandacht bestudeert."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Guest",
-          "text": "Onderbreking is eigenlijk niet het probleem dat mensen denken."
-        }
-      ],
       "exportHeading": "Exporteren",
       "copyText": "Tekst kopiëren",
       "tiles": [

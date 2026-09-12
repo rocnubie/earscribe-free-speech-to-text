@@ -225,6 +225,8 @@
     "links": {
       "about": "关于",
       "privacy": "隐私",
+      "contact": "联系我们",
+      "terms": "使用条款",
       "github": "GitHub"
     },
     "builtWith": "基于 Transformers.js、ONNX Runtime Web、Whisper 构建。"
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "本地处理",
         "autoLanguage": "英语（自动检测）",
-        "duration": "12:48",
-        "wordCount": "1,842 个词"
+        "duration": "12:48"
       },
       "pauseAria": "暂停",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "主持人",
-          "text": "欢迎回来——今天我们与一位研究注意力的学者对话。"
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "嘉宾",
-          "text": "打断其实并不像人们想象的那样是个问题。"
-        }
-      ],
       "exportHeading": "导出",
       "copyText": "复制文本",
       "tiles": [

@@ -225,6 +225,8 @@
     "links": {
       "about": "เกี่ยวกับ",
       "privacy": "นโยบายความเป็นส่วนตัว",
+      "contact": "ติดต่อ",
+      "terms": "ข้อกำหนดการใช้งาน",
       "github": "GitHub"
     },
     "builtWith": "สร้างด้วย Transformers.js, ONNX Runtime Web, Whisper"
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "บนอุปกรณ์",
         "autoLanguage": "ภาษาอังกฤษ (ตรวจพบอัตโนมัติ)",
-        "duration": "12:48",
-        "wordCount": "1,842 คำ"
+        "duration": "12:48"
       },
       "pauseAria": "หยุดชั่วคราว",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "ผู้ดำเนินรายการ",
-          "text": "ยินดีต้อนรับกลับมา — วันนี้เราคุยกับผู้เชี่ยวชาญด้านการศึกษาความสนใจ"
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "แขกรับเชิญ",
-          "text": "การถูกรบกวนไม่ได้เป็นปัญหาอย่างที่คนส่วนใหญ่คิด"
-        }
-      ],
       "exportHeading": "ส่งออก",
       "copyText": "คัดลอกข้อความ",
       "tiles": [

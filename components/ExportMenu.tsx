@@ -17,9 +17,15 @@ import {
 interface ExportMenuProps {
   transcript: Transcript;
   baseName: string;
+  /** The homepage demo passes false so sample exports stay out of product analytics. */
+  trackExport?: boolean;
 }
 
-export function ExportMenu({ transcript, baseName }: ExportMenuProps) {
+export function ExportMenu({
+  transcript,
+  baseName,
+  trackExport = true,
+}: ExportMenuProps) {
   const t = useTranslations("result");
   const [open, setOpen] = useState(false);
 
@@ -28,7 +34,7 @@ export function ExportMenu({ transcript, baseName }: ExportMenuProps) {
     content: string,
     mime: string,
   ) => {
-    track(Events.ExportFormat, { format });
+    if (trackExport) track(Events.ExportFormat, { format });
     downloadText(content, `${baseName}.${format}`, mime);
     setOpen(false);
   };

@@ -225,6 +225,8 @@
     "links": {
       "about": "About",
       "privacy": "Privacy",
+      "contact": "Contact",
+      "terms": "Terms",
       "github": "GitHub"
     },
     "builtWith": "Transformers.js, ONNX Runtime Web, Whisper के साथ बना है।"
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "ऑन-डिवाइस",
         "autoLanguage": "English (auto-detected)",
-        "duration": "12:48",
-        "wordCount": "1,842 words"
+        "duration": "12:48"
       },
       "pauseAria": "पॉज़",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Host",
-          "text": "Welcome back — today we're talking with someone who studies attention."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Guest",
-          "text": "Interruption isn't actually the problem people think it is."
-        }
-      ],
       "exportHeading": "एक्सपोर्ट",
       "copyText": "टेक्स्ट कॉपी करें",
       "tiles": [

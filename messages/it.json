@@ -225,6 +225,8 @@
     "links": {
       "about": "Chi siamo",
       "privacy": "Privacy",
+      "contact": "Contatti",
+      "terms": "Termini",
       "github": "GitHub"
     },
     "builtWith": "Costruito con Transformers.js, ONNX Runtime Web, Whisper."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "Sul dispositivo",
         "autoLanguage": "Inglese (rilevato automaticamente)",
-        "duration": "12:48",
-        "wordCount": "1.842 parole"
+        "duration": "12:48"
       },
       "pauseAria": "Pausa",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Host",
-          "text": "Ben tornati — oggi parliamo con qualcuno che studia l'attenzione."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Guest",
-          "text": "L'interruzione non è davvero il problema che la gente pensa."
-        }
-      ],
       "exportHeading": "Esporta",
       "copyText": "Copia testo",
       "tiles": [

@@ -225,6 +225,8 @@
     "links": {
       "about": "EarScribeについて",
       "privacy": "プライバシー",
+      "contact": "お問い合わせ",
+      "terms": "利用規約",
       "github": "GitHub"
     },
     "builtWith": "Transformers.js、ONNX Runtime Web、Whisperを使用して構築。"
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "オンデバイス",
         "autoLanguage": "英語（自動検出）",
-        "duration": "12:48",
-        "wordCount": "1,842 語"
+        "duration": "12:48"
       },
       "pauseAria": "一時停止",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "司会",
-          "text": "おかえりなさい。今日は、注意に関する研究をしている方をお迎えしています。"
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "ゲスト",
-          "text": "中断そのものが、皆さんが考えるほど大きな問題ではないのです。"
-        }
-      ],
       "exportHeading": "エクスポート",
       "copyText": "テキストをコピー",
       "tiles": [

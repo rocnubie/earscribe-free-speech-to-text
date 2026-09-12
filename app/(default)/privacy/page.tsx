@@ -14,7 +14,6 @@ export function generateMetadata(): Metadata {
     title: { absolute: copy.title },
     description: copy.description,
     alternates: alternatesForLocales(defaultLocale, "/privacy", PRIVACY_LOCALES),
-    robots: { index: false, follow: true },
     openGraph: {
       title: copy.title,
       description: copy.description,

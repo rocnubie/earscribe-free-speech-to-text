@@ -225,6 +225,8 @@
     "links": {
       "about": "О сервисе",
       "privacy": "Конфиденциальность",
+      "contact": "Контакты",
+      "terms": "Условия",
       "github": "GitHub"
     },
     "builtWith": "Создано с Transformers.js, ONNX Runtime Web, Whisper."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "На устройстве",
         "autoLanguage": "English (определён автоматически)",
-        "duration": "12:48",
-        "wordCount": "1 842 слова"
+        "duration": "12:48"
       },
       "pauseAria": "Пауза",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Host",
-          "text": "Welcome back — today we're talking with someone who studies attention."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Guest",
-          "text": "Interruption isn't actually the problem people think it is."
-        }
-      ],
       "exportHeading": "Экспорт",
       "copyText": "Копировать текст",
       "tiles": [

@@ -225,6 +225,8 @@
     "links": {
       "about": "Tietoja",
       "privacy": "Tietosuoja",
+      "contact": "Yhteystiedot",
+      "terms": "Käyttöehdot",
       "github": "GitHub"
     },
     "builtWith": "Rakennettu Transformers.js:llä, ONNX Runtime Webillä ja Whisperillä."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "Laitteella",
         "autoLanguage": "English (auto-detected)",
-        "duration": "12:48",
-        "wordCount": "1,842 words"
+        "duration": "12:48"
       },
       "pauseAria": "Tauko",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Host",
-          "text": "Welcome back — today we're talking with someone who studies attention."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Guest",
-          "text": "Interruption isn't actually the problem people think it is."
-        }
-      ],
       "exportHeading": "Vie",
       "copyText": "Kopioi teksti",
       "tiles": [

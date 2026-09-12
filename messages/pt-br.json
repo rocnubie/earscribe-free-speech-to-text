@@ -225,6 +225,8 @@
     "links": {
       "about": "Sobre",
       "privacy": "Privacidade",
+      "contact": "Contato",
+      "terms": "Termos",
       "github": "GitHub"
     },
     "builtWith": "Feito com Transformers.js, ONNX Runtime Web, Whisper."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "No dispositivo",
         "autoLanguage": "English (detectado automaticamente)",
-        "duration": "12:48",
-        "wordCount": "1.842 palavras"
+        "duration": "12:48"
       },
       "pauseAria": "Pausar",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Apresentador",
-          "text": "Bem-vindo de volta — hoje estamos falando com alguém que pesquisa atenção."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Convidado",
-          "text": "A interrupção não é bem o problema que as pessoas pensam que é."
-        }
-      ],
       "exportHeading": "Exportar",
       "copyText": "Copiar texto",
       "tiles": [

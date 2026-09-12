@@ -225,6 +225,8 @@
     "links": {
       "about": "Tentang",
       "privacy": "Privasi",
+      "contact": "Kontak",
+      "terms": "Ketentuan",
       "github": "GitHub"
     },
     "builtWith": "Dibangun dengan Transformers.js, ONNX Runtime Web, Whisper."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "Di perangkat",
         "autoLanguage": "Bahasa Inggris (terdeteksi otomatis)",
-        "duration": "12:48",
-        "wordCount": "1.842 kata"
+        "duration": "12:48"
       },
       "pauseAria": "Jeda",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Host",
-          "text": "Selamat datang kembali — hari ini kita berbicara dengan seseorang yang meneliti perhatian."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Tamu",
-          "text": "Gangguan sebenarnya bukan masalah yang orang pikirkan."
-        }
-      ],
       "exportHeading": "Ekspor",
       "copyText": "Salin teks",
       "tiles": [

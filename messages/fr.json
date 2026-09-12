@@ -225,6 +225,8 @@
     "links": {
       "about": "À propos",
       "privacy": "Confidentialité",
+      "contact": "Contact",
+      "terms": "Conditions d'utilisation",
       "github": "GitHub"
     },
     "builtWith": "Construit avec Transformers.js, ONNX Runtime Web, Whisper."
@@ -238,24 +240,11 @@
       "badges": {
         "onDevice": "Sur l'appareil",
         "autoLanguage": "English (détecté automatiquement)",
-        "duration": "12:48",
-        "wordCount": "1 842 mots"
+        "duration": "12:48"
       },
       "pauseAria": "Pause",
       "playbackTime": "00:01:14 / 00:12:48",
       "playbackRate": "1.0x",
-      "transcript": [
-        {
-          "ts": "00:00:08",
-          "speaker": "Animateur",
-          "text": "Bienvenue — aujourd'hui nous discutons avec quelqu'un qui étudie l'attention."
-        },
-        {
-          "ts": "00:00:24",
-          "speaker": "Invité",
-          "text": "Les interruptions ne sont pas vraiment le problème que les gens imaginent."
-        }
-      ],
       "exportHeading": "Exporter",
       "copyText": "Copier le texte",
       "tiles": [

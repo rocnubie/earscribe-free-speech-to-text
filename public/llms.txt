@@ -1,0 +1,75 @@
+# EarScribe
+
+> Transcribes audio and video in the browser. Whisper runs on the visitor's device, so the recording itself is never uploaded.
+
+EarScribe is a transcription workspace with no account and no daily quota: one file up to 1 GiB, or a queue of files, turned into a timestamped transcript you can edit and export. There is no server-side transcription and no per-minute billing. `earscribe.app` is the only official domain.
+
+- Runtime: Whisper (ONNX) through Transformers.js in a web worker — WebGPU when the browser exposes it, WebAssembly otherwise.
+- Input: local audio (`mp3`, `wav`, `m4a`, `aac`, `ogg`, `flac`, `opus`) or video containers (`mp4`, `m4v`, `mov`, `qt`, `mkv`, `webm`, `ts`, `m2ts`) whose audio track is extracted locally; or the microphone. There is no remote-URL input.
+- Output: WebVTT, SRT, plain text, clipboard, or `JSON` — the transcript object as the pipeline built it (text, per-cue `[start, end]` timecodes, detected language, duration) for scripts and tools.
+- Languages: 99 spoken languages, auto-detected by default. The interface is translated into 27 locales.
+- Models: `tiny`, `base`, `small`, `turbo`. The first run downloads the weights — 41 MB for `tiny` on WebAssembly up to 3.2 GB for `turbo` on WebGPU — and the browser caches them. `base` is the default, except `tiny` on devices reporting under 2 GB of memory.
+
+## App
+
+- [Transcribe a file](https://earscribe.app/): the workspace. Drop a file or record from the microphone, pick a model, edit the transcript, export.
+
+## Task pages
+
+Published in English, Simplified Chinese (`zh-CN`) and Japanese only.
+
+- [Audio to text](https://earscribe.app/audio-to-text): the general-purpose entry point.
+- [MP3 to text](https://earscribe.app/mp3-to-text): a single audio format.
+- [Audio to SRT](https://earscribe.app/audio-to-srt): timestamped subtitles from a recording.
+- [Whisper online](https://earscribe.app/whisper-online): the same engine, in a tab.
+- [Transcribe audio locally](https://earscribe.app/transcribe-audio-locally): what stays on the device, and what does not.
+- [Interview transcription](https://earscribe.app/interview-transcription): two-person recordings, as flat text without speaker labels.
+- [Meeting recording to text](https://earscribe.app/meeting-recording-to-text): a transcript of a call recording, not meeting notes.
+- [Podcast transcription](https://earscribe.app/podcast-transcription): episodes, then subtitles.
+- [Voice memo to text](https://earscribe.app/voice-memo-to-text): phone recordings on mobile.
+- [M4A to text](https://earscribe.app/m4a-to-text): Apple's container.
+- [WAV to text](https://earscribe.app/wav-to-text): uncompressed audio.
+- [SRT to VTT](https://earscribe.app/srt-to-vtt): subtitle format conversion, no transcription.
+- [SRT to text](https://earscribe.app/srt-to-txt): plain text, with an option to keep timestamps or paragraph breaks.
+
+## Guides
+
+Long-form, English.
+
+- [How to transcribe an MP3 file](https://earscribe.app/guides/how-to-transcribe-an-mp3-file): a 40-minute MP3 peaks at 1,114 MB of decoded audio, takes nine minutes with `base`, and gets three specific words wrong.
+- [How to stop Whisper hallucinations](https://earscribe.app/guides/how-to-stop-whisper-hallucinations): the four decoder settings every fix recommends do not exist in a browser build; what silence actually produces instead.
+- [Which Whisper model to use](https://earscribe.app/guides/which-whisper-model-should-i-use): four models on the same 34 seconds, compared by the words they disagree on rather than an accuracy table.
+- [How long a subtitle line should be](https://earscribe.app/guides/how-long-should-a-subtitle-line-be): Netflix, DCMP and in-house limits traced to a 32-character captioning grid, then measured against what Whisper emits.
+- [How to make Whisper faster](https://earscribe.app/guides/how-to-make-whisper-faster): three of the four models timed on both WebGPU and WebAssembly; `turbo` on WebGPU never finished.
+- [How to transcribe long audio](https://earscribe.app/guides/how-to-transcribe-long-audio): the decode arithmetic behind memory limits, a size-by-format table and where it breaks.
+
+## Limits
+
+- No speaker separation or speaker labels: the transcript is flat text per cue.
+- No translation: the transcript stays in the spoken language.
+- No live or streaming captions: the microphone records first, then transcribes.
+- 1 GiB per file is the hard cap; device memory is the real one, and stereo WAV can run out well before it.
+- Weights are cached, but this is not an offline app: the page itself still needs the network. The footer can install a shortcut that opens straight into the workspace; it does not add an offline copy.
+- Results live in memory: a reload starts clean unless the project is saved to `/dashboard`.
+- The batch queue is serial, shares one model and language setting, and needs the tab to stay open.
+
+## Privacy and ads
+
+- Audio is decoded and transcribed in the tab; it is never uploaded.
+- Model weights are fetched from `huggingface.co` on first use, which sees the visitor's IP.
+- Public pages carry Google AdSense in every locale except `fa`. `/dashboard` is ad-free.
+- Analytics is cookieless aggregate product events (Plausible) with bucketed device and file metadata — no file names, no transcript text.
+
+## Languages
+
+- 27 interface locales: English at `/`, and 26 prefixed, for example [Japanese](https://earscribe.app/ja), [German](https://earscribe.app/de), [Simplified Chinese](https://earscribe.app/zh-CN), [French](https://earscribe.app/fr).
+- Task pages exist only in `en`, `zh-CN` and `ja`; other locales fall back to `/#transcribe`.
+- The privacy policy exists in `en`, `zh-CN`, `ja`, `fr`, `es` and `ko`; other locales link to the English `/privacy`.
+
+## Optional
+
+- [About](https://earscribe.app/about): who runs the site and why it is free.
+- [Privacy](https://earscribe.app/privacy): including what the ad and analytics scripts see.
+- [Changelog](https://earscribe.app/changelog): dated release notes.
+- [Source](https://github.com/rocnubie/earscribe-free-speech-to-text): the marketing UI is MIT-licensed; the worker, audio decoder and subtitle exporters are not published.
+- `/dashboard` holds per-browser state and is marked `noindex`.

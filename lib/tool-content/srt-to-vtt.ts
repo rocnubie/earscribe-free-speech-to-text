@@ -106,19 +106,25 @@ STYLE
 `,
 };
 
+const SAMPLE_LABELS: Record<ToolLocale, { input: string; output: string; vttSource: string; srtResult: string }> = {
+  en: { input: "SRT (input)", output: "WebVTT (output)", vttSource: "WebVTT (input)", srtResult: "SRT (output)" },
+  "zh-CN": { input: "转换前 · SRT", output: "转换后 · WebVTT", vttSource: "VTT 原文件", srtResult: "转成 SRT 之后" },
+  ja: { input: "変換前 · SRT", output: "変換後 · WebVTT", vttSource: "VTT の元ファイル", srtResult: "SRT に変換後" },
+};
+
 function workflowSamples(locale: ToolLocale): CodeSample[] {
   const srt = EXAMPLES[locale].text;
   return [
-    { label: "SRT", code: srt.trim() },
-    { label: "WebVTT", code: toVtt(parseSubtitles(srt).cues).trim() },
+    { label: SAMPLE_LABELS[locale].input, code: srt.trim() },
+    { label: SAMPLE_LABELS[locale].output, code: toVtt(parseSubtitles(srt).cues).trim() },
   ];
 }
 
 function guideSamples(locale: ToolLocale): CodeSample[] {
   const vtt = VTT_FEATURES[locale];
   return [
-    { label: "WebVTT", code: vtt.trim() },
-    { label: "SRT", code: toSrt(parseSubtitles(vtt).cues).trim() },
+    { label: SAMPLE_LABELS[locale].vttSource, code: vtt.trim() },
+    { label: SAMPLE_LABELS[locale].srtResult, code: toSrt(parseSubtitles(vtt).cues).trim() },
   ];
 }
 
@@ -129,8 +135,9 @@ export const SRT_TO_VTT_PAGE: ToolPageDefinition = {
   copy: {
     en: {
       title: "Free SRT to VTT converter (and VTT to SRT)",
+      metaTitle: "SRT to VTT: 12 cues in, 12 out, 19 bytes | EarScribe",
       description:
-        "Convert subtitles between SRT and WebVTT in your browser. Paste text or drop a file and get the other format instantly; nothing is uploaded. Free, no sign-up.",
+        "SRT to VTT in the browser: the same cues and timings, a dot instead of a comma and a WEBVTT header line. Paste or drop a file; nothing is uploaded, free.",
       eyebrow: "SRT ⇄ VTT converter",
       intro:
         "SRT and WebVTT carry the same timed lines in slightly different syntax. Paste subtitles or drop a .srt or .vtt file: EarScribe detects the format, converts it in your browser and tells you when something couldn't be carried over.",
@@ -160,54 +167,62 @@ export const SRT_TO_VTT_PAGE: ToolPageDefinition = {
       screenshotAlt: "The same subtitle cues in SRT and WebVTT",
     },
     "zh-CN": {
-      title: "免费 SRT 转 VTT、VTT 转 SRT 在线转换",
-      description: "在浏览器里把字幕在 SRT 和 WebVTT 之间互相转换。粘贴文本或拖入文件，立刻得到另一种格式，文件不上传。免费、无需注册。",
+      title: "SRT 转 VTT 免费在线转换（也支持 VTT 转 SRT）",
+      description:
+        "SRT 转 VTT 只是把逗号换成点、补一行 WEBVTT，文字和时间轴都不动。粘贴文本或拖入文件即可，全程在浏览器里完成，文件不上传，也不用注册。",
       eyebrow: "SRT ⇄ VTT 转换",
-      intro: "SRT 和 WebVTT 装的是同样的带时间字幕，只是写法略有不同。粘贴字幕或拖入 .srt、.vtt 文件，EarScribe 会自动识别格式，在浏览器里完成转换，并提醒你哪些内容无法保留。",
-      benefits: ["双向转换：SRT 转 VTT，VTT 转 SRT", "提醒 SRT 保留不了的位置和样式", "文件不上传，无需账号"],
-      workflowTitle: "三步免费完成转换",
-      workflow: [
-        { title: "放入字幕", body: "拖入 .srt 或 .vtt 文件、从设备选择，或者直接粘贴文本，格式会自动识别。" },
-        { title: "确认输出格式", body: "默认转成另一种格式。看一下字幕条数，以及有没有设置被去掉的提示。" },
-        { title: "复制或下载", body: "复制结果，或以原文件名加新扩展名下载。" },
+      intro:
+        "SRT 和 WebVTT 存的是同一批带时间的字幕，只是写法不一样：SRT 用逗号分隔毫秒，WebVTT 用点，还要以 WEBVTT 开头。把字幕粘贴进来，或拖入 .srt、.vtt 文件，EarScribe 会自己判断是哪种格式、在浏览器里转好，转不过去的内容会单独告诉你。",
+      benefits: [
+        "两个方向都能转：SRT 转 VTT，VTT 转 SRT",
+        "转回 SRT 之前，先告诉你哪些设置会丢",
+        "文件不上传，不用账号",
       ],
-      tipsTitle: "什么场景用哪种格式",
+      workflowTitle: "三步完成转换",
+      workflow: [
+        { title: "把字幕放进来", body: "拖入 .srt 或 .vtt 文件、从设备里选一个，或者直接粘贴文本。是哪种格式，不用你告诉它。" },
+        { title: "看一眼输出", body: "目标格式已经替你选好。核对字幕条数有没有变少，再看有没有「设置被去掉」的提示。" },
+        { title: "复制或下载", body: "复制转换结果，或者用原文件名加新扩展名下载，比如 episode-12.srt 变成 episode-12.vtt。" },
+      ],
+      tipsTitle: "哪种格式用在什么地方",
       tips: [
-        "基于 HTML5 <track> 的网页播放器读取的是 WebVTT。网页播放器不显示字幕时，换成 VTT 通常就能解决。",
-        "Premiere Pro、DaVinci Resolve 等剪辑软件可以导入 SRT，YouTube 两种格式都支持。",
-        "保留原文件：VTT 转成 SRT 会去掉位置和样式，之后无法找回。",
+        "网页播放器（HTML5 的 <track>）只认 WebVTT。字幕在网页播放器里不显示，换成 VTT 基本就好了。",
+        "Premiere Pro、DaVinci Resolve 这类剪辑软件导入的是 SRT，YouTube 两种都收。",
+        "转换前留一份原文件：VTT 转成 SRT，位置和样式就没了，找不回来。",
       ],
       faq: [
-        { q: "SRT 和 VTT 有什么区别？", a: "两者都是一条条字幕，每条有开始时间、结束时间和文字。WebVTT 以 WEBVTT 开头，毫秒前用点号（00:00:01.000 而不是 00:00:01,000），不需要序号，还支持 SRT 没有的位置、样式和注释。" },
-        { q: "VTT 转 SRT 会丢失内容吗？", a: "位置、对齐等字幕设置，STYLE、REGION 块和 NOTE 注释在 SRT 里没有对应写法，会被去掉。<v 张三> 这样的说话人标签会变成行首的“张三:”，粗体、斜体和下划线会保留。" },
-        { q: "文件里出现乱码怎么办？", a: "较早的字幕文件常用 GBK/GB18030 等旧编码保存。EarScribe 先按 UTF-8 读取，失败时自动改用 GB18030；如果仍有乱码，可以在列表里手动选择编码。转换结果一律保存为 UTF-8。" },
-        { q: "字幕文件会被上传吗？", a: "不会。读取和转换都在浏览器标签页里完成，文件不会离开你的设备。" },
+        { q: "SRT 转 VTT 到底改了什么？", a: "三处。WebVTT 的第一行必须是 WEBVTT，SRT 没有这一行；毫秒前用点号（00:00:01.000，不是 00:00:01,000）；每条字幕上面的序号可以不要，这里的转换会去掉。文字和时间轴都不动。" },
+        { q: "VTT 转 SRT 会丢东西吗？", a: "会。position、align 这类写在时间轴行上的 cue 设置，STYLE、REGION 块和 NOTE 注释，SRT 里没有对应写法，会被删掉。<v 主持人> 这样的说话人标签会变成行首的「主持人: 」，粗体、斜体、下划线会保留。" },
+        { q: "打开是乱码，怎么办？", a: "早年做的字幕常存成 GBK/GB18030、Big5，而不是 UTF-8。EarScribe 先按 UTF-8 读，读不通就换 GB18030 再读一次并提示你；也可以在下拉列表里手动选编码。转换结果一律按 UTF-8 输出。" },
+        { q: "字幕文件会被上传吗？", a: "不会。读取和转换都在当前这个标签页里跑，文件不会离开你的设备，也不下载任何模型。" },
       ],
       screenshotAlt: "同一组字幕的 SRT 和 WebVTT 写法",
     },
     ja: {
-      title: "SRTとVTTを無料で相互変換（ブラウザで完結）",
-      description: "字幕をSRTとWebVTTの間でブラウザ上で無料で相互変換。テキストを貼り付けるかファイルをドロップすると、すぐにもう一方の形式になります。アップロード不要・登録不要。",
+      title: "SRT VTT 変換をブラウザで無料（双方向）",
+      description:
+        "SRT VTT 変換は、カンマをピリオドに変えて WEBVTT の行を足すだけ。テキストもタイムコードも変わりません。貼り付けかファイル選択だけで、変換はブラウザ内で完結し、アップロードも登録も要りません。",
       eyebrow: "SRT ⇄ VTT 変換",
-      intro: "SRTとWebVTTは、同じタイミング付きの字幕を少し違う書き方で持つ形式です。字幕を貼り付けるか.srt・.vttファイルをドロップすると、EarScribeが形式を判定してブラウザ内で変換し、引き継げなかった内容があれば知らせます。",
-      benefits: ["SRT→VTTもVTT→SRTも対応", "SRTで保持できない位置やスタイルを警告", "アップロードなし・アカウント不要"],
-      workflowTitle: "3ステップで無料変換",
+      intro:
+        "SRTとWebVTTは、同じ時間付きの字幕を違う書き方で持っているだけです。SRTはミリ秒の前にカンマ、WebVTTはピリオドを使い、1行目にWEBVTTが必要です。字幕を貼り付けるか.srt・.vttファイルを選ぶと、EarScribeが形式を判定してブラウザ内で変換し、引き継げなかった項目は別に知らせます。",
+      benefits: ["SRT→VTTもVTT→SRTも変換できる", "SRTに戻す前に、失われる設定を先に知らせる", "アップロードなし・アカウント不要"],
+      workflowTitle: "3ステップで変換",
       workflow: [
-        { title: "字幕を入れる", body: ".srtか.vttファイルをドロップするか、端末から選ぶか、テキストを貼り付けます。形式は自動で判定されます。" },
-        { title: "出力形式を確認する", body: "もう一方の形式が自動で選ばれます。字幕の件数と、設定が削除された場合の警告を確認してください。" },
-        { title: "コピーまたはダウンロード", body: "結果をコピーするか、元のファイル名に新しい拡張子を付けてダウンロードします。" },
+        { title: "字幕を入れる", body: ".srtか.vttファイルをドロップするか、端末から選ぶか、テキストを貼り付けます。形式は自動で判定されるので、指定する必要はありません。" },
+        { title: "出力を確認する", body: "変換先はもう一方の形式が選ばれています。字幕の数が減っていないか、設定が削除されたという注意が出ていないかを見てください。" },
+        { title: "コピーかダウンロード", body: "結果をコピーするか、episode-12.srt が episode-12.vtt になるように、元のファイル名のままダウンロードします。" },
       ],
-      tipsTitle: "どこでどちらの形式を使うか",
+      tipsTitle: "どちらの形式をどこで使うか",
       tips: [
-        "HTML5の<track>要素を使うWebプレーヤーはWebVTTを読みます。Webプレーヤーで字幕が出ないときは、VTTにすると解決することが多いです。",
-        "Premiere ProやDaVinci Resolveなどの編集ソフトはSRTを読み込め、YouTubeはどちらの形式にも対応しています。",
-        "元のファイルは残しておきましょう。VTTをSRTにすると、位置やスタイルの指定は失われて戻せません。",
+        "HTML5の<track>を使うWebプレーヤーが読むのはWebVTTです。Webプレーヤーで字幕が出ないときは、VTTにすればほぼ解決します。",
+        "Premiere ProやDaVinci Resolveなどの編集ソフトが読み込むのはSRTで、YouTubeはどちらの形式も受け付けます。",
+        "元のファイルは残しておいてください。VTTをSRTにすると、位置やスタイルは戻せません。",
       ],
       faq: [
-        { q: "SRTとVTTの違いは何ですか？", a: "どちらも開始時刻・終了時刻・テキストを持つ字幕の一覧です。WebVTTはWEBVTTという見出しで始まり、ミリ秒の前にピリオドを使い（00:00:01,000ではなく00:00:01.000）、字幕番号は不要で、SRTにない位置・スタイル・メモの機能があります。" },
-        { q: "VTTをSRTにすると何か失われますか？", a: "位置や揃えなどの字幕設定、STYLE・REGIONブロック、NOTEのメモはSRTに対応する書き方がないため削除されます。<v 山田>のような話者タグは行頭の「山田:」になり、太字・斜体・下線は残ります。" },
-        { q: "文字化けしました。どうすればいいですか？", a: "古い字幕ファイルはShift_JISなど、UTF-8以外の文字コードで保存されていることがよくあります。EarScribeはまずUTF-8で読み、失敗したらShift_JISで読み直します。それでも文字化けする場合は一覧から文字コードを選んでください。結果は常にUTF-8で保存されます。" },
-        { q: "字幕ファイルはアップロードされますか？", a: "されません。読み込みも変換もブラウザのタブ内で行われ、ファイルは端末から出ません。" },
+        { q: "SRTをVTTにすると何が変わる？", a: "3か所です。WebVTTは1行目がWEBVTTでなければならず、SRTにはその行がありません。ミリ秒の前はピリオド（00:00:01.000、00:00:01,000ではありません）。各字幕の上の番号は不要なので、この変換では削除します。テキストとタイムコードはそのままです。" },
+        { q: "VTTをSRTにすると何か失われますか？", a: "失われます。タイムコード行に書くposition・alignなどのキュー設定、STYLE・REGIONブロック、NOTEのメモは、SRTに置き場所がないため削除されます。<v 司会>のような話者タグは行頭の「司会: 」になり、太字・斜体・下線は残ります。" },
+        { q: "文字化けしたときは？", a: "少し前の字幕は、UTF-8ではなくShift_JISで保存されていることがよくあります。EarScribeはまずUTF-8で読み、読めなければShift_JISで読み直して知らせます。一覧から手動で選ぶこともできます。出力は常にUTF-8です。" },
+        { q: "字幕ファイルはアップロードされますか？", a: "されません。読み込みも変換もこのタブの中で完結し、ファイルは端末の外に出ません。モデルのダウンロードもありません。" },
       ],
       screenshotAlt: "同じ字幕のSRTとWebVTTの書き方",
     },
@@ -217,89 +232,177 @@ export const SRT_TO_VTT_PAGE: ToolPageDefinition = {
 export const SRT_TO_VTT_GUIDES: Record<ToolLocale, ToolGuide> = {
   en: {
     primaryKeyword: "srt to vtt",
-    supportingKeywords: ["vtt to srt", "srt to vtt converter online", "vtt to srt converter", "convert subtitles srt vtt"],
-    guideTitle: "What actually changes between SRT and WebVTT",
+    supportingKeywords: [
+      "vtt to srt",
+      "srt to vtt converter online",
+      "convert subtitles srt vtt",
+    ],
+    // The conversion is mechanical, so the page can be checked: same cues, same
+    // timing, and a smaller file. Everything else is the three syntax changes.
+    guideTitle: "SRT to VTT: 12 cues in, 12 cues out, 19 bytes smaller",
     guideIntro:
-      "The text and the timing survive a conversion unchanged. What differs is the syntax around them, plus a handful of WebVTT features that SRT has no way to express.",
+      "Converting is a syntax change, not a transcription step: the same 12 cues come back with the same text and the same millisecond timings, in a file 19 bytes smaller than the SRT because WebVTT does not number its cues. Three things change, and all three can break a player if a tool gets them wrong.",
     sections: [
       {
-        title: "The syntax differences",
+        title: "The three things that change",
         paragraphs: [
-          "An SRT file is a list of numbered blocks: a counter, a timing line with commas before the milliseconds, and one or more lines of text. WebVTT begins with the word WEBVTT, uses dots before the milliseconds, treats cue identifiers as optional, and allows the hours to be left out (01:02.500).",
-          "Converting SRT to VTT adds the header, swaps the separators and escapes the characters WebVTT reserves, such as & and <. Converting back renumbers the cues from 1.",
+          "WebVTT needs a WEBVTT line at the top; SRT has no header. SRT writes decimals with a comma, WebVTT with a dot. WebVTT does not require a sequence number over each cue, and the exporter here drops it — which is why the output is smaller even though it gained a header.",
+          "That is the whole diff on our 34-second clip: 923 bytes of SRT became 904 bytes of WebVTT, with 10 fewer lines because the twelve numbers disappeared. Text and timing parsed back identical.",
+          "What the conversion does not touch is the cue lengths: they run from 1 second to 6.2 with a mean of 2.8, and four of the twelve are exactly one second — a chunk boundary rather than a spoken sentence. Fixing that is a re-cut, not a format change.",
         ],
+        table: {
+          caption:
+            "One transcript exported with the app's own formatters and parsed back. Byte counts are UTF-8; timings compared to the millisecond.",
+          source: "content/guides/data/subtitle-roundtrip.json",
+          columns: ["", "SRT", "WebVTT"],
+          rows: [
+            ["Cues", "12", "12"],
+            ["Bytes", "923", "904"],
+            ["Lines", "48", "38"],
+            ["Timestamp separator", "comma", "dot"],
+            ["Header line", "none", "WEBVTT"],
+            ["Cue numbers", "yes", "no"],
+          ],
+        },
       },
       {
-        title: "Features SRT can't carry",
+        title: "What actually breaks a player",
         paragraphs: [
-          "WebVTT cue settings (position, line, align, size and vertical), STYLE and REGION blocks, and NOTE comments have no SRT equivalent. EarScribe drops them and shows a warning, so you know to check placement in your video editor.",
-          "Voice spans such as <v Anna> become a plain \"Anna:\" prefix, class spans and karaoke timestamps are removed, and <b>, <i> and <u> are kept because most SRT players understand them.",
-        ],
-      },
-      {
-        title: "Encoding and line endings",
-        paragraphs: [
-          "Subtitles made years ago are often saved in Windows-1252, GB18030 or Shift_JIS rather than UTF-8. If a file isn't valid UTF-8, EarScribe decodes it with a common legacy encoding and tells you; you can pick a different one from the list.",
-          "Output is always UTF-8 with plain line breaks, which current players, browsers and editors read without trouble.",
+          "A file that starts with a byte-order mark before WEBVTT is treated as invalid by some parsers, and a file saved without the header at all is not WebVTT regardless of its extension. Both come from editors that re-save the file, not from the conversion.",
+          "The other silent failure is an extension that lies: a .vtt that still contains comma decimals will fail in browsers while opening fine in a desktop player that guesses the format. Converting again from the original SRT fixes it; trimming the file by hand usually does not.",
         ],
       },
     ],
-    checklistTitle: "Before you upload the converted file",
+    checklistTitle: "Before the .vtt goes to a player",
     checklist: [
-      { title: "Timing", body: "Spot-check the first and last cue against the video." },
-      { title: "Placement", body: "If the VTT had positioned cues, reposition them in your editor after converting to SRT." },
-      { title: "Characters", body: "Broken accents or symbols point to an encoding problem in the source." },
-      { title: "File name", body: "Keep a language code if your platform uses one, such as video.en.vtt." },
+      {
+        title: "First line is WEBVTT",
+        body: "Not WEBVTT with a byte-order mark in front of it, and not a blank line first. This one check rules out most “invalid VTT” errors.",
+      },
+      {
+        title: "Decimals are dots",
+        body: "00:00:02.300, not 00:00:02,300. A mixed file plays in some tools and fails in browsers, which is the worst kind of failure to debug.",
+      },
+      {
+        title: "Timings survived",
+        body: "Compare the first and last cue against the source: on our clip the round trip was millisecond-identical, so a difference means the file was re-timed by an editor.",
+      },
     ],
-    limitsTitle: "What this converter doesn't do",
+    limitsTitle: "Where a conversion cannot help",
     limits: [
-      "It doesn't shift timing, merge cues or fix overlaps; the timing stays exactly as it is.",
-      "It reads and writes SRT and WebVTT only; formats such as ASS or TTML aren't supported.",
+      "SRT carries no styling, so nothing about fonts, position or speaker colours survives — a VTT with STYLE blocks has to be written, not converted.",
+      "If the source cues were already too long for the line limit, converting does not shorten them: that is the re-cut step, not the format step.",
     ],
-    imageSrc: image,
-    imageAlt: "SRT and WebVTT subtitle files side by side",
-    workflowSamples: workflowSamples("en"),
-    guideSamples: guideSamples("en"),
+    imageSrc: "/screenshots/guides/transcript-result-top.webp",
+    imageAlt: "SRT to VTT: exported captions beside the subtitle editor",
+    workflowSamples: [
+      {
+        label: "episode-12.srt (input)",
+        code: `1
+00:00:00,000 --> 00:00:05,200
+Welcome back to the show. Today we're talking
+with a researcher who studies attention at work.
+
+2
+00:00:05,700 --> 00:00:11,180
+srt-to-vtt`,
+      },
+    ],
   },
   "zh-CN": {
     primaryKeyword: "srt转vtt",
-    supportingKeywords: ["vtt转srt", "vtt转srt 在线", "srt转vtt 在线", "字幕格式转换"],
-    guideTitle: "SRT 和 WebVTT 之间到底变了什么",
-    guideIntro: "转换前后，文字和时间完全不变。变的是它们周围的写法，以及 SRT 根本表达不了的几项 WebVTT 功能。",
+    supportingKeywords: ["vtt转srt", "srt转vtt 在线", "vtt转srt 在线", "字幕格式转换", "webvtt 转换"],
+    guideTitle: "SRT 转 VTT：12 条字幕进去，12 条出来，文件还小了 19 字节",
+    guideIntro:
+      "转换不是重新听写，只是把写法换掉：12 条字幕、同样的文字、毫秒不差的时间点，转完还少了 19 字节，因为 WebVTT 不用写序号。真正变的只有三处，任何一处被工具改错，播放器就直接不认这个文件。",
     sections: [
       {
-        title: "写法上的区别",
+        title: "改的只有这三处",
         paragraphs: [
-          "SRT 文件由一个个编号块组成：序号、毫秒前用逗号的时间轴行，以及一行或多行文字。WebVTT 以 WEBVTT 开头，毫秒前用点号，字幕标识可有可无，还允许省略小时（01:02.500）。",
-          "SRT 转 VTT 时会加上文件头、替换分隔符，并转义 WebVTT 保留的字符，比如 & 和 <。转回 SRT 时会从 1 开始重新编号。",
+          "第一，WebVTT 的第一行必须是 WEBVTT，SRT 没有文件头。第二，秒和毫秒之间：SRT 用逗号（00:00:01,000），WebVTT 用点（00:00:01.000）。第三，每条字幕上面的序号，WebVTT 不要求写，这里的转换会把它去掉——所以明明多了一行文件头，文件反而更小了。",
+          "拿一段 34 秒的素材实测：923 字节的 SRT 变成 904 字节的 WebVTT，行数从 48 降到 38。12 个序号没了，同时多了 WEBVTT 和它下面那行空行，一进一出正好净少 10 行。再解析回来，12 条字幕的文字和毫秒时间一条不差。",
+          "时间轴完全没动：不挪时间、不合并、不拆分。原来每条字幕多长，转完还是多长。短得来不及读、长得一行放不下，那是切分造成的，得回去重剪，换格式救不了。",
+          "样本里这三条能一条条算：第 1 条 5.2 秒，第 2 条 5.5 秒，第 3 条 2.0 秒，整段 13.58 秒。转成 WebVTT 之后还是这三段，秒数一个没变——变的只有序号、文件头和那个逗号。",
+          "把样本放大到真实素材，19 字节和 10 行的账才看得清：一份 30 分钟的访谈，按每条字幕 3–5 秒算，大约 360–600 条字幕，也就有 360–600 个序号和 720–1200 个时间码；转成 VTT 之后序号一个都不用写，时间码照旧留在每段开头，少掉的正好是那 360–600 个序号。这是估算，不是实测，但方向不会反。",
+        ],
+        table: {
+          caption:
+            "同一份转录用页面自带的转换器导出，再解析回来。字节数按 UTF-8 计算，时间比对到毫秒。",
+          source: "content/guides/data/subtitle-roundtrip.json",
+          columns: ["", "SRT", "WebVTT"],
+          rows: [
+            ["字幕条数", "12", "12"],
+            ["字节数", "923", "904"],
+            ["行数", "48", "38"],
+            ["时间戳分隔符", "逗号", "点"],
+            ["文件头", "无", "WEBVTT"],
+            ["字幕序号", "有", "无"],
+          ],
+        },
+      },
+      {
+        title: "SRT转VTT 之后播放器打不开，多半是这两个原因",
+        paragraphs: [
+          "WEBVTT 前面多一个 BOM 的文件，有些解析器直接判为无效；连 WEBVTT 这一行都没有的文件，扩展名写成 .vtt 也不是 WebVTT。这两件事都是剪辑软件另存时弄出来的，跟转换没关系。",
+          "还有一种更隐蔽：扩展名已经是 .vtt，里面的毫秒还在用逗号。浏览器会拒绝加载，桌面播放器却因为自己猜格式而播放正常——这种「我这儿没问题」最难查。从原始 SRT 重新转一次就好，手工改那几个字符通常改不干净。",
         ],
       },
       {
-        title: "SRT 保留不了的功能",
+        title: "VTT 转回 SRT，会丢掉什么",
         paragraphs: [
-          "WebVTT 的字幕设置（position、line、align、size、vertical）、STYLE 和 REGION 块、NOTE 注释在 SRT 里都没有对应写法。EarScribe 会去掉它们并给出提示，方便你在剪辑软件里重新检查位置。",
-          "<v 张三> 这样的说话人标签会变成行首的“张三:”，类名标签和逐字时间戳会被去掉，<b>、<i>、<u> 则会保留，因为大多数 SRT 播放器都认识它们。",
+          "SRT 只有「序号 + 时间轴 + 文字」这三样，WebVTT 多出来的功能在 SRT 里没有地方放。写在时间轴行上的位置、对齐设置，还有 STYLE、REGION 块，转换时都会删掉，页面会提示你，位置要回剪辑软件里重新摆。NOTE 注释也一样被删，但这类改动不提示。",
+          "说话人标签 <v 主持人> 会变成行首的「主持人: 」，从标签变成普通文字；类名、注音、逐字时间戳这些标签连同标记一起去掉，注音的读音会直接接在汉字后面。粗体、斜体、下划线保留，因为大多数 SRT 播放器都认识这三个标签。",
+          "数一遍更清楚：下面这张表列了 10 种写法，能原样带回 SRT 的只有 2 种——粗体斜体下划线，和 &amp; 这类实体；另外 8 种要么整块删掉，要么降级成普通文字。NOTE 注释连提示都没有，cue 设置、STYLE、REGION 就算提示了，位置也只能回剪辑软件重摆。",
         ],
+        table: {
+          caption: "按 lib/subtitle-convert.ts 里 VTT 转 SRT 的实际处理逐项对照。",
+          columns: ["VTT 里的写法", "转成 SRT 之后", "还能找回来吗"],
+          rows: [
+            ["position、align 等 cue 设置", "删除", "不能，要回剪辑软件重排"],
+            ["STYLE 块", "整块删除", "不能"],
+            ["REGION 块", "整块删除", "不能"],
+            ["NOTE 注释", "整块删除，不给提示", "不能"],
+            ["<v 主持人>", "行首的「主持人: 」", "变成文字，不再是标签"],
+            ["<c.yellow> 类名", "删标签、留文字", "不能"],
+            ["<00:00:12.000> 逐字时间", "删除", "不能"],
+            ["<ruby>、<rt> 注音", "删标签，读音接在汉字后面", "不能"],
+            ["<b>、<i>、<u>", "原样保留", "能"],
+            ["&amp;、&lt; 等实体", "还原成 & 和 <", "能"],
+          ],
+        },
       },
       {
-        title: "编码和换行",
+        title: "乱码不是转换弄出来的",
         paragraphs: [
-          "多年前做的字幕常用 GBK/GB18030、Big5 等编码保存，而不是 UTF-8。文件不是有效的 UTF-8 时，EarScribe 会按 GB18030 读取并提示你；也可以在列表里换成其他编码。",
-          "输出一律是 UTF-8、普通换行，现在的播放器、浏览器和剪辑软件都能正常读取。",
+          "早几年做的字幕，常存成 GBK/GB18030、Big5，而不是 UTF-8。文件不是合法的 UTF-8 时，EarScribe 会改用 GB18030 再读一遍，并告诉你换了编码；下拉列表里也可以自己选 Big5、Shift_JIS。",
+          "输出一律是 UTF-8 加普通换行，浏览器、播放器、剪辑软件都能直接读。想彻底躲开这件事，存文件的时候就选 UTF-8，别用「ANSI」。",
         ],
       },
     ],
-    checklistTitle: "上传转换后的文件之前",
+    checklistTitle: "把 .vtt 交给播放器之前",
     checklist: [
-      { title: "时间", body: "对照视频抽查第一条和最后一条字幕。" },
-      { title: "位置", body: "原 VTT 有定位的字幕，转成 SRT 后要在剪辑软件里重新摆放。" },
-      { title: "字符", body: "出现乱码或怪符号，通常是原文件编码的问题。" },
-      { title: "文件名", body: "平台需要语言代码时要保留，比如 video.zh.vtt。" },
+      {
+        title: "第一行就是 WEBVTT",
+        body: "前面不能有 BOM，也不能先空一行。这一条能排掉大半「invalid VTT」的报错。",
+      },
+      {
+        title: "毫秒前面是点",
+        body: "00:00:02.300，不是 00:00:02,300。逗号和点混用的文件，有的工具能播、浏览器却不行，这是最难查的一类故障。",
+      },
+      {
+        title: "时间没被改过",
+        body: "拿第一条和最后一条跟原文件对一下。这里转一圈是毫秒级一致，对不上就说明中间被剪辑软件重新对过时间。",
+      },
+      {
+        title: "文件是 UTF-8",
+        body: "中文、日文、韩文字幕尤其要看这一项，编码错了，播放器里就是一堆问号和方块。",
+      },
     ],
-    limitsTitle: "这个转换器不做的事",
+    limitsTitle: "这个转换器做不到的事",
     limits: [
-      "不调整时间、不合并字幕、不修复重叠，时间保持原样。",
-      "只读写 SRT 和 WebVTT，不支持 ASS、TTML 等格式。",
+      "SRT 没有样式，字体、位置、说话人颜色都带不过去；带 STYLE 的 VTT 只能写出来，不能靠转换得到。",
+      "原来一行就太长，转换不会让它变短。那是重新切分的活，不是换格式的活。",
+      "只读写 SRT 和 WebVTT，不支持 ASS、TTML、SBV 这些格式。",
     ],
     imageSrc: image,
     imageAlt: "SRT 和 WebVTT 字幕文件对照",
@@ -309,42 +412,97 @@ export const SRT_TO_VTT_GUIDES: Record<ToolLocale, ToolGuide> = {
   ja: {
     primaryKeyword: "srt vtt 変換",
     supportingKeywords: ["vtt srt 変換", "vtt srt 変換 サイト", "srt vtt 変換 オンライン", "字幕 形式 変換"],
-    guideTitle: "SRTとWebVTTの間で実際に変わること",
-    guideIntro: "変換してもテキストとタイミングはそのままです。違うのはその周りの書き方と、SRTでは表現できないWebVTTのいくつかの機能です。",
+    guideTitle: "SRT VTT 変換で変わるのは3か所、12字幕はそのまま",
+    guideIntro:
+      "変換は書き起こし直しではなく、書き方の入れ替えです。同じ12字幕、同じテキスト、ミリ秒まで同じタイムコードのまま、ファイルは19バイト小さくなります。WebVTTは字幕番号を書かないからです。変わるのは3か所だけで、どれか一つを取り違えるとプレーヤーはファイルを読みません。",
     sections: [
       {
-        title: "書き方の違い",
+        title: "変わるのは3か所だけ",
         paragraphs: [
-          "SRTは番号付きのブロックの並びで、番号、ミリ秒の前にカンマを使うタイミング行、1行以上のテキストでできています。WebVTTはWEBVTTで始まり、ミリ秒の前にピリオドを使い、字幕IDは任意で、時間の省略（01:02.500）もできます。",
-          "SRTからVTTへの変換では、見出しを加え、区切り文字を入れ替え、&や<などWebVTTの予約文字をエスケープします。SRTに戻すときは1から番号を振り直します。",
+          "1つ目は1行目のWEBVTTです。SRTにはヘッダーがありません。2つ目はタイムコードの区切りで、SRTはカンマ（00:00:01,000）、WebVTTはピリオド（00:00:01.000）を使います。3つ目は各字幕の上の番号で、WebVTTでは不要なため、この変換では削除します。ヘッダーが1行増えたのにファイルが小さくなるのは、そのためです。",
+          "34秒の素材で試すと、923バイトのSRTが904バイトのWebVTTになり、行数は48から38へ減りました。12個の番号が消え、代わりにWEBVTTとその下の空行が2行増えるので、差し引き10行減です。解析し直すと、12字幕のテキストもタイムコードも1件も変わりませんでした。",
+          "タイムコードには手を付けません。ずらす・結合する・分割することもないので、字幕の長さは変換の前後で同じです。1行に収まらない長さや読む時間が足りない短さは、形式ではなくカットの問題で、変換では直りません。",
+          "サンプルの3字幕はそれぞれ5.2秒・5.5秒・2.0秒、全体で13.58秒です。WebVTTにしてもこの3つの区切りはそのままで、秒数は1つも変わりません。変わるのは番号とヘッダーと、カンマがピリオドになることだけです。",
+          "実素材の規模に置き換えると、19バイト・10行の差が見えてきます。30分のインタビューなら、1字幕3〜5秒として360〜600字幕、番号も360〜600個、タイムコードはその2倍の720〜1200個です。WebVTTは番号を書かないので、減るのは番号の360〜600個ぶん。これは試算で、実測ではありません。",
+        ],
+        table: {
+          caption:
+            "同じ書き起こしをこのページの変換器で書き出し、もう一度解析したもの。バイト数はUTF-8、タイムコードはミリ秒まで比較しています。",
+          source: "content/guides/data/subtitle-roundtrip.json",
+          columns: ["", "SRT", "WebVTT"],
+          rows: [
+            ["字幕の数", "12", "12"],
+            ["バイト数", "923", "904"],
+            ["行数", "48", "38"],
+            ["タイムコードの区切り", "カンマ", "ピリオド"],
+            ["ヘッダー行", "なし", "WEBVTT"],
+            ["字幕番号", "あり", "なし"],
+          ],
+        },
+      },
+      {
+        title: "プレーヤーが読まないときの原因は2つ",
+        paragraphs: [
+          "WEBVTTの前にBOMが付いたファイルは、パーサーによっては無効と判断されます。WEBVTTの行がそもそもないファイルは、拡張子が.vttでもWebVTTではありません。どちらも編集ソフトで保存し直したときに起きるもので、変換が原因ではありません。",
+          "見落としやすいのは、拡張子だけ.vttで中身のミリ秒がカンマのままのファイルです。ブラウザは読み込みを拒否し、形式を推測するデスクトッププレーヤーでは普通に再生できてしまいます。元のSRTからもう一度変換すれば直りますが、手で数文字を書き換えても直りきらないことが多いです。",
         ],
       },
       {
-        title: "SRTに引き継げない機能",
+        title: "VTTからSRTに戻すと失われるもの",
         paragraphs: [
-          "WebVTTの字幕設定（position、line、align、size、vertical）、STYLE・REGIONブロック、NOTEのメモはSRTに対応するものがありません。EarScribeはこれらを削除して警告を出すので、編集ソフトで位置を確認できます。",
-          "<v 山田>のような話者タグは行頭の「山田:」に、クラス指定や単語ごとのタイムスタンプは削除され、<b>・<i>・<u>は多くのSRTプレーヤーが理解するので残します。",
+          "SRTにあるのは「番号・タイムコード・テキスト」の3つだけで、WebVTTの追加機能を置く場所がありません。タイムコード行に書く位置や揃えの設定、STYLE・REGIONブロックは変換時に削除され、画面に注意が出ます。位置は編集ソフトで置き直してください。NOTEのメモも削除されますが、こちらは通知されません。",
+          "話者タグの<v 司会>は行頭の「司会: 」になり、タグではなく普通の文字になります。クラス名・ルビ・単語ごとのタイムスタンプはタグごと削除され、ルビの読みは漢字の直後につながります。<b>・<i>・<u>は多くのSRTプレーヤーが解釈するので残します。",
+          "数えると分かりやすくなります。次の表は10項目ありますが、そのまま残るのは2項目だけです。太字・斜体・下線と、&amp; などの実体参照です。残りの8項目は削除されるか、ただの文字になります。キュー設定・STYLE・REGION・NOTEの4つは、位置を編集ソフトで置き直す必要があります。",
         ],
+        table: {
+          caption: "lib/subtitle-convert.ts のVTT→SRT処理に沿って1項目ずつ確認したものです。",
+          columns: ["VTTでの書き方", "SRTにした後", "戻せるか"],
+          rows: [
+            ["position・align などのキュー設定", "削除", "戻せない。編集ソフトで置き直す"],
+            ["STYLE ブロック", "まるごと削除", "戻せない"],
+            ["REGION ブロック", "まるごと削除", "戻せない"],
+            ["NOTE のメモ", "まるごと削除（通知なし）", "戻せない"],
+            ["<v 司会>", "行頭の「司会: 」", "文字になり、タグではなくなる"],
+            ["<c.yellow> のクラス指定", "タグだけ削除、文字は残る", "戻せない"],
+            ["<00:00:12.000> の単語タイムスタンプ", "削除", "戻せない"],
+            ["<ruby>・<rt> のルビ", "タグを削除、読みは漢字の直後", "戻せない"],
+            ["<b>・<i>・<u>", "そのまま残る", "残せる"],
+            ["&amp;・&lt; などの実体参照", "& と < に戻る", "残せる"],
+          ],
+        },
       },
       {
-        title: "文字コードと改行",
+        title: "文字化けは SRT VTT 変換のせいではありません",
         paragraphs: [
-          "昔作られた字幕はUTF-8ではなくShift_JISなどで保存されていることがよくあります。有効なUTF-8でない場合、EarScribeはShift_JISで読み込んで知らせます。一覧から別の文字コードも選べます。",
-          "出力は常にUTF-8と通常の改行で、現在のプレーヤー・ブラウザ・編集ソフトで問題なく読めます。",
+          "少し前に作った字幕は、UTF-8ではなくShift_JISで保存されていることがよくあります。有効なUTF-8でない場合、EarScribeはShift_JISで読み直して、その旨を知らせます。一覧からBig5やGB18030を選ぶこともできます。",
+          "出力は常にUTF-8・通常の改行で、ブラウザもプレーヤーも編集ソフトもそのまま読めます。根本的に避けたいなら、保存するときにUTF-8を選んでください。",
         ],
       },
     ],
-    checklistTitle: "変換したファイルをアップロードする前に",
+    checklistTitle: "その.vttをプレーヤーに渡す前に",
     checklist: [
-      { title: "タイミング", body: "最初と最後の字幕を動画と照らし合わせる。" },
-      { title: "位置", body: "VTTで位置指定していた字幕は、SRTにした後で編集ソフトで配置し直す。" },
-      { title: "文字", body: "文字化けや記号の崩れは、元ファイルの文字コードが原因のことが多い。" },
-      { title: "ファイル名", body: "プラットフォームが使う場合は video.ja.vtt のように言語コードを残す。" },
+      {
+        title: "1行目がWEBVTT",
+        body: "前にBOMが付いていないか、空行が入っていないかも見ます。この1点で「invalid VTT」の多くは消えます。",
+      },
+      {
+        title: "ミリ秒の前はピリオド",
+        body: "00:00:02.300 であって、00:00:02,300 ではありません。混在したファイルはツールによっては再生でき、ブラウザでは失敗します。いちばん厄介な壊れ方です。",
+      },
+      {
+        title: "タイムコードが変わっていない",
+        body: "最初と最後の字幕を元ファイルと比べてください。ここでの往復はミリ秒まで一致するので、ずれていれば編集ソフトで時刻を打ち直されています。",
+      },
+      {
+        title: "文字コードはUTF-8",
+        body: "日本語字幕では特に確認を。文字コードを間違えると、プレーヤーでは「？」や四角の並びになります。",
+      },
     ],
-    limitsTitle: "このツールがしないこと",
+    limitsTitle: "この変換でできないこと",
     limits: [
-      "タイミングのずらし、字幕の結合、重なりの修正は行わず、時間はそのまま保ちます。",
-      "読み書きできるのはSRTとWebVTTだけで、ASSやTTMLなどには対応していません。",
+      "SRTにはスタイルがないので、フォント・位置・話者ごとの色は引き継げません。STYLE付きのVTTは書くもので、変換して作るものではありません。",
+      "元の行が長すぎる場合、変換しても短くなりません。それは切り直しの作業で、形式の作業ではありません。",
+      "読み書きできるのはSRTとWebVTTだけで、ASS・TTML・SBVには対応していません。",
     ],
     imageSrc: image,
     imageAlt: "SRTとWebVTTの字幕ファイルの比較",

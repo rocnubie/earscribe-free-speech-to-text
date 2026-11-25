@@ -10,8 +10,9 @@ export const VOICE_MEMO_TO_TEXT_PAGE: ToolPageDefinition = {
   copy: {
     en: {
       title: "Free voice memo to text for iPhone and Mac",
+      metaTitle: "Voice memo to text: when the phone is enough | EarScribe",
       description:
-        "Transcribe Voice Memos recordings into timestamped, editable text for free on iPhone, iPad or Mac. Nothing to install, no sign-up; export TXT, SRT or VTT.",
+        "Voice memo to text in the browser: the phone already shows a transcript, but it cannot leave as an .srt. Two hours is 111 MB compressed, 565 MB lossless.",
       eyebrow: "Voice memo to text",
       intro:
         "Voice Memos saves each recording as an .m4a file. Export it from the app, open it here, and EarScribe transcribes it in the browser with timestamps you can click to replay, edit and export.",
@@ -41,54 +42,68 @@ export const VOICE_MEMO_TO_TEXT_PAGE: ToolPageDefinition = {
       screenshotAlt: "Voice memo transcribed into timestamped text in EarScribe",
     },
     "zh-CN": {
-      title: "免费把 iPhone 语音备忘录转成文字",
-      description: "免费在 iPhone、iPad 或 Mac 上把语音备忘录录音转成带时间戳、可编辑的文字。无需安装、无需注册，可导出 TXT、SRT 或 VTT。",
+      title: "语音备忘录转文字：iPhone 和安卓录音都能用",
+      metaTitle: "语音备忘录转文字：系统自带够用吗 | EarScribe",
+      description:
+        "语音备忘录、安卓录音机、微信语音转文字，都在浏览器里完成：带时间戳、可导出 SRT/VTT、不上传。两小时录音压缩后 111 MB。",
       eyebrow: "语音备忘录转文字",
-      intro: "“语音备忘录”App 会把每条录音保存为 .m4a 文件。从 App 里导出后在这里打开，EarScribe 会在浏览器中转成文字，每一句都有时间戳，可以点击回听、修改和导出。",
-      benefits: ["iPhone、iPad、Mac 的 Safari 都能用", "点击任意一句回听那段录音", "完成后导出文字或字幕"],
-      workflowTitle: "免费把语音备忘录变成文字",
-      workflow: [
-        { title: "导出录音", body: "在 iPhone 或 iPad 上打开录音，轻点“更多”（•••），选择“共享”，再选“存储到文件”。在 Mac 上，直接把录音从“语音备忘录”拖到桌面。" },
-        { title: "在 EarScribe 打开", body: "轻点上传区域，从“文件”App 或访达里选择录音。第一次使用会下载语音模型，之后浏览器会保留缓存。" },
-        { title: "核对后分享", body: "搜索内容，回听不清楚的地方，改正人名，然后复制文字或导出文件。" },
+      intro:
+        "iPhone 的“语音备忘录”存成 .m4a，小米、华为、OPPO 自带的录音机多是 .m4a 或 .ogg，安卓上也常见 .amr。把文件导出来在这里打开，EarScribe 就在浏览器里转写，每一句带时间戳，可以点击回听、修改和导出。微信里的语音也先转存成文件再打开。",
+      benefits: [
+        "iPhone、安卓手机和 Mac 的浏览器都能用",
+        "点一句话，就能回听那一段录音",
+        "导出 TXT、SRT 或 VTT，直接进剪辑软件",
       ],
-      tipsTitle: "语音备忘录小技巧",
+      workflowTitle: "从手机录音到能改的文字",
+      workflow: [
+        { title: "导出录音", body: "iPhone 打开录音，点“更多”（•••）→“共享”→“存储到文件”。小米、华为、OPPO 在录音机里长按录音，选“分享”或“导出”，存进文件管理。Mac 上把录音从“语音备忘录”拖到桌面。" },
+        { title: "在 EarScribe 打开", body: "点上传区域，从文件管理或访达里选录音，.m4a 也可以直接拖进来。第一次使用会下载语音模型，之后浏览器会缓存。" },
+        { title: "核对后导出", body: "搜索内容，回听不清楚的地方，改正人名和金额，再复制文字或导出字幕。" },
+      ],
+      tipsTitle: "录之前和转写前的几件事",
       tips: [
-        "在“语音备忘录”设置里把音质设为“无损”，文件会大很多。长录音用“压缩”更好处理，识别人声的效果也一样。",
-        "录音时让手机靠近说话人，别用手挡住手机底部的麦克风。",
-        "长录音内存不够时，先在“语音备忘录”里剪掉静音部分，或者拆成几段再转写。",
+        "“无损”是“压缩”的五倍大：每分钟约 4.71 MB 对 0.93 MB，两小时就是 565 MB 对 111 MB。文件上限 1 GiB，长录音用“压缩”更稳。",
+        "录音时让手机靠近说话人，别挡住底部的麦克风。放在口袋或包里录的，多半只剩衣物摩擦声。",
+        "安卓录音机常默认存成 .ogg 或 .amr，音质够用；不必再转成 WAV 把体积放大。",
       ],
       faq: [
-        { q: "语音备忘录 App 自己不是能转文字吗？", a: "较新版本的 iOS 和 macOS 在部分语言和设备上可以在“语音备忘录”里显示文字稿。需要可以导出成字幕的时间戳、修改后同步到所有导出格式，或者自带功能不支持的语言时，EarScribe 更合适。" },
-        { q: "语音备忘录是什么格式？", a: "语音备忘录录的是 .m4a 文件：音质设为“压缩”时是 AAC 音频，设为“无损”时是 Apple Lossless。" },
-        { q: "能全程只用 iPhone 完成吗？", a: "可以。把录音存储到“文件”，用 Safari 打开 EarScribe 并选择文件即可。较旧的 iPhone 运行大模型会比较慢，建议先用推荐的模型。" },
-        { q: "我的语音备忘录会被上传吗？", a: "不会。文件在浏览器标签页里解码和识别，唯一需要下载的是语音模型。" },
+        { q: "手机自带的转写不够用吗？", a: "较新的 iOS 能在“语音备忘录”里显示文字稿，部分安卓录音机也有类似功能。但它只留在手机里：要导出 .srt/.vtt 字幕、要在电脑上接着改、要换成系统不支持的语言时，EarScribe 更合适——它在本地跑 Whisper，不上传，也没有时长限制。" },
+        { q: "手机录音一般是什么格式？", a: "iPhone 的语音备忘录是 .m4a，压缩时是 AAC、无损时是 Apple Lossless；安卓录音机常见 .m4a、.ogg 和 .amr。这几种都能直接打开，.m4a 还能拖进来。" },
+        { q: "能全程只用手机完成吗？", a: "可以。把录音存到“文件”，用手机浏览器打开 EarScribe 选文件即可。旧手机跑大模型会慢，先用推荐的 base。" },
+        { q: "能区分说话人、翻译或者实时转写吗？", a: "都不做。输出是一路带时间戳的文字，不区分说话人、不翻译，也不是实时字幕；录音文件不会被上传。" },
       ],
       screenshotAlt: "语音备忘录在 EarScribe 中转成的带时间戳文字",
     },
     ja: {
-      title: "iPhoneのボイスメモを無料で文字起こし",
-      description: "ボイスメモの録音を、iPhone・iPad・Macで無料でタイムスタンプ付きの編集できるテキストに。インストール不要・登録不要で、TXT・SRT・VTTに書き出せます。",
+      title: "ボイスメモ 文字起こし：iPhone も Android も無料で",
+      metaTitle: "ボイスメモ 文字起こし：標準機能で足りるか | EarScribe",
+      description:
+        "ボイスメモもAndroidのレコーダーも、ブラウザで文字起こし。タイムスタンプ付きでSRT・VTTに書き出せ、音声はアップロードしません。",
       eyebrow: "ボイスメモ 文字起こし",
-      intro: "ボイスメモは録音を.m4aファイルとして保存します。アプリから書き出してここで開けば、EarScribeがブラウザ内で文字起こしします。タイムスタンプから聞き直し、修正して書き出せます。",
-      benefits: ["iPhone・iPad・MacのSafariで使える", "行をクリックするとその部分を再生", "終わったら文字や字幕として書き出し"],
-      workflowTitle: "ボイスメモを無料で文字にするまで",
-      workflow: [
-        { title: "メモを書き出す", body: "iPhoneやiPadでは録音を開き、「その他」（•••）→「共有」→「“ファイル”に保存」を選びます。Macではボイスメモから録音をデスクトップへドラッグします。" },
-        { title: "EarScribeで開く", body: "アップロード欄をタップし、「ファイル」アプリやFinderからメモを選びます。初回は音声モデルをダウンロードし、以降はブラウザに保存されます。" },
-        { title: "確認して共有する", body: "文字を検索し、聞き取りにくい箇所を再生して人名などを直してから、コピーまたは書き出します。" },
+      intro:
+        "iPhoneのボイスメモは.m4a、Androidのレコーダーは.m4aや.ogg、.amrで保存されます。書き出したファイルをここで開けば、EarScribeがブラウザ内で文字起こしします。行ごとのタイムスタンプから聞き直し、修正して書き出せます。",
+      benefits: [
+        "iPhone・Android・Macのブラウザで使える",
+        "行をタップするとその部分を再生",
+        "TXT・SRT・VTTに書き出して編集ソフトへ",
       ],
-      tipsTitle: "ボイスメモのコツ",
+      workflowTitle: "スマホの録音を編集できるテキストにするまで",
+      workflow: [
+        { title: "メモを書き出す", body: "iPhoneは録音を開いて「その他」（•••）→「共有」→「“ファイル”に保存」。Androidはレコーダーで録音を長押しし、「共有」や「エクスポート」からファイルマネージャーへ保存します。Macはボイスメモからデスクトップへドラッグします。" },
+        { title: "EarScribeで開く", body: "アップロード欄をタップし、ファイルマネージャーやFinderから録音を選びます。.m4aはそのままドラッグしてもかまいません。初回は音声モデルをダウンロードし、以降はブラウザにキャッシュされます。" },
+        { title: "確認して書き出す", body: "文字を検索し、聞き取りにくい箇所を再生して人名や金額を直してから、コピーするか字幕として書き出します。" },
+      ],
+      tipsTitle: "録音前と文字起こし前に",
       tips: [
-        "ボイスメモの設定で音質を「非圧縮」にするとファイルがかなり大きくなります。長い録音は「圧縮」のほうが処理しやすく、話し声の認識にも十分です。",
-        "スマートフォンは話す人の近くに置き、下部のマイクを手でふさがないようにしましょう。",
-        "長いメモでメモリが足りない場合は、ボイスメモで無音部分を削るか、分割してから文字起こししてください。",
+        "「非圧縮」は「圧縮」の約5倍です。1分あたり4.71 MB 対 0.93 MB、2時間なら565 MB 対 111 MB。ファイル上限は1 GiBなので、長い録音は「圧縮」が安全です。",
+        "スマートフォンは話す人の近くに置き、下端のマイクをふさがないようにします。ポケットやカバンの中の録音は衣ずれの音が大半になります。",
+        "Androidのレコーダーは.oggや.amrで保存されることもあります。音質は十分なので、WAVに変換して容量を増やす必要はありません。",
       ],
       faq: [
-        { q: "ボイスメモのアプリだけで文字起こしできませんか？", a: "最近のiOSやmacOSでは、一部の言語と機種でボイスメモに文字起こしを表示できます。字幕として書き出せるタイムスタンプが必要なとき、修正をすべての形式に反映したいとき、標準機能が対応していない言語のときにEarScribeが役立ちます。" },
-        { q: "ボイスメモのファイル形式は何ですか？", a: ".m4aです。音質が「圧縮」ならAAC、「非圧縮」ならApple Losslessで保存されます。" },
-        { q: "iPhoneだけで完結できますか？", a: "はい。メモを「ファイル」に保存し、SafariでEarScribeを開いてファイルを選ぶだけです。古いiPhoneでは大きいモデルが遅くなるので、まずはおすすめのモデルを使ってください。" },
-        { q: "ボイスメモはアップロードされますか？", a: "されません。ファイルはブラウザのタブ内でデコードされ、文字起こしされます。ダウンロードするのは音声モデルだけです。" },
+        { q: "スマホ標準の文字起こしでは足りませんか？", a: "新しいiOSならボイスメモに文字起こしが表示され、Androidのレコーダーにも同様の機能があります。ただしスマホの中だけで完結します。.srt/.vtt字幕として書き出す、PCで続きを編集する、標準機能が対応していない言語を使うならEarScribeが向いています。Whisperを端末内で動かし、アップロードも時間制限もありません。" },
+        { q: "スマホの録音はどんな形式ですか？", a: "iPhoneのボイスメモは.m4a（圧縮はAAC、非圧縮はApple Lossless）。Androidのレコーダーは.m4a・.ogg・.amrが一般的です。どれもそのまま開けます。" },
+        { q: "スマホだけで完結できますか？", a: "はい。録音を「ファイル」に保存し、スマホのブラウザでEarScribeを開いて選ぶだけです。古い端末では大きいモデルが遅いので、まずは推奨のbaseを使ってください。" },
+        { q: "話者分離・翻訳・リアルタイム字幕はできますか？", a: "どれも行いません。出力はタイムスタンプ付きの一続きのテキストで、話者の区別・翻訳・リアルタイム字幕には対応していません。録音ファイルはアップロードされません。" },
       ],
       screenshotAlt: "EarScribeでボイスメモをタイムスタンプ付きテキストにした画面",
     },
@@ -98,132 +113,198 @@ export const VOICE_MEMO_TO_TEXT_PAGE: ToolPageDefinition = {
 export const VOICE_MEMO_TO_TEXT_GUIDES: Record<ToolLocale, ToolGuide> = {
   en: {
     primaryKeyword: "voice memo to text",
-    supportingKeywords: ["transcribe voice memos", "voice memo to text iphone", "voice memos to text on mac", "voice memo transcription free"],
-    guideTitle: "Getting a voice memo out of the app and into text",
+    supportingKeywords: [
+      "iphone voice memo transcription",
+      "voice memo transcript",
+      "record voice memo to text",
+    ],
+    // The decision this page exists for: the phone already transcribes. It is the
+    // export and the language coverage that decide whether that is enough.
+    guideTitle: "Voice memo to text: when the phone's own transcript is enough",
     guideIntro:
-      "Making the recording is easy; the fiddly part is getting the file out of Voice Memos in a form you can use. Here is what the export gives you and how to keep the transcript tied to it.",
+      "Recent iOS and macOS versions show a transcript beside the recording, so the question is no longer whether a memo can become text — it is whether you need the text outside the phone. Two hours of memo is 111 MB compressed or 565 MB lossless, and the built-in transcript cannot leave as a subtitle file.",
     sections: [
       {
-        title: "Exporting from iPhone, iPad and Mac",
+        title: "What the phone gives you, and what it does not",
         paragraphs: [
-          "On iPhone and iPad, Save to Files in the Share sheet writes the memo as an .m4a file to iCloud Drive or On My iPhone, where the browser's file picker can reach it. AirDrop to a Mac works too.",
-          "On a Mac, drag a recording from Voice Memos straight into Finder, or use the app's Share button. Memos synced through iCloud appear on every device signed in to the same Apple Account.",
+          "The built-in transcript is a reading aid: it follows the playback, it is searchable inside the app, and it saves a copy-paste. What it does not do is produce a caption file, travel to another device, or cover the languages this tool offers.",
+          "The gap is measurable in three places: 4 export formats here against none there, 99 spoken languages against the set Apple ships, and a 27-locale interface against one.",
+          "That is the whole decision, and it is worth making deliberately rather than defaulting to whichever icon is closer.",
         ],
+        table: {
+          caption:
+            "The two routes compared on what people actually do with a memo. “Export” means a file you can hand to an editor, a player or a colleague.",
+          columns: ["What you need", "Voice Memos on the phone", "A browser tab"],
+          rows: [
+            ["Read the words while listening", "yes", "yes"],
+            ["A caption file (.srt / .vtt)", "no", "yes"],
+            ["Text you can edit and re-export", "copy-paste only", "TXT, SRT, VTT, JSON"],
+            ["27 interface languages", "no", "yes"],
+            ["Nothing uploaded", "yes", "yes"],
+          ],
+        },
       },
       {
-        title: "What's inside the file",
+        title: "What the file itself costs",
         paragraphs: [
-          "Standard memos are AAC audio in an .m4a file. With Audio Quality set to Lossless, the same .m4a holds Apple Lossless audio and is much larger, but it doesn't improve speech recognition, because Whisper works from a 16 kHz mono copy.",
-          "The exported file keeps the memo's name, and EarScribe names its TXT, SRT and VTT exports after the file you open. Renaming the memo before you export makes the transcript easy to find later.",
-        ],
-      },
-      {
-        title: "From memo to notes or captions",
-        paragraphs: [
-          "For notes, search the transcript for the points you need and copy the corrected text. For a video or social clip, export SRT or VTT and add it to your editor; the cue times follow the memo's timeline.",
-          "Memos are often recorded on the move. Replay anything that sounds off before sharing, especially names, amounts and dates.",
+          "A memo is an .m4a either way: AAC when the quality setting is compressed, Apple Lossless when it is not. At 0.93 MB per minute the compressed setting puts 19.3 hours under the 1 GB ceiling; at 4.71 the lossless one puts 3.8, which is the only case where a memo gets too big to process.",
+          "Both decode to the same 16 kHz samples, so nothing about accuracy changes between them — this is a disk question, not a transcription question.",
+          "A 5-minute memo is 4.7 MB compressed or 24 MB lossless, and a 20-minute one is 19 MB or 94 MB. Worth keeping the two sizes in proportion: a 45-minute memo is 42 MB compressed or 212 MB lossless, while the model that reads it is 41 MB for tiny and 77 MB for base. Below about an hour the weights and the recording are the same order of magnitude.",
         ],
       },
     ],
-    checklistTitle: "Voice memo checklist",
+    checklistTitle: "Before you move a memo off the phone",
     checklist: [
-      { title: "Export", body: "Save to Files on iPhone or iPad, or drag from the Mac app." },
-      { title: "Name", body: "Rename the memo so exports carry a useful file name." },
-      { title: "Size", body: "Use Compressed quality for long memos." },
-      { title: "Review", body: "Replay names, numbers and dates before sharing." },
+      {
+        title: "Check the quality setting first",
+        body: "A lossless memo is five times the size: 4.71 MB per minute against 0.93, and 3.8 hours is where the 1 GB ceiling arrives.",
+      },
+      {
+        title: "Copy the date with the file",
+        body: "Voice Memos names files by date and location. Once the .m4a is off the phone that context is the only thing tying it to the meeting it recorded.",
+      },
+      {
+        title: "Decide the output before transcribing",
+        body: "Reading on the phone needs nothing. Captions need SRT or VTT; a searchable archive needs TXT. The choice is made before the run, not after.",
+      },
     ],
-    limitsTitle: "What to expect",
+    limitsTitle: "Where a voice memo stops being the right source",
     limits: [
-      "EarScribe transcribes a recording after it's made; it is not a live dictation keyboard.",
-      "It doesn't connect to Voice Memos or iCloud. Export the memo, then open it here.",
+      "A memo recorded in a pocket is mostly fabric noise: the model will produce brackets where the words should be, and no model choice fixes that.",
+      "Files past roughly two hours exceed the memory budget on a phone browser — which is exactly where you are standing when the memo is on the device.",
     ],
-    imageSrc: image,
-    imageAlt: "Transcript of an exported voice memo with timestamps",
+    imageSrc: "/screenshots/guides/transcript-result-top.webp",
+    imageAlt: "Voice memo to text: transcript with timestamps beside the waveform",
+    workflowImageSrc: "/screenshots/guides/model-picker.webp",
   },
   "zh-CN": {
     primaryKeyword: "语音备忘录转文字",
-    supportingKeywords: ["语音备忘录转文字 iphone", "语音备忘录转文字 免费", "iphone录音转文字", "mac 语音备忘录转文字"],
-    guideTitle: "把语音备忘录导出来，再变成文字",
-    guideIntro: "录音很简单，麻烦的是把文件从“语音备忘录”里导出成能用的格式。下面说明导出后得到的是什么，以及怎样让文字稿和录音一一对应。",
+    supportingKeywords: ["语音备忘录转文字 iphone", "语音备忘录转文字 免费", "安卓录音转文字", "微信语音转文字", "mac 语音备忘录转文字"],
+    // The decision this page exists for: the phone already transcribes. It is the
+    // export and the language coverage that decide whether that is enough.
+    guideTitle: "语音备忘录转文字：系统自带的那份够用吗",
+    guideIntro:
+      "较新的 iPhone 在“语音备忘录”里就能显示文字，部分安卓录音机也有类似功能，所以问题不再是“能不能转”，而是“文字要不要离开手机”。两小时录音压缩后 111 MB、无损 565 MB，而系统自带的那份文字导不出字幕，也带不到别的设备上。",
     sections: [
       {
-        title: "从 iPhone、iPad 和 Mac 导出",
+        title: "语音备忘录转文字：手机给了你什么，又少了什么",
         paragraphs: [
-          "在 iPhone 和 iPad 上，共享菜单里的“存储到文件”会把录音以 .m4a 格式保存到 iCloud 云盘或“我的 iPhone”，浏览器的文件选择器可以直接读取。也可以用隔空投送发到 Mac。",
-          "在 Mac 上，可以把录音从“语音备忘录”直接拖进访达，或者用 App 里的“共享”按钮。开启 iCloud 同步后，登录同一个 Apple 账户的设备上都能看到这些录音。",
+          "系统自带的转写是阅读辅助：跟着播放走，能在 App 里搜索，省掉一次复制粘贴。它不做字幕文件，不跟着你换设备，也不覆盖这个工具支持的语言。",
+          "差距落在三个地方：这里能导出 4 种格式（TXT、SRT、VTT、JSON），那边一种都没有；这里支持 99 种语音语言，系统只带它自己那套；界面 27 种语言，对 1 种。",
+          "同一段 34.36 秒的样音，换一档模型，111 个词里就有 26 个不同，其中 3 处改变了语义——这也是为什么默认给 base，而不是最省事的 tiny。",
+          "要决定的就这么多，值得认真选一次，而不是看哪个图标离手指更近。",
         ],
+        table: {
+          caption:
+            "两条路，按人们实际会拿录音做的事来比。“导出”指能交给剪辑软件、播放器或同事的文件。",
+          columns: ["你需要什么", "手机自带转写", "浏览器标签页"],
+          rows: [
+            ["边听边看文字", "可以", "可以"],
+            ["字幕文件（.srt / .vtt）", "不行", "可以"],
+            ["改完还能再导出的文字", "只能复制粘贴", "TXT、SRT、VTT、JSON"],
+            ["27 种界面语言", "不行", "可以"],
+            ["不上传", "可以", "可以"],
+          ],
+        },
       },
       {
-        title: "文件里装的是什么",
+        title: "文件本身要花多少",
         paragraphs: [
-          "普通录音是装在 .m4a 里的 AAC 音频。音质设为“无损”时，同样的 .m4a 里装的是 Apple Lossless，文件大得多，但对语音识别没有帮助，因为 Whisper 处理的是 16 kHz 单声道副本。",
-          "导出的文件沿用录音的名字，EarScribe 导出的 TXT、SRT、VTT 也会以你打开的文件命名。导出前先给录音改个名，之后更容易找到对应的文字稿。",
-        ],
-      },
-      {
-        title: "从录音到笔记或字幕",
-        paragraphs: [
-          "做笔记时，在文字稿里搜索需要的要点，复制改正后的文字。做视频或短片时，导出 SRT 或 VTT 放进剪辑软件，字幕时间和录音时间轴一致。",
-          "语音备忘录常常是在路上录的，分享前回听听起来不对的地方，尤其是人名、金额和日期。",
+          "同样是 .m4a：音质设“压缩”是 AAC，设“无损”是 Apple Lossless。压缩每分钟 0.93 MB，1 GiB 上限能放 19.3 小时；无损每分钟 4.71 MB，只放得下 3.8 小时——这是录音唯一会大到处理不了的情况。",
+          "两者解码后都是同样的 16 kHz 单声道，每分钟 3.84 MB，1 小时 230 MB，跟文件多大无关。准确率不会因为选了哪个而改变——这是存储的问题，不是转写的问题。",
+          "5 分钟录音压缩后 4.7 MB、无损 24 MB；20 分钟是 19 MB 或 94 MB；45 分钟是 42 MB 或 212 MB。模型这边，tiny 下载 41 MB（WebGPU 151 MB），base 77 MB（291 MB），small 249 MB（968 MB），turbo 1085 MB（3236 MB）。一小时以内、230 MB 的样本，和 77 MB 的 base 权重基本是同一个量级。",
+          "这些模型给的不是同一份答案：同一段 34.36 秒的样音，tiny 和 base 的 111 个词里有 26 个不同，3 处改变了语义。",
         ],
       },
     ],
-    checklistTitle: "语音备忘录清单",
+    checklistTitle: "把录音搬出手机之前",
     checklist: [
-      { title: "导出", body: "iPhone/iPad 用“存储到文件”，Mac 直接拖出来。" },
-      { title: "命名", body: "先给录音改名，导出的文件名才好认。" },
-      { title: "大小", body: "长录音用“压缩”音质。" },
-      { title: "核对", body: "分享前回听人名、数字和日期。" },
+      {
+        title: "先看音质设置",
+        body: "无损是压缩的五倍：每分钟 4.71 MB 对 0.93 MB，3.8 小时就撞上 1 GiB 上限。",
+      },
+      {
+        title: "把日期一起记下",
+        body: "录音机常按日期命名。文件离开手机之后，这行日期往往是它和那场会议唯一的联系。",
+      },
+      {
+        title: "转写前先想好输出去哪",
+        body: "只想在手机上看，什么都不用做；要字幕就选 SRT 或 VTT；要能搜索的存档就选 TXT。",
+      },
     ],
-    limitsTitle: "使用前须知",
+    limitsTitle: "什么时候录音本身就不合适",
     limits: [
-      "EarScribe 转写的是录好的文件，不是实时听写输入法。",
-      "它不会连接“语音备忘录”或 iCloud，需要先导出录音再在这里打开。",
+      "放在口袋或包里录的，多半只剩衣物摩擦声。模型会在该有字的地方留下方括号，换哪个模型都救不回来。",
+      "超过约两小时的录音，会超出手机浏览器的内存预算——而录音恰好就在这台手机上。",
+      "不区分说话人、不翻译、也不是实时字幕：输出只有一路带时间戳的文字。",
     ],
     imageSrc: image,
-    imageAlt: "导出的语音备忘录生成的带时间戳文字稿",
+    imageAlt: "语音备忘录转成的带时间戳文字，旁边是波形",
+    workflowImageSrc: "/screenshots/guides/model-picker.webp",
   },
   ja: {
     primaryKeyword: "ボイスメモ 文字起こし",
-    supportingKeywords: ["ボイスメモ 文字起こし iphone", "ボイスメモ 文字起こし 無料", "iphone 録音 文字起こし", "mac ボイスメモ 文字起こし"],
-    guideTitle: "ボイスメモを書き出して文字にする",
-    guideIntro: "録音は簡単でも、使える形でボイスメモからファイルを取り出すのは少し手間です。書き出したファイルの中身と、文字起こしを録音と結びつけておく方法をまとめます。",
+    supportingKeywords: ["ボイスメモ 文字起こし iphone", "ボイスメモ 文字起こし 無料", "android 録音 文字起こし", "ボイスメモ 文字起こし mac"],
+    // The decision this page exists for: the phone already transcribes. It is the
+    // export and the language coverage that decide whether that is enough.
+    guideTitle: "ボイスメモ 文字起こし：標準機能のままで足りるか",
+    guideIntro:
+      "新しい iOS ならボイスメモに文字起こしが表示され、Android のレコーダーにも同様の機能があります。問題は「文字にできるか」ではなく「その文字をスマホの外へ出せるか」です。2 時間の録音は圧縮で 111 MB、非圧縮で 565 MB。標準の文字起こしは字幕ファイルにならず、別の端末にも持っていけません。",
     sections: [
       {
-        title: "iPhone・iPad・Macからの書き出し",
+        title: "ボイスメモ 文字起こし：スマホができること、できないこと",
         paragraphs: [
-          "iPhoneとiPadでは、共有メニューの「“ファイル”に保存」でメモが.m4aとしてiCloud Driveや「このiPhone内」に保存され、ブラウザのファイル選択から開けます。AirDropでMacへ送ることもできます。",
-          "Macでは、ボイスメモから録音をFinderへそのままドラッグするか、アプリの共有ボタンを使います。iCloudで同期していれば、同じApple Accountでサインインしたすべてのデバイスにメモが表示されます。",
+          "標準の文字起こしは読むための補助です。再生に追従し、アプリ内で検索でき、コピーの手間を省きます。ただし字幕ファイルを作ることはせず、別の端末へ移ることもなく、このツールが対応する言語をカバーすることもありません。",
+          "差は 3 点です。ここでは 4 形式（TXT・SRT・VTT・JSON）に書き出せて、標準機能は 0。対応する音声言語は 99 言語で、標準機能は OS が載せている分だけ。インターフェースは 27 言語で、標準機能は 1 言語です。",
+          "同じ 34.36 秒のサンプルでも、モデルを 1 段変えると 111 語のうち 26 語が変わり、3 語は意味が変わりました。既定で base（77 MB）を勧めるのは、一番軽い tiny（41 MB）ではなくこの差のためです。",
+          "判断材料はこれだけです。指に近いアイコンで決めるより、一度は意識して選ぶ価値があります。",
         ],
+        table: {
+          caption:
+            "録音を実際にどう使うかで2つの方法を比べます。「書き出し」は編集ソフトやプレーヤー、同僚に渡せるファイルのことです。",
+          columns: ["必要なこと", "スマホ標準の文字起こし", "ブラウザのタブ"],
+          rows: [
+            ["聞きながら文字を読む", "できる", "できる"],
+            ["字幕ファイル（.srt / .vtt）", "できない", "できる"],
+            ["直して再書き出しできる文字", "コピー＆ペーストのみ", "TXT・SRT・VTT・JSON"],
+            ["27言語のインターフェース", "できない", "できる"],
+            ["アップロードしない", "できる", "できる"],
+          ],
+        },
       },
       {
-        title: "ファイルの中身",
+        title: "ファイル自体のコスト",
         paragraphs: [
-          "通常のメモは.m4aに入ったAAC音声です。音質を「非圧縮」にすると同じ.m4aにApple Losslessが入り、容量はかなり大きくなりますが、音声認識には役立ちません。Whisperは16 kHzモノラルのコピーで処理するためです。",
-          "書き出したファイルにはメモの名前が付き、EarScribeのTXT・SRT・VTTも開いたファイル名で保存されます。書き出す前にメモの名前を変えておくと、あとで文字起こしを探しやすくなります。",
-        ],
-      },
-      {
-        title: "メモからノートや字幕へ",
-        paragraphs: [
-          "ノートにするなら、必要な要点を検索して修正済みの文章をコピーします。動画やSNSのクリップにするなら、SRTかVTTを書き出して編集ソフトに追加すれば、字幕の時間はメモのタイムラインに合います。",
-          "ボイスメモは移動中に録ることが多いものです。共有する前に、人名・金額・日付など気になる箇所を聞き直してください。",
+          "どちらも .m4a です。音質が「圧縮」なら AAC、「非圧縮」なら Apple Lossless。圧縮は 1 分 0.93 MB で、1 GiB（1,024 MB）の上限に 19.3 時間入ります。非圧縮は 1 分 4.71 MB で 3.8 時間まで——録音が大きすぎて処理できなくなるのはこの場合だけです。",
+          "どちらも同じ 16 kHz モノラルのサンプルにデコードされ、1 分あたり 3.84 MB、1 時間で 230 MB になります。2 時間なら 565 MB のファイルが 461 MB のサンプルになる計算です。ファイルの大きさとは関係なく、精度も変わりません。これはディスクの話で、文字起こしの話ではありません。",
+          "5 分の録音は圧縮 4.7 MB・非圧縮 24 MB、20 分で 19 MB・94 MB、45 分で 42 MB・212 MB。モデルは tiny が 41 MB（WebGPU で 151 MB）、base が 77 MB（291 MB）、small が 249 MB（968 MB）、turbo が 1,085 MB（3,236 MB）。1 時間・230 MB のサンプルと、base の 77 MB はほぼ同じ桁です。",
+          "モデルは同じ答えを返すわけではありません。同じ 34.36 秒のサンプルで、tiny と base は 111 語のうち 26 語が違い、3 語は意味が変わりました。",
         ],
       },
     ],
-    checklistTitle: "ボイスメモのチェックリスト",
+    checklistTitle: "録音をスマホの外へ出す前に",
     checklist: [
-      { title: "書き出し", body: "iPhone・iPadは「“ファイル”に保存」、Macはドラッグで。" },
-      { title: "名前", body: "メモの名前を変えて、書き出しファイルをわかりやすくする。" },
-      { title: "容量", body: "長いメモは「圧縮」の音質で。" },
-      { title: "確認", body: "共有前に人名・数字・日付を聞き直す。" },
+      {
+        title: "まず音質設定を見る",
+        body: "非圧縮は圧縮の約 5 倍。1 分 4.71 MB 対 0.93 MB で、3.8 時間で 1 GiB（1,024 MB）の上限に届きます。",
+      },
+      {
+        title: "日付も一緒に残す",
+        body: "レコーダーは日付でファイルを名付けます。スマホを離れたあと、その日付が会議と録音を結ぶ唯一の手がかりになります。",
+      },
+      {
+        title: "書き出し先を先に決める",
+        body: "スマホで読むだけなら何も不要。字幕ならSRTかVTT、検索できるアーカイブならTXTです。",
+      },
     ],
-    limitsTitle: "あらかじめ知っておくこと",
+    limitsTitle: "録音自体が向かない場面",
     limits: [
-      "EarScribeは録音済みのファイルを文字起こしするツールで、リアルタイムの音声入力キーボードではありません。",
-      "ボイスメモやiCloudとは連携しません。メモを書き出してから、ここで開いてください。",
+      "ポケットやカバンの中で録った音は衣ずれが大半で、モデルは語句のあるべき場所に括弧を残します。どのモデルを選んでも直りません。",
+      "2 時間（461 MB のサンプル）を大きく超える録音は、スマホのブラウザのメモリ予算を超えます。しかも録音があるのは、まさにそのスマホです。",
+      "話者分離・翻訳・リアルタイム字幕には対応していません。出力はタイムスタンプ付きの一続きのテキストです。",
     ],
     imageSrc: image,
-    imageAlt: "書き出したボイスメモのタイムスタンプ付き文字起こし",
+    imageAlt: "ボイスメモを文字起こししたタイムスタンプ付きテキストと波形",
+    workflowImageSrc: "/screenshots/guides/model-picker.webp",
   },
 };

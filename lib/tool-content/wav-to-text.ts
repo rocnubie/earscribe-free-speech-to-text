@@ -10,8 +10,9 @@ export const WAV_TO_TEXT_PAGE: ToolPageDefinition = {
   copy: {
     en: {
       title: "Free WAV to text converter for large recordings",
+      metaTitle: "WAV to text: how many minutes fit in 1 GB | EarScribe",
       description:
-        "Free WAV to text in your browser: transcribe recorder, DAW and Audacity files into timestamped text. Nothing is uploaded; export TXT, SRT or VTT.",
+        "WAV to text in your browser, free: at 44.1 kHz stereo 1 GB is 101 minutes, at 96 kHz 24-bit it is 31. Record lower, split the file, or transcribe as it is.",
       eyebrow: "WAV to text converter",
       intro:
         "WAV is what field recorders, DAWs and Audacity produce: uncompressed and large. EarScribe reads the WAV on your own device, so a big file never has to be uploaded, and turns it into timestamped text you can check and export.",
@@ -20,11 +21,11 @@ export const WAV_TO_TEXT_PAGE: ToolPageDefinition = {
         "Timestamped segments you can replay",
         "Export TXT, SRT, VTT or JSON",
       ],
-      workflowTitle: "Transcribe a WAV recording for free",
+      workflowTitle: "Read the header before you read the transcript",
       workflow: [
-        { title: "Check the file size", body: "An hour of CD-quality stereo WAV is about 635 MB, and files over 1 GB are refused. Split long recordings or export a mono copy first." },
-        { title: "Pick a model that fits the device", body: "The balanced model works for most recordings. Tiny is lighter when memory is tight; larger models need more of it." },
-        { title: "Review and export", body: "Replay uncertain lines from their timestamps, correct them, then export the format you need." },
+        { title: "Check the header, not just the size", body: "An hour of CD-quality stereo is 635 MB; a 96 kHz, 24-bit recorder writes 34.56 MB per minute and hits the 1 GB ceiling in 31 minutes." },
+        { title: "Resample only if you still have the source", body: "16 kHz mono is where the model ends up, and exporting there turns 10.58 MB per minute into 1.92. Without the source, split the file instead." },
+        { title: "Read for names, then export", body: "The WAV does not change what the model hears, so the review is the same as any other format: names, negations, numbers, then export." },
       ],
       tipsTitle: "WAV settings that matter, and ones that don't",
       tips: [
@@ -98,87 +99,148 @@ export const WAV_TO_TEXT_PAGE: ToolPageDefinition = {
 export const WAV_TO_TEXT_GUIDES: Record<ToolLocale, ToolGuide> = {
   en: {
     primaryKeyword: "wav to text",
-    supportingKeywords: ["wav to text converter", "transcribe wav file", "wav transcription online", "convert wav to text free"],
-    guideTitle: "Why WAV files behave differently",
+    supportingKeywords: [
+      "transcribe wav file",
+      "wav transcription free",
+      "wav too large to transcribe",
+    ],
+    // WAV's own problem is arithmetic: how many minutes fit under the ceiling.
+    guideTitle: "WAV to text: the ceiling is size, not format",
     guideIntro:
-      "WAV is usually uncompressed PCM audio, which makes it easy to decode and expensive to hold in memory. Plan for the file size; the transcription itself is the easy part.",
+      "Field recorders and DAWs write uncompressed audio, so the file reaches the 1 GB limit long before the model becomes the problem. At 44.1 kHz, 16-bit stereo that is 101 minutes of audio; at 96 kHz, 24-bit it is 31.",
     sections: [
       {
-        title: "Size grows with sample rate, bit depth and channels",
+        title: "How many minutes fit under 1 GB",
         paragraphs: [
-          "CD-quality stereo WAV (16-bit, 44.1 kHz) takes about 10.6 MB per minute, and 24-bit, 48 kHz stereo about 17.3 MB per minute, so it reaches EarScribe's 1 GB file limit after roughly an hour. A 16 kHz, 16-bit mono WAV needs under 2 MB per minute and still contains everything speech recognition uses.",
-          "EarScribe decodes the whole file in the browser and converts it to 16 kHz mono for Whisper. Nothing is uploaded, but the browser needs memory for the original file and the decoded audio together, which is why long high-resolution WAVs can fail on phones.",
+          "The limit is the file, not the duration: the app refuses anything over 1 GB before it decodes a single sample. Because WAV size is rate × depth × channels, the same ceiling buys very different amounts of recording depending on how the recorder was set.",
+        ],
+        table: {
+          caption:
+            "Arithmetic from the app's 1 GB file limit and the header of each WAV, not a benchmark: sample rate × bytes per sample × channels × 60.",
+          source: "content/guides/data/wav-ceiling.json",
+          columns: ["Recording format", "Per minute", "Minutes under 1 GB"],
+          rows: [
+            ["44.1 kHz, 16-bit, stereo", "10.58 MB", "101 min"],
+            ["48 kHz, 16-bit, stereo", "11.52 MB", "93 min"],
+            ["44.1 kHz, 16-bit, mono", "5.29 MB", "202 min"],
+            ["96 kHz, 24-bit, stereo", "34.56 MB", "31 min"],
+          ],
+        },
+      },
+      {
+        title: "Why a smaller file is not a worse transcript",
+        paragraphs: [
+          "Every input is resampled to 16 kHz mono before the model sees it — 3.84 MB of samples per minute, regardless of what came in. A 40-minute WAV and a 40-minute MP3 therefore arrive at the model as the same 154 MB.",
+          "What changes is the decode: a 96 kHz file has to be read and downsampled first, so it costs time and memory for information the model discards. Above 8 kHz there is nothing left to keep.",
         ],
       },
       {
-        title: "When to make a smaller copy first",
+        title: "What to change if the file is over the limit",
         paragraphs: [
-          "If a recording runs longer than an hour or was captured at 24-bit, 48 kHz stereo, export a 16 kHz mono WAV or a good-quality MP3 from your editor before transcribing. You lose nothing the model would have used.",
-          "Keep the original WAV as your master for editing and archiving. The transcript's timestamps still line up with it as long as the copy starts at the same point.",
-        ],
-      },
-      {
-        title: "Channels and multitrack sessions",
-        paragraphs: [
-          "Stereo channels are mixed together before recognition. If two people were recorded on separate channels, the transcript still reads as one conversation without speaker labels.",
-          "For podcasts or interviews recorded as separate tracks, transcribe the final mix for show notes, or each track on its own when you need to know exactly who said what.",
+          "If the file is a speech recording and you still have the source, export it again at 16 kHz mono — that is where the model ends up anyway, and it turns 10.58 MB per minute into 1.92.",
+          "If you only have the recording, two options work: split it at a song or session boundary and transcribe each part, or export it as M4A, which at 128 kbps is 0.93 MB per minute and fits 19.3 hours under the same ceiling.",
         ],
       },
     ],
-    checklistTitle: "WAV transcription checklist",
+    checklistTitle: "Before the text leaves the tab",
     checklist: [
-      { title: "Length", body: "Split recordings over an hour on phones and low-memory laptops." },
-      { title: "Encoding", body: "Use standard 16-bit or 24-bit PCM WAV; convert compressed variants." },
-      { title: "Working copy", body: "Transcribe a 16 kHz mono export when the original is huge, and keep the original." },
-      { title: "Review", body: "Replay names, numbers and technical terms before you export." },
+      {
+        title: "Check the header first",
+        body: "A recorder set to 96 kHz, 24-bit burns through the ceiling in 31 minutes. The sample rate is visible in any file inspector and decides everything on this page.",
+      },
+      {
+        title: "Keep the original WAV",
+        body: "It is the master. Export a smaller copy for the browser, keep the uncompressed file as the thing you can re-decode later.",
+      },
+      {
+        title: "Do not upsample to fix a bad take",
+        body: "Resampling a clipped or noisy recording up to 96 kHz adds no information the model can use; it only makes the file larger.",
+      },
     ],
-    limitsTitle: "Limits to keep in mind",
+    limitsTitle: "Where a large WAV stops working",
     limits: [
-      "Files over 1 GB are refused, and the practical limit is your device's memory; there is no server doing the work for you.",
-      "EarScribe does not separate speakers or tracks; multitrack sessions need a mixdown or one file per track.",
+      "The 1 GB ceiling is a file limit, not a duration limit: a 44.1 kHz 16-bit mono file gets 202 minutes, a 96 kHz 24-bit stereo file only 31.",
+      "Past roughly two hours of any format the peak memory estimate passes 3.3 GB, so splitting the recording is the way through.",
     ],
-    imageSrc: image,
-    imageAlt: "Transcript of a WAV recording with timestamps and export options",
+    imageSrc: "/screenshots/guides/pre-run.webp",
+    imageAlt: "WAV to text: the pre-run estimate before a large file is decoded",
+    workflowImageSrc: "/screenshots/guides/transcript-result-top.webp",
   },
   "zh-CN": {
     primaryKeyword: "wav转文字",
     supportingKeywords: ["wav转文字 免费", "wav录音转文字", "wav文件转文字", "wav转文字 在线"],
-    guideTitle: "为什么 WAV 文件和别的格式不一样",
-    guideIntro: "WAV 通常是不压缩的 PCM 音频，解码容易，但很占内存。真正要提前规划的是文件大小，转写本身反而是简单的部分。",
+    guideTitle: "WAV 转文字：先算体积，再看准确率",
+    guideIntro:
+      "录音笔、剪辑软件和 Audacity 导出的 WAV 不压缩，文件往往在模型撑不住之前就先撞上 1 GB 上限。44.1 kHz、16-bit 立体声只放得下 101 分钟，96 kHz、24-bit 只剩 31 分钟。",
     sections: [
       {
-        title: "体积随采样率、位深和声道增长",
+        title: "1 GB 里能放多少分钟",
         paragraphs: [
-          "CD 音质的立体声 WAV（16-bit、44.1 kHz）每分钟约 10.6 MB，24-bit、48 kHz 立体声每分钟约 17.3 MB，大约一小时就会达到 EarScribe 1 GB 的文件上限。16 kHz、16-bit 单声道 WAV 每分钟不到 2 MB，语音识别需要的信息一点不少。",
-          "EarScribe 会在浏览器里解码整个文件，并转成 16 kHz 单声道交给 Whisper。文件不上传，但浏览器要同时存放原文件和解码后的音频，所以长时间的高规格 WAV 在手机上容易失败。",
+          "先卡住你的是文件，不是时长：超过 1 GB 的文件，在解码第一个采样点之前就会被拒绝。WAV 的体积等于采样率 × 位深 ÷ 8 × 声道数，所以同一个上限能换到多少分钟，完全看录音时怎么设的。",
+        ],
+        table: {
+          caption:
+            "按应用 1 GB 的文件上限和每个 WAV 的文件头算出来的，不是实测：采样率 × 每采样字节数 × 声道数 × 60。",
+          source: "content/guides/data/wav-ceiling.json",
+          columns: ["录音格式", "每分钟", "1 GB 内可放"],
+          rows: [
+            ["44.1 kHz、16-bit、立体声", "10.58 MB", "101 分钟"],
+            ["48 kHz、16-bit、立体声", "11.52 MB", "93 分钟"],
+            ["44.1 kHz、16-bit、单声道", "5.29 MB", "202 分钟"],
+            ["96 kHz、24-bit、立体声", "34.56 MB", "31 分钟"],
+          ],
+        },
+      },
+      {
+        title: "文件小了，文字不会变差",
+        paragraphs: [
+          "不管丢进来的是什么格式，进模型之前都会被重采样成 16 kHz 单声道，每分钟 3.84 MB 的样本——40 分钟的 WAV 和 40 分钟的 MP3，到了模型那里都是同样的 154 MB。",
+          "变的只是解码：96 kHz 的文件要先整体读一遍再降采样，花掉的时间和内存，换来的多是模型随后就丢掉的信息。8 kHz 以上的内容，对识别结果没有影响。",
         ],
       },
       {
-        title: "什么时候先导出一个小副本",
+        title: "超过 1 GB 之后怎么办",
         paragraphs: [
-          "录音超过一小时，或者是 24-bit、48 kHz 立体声时，先在剪辑软件里导出 16 kHz 单声道 WAV 或高质量 MP3 再转写。模型用得到的信息不会损失。",
-          "原始 WAV 留作剪辑和归档的母版。只要副本的起点相同，文字稿的时间戳就和原文件对得上。",
+          "如果原始工程还在，直接按 16 kHz 单声道重新导出：模型本来就要转到这个格式，每分钟体积也从 10.58 MB 降到 1.92 MB。",
+          "只剩成品文件的话有两条路。按歌曲或会议间隙切开，分段转写；或者导出成 128 kbps 的 M4A，每分钟 0.93 MB，同一个上限能装 19.3 小时。",
+          "素材是视频也不用先转 WAV：mp4、m4v、mov、qt、mkv、webm、ts、m2ts 都能直接拖进来，音轨在浏览器里提取完，走的是同一条转写流程。",
         ],
-      },
-      {
-        title: "声道和多轨录音",
-        paragraphs: [
-          "识别前两个声道会合成一个。如果两个人分别录在左右声道，文字稿仍然是一段连续对话，不会标注说话人。",
-          "分轨录制的播客或采访，写节目笔记时转写最终混音即可；需要准确区分谁说了什么时，再逐个音轨单独转写。",
-        ],
+        table: {
+          caption: "同一段 40 分钟录音换几种存法之后的大小，按每分钟体积乘 40 算出来。",
+          columns: ["存法", "每分钟", "40 分钟"],
+          rows: [
+            ["44.1 kHz、16-bit、立体声 WAV", "10.58 MB", "423 MB"],
+            ["96 kHz、24-bit、立体声 WAV", "34.56 MB", "1,382 MB"],
+            ["16 kHz、16-bit、单声道 WAV", "1.92 MB", "77 MB"],
+            ["M4A、128 kbps", "0.93 MB", "37 MB"],
+          ],
+        },
       },
     ],
-    checklistTitle: "WAV 转写清单",
+    checklistTitle: "文字导出之前，先过一遍",
     checklist: [
-      { title: "时长", body: "在手机和低内存电脑上，超过一小时的录音先拆分。" },
-      { title: "编码", body: "使用标准 16-bit 或 24-bit PCM WAV，压缩变体先转换。" },
-      { title: "工作副本", body: "原文件太大时转写 16 kHz 单声道副本，原文件保留。" },
-      { title: "核对", body: "导出前回听人名、数字和专业术语。" },
+      {
+        title: "先看文件头",
+        body: "录音笔设在 96 kHz、24-bit，31 分钟就把 1 GB 用完了。采样率在文件属性里就能看到，这一页的结论都由它决定。",
+      },
+      {
+        title: "原始 WAV 留着",
+        body: "它是母版。给浏览器的是小副本，不压缩的原文件留着，以后还能重新解码。",
+      },
+      {
+        title: "别用升采样救一段坏录音",
+        body: "把削波或嘈杂的录音升到 96 kHz，不会多出模型用得上的信息，只会让文件更大。",
+      },
+      {
+        title: "切段后记下偏移",
+        body: "只要副本从同一秒开始，后面几段的时间戳加上偏移量，就能对回原文件。",
+      },
     ],
-    limitsTitle: "需要注意的限制",
+    limitsTitle: "大 WAV 会卡在哪里",
     limits: [
-      "超过 1 GB 的文件会被拒绝，实际上限取决于设备内存，没有服务器替你处理。",
-      "EarScribe 不区分说话人或音轨，多轨录音需要先混音，或每轨导出一个文件。",
+      "1 GB 是文件上限，不是时长上限：44.1 kHz、16-bit 单声道能放 202 分钟，96 kHz、24-bit 立体声只有 31 分钟。",
+      "任何格式超过两小时左右，峰值内存估算就会超过 3.3 GB，长录音只能拆开处理。",
+      "不做说话人分离、不翻译、也不做实时字幕；多轨录音要先混音，或者每条轨道单独导出。",
     ],
     imageSrc: image,
     imageAlt: "WAV 录音转成的带时间戳文字稿和导出选项",
@@ -186,42 +248,78 @@ export const WAV_TO_TEXT_GUIDES: Record<ToolLocale, ToolGuide> = {
   ja: {
     primaryKeyword: "wav 文字起こし",
     supportingKeywords: ["wav 文字起こし 無料", "wav テキスト変換", "wav 文字起こし ai", "録音 wav 文字起こし"],
-    guideTitle: "WAVファイルがほかの形式と違う理由",
-    guideIntro: "WAVは多くの場合非圧縮のPCM音声で、デコードは簡単ですがメモリを大きく使います。前もって考えるべきなのはファイルサイズで、文字起こし自体は難しくありません。",
+    guideTitle: "WAV 文字起こし：1 GB に入る長さから考える",
+    guideIntro:
+      "録音機やDAWが書き出すWAVは非圧縮なので、モデルの限界より先に1 GBの上限に届きます。44.1 kHz・16-bitのステレオで101分、96 kHz・24-bitなら31分しか入りません。",
     sections: [
       {
-        title: "サイズはサンプリングレート・ビット深度・チャンネル数で増える",
+        title: "1 GB に入るのは何分か",
         paragraphs: [
-          "CD音質のステレオWAV（16-bit、44.1 kHz）は1分あたり約10.6 MB、24-bit・48 kHzのステレオは約17.3 MBで、1時間ほどでEarScribeの上限の1 GBに達します。16 kHz・16-bitのモノラルなら1分2 MB未満で、音声認識に必要な情報はすべて残ります。",
-          "EarScribeはブラウザ内でファイル全体をデコードし、16 kHzのモノラルに変換してWhisperに渡します。アップロードはしませんが、元のファイルとデコード後の音声を同時にメモリに置くため、長時間の高解像度WAVはスマートフォンで失敗しやすくなります。",
+          "先に止まるのは長さではなくファイルです。1 GBを超えた時点で、1サンプルもデコードせずに受け付けません。WAVのサイズはサンプリングレート × ビット深度 ÷ 8 × チャンネル数で決まるので、同じ上限でも録音時の設定しだいで入る長さは大きく変わります。",
+        ],
+        table: {
+          caption:
+            "アプリの1 GB上限と各WAVのヘッダーから計算した値で、実測ではありません：サンプリングレート × 1サンプルのバイト数 × チャンネル数 × 60。",
+          source: "content/guides/data/wav-ceiling.json",
+          columns: ["録音形式", "1分あたり", "1 GB に入る長さ"],
+          rows: [
+            ["44.1 kHz・16-bit・ステレオ", "10.58 MB", "101 分"],
+            ["48 kHz・16-bit・ステレオ", "11.52 MB", "93 分"],
+            ["44.1 kHz・16-bit・モノラル", "5.29 MB", "202 分"],
+            ["96 kHz・24-bit・ステレオ", "34.56 MB", "31 分"],
+          ],
+        },
+      },
+      {
+        title: "ファイルが小さくても精度は落ちない",
+        paragraphs: [
+          "どの形式で入れても、モデルに渡す前に16 kHzモノラルへ変換されます。サンプルは1分あたり3.84 MBなので、40分のWAVも40分のMP3も、モデルから見れば同じ154 MBです。",
+          "変わるのはデコードの手間だけです。96 kHzのファイルは全体を読み込んで間引く必要があり、その時間とメモリを使っても、モデルは8 kHzより上の情報を捨ててしまいます。",
         ],
       },
       {
-        title: "先に小さいコピーを作るべきとき",
+        title: "1 GB を超えたときの対処",
         paragraphs: [
-          "1時間を超える録音や、24-bit・48 kHzのステレオ録音は、編集ソフトで16 kHzモノラルのWAVか高品質のMP3を書き出してから文字起こししてください。モデルが使う情報は失われません。",
-          "元のWAVは編集と保管用のマスターとして残しましょう。コピーの開始位置が同じなら、文字起こしのタイムスタンプは元ファイルとも一致します。",
+          "編集前のデータが残っているなら、16 kHzモノラルで書き出し直すのが一番早い方法です。モデルが最終的に使う形式そのもので、1分あたり10.58 MBが1.92 MBになります。",
+          "書き出したファイルしかない場合は2つです。曲や会議の切れ目で分割して個別に文字起こしするか、128 kbpsのM4Aに変換するか。M4Aは1分あたり0.93 MBなので、同じ上限で19.3時間入ります。",
+          "素材が動画でもWAVに変換する必要はありません。mp4・m4v・mov・qt・mkv・webm・ts・m2tsはそのままドロップでき、音声トラックはブラウザ内で取り出して同じ文字起こしに流れます。",
         ],
-      },
-      {
-        title: "チャンネルとマルチトラック",
-        paragraphs: [
-          "左右のチャンネルは認識前に1つにまとめられます。2人を別々のチャンネルで録っていても、文字起こしは話者ラベルのない1つの会話になります。",
-          "トラックを分けて録ったポッドキャストやインタビューは、概要欄用なら最終ミックスを、誰が話したかを正確に残したいならトラックごとに文字起こしします。",
-        ],
+        table: {
+          caption: "同じ40分の録音を保存形式ごとに比べたサイズ。1分あたりの値を40倍した計算値です。",
+          columns: ["保存形式", "1分あたり", "40分"],
+          rows: [
+            ["44.1 kHz・16-bit・ステレオ WAV", "10.58 MB", "423 MB"],
+            ["96 kHz・24-bit・ステレオ WAV", "34.56 MB", "1,382 MB"],
+            ["16 kHz・16-bit・モノラル WAV", "1.92 MB", "77 MB"],
+            ["M4A・128 kbps", "0.93 MB", "37 MB"],
+          ],
+        },
       },
     ],
-    checklistTitle: "WAV文字起こしのチェックリスト",
+    checklistTitle: "書き出す前のチェック",
     checklist: [
-      { title: "長さ", body: "スマートフォンや低メモリのPCでは、1時間を超える録音を分割する。" },
-      { title: "エンコード", body: "標準の16-bitか24-bit PCMを使い、圧縮形式は変換する。" },
-      { title: "作業用コピー", body: "元が大きすぎる場合は16 kHzモノラル版を文字起こしし、元ファイルは残す。" },
-      { title: "確認", body: "書き出す前に人名・数字・専門用語を聞き直す。" },
+      {
+        title: "ファイルヘッダーを先に見る",
+        body: "96 kHz・24-bitに設定した録音機は31分で1 GBに達します。サンプリングレートはファイルの情報で確認でき、このページの数字はすべてそこから決まります。",
+      },
+      {
+        title: "元のWAVは残す",
+        body: "マスターです。ブラウザには小さいコピーを渡し、非圧縮の元ファイルは後からデコードし直せる形で保管します。",
+      },
+      {
+        title: "悪い録音をアップサンプリングで直さない",
+        body: "歪んだ音や雑音の多い録音を96 kHzにしても、モデルが使える情報は増えず、ファイルだけが大きくなります。",
+      },
+      {
+        title: "分割したら開始位置を記録する",
+        body: "2本目以降は冒頭のオフセットを足せば、元ファイルのタイムスタンプに戻せます。",
+      },
     ],
-    limitsTitle: "知っておきたい制限",
+    limitsTitle: "大きなWAVが止まるところ",
     limits: [
-      "1 GBを超えるファイルは受け付けず、実際の上限は端末のメモリです。代わりに処理するサーバーはありません。",
-      "EarScribeは話者やトラックを区別しません。マルチトラックはミックスダウンするか、トラックごとにファイルを分けてください。",
+      "1 GBはファイルの上限で、長さの上限ではありません。44.1 kHz・16-bitのモノラルなら202分、96 kHz・24-bitのステレオなら31分です。",
+      "どの形式でも2時間を超えるあたりでピークメモリの見積もりが3.3 GBを超えるため、長い録音は分割が必要です。",
+      "話者分離・翻訳・リアルタイム字幕には対応していません。マルチトラックはミックスダウンするか、トラックごとに書き出してください。",
     ],
     imageSrc: image,
     imageAlt: "WAV録音のタイムスタンプ付き文字起こしと書き出しオプション",

@@ -10,8 +10,9 @@ export const PODCAST_TRANSCRIPTION_PAGE: ToolPageDefinition = {
   copy: {
     en: {
       title: "Free podcast transcription for show notes, quotes and captions",
+      metaTitle: "Podcast transcription: 1,300 cues an hour | EarScribe",
       description:
-        "Transcribe podcast episodes in your browser, then turn the text into show notes, chapter timestamps, quotes and SRT or VTT captions. Free, no sign-up.",
+        "Podcast transcription in the browser for show notes and captions: an hour is about 1,300 cues, and half of them break the 42-character line rule. Free.",
       eyebrow: "Podcast transcription",
       intro:
         "Drop in the episode you exported from your editor. EarScribe creates a timestamped transcript on your device that you can search for quotes, use to write show notes and chapters, and export as captions for the video version.",
@@ -20,13 +21,13 @@ export const PODCAST_TRANSCRIPTION_PAGE: ToolPageDefinition = {
         "Timestamps ready for chapters and captions",
         "Export TXT, SRT, VTT or JSON",
       ],
-      workflowTitle: "From finished episode to a free, publishable transcript",
+      workflowTitle: "From final mix to captions that pass",
       workflow: [
-        { title: "Transcribe the final mix", body: "Use the exported episode (MP3, WAV or M4A) so the timestamps match what listeners hear." },
-        { title: "Check names and sponsors", body: "Search for guest names, brands and URLs, replay each mention and correct the spelling." },
+        { title: "Transcribe the final mix", body: "Use the exported episode (MP3, WAV or M4A) so the timestamps match what listeners hear. An hour is 230 MB of samples once decoded." },
+        { title: "Check names and sponsors", body: "Search guest names, brands and URLs, replay each mention. The opening name said once, over music, is the likeliest error." },
         { title: "Reuse the transcript", body: "Copy text for show notes, note timestamps for chapters, and export SRT or VTT for the video episode." },
       ],
-      tipsTitle: "Podcast-specific tips",
+      tipsTitle: "What we tell every new host",
       tips: [
         "Music beds and intros can produce stray or repeated lines. Check the first and last minutes of the transcript.",
         "EarScribe doesn't label speakers. Add host and guest names while reviewing, using the timestamps to find each turn.",
@@ -98,132 +99,269 @@ export const PODCAST_TRANSCRIPTION_PAGE: ToolPageDefinition = {
 export const PODCAST_TRANSCRIPTION_GUIDES: Record<ToolLocale, ToolGuide> = {
   en: {
     primaryKeyword: "podcast transcription",
-    supportingKeywords: ["transcribe podcast free", "podcast transcript generator", "podcast show notes from transcript", "podcast chapter timestamps"],
-    guideTitle: "Turn one transcript into everything an episode needs",
+    supportingKeywords: [
+      "transcribe podcast episode",
+      "podcast transcript generator",
+      "podcast captions",
+    ],
+    // An episode produces two artefacts. The words are the easy one; the cue
+    // file is where the measurable work is.
+    guideTitle: "Podcast transcription: the transcript is the easy half",
     guideIntro:
-      "A transcript earns its keep after the episode is out: it becomes show notes, chapter markers, quotes for social posts and captions for the video version. Timestamps connect all of them back to the audio.",
+      "An hour of episode is about 8,700 words and roughly 1,300 caption cues. The words arrive usable; the cues do not — on every model we ran, at least half the cues were longer than the 42-character line the app allows, before any re-cut.",
     sections: [
       {
-        title: "Show notes and chapters",
+        title: "What one episode actually produces",
         paragraphs: [
-          "Skim the transcript for topic changes and note their timestamps. Many platforms turn a timestamp list in the description into chapters; YouTube, for example, needs the list to start at 0:00 and contain at least three chapters of ten seconds or more.",
-          "Write the notes from the corrected transcript rather than the raw one, so guest names and links are spelled the way you confirmed them.",
+          "Whisper writes one cue per chunk, not one cue per sentence. On our 34-second clip that was twelve cues, so an hour scales to about 1,300 — a number worth knowing before you open a caption editor and start dragging boundaries.",
+          "The words are easier: 145 words a minute over an hour is 8,700, and that is a length you can search, skim and quote from. The cue count is what decides whether the video version ships this week.",
         ],
       },
       {
-        title: "Quotes and clips",
+        title: "Half the cues break the line rule",
         paragraphs: [
-          "Search for the phrase you remember, click its timestamp and listen to the whole sentence before quoting it. The surrounding context often changes how a line should be trimmed.",
-          "When you cut a clip for social media, the timestamps tell your editor exactly where to go, which saves scrubbing through an hour of audio.",
+          "The app applies the same limits a broadcaster would: 42 characters per line, 84 per cue, 20 characters per second of reading speed. Exported straight from the model, every combination we measured broke the line limit in at least half its cues.",
         ],
+        table: {
+          caption:
+            "Seven model and backend combinations, each exported with the same toSrt() the download button uses, then parsed back and measured. \"After re-cut\" is the same transcript passed through the app's layout pass.",
+          source: "content/guides/data/subtitle-violations.json",
+          columns: ["Model", "Cues", "Over the line, raw", "After re-cut", "Longest raw cue"],
+          rows: [
+            ["tiny, CPU", "12", "6 (50%)", "3 (25%)", "88 chars"],
+            ["tiny, GPU", "11", "6 (55%)", "3 (27%)", "89 chars"],
+            ["base, CPU", "12", "6 (50%)", "3 (25%)", "89 chars"],
+            ["base, GPU", "8", "6 (75%)", "3 (30%)", "100 chars"],
+            ["small, CPU", "10", "5 (50%)", "1 (8%)", "100 chars"],
+            ["small, GPU", "10", "5 (50%)", "0 (0%)", "100 chars"],
+            ["turbo, CPU", "10", "5 (50%)", "0 (0%)", "100 chars"],
+          ],
+        },
       },
       {
-        title: "Captions and accessibility",
+        title: "What show notes can and cannot be",
         paragraphs: [
-          "Export SRT or WebVTT for the video version of the episode, and run the subtitle check to catch cues that are too long or too fast to read.",
-          "A published transcript also serves listeners who are deaf or hard of hearing, and anyone who prefers to skim. The podcast namespace's podcast:transcript tag lets you link the transcript file from your RSS feed.",
+          "Show notes are a reading artefact: a summary, the links, the names. Transcription gives you the raw material and a timestamp for each line, which is enough to write a summary by jumping to the four moments you remember.",
+          "It does not give you chapters. A chapter break is a judgement about what the episode was about, and the transcript knows only when someone stopped talking — which is why the timestamps help and the automatic segmentation does not.",
         ],
       },
     ],
-    checklistTitle: "Before you publish the transcript",
+    checklistTitle: "Three checks before the episode ships",
     checklist: [
-      { title: "Names", body: "Guests, companies, products and places spelled correctly." },
-      { title: "Links", body: "URLs and promo codes checked against the audio." },
-      { title: "Ad reads", body: "Decide whether sponsor segments stay in the published text." },
-      { title: "Timing", body: "Chapter timestamps and captions match the final mix." },
+      {
+        title: "Listen to the first 30 seconds",
+        body: "The opening is where the model has least context — a name said once, over music, is the most likely line in the episode to be wrong.",
+      },
+      {
+        title: "Re-cut the captions before exporting",
+        body: "Half the raw cues overflow the line; the layout pass takes that to between zero and 30 percent, depending on the model you chose.",
+      },
+      {
+        title: "Keep the sponsor read verbatim",
+        body: "Ad copy is the one part a listener may check against the audio. Read it in the transcript, not just in the notes.",
+      },
     ],
-    limitsTitle: "What EarScribe won't do",
+    limitsTitle: "Where an episode stops fitting in a tab",
     limits: [
-      "It doesn't fetch episodes from RSS, Spotify or Apple Podcasts links; it needs the audio file.",
-      "It doesn't identify speakers or write summaries; you stay in control of the edit.",
+      "Music under speech is where captions degrade fastest: the words may survive, the cue boundaries will not.",
+      "Past roughly two hours the memory estimate passes 3.3 GB, so a long interview episode needs splitting before it needs a better model.",
     ],
-    imageSrc: image,
-    imageAlt: "Searchable podcast transcript with timestamps for chapters and quotes",
+    imageSrc: "/screenshots/ui-subtitles.webp",
+    imageAlt: "Podcast transcription: subtitle editor with per-cue line lengths",
+    workflowImageSrc: "/screenshots/guides/pre-run.webp",
   },
   "zh-CN": {
     primaryKeyword: "播客转文字",
-    supportingKeywords: ["播客转文字稿", "播客文字稿 免费", "播客 节目笔记", "播客 章节时间轴"],
-    guideTitle: "一份文字稿，满足单集需要的全部内容",
-    guideIntro: "文字稿真正派上用场是在节目上线之后：它可以变成节目笔记、章节标记、社交平台的金句和视频版字幕，时间戳把这些内容都连回原音频。",
+    supportingKeywords: ["播客转文字 免费", "播客 文字稿 生成", "播客 字幕", "播客 节目笔记"],
+    guideTitle: "播客转文字：一期节目能出四样东西",
+    guideIntro:
+      "一小时的单集约 8,700 字、1,300 条字幕。文字转出来基本能用，字幕不是——每个模型导出的字幕里，都至少有一半超过每行 42 个字符，得先重排才敢用。",
     sections: [
       {
-        title: "节目笔记和章节",
+        title: "一期节目能转出什么",
         paragraphs: [
-          "浏览文字稿找出话题转换的地方，记下时间点。很多平台会把简介里的时间点列表变成章节，比如 YouTube 要求列表从 0:00 开始，至少三个章节，每章不少于 10 秒。",
-          "用改正后的文字稿写笔记，而不是原始识别结果，这样嘉宾名字和链接都是你确认过的写法。",
+          "同一段音频转一次，就能拿到四样东西：带时间戳的文字稿、SRT/VTT 字幕、给节目笔记用的纯文本，以及给脚本用的 JSON。不必为每种用途各转一遍。",
+          "字幕是唯一还要加工的。Whisper 按语音块断句，不按句子断：34 秒的样本出了 12 条字幕，按这个比例，一小时大约 1,300 条——先知道这个数，再打开字幕编辑器拖边界。",
+        ],
+        table: {
+          caption: "一期节目转一次，四种产出分别用在哪里、导出什么格式。",
+          columns: ["产出", "用在哪", "导出格式"],
+          rows: [
+            ["带时间戳文字稿", "搜索金句、回听原话", "TXT"],
+            ["SRT / VTT 字幕", "B 站、YouTube 的视频版", "SRT、VTT"],
+            ["纯文本", "节目笔记、单集简介", "TXT"],
+            ["JSON", "自己的脚本或站点", "JSON"],
+          ],
+        },
+      },
+      {
+        title: "一半字幕条超出行长限制",
+        paragraphs: [
+          "应用用的是播出级的三条限制：每行 42 个字符、每条字幕 84 个字符、每秒阅读 20 个字符。直接导出模型原始结果，每种组合都至少有一半字幕超出行长。",
+          "所以导出前先跑一次重排。同一份文字稿过一遍应用的版式处理，超标比例降到 0 到 30%，取决于你选的模型。",
+        ],
+        table: {
+          caption:
+            "七种模型与后端组合，都用下载按钮背后的同一个 toSrt() 导出，再解析回来逐条测量。「重排后」是同一份文字稿过了应用的版式处理。",
+          source: "content/guides/data/subtitle-violations.json",
+          columns: ["模型", "字幕条数", "超行长（原始）", "重排后", "最长原始字幕"],
+          rows: [
+            ["tiny，CPU", "12", "6（50%）", "3（25%）", "88 字符"],
+            ["tiny，GPU", "11", "6（55%）", "3（27%）", "89 字符"],
+            ["base，CPU", "12", "6（50%）", "3（25%）", "89 字符"],
+            ["base，GPU", "8", "6（75%）", "3（30%）", "100 字符"],
+            ["small，CPU", "10", "5（50%）", "1（8%）", "100 字符"],
+            ["small，GPU", "10", "5（50%）", "0（0%）", "100 字符"],
+            ["turbo，CPU", "10", "5（50%）", "0（0%）", "100 字符"],
+          ],
+        },
+      },
+      {
+        title: "节目笔记能写什么、不能写什么",
+        paragraphs: [
+          "节目笔记是给人读的：一段摘要、几个链接、人名。转写给你的是原料和每句话的时间戳，够你跳到记得的那四个时刻，把摘要写出来。",
+          "它不会替你写章节。章节切在哪里是对内容的判断，文字稿只知道谁在什么时候不说话了——时间戳能帮你定位，自动分段帮不上。平台对章节格式的要求，还是得你对着音频自己核。",
         ],
       },
       {
-        title: "金句和切片",
+        title: "长节目和手机：先看模型体积",
         paragraphs: [
-          "搜索你记得的那句话，点击时间戳听完整句再引用。上下文常常会影响一句话该怎么截取。",
-          "剪短视频切片时，时间戳能直接告诉剪辑师位置，不用在一小时的音频里来回拖动。",
+          "40 分钟的节目，base 模型在 WebAssembly（CPU）下约 9 分钟转完，WebGPU 约 3.8 分钟。整期一小时按比例往上加，慢的地方主要是模型下载和内存。",
+          "第一次用要下载模型，之后缓存在浏览器里。手机内存紧张时，tiny 和 base 最现实；turbo 的体积在移动端基本不用考虑。",
         ],
-      },
-      {
-        title: "字幕和无障碍",
-        paragraphs: [
-          "为视频版导出 SRT 或 WebVTT，并运行字幕检查，找出太长或读不过来的字幕条。",
-          "公开的文字稿也方便听障听众和喜欢快速浏览的人。按照播客命名空间规范，可以用 podcast:transcript 标签在 RSS 里链接文字稿文件。",
-        ],
+        table: {
+          caption: "各模型的首次下载体积：CPU 走 q8 量化，GPU 走 fp32。",
+          columns: ["模型", "CPU（q8）", "GPU（fp32）"],
+          rows: [
+            ["Tiny", "41 MB", "151 MB"],
+            ["Base", "77 MB", "291 MB"],
+            ["Small", "249 MB", "968 MB"],
+            ["Turbo", "1,085 MB", "3,236 MB"],
+          ],
+        },
       },
     ],
-    checklistTitle: "发布文字稿之前",
+    checklistTitle: "单集上线前的三项检查",
     checklist: [
-      { title: "名字", body: "嘉宾、公司、产品和地名写法正确。" },
-      { title: "链接", body: "网址和优惠码对照音频核实。" },
-      { title: "口播广告", body: "决定赞助口播是否保留在公开文字里。" },
-      { title: "时间", body: "章节时间和字幕与最终混音一致。" },
+      {
+        title: "先听开头 30 秒",
+        body: "开头是模型上下文最少的地方：垫着音乐、只说一次的人名，是整期最可能出错的一句。",
+      },
+      {
+        title: "导出前重排字幕",
+        body: "原始字幕一半超出行长，重排后降到 0 到 30%，取决于模型。",
+      },
+      {
+        title: "赞助口播逐字核对",
+        body: "广告口播是听众可能拿着音频对照的部分，它要进文字稿，不只是进笔记。",
+      },
     ],
-    limitsTitle: "EarScribe 不做的事",
+    limitsTitle: "一期节目装不进一个标签页的地方",
     limits: [
-      "不会从 RSS、小宇宙、Apple Podcasts 等链接抓取节目，需要音频文件。",
-      "不识别说话人，也不自动写摘要，编辑由你掌控。",
+      "说话声下面垫着音乐时，字幕劣化最快：字可能还在，断句一定乱。",
+      "超过约两小时，内存估算会过 3.3 GB——90 分钟以上的访谈，先拆分比换更大的模型更有效。",
+      "不区分说话人：双人播客不会分出「主持人」和「嘉宾」；也不翻译，也不做实时字幕。",
+      "单文件上限 1 GiB，进模型前统一重采样成 16 kHz 单声道。",
+      "不能贴链接抓取：小宇宙、喜马拉雅、网易云音乐、B 站上的节目要先下载音频，再拖进来。",
     ],
     imageSrc: image,
-    imageAlt: "带时间戳、可用于章节和金句的播客文字稿",
+    imageAlt: "带时间戳、可搜索的播客单集文字稿",
   },
   ja: {
     primaryKeyword: "ポッドキャスト 文字起こし",
-    supportingKeywords: ["ポッドキャスト 文字起こし 無料", "ポッドキャスト 概要欄", "ポッドキャスト チャプター", "ポッドキャスト 字幕"],
-    guideTitle: "1つの文字起こしをエピソードのあらゆる用途に",
-    guideIntro: "文字起こしが本当に役立つのは配信後です。概要欄、チャプター、SNS用の引用、動画版の字幕になり、タイムスタンプがそのすべてを元の音声につなぎます。",
+    supportingKeywords: ["ポッドキャスト 文字起こし 無料", "ポッドキャスト 書き起こし", "ポッドキャスト 概要欄", "ポッドキャスト 字幕"],
+    guideTitle: "ポッドキャスト 文字起こし：1本のエピソードから4つの成果物",
+    guideIntro:
+      "1時間のエピソードは約8,700語、字幕はおよそ1,300本になります。言葉のほうはそのまま使えますが、字幕はそうではありません。どのモデルでも、書き出した字幕の半分以上が1行42文字を超えていて、まず組み直しが必要です。",
     sections: [
       {
-        title: "概要欄とチャプター",
+        title: "1本のエピソードから出てくるもの",
         paragraphs: [
-          "文字起こしをざっと読んで話題が変わる箇所の時刻を控えます。多くのプラットフォームは説明文の時刻リストをチャプターにします。たとえばYouTubeでは、0:00から始まり、10秒以上のチャプターが3つ以上必要です。",
-          "概要欄は、認識そのままではなく修正済みの文字起こしから書きましょう。ゲスト名やリンクが確認済みの表記になります。",
+          "同じ音声を一度文字起こしするだけで、4つが手に入ります。タイムスタンプ付きの文字起こし、SRT・VTTの字幕、概要欄に使うプレーンテキスト、そして自作スクリプト用のJSONです。用途ごとに何度も処理し直す必要はありません。",
+          "追加の作業が要るのは字幕だけです。Whisperは文ではなく音声の塊ごとに区切るため、34秒のサンプルで12本になりました。この割合なら1時間で約1,300本です。この数字を先に知っておくと、字幕エディタで境界をドラッグする覚悟が決まります。",
+        ],
+        table: {
+          caption: "1本のエピソードを一度処理して得られる4つの成果物と、その使い道・書き出し形式です。",
+          columns: ["成果物", "使い道", "書き出し形式"],
+          rows: [
+            ["タイムスタンプ付き文字起こし", "引用の検索、聞き直し", "TXT"],
+            ["SRT / VTT 字幕", "動画版の字幕（YouTube など）", "SRT、VTT"],
+            ["プレーンテキスト", "概要欄、エピソードの説明文", "TXT"],
+            ["JSON", "自作スクリプトやサイト", "JSON"],
+          ],
+        },
+      },
+      {
+        title: "字幕の半分は行長を超えている",
+        paragraphs: [
+          "アプリは放送向けの3つの制限をかけています。1行42文字、1本あたり84文字、1秒あたり20文字の読み速度です。モデルの出力をそのまま書き出すと、どの組み合わせでも半分以上の字幕が行長を超えました。",
+          "そこで書き出しの前に組み直しを行います。同じ文字起こしをアプリのレイアウト処理に通すと、超過は0〜30%まで下がります。どこまで下がるかは選んだモデル次第です。",
+        ],
+        table: {
+          caption:
+            "7つのモデルとバックエンドの組み合わせを、ダウンロードボタンと同じtoSrt()で書き出し、解析し直して1本ずつ測った結果です。「組み直し後」は同じ文字起こしをアプリのレイアウト処理に通したものです。",
+          source: "content/guides/data/subtitle-violations.json",
+          columns: ["モデル", "字幕数", "行長超過（生）", "組み直し後", "最長の生字幕"],
+          rows: [
+            ["tiny、CPU", "12", "6（50%）", "3（25%）", "88文字"],
+            ["tiny、GPU", "11", "6（55%）", "3（27%）", "89文字"],
+            ["base、CPU", "12", "6（50%）", "3（25%）", "89文字"],
+            ["base、GPU", "8", "6（75%）", "3（30%）", "100文字"],
+            ["small、CPU", "10", "5（50%）", "1（8%）", "100文字"],
+            ["small、GPU", "10", "5（50%）", "0（0%）", "100文字"],
+            ["turbo、CPU", "10", "5（50%）", "0（0%）", "100文字"],
+          ],
+        },
+      },
+      {
+        title: "概要欄に書けること、書けないこと",
+        paragraphs: [
+          "概要欄は人が読むためのものです。短いまとめ、リンク、人名。文字起こしが渡してくれるのは素材と1行ごとのタイムスタンプで、覚えている4つの場面に飛んでまとめを書くには十分です。",
+          "ただしチャプターは作ってくれません。どこで区切るかは内容に対する判断で、文字起こしが知っているのは「誰がいつ話し終えたか」だけです。タイムスタンプは場所を教えてくれますが、自動の分割は役に立ちません。",
         ],
       },
       {
-        title: "引用と切り抜き",
+        title: "長いエピソードとスマホ：まずモデルのサイズ",
         paragraphs: [
-          "覚えているフレーズを検索し、タイムスタンプから文全体を聞いてから引用します。前後の文脈で、どこまで切り取るべきかが変わることはよくあります。",
-          "SNS用に切り抜くときも、タイムスタンプを渡せば編集担当はすぐにその場所へ行けます。1時間の音声を何度も探す必要はありません。",
+          "40分のエピソードなら、baseモデルでWebAssembly（CPU）が約9分、WebGPUなら約3.8分です。1時間になれば比例して伸び、時間を食うのは主にモデルのダウンロードとメモリです。",
+          "初回はモデルをダウンロードし、その後はブラウザにキャッシュされます。スマートフォンでメモリが厳しいときはtinyかbaseが現実的で、turboのサイズはモバイルではまず選べません。",
         ],
-      },
-      {
-        title: "字幕とアクセシビリティ",
-        paragraphs: [
-          "動画版にはSRTかWebVTTを書き出し、字幕チェックで長すぎる・速すぎる字幕を見つけます。",
-          "公開された文字起こしは、聴覚に障害のあるリスナーや、ざっと読みたい人にも役立ちます。ポッドキャストのネームスペースにあるpodcast:transcriptタグを使えば、RSSから文字起こしファイルにリンクできます。",
-        ],
+        table: {
+          caption: "モデルごとの初回ダウンロードサイズ。CPUはq8量子化、GPUはfp32です。",
+          columns: ["モデル", "CPU（q8）", "GPU（fp32）"],
+          rows: [
+            ["Tiny", "41 MB", "151 MB"],
+            ["Base", "77 MB", "291 MB"],
+            ["Small", "249 MB", "968 MB"],
+            ["Turbo", "1,085 MB", "3,236 MB"],
+          ],
+        },
       },
     ],
-    checklistTitle: "文字起こしを公開する前に",
+    checklistTitle: "配信前の3つの確認",
     checklist: [
-      { title: "名前", body: "ゲスト、会社、製品、地名の表記が正しいか。" },
-      { title: "リンク", body: "URLやクーポンコードを音声と照合したか。" },
-      { title: "広告", body: "スポンサー読み上げを公開テキストに残すか決めたか。" },
-      { title: "タイミング", body: "チャプターと字幕が最終ミックスと合っているか。" },
+      {
+        title: "最初の30秒を聞く",
+        body: "冒頭はモデルにとって文脈が最も少ない場所です。BGMの上で一度しか出てこない人名は、エピソードでいちばん間違えやすい一行です。",
+      },
+      {
+        title: "書き出す前に字幕を組み直す",
+        body: "生の字幕は半分が行長超過です。組み直すと0〜30%まで下がり、どこまで下がるかはモデル次第です。",
+      },
+      {
+        title: "スポンサーの読み上げは一字一句確認する",
+        body: "広告の読み上げは、リスナーが音声と照らし合わせる唯一の部分です。概要欄だけでなく、文字起こしにも残してください。",
+      },
     ],
-    limitsTitle: "EarScribeがしないこと",
+    limitsTitle: "1本のエピソードがタブに収まらなくなる場所",
     limits: [
-      "RSSやSpotify、Apple PodcastsのURLからエピソードを取得しません。音声ファイルが必要です。",
-      "話者の識別や要約の自動作成は行いません。編集はあなたが決めます。",
+      "話し声の下に音楽があると字幕が最も崩れます。言葉は残っても、区切りは崩れます。",
+      "およそ2時間を超えるとメモリの見積もりが3.3 GBを超えます。90分以上のインタビューは、大きいモデルに替えるより先に分割してください。",
+      "話者の区別はしません。2人のポッドキャストでも「ホスト」「ゲスト」には分かれません。翻訳もリアルタイム字幕も行いません。",
+      "ファイルの上限は1 GiBで、モデルに渡す前に16 kHzモノラルへ変換します。",
+      "URLを貼って取得することはできません。Spotify、Apple Podcasts、stand.fm、Voicyのエピソードは、音声ファイルをダウンロードしてからドロップしてください。",
     ],
     imageSrc: image,
-    imageAlt: "チャプターや引用に使えるタイムスタンプ付きのポッドキャスト文字起こし",
+    imageAlt: "検索できるタイムスタンプ付きのポッドキャスト文字起こし",
   },
 };

@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — ブラウザだけで音声・動画を文字起こし、しかも無料</h1>
+<h1 align="center">EarScribe — 音声・動画の文字起こしを、ブラウザだけで無料で</h1>
 
 <p align="center">
   <b>音声ファイル、動画、マイク録音を放り込むだけ。タイムスタンプ付きの文字起こしと字幕が手に入ります。</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — ブラウザで無料の音声・動画文字起こし。MP3、WAV、M4A、MP4 をドロップすれば、アップロードせずにタイムスタンプ付きの文字起こしが得られます。"></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/ja/hero.webp" alt="EarScribe — ブラウザで無料の音声・動画文字起こし。MP3、WAV、M4A、MP4 をドロップすれば、アップロードせずにタイムスタンプ付きの文字起こしが得られます。"></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@
 ### 1. ファイルか動画をドロップ、あるいは録音 — 登録もアップロードも不要
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="無料の音声・動画テキスト変換ツール — ブラウザで MP3、WAV、M4A、MP4、MOV、MKV をドロップ。登録もログインも不要。"></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/ja/hero.webp" alt="無料の音声・動画テキスト変換ツール — ブラウザで MP3、WAV、M4A、MP4、MOV、MKV をドロップ。登録もログインも不要。"></a>
 </p>
+
+<p align="center"><sub>最初の画面：ドロップ領域と、受け付ける音声・動画形式の一覧。</sub></p>
 
 ### 2. 波形付きのタイムスタンプ入り文字起こし — 行をクリックすればそこへジャンプ
 
@@ -128,11 +130,15 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="EarScribe の文字起こし出力 — タイムスタンプ付きの音声テキスト変換、波形スクラバー、ワンクリックの SRT・VTT 字幕書き出し"></a>
 </p>
 
+<p align="center"><sub>文字起こし画面：左にタイムスタンプ付きの行、右に波形と再生位置。</sub></p>
+
 ### 3. 3ステップ：ドロップ → Whisper モデルを選ぶ → 書き出す
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="EarScribe で無料の音声テキスト変換が動く流れ — 音声か動画をドロップし、Whisper モデル（tiny、base、small、turbo）を選び、文字起こしを読んで書き出す"></a>
 </p>
+
+<p align="center"><sub>3ステップの流れ：ファイルのドロップ、モデル選択、書き出しが順に並ぶ。</sub></p>
 
 ### 4. EarScribe を選ぶ理由 — プライバシー優先、ブラウザネイティブの Whisper
 
@@ -140,11 +146,15 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScribe の機能 — アップロード不要でプライベート、WebGPU と WASM、99 の話し言葉を自動判定、SRT VTT JSON TXT の書き出し、デバイス内推論"></a>
 </p>
 
+<p align="center"><sub>機能一覧：プライバシー、推論バックエンド、言語、書き出し形式を1画面にまとめたもの。</sub></p>
+
 ### 5. EarScribe を使う人 — ポッドキャスター、ジャーナリスト、学生、編集者
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="EarScribe のユースケース — ポッドキャスター、ジャーナリスト、学生、ユーザーリサーチ、動画字幕、オーディオブックの文字起こしのための無料音声テキスト変換"></a>
 </p>
+
+<p align="center"><sub>ユースケース：ポッドキャスト、取材、授業、会議など利用者別の入口。</sub></p>
 
 ### 6. EarScribe と Otter.ai、Rev、HappyScribe、ローカルに入れた Whisper の比較
 
@@ -152,11 +162,15 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="EarScribe と Otter.ai、Rev、HappyScribe の比較 — デバイス内推論で分単位の課金がない、無料・無制限の音声テキスト変換"></a>
 </p>
 
+<p align="center"><sub>比較表：EarScribe と各クラウドサービス、ローカル Whisper を項目ごとに並べたもの。</sub></p>
+
 ### 7. FAQ — プライバシー、形式、字幕の書き出し、オフライン利用
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="無料の音声テキスト変換 FAQ — プライバシー、MP3 や動画のテキスト化、SRT・VTT 字幕の書き出し、対応言語、オフライン利用、ブラウザ上の Whisper についての回答"></a>
 </p>
+
+<p align="center"><sub>FAQ：プライバシー、形式、字幕の書き出し、オフライン利用に関する回答の要約。</sub></p>
 
 ---
 
@@ -308,7 +322,7 @@ YouTube、Premiere、Final Cut、Resolve 向けの**[音声から SRT](https://e
 
 はっきり書いておけば、誰かの無駄な1回を省けます。
 
-- **話者分離はしません。** 1つのファイルに2人が入っていれば、出てくるのは「話者 1 / 話者 2」のラベルのない平坦なテキストです。インタビューのページはわざとそう書いています。
+- **話者分離はしません。** 1つのファイルに2人が入っていれば、出てくるのは「話者 1 / 話者 2」のラベルがないテキストです。インタビューのページはわざとそう書いています。
 - **翻訳はしません。** 文字起こしは話された言語のままです。UI の言語と話し言葉は無関係です。
 - **リアルタイム字幕はありません。** 録音と文字起こしは別のステップです。まずマイクで録り、そのあとファイルを文字起こしします。
 - **キューは直列で、タブを開いたままにする必要があります。** バッチ全体でモデル1つ、言語設定1つです。タブを閉じれば止まります。
@@ -362,7 +376,7 @@ YouTube、Premiere、Final Cut、Resolve 向けの**[音声から SRT](https://e
 
 <details>
 <summary><b>誰が話しているかをラベル付けしますか？</b></summary><br/>
-いいえ。出力はタイムコード付きの平坦なテキストです。話者ダイアライゼーションはこのビルドには含まれておらず、アプリもそう見せかけることはしません。
+いいえ。出力はタイムコード付きで、話者のラベルがないテキストです。話者ダイアライゼーションはこのビルドには含まれておらず、アプリもそう見せかけることはしません。
 </details>
 
 <details>

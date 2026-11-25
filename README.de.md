@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — Audio und Video kostenlos im Browser in Text umwandeln</h1>
+<h1 align="center">EarScribe — Audio zu Text: kostenlose Transkription im Browser</h1>
 
 <p align="center">
   <b>Legen Sie eine Audiodatei oder ein Video ab, oder nehmen Sie mit dem Mikrofon auf. Sie erhalten ein Transkript mit Zeitstempeln und Untertitel.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — Audio und Video kostenlos im Browser in Text umwandeln. Legen Sie eine MP3-, WAV-, M4A- oder MP4-Datei ab und erhalten Sie ein Transkript mit Zeitstempeln, ohne etwas hochzuladen."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/de/hero.webp" alt="EarScribe — Audio und Video kostenlos im Browser in Text umwandeln. Legen Sie eine MP3-, WAV-, M4A- oder MP4-Datei ab und erhalten Sie ein Transkript mit Zeitstempeln, ohne etwas hochzuladen."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Mit der Warteschlange werfen Sie einen ganzen Ordner voller Dateien ab und gehen
 ### 1. Datei ablegen, Video ablegen oder aufnehmen — ohne Registrierung, ohne Upload
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Kostenlos Audio und Video in Text umwandeln — MP3, WAV, M4A, MP4, MOV oder MKV im Browser ablegen. Ohne Registrierung, ohne Login."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/de/hero.webp" alt="Kostenlos Audio und Video in Text umwandeln — MP3, WAV, M4A, MP4, MOV oder MKV im Browser ablegen. Ohne Registrierung, ohne Login."></a>
 </p>
+
+<p align="center"><sub>Datei, Video oder Mikrofonaufnahme ablegen — ohne Registrierung und ohne Upload.</sub></p>
 
 ### 2. Transkript mit Zeitstempeln und Wellenform — jede Zeile zum Springen anklicken
 
@@ -128,11 +130,15 @@ Mit der Warteschlange werfen Sie einen ganzen Ordner voller Dateien ab und gehen
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="Transkript-Ausgabe von EarScribe — Audio mit Zeitstempeln in Text umgewandelt, mit Wellenform-Regler und Ein-Klick-Export als SRT- und VTT-Untertitel"></a>
 </p>
 
+<p align="center"><sub>Transkript mit Zeitstempeln entlang der Wellenform; ein Klick auf eine Zeile springt an die Stelle.</sub></p>
+
 ### 3. Drei Schritte: ablegen → Whisper-Modell wählen → exportieren
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="So funktioniert kostenlose Audio-zu-Text-Umwandlung bei EarScribe — Audio oder Video ablegen, ein Whisper-Modell wählen (tiny, base, small oder turbo), Transkript lesen und exportieren"></a>
 </p>
+
+<p align="center"><sub>Die drei Schritte der Oberfläche: Medium ablegen, Whisper-Modell wählen, Ergebnis exportieren.</sub></p>
 
 ### 4. Warum EarScribe — Datenschutz zuerst, Whisper direkt im Browser
 
@@ -140,11 +146,15 @@ Mit der Warteschlange werfen Sie einen ganzen Ordner voller Dateien ab und gehen
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="Funktionen von EarScribe — privat ohne Upload, WebGPU plus WASM, 99 gesprochene Sprachen automatisch erkannt, Export als SRT VTT JSON TXT, Inferenz auf dem Gerät"></a>
 </p>
 
+<p align="center"><sub>Funktionsseite: Verarbeitung auf dem Gerät, WebGPU und WebAssembly, Exportformate.</sub></p>
+
 ### 5. Wer EarScribe nutzt — Podcaster, Journalisten, Studierende, Cutter
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="Anwendungsfälle von EarScribe — kostenlos Audio in Text für Podcaster, Journalisten, Studierende, Nutzerforschung, Video-Untertitel und Hörbuch-Transkription"></a>
 </p>
+
+<p align="center"><sub>Überblick über die Einsatzbereiche: Podcast, Journalismus, Studium, Videoschnitt.</sub></p>
 
 ### 6. EarScribe im Vergleich zu Otter.ai, Rev, HappyScribe und einer lokalen Whisper-Installation
 
@@ -152,11 +162,15 @@ Mit der Warteschlange werfen Sie einen ganzen Ordner voller Dateien ab und gehen
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Vergleich EarScribe gegen Otter.ai, Rev und HappyScribe — kostenlos und unbegrenzt Audio in Text, Inferenz auf dem Gerät, keine Gebühren pro Minute"></a>
 </p>
 
+<p align="center"><sub>Vergleichstabelle mit Cloud-Diensten und einer lokalen Whisper-Installation.</sub></p>
+
 ### 7. FAQ — Datenschutz, Formate, Untertitel-Export, Offline-Nutzung
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="FAQ zur kostenlosen Spracherkennung — Antworten zu Datenschutz, MP3 und Video in Text, Export als SRT- und VTT-Untertitel, unterstützte Sprachen, Offline-Nutzung und Whisper im Browser"></a>
 </p>
+
+<p align="center"><sub>FAQ-Bereich: Datenschutz, unterstützte Formate, Untertitel-Export, Offline-Nutzung.</sub></p>
 
 ---
 
@@ -194,7 +208,7 @@ Innerhalb eines Projekts können Sie das Transkript durchsuchen, einen Zeitstemp
 
 ## 💸 Was es kostet
 
-Kostenlos heißt nicht schwerelos. Die folgenden Zahlen sind gemessene Download-Größen je Modell und Backend, keine Schätzungen:
+Kostenlos heißt nicht ohne Kosten. Die folgenden Zahlen sind gemessene Download-Größen je Modell und Backend, keine Schätzungen:
 
 | Modell | WebGPU | WebAssembly | Typischer Einsatz |
 |---|---:|---:|---|
@@ -225,7 +239,7 @@ Wie schlägt sich EarScribe im Jahr 2026 gegen andere Wege, Audio zu transkribie
 | **Läuft im Browser** | ✅ | ✅ | ✅ | ✅ | ❌ |
 | **SRT-/VTT-Export** | ✅ | ⚠️ Kostenpflichtig | ✅ | ✅ | ⚠️ Manuell |
 | **Transkript mit Zeitstempeln** | ✅ | ✅ | ✅ | ✅ | ⚠️ Manuell |
-| **Lokale Inferenz** | ✅ | ❌ | ❌ | ❌ | ✅ |
+| **Inferenz auf dem Gerät** | ✅ | ❌ | ❌ | ❌ | ✅ |
 | **99 gesprochene Sprachen** | ✅ | ⚠️ Eingeschränkt | ⚠️ Eingeschränkt | ✅ | ✅ |
 | **Whisper Large v3 Turbo** | ✅ | ❌ | ❌ | ❌ | ✅ |
 | **Installation nötig** | ❌ Keine | ❌ Keine | ❌ Keine | ❌ Keine | ⚠️ Python + GPU |
@@ -302,7 +316,7 @@ Zwei-Stunden-Dateien werden unterstützt, sind aber genau der Fall, in dem der G
 
 Klarheit an dieser Stelle erspart allen einen vergeudeten Lauf:
 
-- **Keine Sprechertrennung.** Zwei Personen in einer Datei ergeben flachen Text ohne Bezeichnungen wie „Sprecher 1 / Sprecher 2“. Die Interviewseite sagt das mit Absicht.
+- **Keine Sprechertrennung.** Zwei Personen in einer Datei ergeben Text ohne Sprecherangaben wie „Sprecher 1 / Sprecher 2“. Die Interviewseite sagt das mit Absicht.
 - **Keine Übersetzung.** Das Transkript bleibt in der gesprochenen Sprache; Oberflächensprache und gesprochene Sprache haben nichts miteinander zu tun.
 - **Keine Live-Untertitel.** Aufnahme und Transkription sind getrennte Schritte — das Mikrofon nimmt zuerst auf, danach wird die Datei transkribiert.
 - **Die Warteschlange ist seriell und braucht den offenen Tab.** Ein Modell und eine Spracheinstellung für den gesamten Stapel. Wird der Tab geschlossen, hält sie an.
@@ -321,7 +335,7 @@ Ja — keine Bezahlstufe, keine Kreditkarte, keine Gebühr pro Minute, kein Tage
 
 <details>
 <summary><b>Wird mein Audio irgendwohin hochgeladen?</b></summary><br/>
-Nein. Audio wird im Tab dekodiert und einem Whisper-Modell übergeben, das in einem Web Worker läuft. Die Modellgewichte werden von einem CDN <i>in</i> Ihren Browser geladen, das CDN sieht also Ihre IP-Adresse — die Aufnahme wird jedoch nicht gesendet. Öffentliche Seiten enthalten Google AdSense — außer den persischen Seiten, die die AdSense-Richtlinien ausschließen — sowie cookielose Plausible-Analyse; <code>/dashboard</code> lädt keinen Werbecode.
+Nein. Audio wird im Tab dekodiert und einem Whisper-Modell übergeben, das in einem Web Worker läuft. Die Modellgewichte werden von einem CDN <i>in</i> Ihren Browser geladen, das CDN sieht also Ihre IP-Adresse — die Aufnahme wird jedoch nicht gesendet. Öffentliche Seiten enthalten Google AdSense — außer den persischen Seiten, die die AdSense-Richtlinien ausschließen — sowie cookielose Plausible-Analyse; <code>/dashboard</code> lädt keinen Werbecode. Die Tonspur wird im Browser verarbeitet und verlässt das Gerät nicht.
 </details>
 
 <details>
@@ -356,7 +370,7 @@ Der Transkriptionsschritt ja: Sobald Seite und Modell geladen sind, wird Audio v
 
 <details>
 <summary><b>Wird gekennzeichnet, wer spricht?</b></summary><br/>
-Nein. Die Ausgabe ist flacher Text mit Zeitcodes. Sprechertrennung ist nicht Teil dieses Builds, und die App gibt nichts anderes vor.
+Nein. Die Ausgabe ist Text ohne Sprecherangaben mit Zeitcodes. Sprechertrennung ist nicht Teil dieses Builds, und die App gibt nichts anderes vor.
 </details>
 
 <details>

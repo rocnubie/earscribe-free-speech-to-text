@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — 在瀏覽器中免費把音訊與影片轉成文字</h1>
+<h1 align="center">EarScribe — 免費音訊轉文字、影片轉文字，就在瀏覽器裡</h1>
 
 <p align="center">
   <b>拖進一個音訊檔、一段影片，或直接用麥克風錄音。取得帶時間戳的逐字稿與字幕。</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe——在瀏覽器中免費把音訊與影片轉成文字。拖進 MP3、WAV、M4A 或 MP4，不必上傳就能取得帶時間戳的逐字稿。"></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/zh-TW/hero.webp" alt="EarScribe——在瀏覽器中免費把音訊與影片轉成文字。拖進 MP3、WAV、M4A 或 MP4，不必上傳就能取得帶時間戳的逐字稿。"></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@
 ### 1. 拖進檔案、影片，或直接錄音——免註冊、免上傳
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="免費的音訊與影片轉文字工具——在瀏覽器中拖進 MP3、WAV、M4A、MP4、MOV 或 MKV。免註冊、免登入。"></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/zh-TW/hero.webp" alt="免費的音訊與影片轉文字工具——在瀏覽器中拖進 MP3、WAV、M4A、MP4、MOV 或 MKV。免註冊、免登入。"></a>
 </p>
+
+<p align="center"><sub>首屏：拖放區域，以及可接受的音訊、影片格式一覽。</sub></p>
 
 ### 2. 帶時間戳的逐字稿與波形——點任何一行就能跳轉
 
@@ -128,11 +130,15 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="EarScribe 的逐字稿輸出——帶時間戳的音訊轉文字，附波形拖曳軸與一鍵匯出 SRT、VTT 字幕"></a>
 </p>
 
+<p align="center"><sub>逐字稿介面：左側是帶時間戳的行，右側是波形與播放進度。</sub></p>
+
 ### 3. 三個步驟：拖進 → 選一個 Whisper 模型 → 匯出
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="EarScribe 的免費音訊轉文字怎麼運作——拖進音訊或影片、選一個 Whisper 模型（tiny、base、small 或 turbo）、閱讀並匯出逐字稿"></a>
 </p>
+
+<p align="center"><sub>三步流程：拖入檔案、選擇模型、匯出結果依序排列。</sub></p>
 
 ### 4. 為什麼選 EarScribe——隱私優先、原生於瀏覽器的 Whisper
 
@@ -140,11 +146,15 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScribe 的功能——私密不上傳、WebGPU 加 WASM、自動偵測 99 種口說語言、SRT VTT JSON TXT 匯出、裝置端推論"></a>
 </p>
 
+<p align="center"><sub>功能總覽：隱私、推論後端、語言和匯出格式集中在同一畫面。</sub></p>
+
 ### 5. 誰在用 EarScribe——播客製作、記者、學生、剪輯人員
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="EarScribe 的使用情境——為播客、記者、學生、使用者研究、影片字幕與有聲書轉錄提供免費的音訊轉文字"></a>
 </p>
+
+<p align="center"><sub>使用情境：播客、採訪、課堂、會議等幾類使用者的入口。</sub></p>
 
 ### 6. EarScribe 對比 Otter.ai、Rev、HappyScribe 與本機安裝的 Whisper
 
@@ -152,11 +162,15 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="EarScribe 對比 Otter.ai、Rev、HappyScribe——免費且無限制的音訊轉文字，裝置端推論，沒有按分鐘計費"></a>
 </p>
 
+<p align="center"><sub>比較表：EarScribe 與幾款雲端服務、本機 Whisper 的逐項對照。</sub></p>
+
 ### 7. 常見問題——隱私、格式、字幕匯出、離線使用
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="免費語音轉文字常見問題——關於隱私、MP3 與影片轉文字、SRT 與 VTT 字幕匯出、支援的語言、離線使用，以及瀏覽器裡的 Whisper"></a>
 </p>
+
+<p align="center"><sub>常見問題：隱私、格式、字幕匯出和離線使用的問答摘要。</sub></p>
 
 ---
 
@@ -206,7 +220,7 @@
 - **下載一次，之後走快取。** 權重存放在瀏覽器的快取中；第二次執行不會再下載任何東西。換一個瀏覽器設定檔就得重新下載。
 - **GPU 值得。** 在同一台機器上，WebGPU 用 base 處理一個 40 分鐘的檔案約 3.8 分鐘，CPU 則要 9.4 分鐘——大約快 2.5×，代價是三到四倍的下載量。在我們的測試中，WebGPU 上的 `turbo` 連 3.24 GB 的下載都沒跑完，所以它被列為未測量，而不是很快。
 - **決定成敗的是記憶體，不是檔案大小。** 較長的錄音會先解碼成 16 kHz 單聲道再轉錄。一個 40 分鐘的 MP3 需要幾百 MB；一個兩小時的立體聲 WAV 可能在開始前就把分頁撐爆。現在解碼會直接要求 16 kHz，讓一個兩小時立體聲檔案的峰值記憶體從約 1.6 GB 降到 0.5 GB。
-- **沒有伺服器，也不必排隊等別人的機器。** 時間花的是你的 CPU，所以慢的筆電就是慢。這就是不上傳所換來的代價。
+- **沒有伺服器，也不必等別人的機器空出來。** 時間花的是你的 CPU，所以慢的筆電就是慢。這就是不上傳所換來的代價。
 
 完整的測量數據、方法，以及失敗的測試回合，都放在[指南](https://earscribe.app/guides)裡。
 

@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — безкоштовне перетворення аудіо та відео на текст у браузері</h1>
+<h1 align="center">EarScribe — безкоштовна розшифровка аудіо та відео в текст у браузері</h1>
 
 <p align="center">
   <b>Перетягніть аудіофайл або відео чи запишіть звук із мікрофона. Отримайте розшифровку з мітками часу та субтитри.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — безкоштовне перетворення аудіо та відео на текст у браузері. Перетягніть MP3, WAV, M4A або MP4 і отримайте розшифровку з мітками часу без вивантаження."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/uk/hero.webp" alt="EarScribe — безкоштовне перетворення аудіо та відео на текст у браузері. Перетягніть MP3, WAV, M4A або MP4 і отримайте розшифровку з мітками часу без вивантаження."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@
 ### 1. Перетягніть файл чи відео або запишіть звук — без реєстрації та вивантаження
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Безкоштовний конвертер аудіо та відео в текст — перетягніть MP3, WAV, M4A, MP4, MOV або MKV у браузері. Без реєстрації, без входу."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/uk/hero.webp" alt="Безкоштовний конвертер аудіо та відео в текст — перетягніть MP3, WAV, M4A, MP4, MOV або MKV у браузері. Без реєстрації, без входу."></a>
 </p>
+
+<p align="center"><sub>Головний екран: зона перетягування файлів, кнопка запису з мікрофона та вибір моделі в одному вікні</sub></p>
 
 ### 2. Розшифровка з мітками часу та хвильовою формою — клацніть будь-який рядок, щоб перейти
 
@@ -128,17 +130,23 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="Результат розшифровки EarScribe — аудіо в текст із мітками часу, повзунком по хвильовій формі та експортом субтитрів SRT і VTT в один клік"></a>
 </p>
 
+<p align="center"><sub>Розшифровка з мітками часу, хвильовою формою та кнопками експорту SRT і VTT</sub></p>
+
 ### 3. Три кроки: перетягнути → вибрати модель Whisper → експортувати
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Як працює безкоштовне перетворення аудіо на текст на EarScribe — перетягніть аудіо чи відео, виберіть модель Whisper (tiny, base, small або turbo), прочитайте й експортуйте розшифровку"></a>
 </p>
 
+<p align="center"><sub>Три кроки на одному екрані: файл, модель Whisper і готовий текст для експорту</sub></p>
+
 ### 4. Чому EarScribe — приватність передусім, Whisper прямо в браузері
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="Можливості EarScribe — приватність без вивантаження, WebGPU плюс WASM, 99 мов мовлення з автовизначенням, експорт SRT VTT JSON TXT, висновок на пристрої"></a>
+  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="Можливості EarScribe — приватність без вивантаження, WebGPU плюс WASM, 99 мов мовлення з автовизначенням, експорт SRT VTT JSON TXT, виведення на пристрої"></a>
 </p>
+
+<p align="center"><sub>Огляд можливостей: локальна обробка, автовизначення мови та формати експорту</sub></p>
 
 ### 5. Хто користується EarScribe — подкастери, журналісти, студенти, монтажери
 
@@ -146,17 +154,23 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="Сценарії EarScribe — безкоштовне аудіо в текст для подкастерів, журналістів, студентів, досліджень користувачів, субтитрів для відео та розшифровки аудіокниг"></a>
 </p>
 
+<p align="center"><sub>Приклади застосування для подкастів, співбесід, навчання й субтитрів</sub></p>
+
 ### 6. EarScribe проти Otter.ai, Rev, HappyScribe та локальної установки Whisper
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Порівняння EarScribe з Otter.ai, Rev і HappyScribe — безкоштовне аудіо в текст без обмежень із висновком на пристрої та без погодинної плати"></a>
+  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Порівняння EarScribe з Otter.ai, Rev і HappyScribe — безкоштовне аудіо в текст без обмежень із виведенням на пристрої та без погодинної плати"></a>
 </p>
+
+<p align="center"><sub>Таблиця порівняння з Otter.ai, Rev, HappyScribe та локальним Whisper</sub></p>
 
 ### 7. Часті запитання — приватність, формати, експорт субтитрів, робота офлайн
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="Часті запитання про безкоштовне перетворення мовлення на текст — відповіді про приватність, MP3 і відео в текст, експорт субтитрів SRT і VTT, підтримувані мови, роботу офлайн і Whisper у браузері"></a>
 </p>
+
+<p align="center"><sub>Блок запитань і відповідей про приватність, формати та роботу офлайн</sub></p>
 
 ---
 
@@ -225,7 +239,7 @@
 | **Працює в браузері** | ✅ | ✅ | ✅ | ✅ | ❌ |
 | **Експорт SRT / VTT** | ✅ | ⚠️ Платно | ✅ | ✅ | ⚠️ Вручну |
 | **Розшифровка з мітками часу** | ✅ | ✅ | ✅ | ✅ | ⚠️ Вручну |
-| **Висновок на пристрої** | ✅ | ❌ | ❌ | ❌ | ✅ |
+| **Виведення на пристрої** | ✅ | ❌ | ❌ | ❌ | ✅ |
 | **99 мов мовлення** | ✅ | ⚠️ Обмежено | ⚠️ Обмежено | ✅ | ✅ |
 | **Whisper Large v3 Turbo** | ✅ | ❌ | ❌ | ❌ | ✅ |
 | **Потрібна установка** | ❌ Ні | ❌ Ні | ❌ Ні | ❌ Ні | ⚠️ Python + GPU |

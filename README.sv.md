@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — gratis ljud och video till text i webbläsaren</h1>
+<h1 align="center">EarScribe — gratis ljud och video till text, transkribering i webbläsaren</h1>
 
 <p align="center">
   <b>Släpp in en ljudfil eller en video, eller spela in från mikrofonen. Få en transkribering med tidsstämplar och undertexter.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — gratis ljud och video till text i webbläsaren. Släpp in MP3, WAV, M4A eller MP4 och få en transkribering med tidsstämplar utan att ladda upp."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/sv/hero.webp" alt="EarScribe — gratis ljud och video till text i webbläsaren. Släpp in MP3, WAV, M4A eller MP4 och få en transkribering med tidsstämplar utan att ladda upp."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Lägg till kön och du kan släppa in en hel mapps filer och gå därifrån; lä
 ### 1. Släpp in en fil eller video, eller spela in — ingen registrering, ingen uppladdning
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Gratis konverterare från ljud och video till text — släpp in MP3, WAV, M4A, MP4, MOV eller MKV i webbläsaren. Ingen registrering, ingen inloggning."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/sv/hero.webp" alt="Gratis konverterare från ljud och video till text — släpp in MP3, WAV, M4A, MP4, MOV eller MKV i webbläsaren. Ingen registrering, ingen inloggning."></a>
 </p>
+
+<p align="center"><sub>Startsidan: släppzon för filer, mikrofonknapp och modellval i samma vy</sub></p>
 
 ### 2. Transkribering med tidsstämplar och vågform — klicka på valfri rad för att hoppa dit
 
@@ -128,11 +130,15 @@ Lägg till kön och du kan släppa in en hel mapps filer och gå därifrån; lä
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="EarScribes transkriberingsresultat — ljud till text med tidsstämplar, vågformsreglage och undertextexport till SRT och VTT med ett klick"></a>
 </p>
 
+<p align="center"><sub>Transkription med tidsstämplar, vågform och exportknappar för SRT och VTT</sub></p>
+
 ### 3. Tre steg: släpp in → välj en Whisper-modell → exportera
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Så fungerar gratis ljud till text på EarScribe — släpp in ljud eller video, välj en Whisper-modell (tiny, base, small eller turbo), läs och exportera transkriberingen"></a>
 </p>
+
+<p align="center"><sub>Tre steg i samma vy: fil, Whisper-modell och färdig text att exportera</sub></p>
 
 ### 4. Varför EarScribe — integritet först, Whisper direkt i webbläsaren
 
@@ -140,11 +146,15 @@ Lägg till kön och du kan släppa in en hel mapps filer och gå därifrån; lä
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScribes funktioner — privat utan uppladdning, WebGPU plus WASM, 99 talade språk som identifieras automatiskt, export till SRT VTT JSON TXT, inferens på enheten"></a>
 </p>
 
+<p align="center"><sub>Funktionsöversikt: lokal bearbetning, automatisk språkidentifiering och exportformat</sub></p>
+
 ### 5. Vilka använder EarScribe — poddare, journalister, studenter, redigerare
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="EarScribes användningsområden — gratis ljud till text för poddare, journalister, studenter, användarstudier, videoundertexter och transkribering av ljudböcker"></a>
 </p>
+
+<p align="center"><sub>Exempel på användning för poddar, intervjuer, studier och undertexter</sub></p>
 
 ### 6. EarScribe mot Otter.ai, Rev, HappyScribe och en lokal Whisper-installation
 
@@ -152,11 +162,15 @@ Lägg till kön och du kan släppa in en hel mapps filer och gå därifrån; lä
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Jämförelse av EarScribe mot Otter.ai, Rev och HappyScribe — gratis obegränsat ljud till text med inferens på enheten och inga minutkostnader"></a>
 </p>
 
+<p align="center"><sub>Jämförelsetabell mot Otter.ai, Rev, HappyScribe och lokal Whisper</sub></p>
+
 ### 7. Vanliga frågor — integritet, format, undertextexport, offlineanvändning
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="Vanliga frågor om gratis tal till text — svar om integritet, MP3 och video till text, undertextexport till SRT och VTT, språk som stöds, offlineanvändning och Whisper i webbläsaren"></a>
 </p>
+
+<p align="center"><sub>Frågor och svar om integritet, format och offlinebruk</sub></p>
 
 ---
 
@@ -231,7 +245,7 @@ Hur står sig EarScribe mot andra sätt att transkribera ljud 2026?
 | **Installation krävs** | ❌ Ingen | ❌ Ingen | ❌ Ingen | ❌ Ingen | ⚠️ Python + GPU |
 | **Kostnad** | $0 | $0–$30/mån | $0.25/min | €0.20/min | $0 (din hårdvara) |
 
-**Där den förlorar:** en lokal installation kan köra en större modell på en snabbare backend än en webbläsarflik, och en betaltjänst lägger till talaretiketter och en teamarbetsyta. EarScribes fördel är att den är gratis, inte kräver något installerat och att ljudet aldrig går någonstans.
+**Där den inte räcker till:** en lokal installation kan köra en större modell på en snabbare backend än en webbläsarflik, och en betaltjänst lägger till talaretiketter och en teamarbetsyta. EarScribes fördel är att den är gratis, inte kräver något installerat och att ljudet aldrig går någonstans.
 
 → **[Prova på earscribe.app](https://earscribe.app)**
 

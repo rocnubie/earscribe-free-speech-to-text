@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — audio i wideo na tekst za darmo, w przeglądarce</h1>
+<h1 align="center">EarScribe — Transkrypcja audio i wideo za darmo, w przeglądarce</h1>
 
 <p align="center">
   <b>Wrzuć plik audio, wideo albo nagraj z mikrofonu. Otrzymasz transkrypcję ze znacznikami czasu i napisy.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — audio i wideo na tekst za darmo w przeglądarce. Wrzuć MP3, WAV, M4A albo MP4 i dostań transkrypcję ze znacznikami czasu bez wysyłania pliku."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/pl/hero.webp" alt="EarScribe — audio i wideo na tekst za darmo w przeglądarce. Wrzuć MP3, WAV, M4A albo MP4 i dostań transkrypcję ze znacznikami czasu bez wysyłania pliku."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Dodaj kolejkę i możesz wrzucić cały folder plików, a potem odejść; dodaj 
 ### 1. Wrzuć plik lub wideo albo nagraj — bez rejestracji, bez wysyłania
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Darmowy konwerter audio i wideo na tekst — wrzuć MP3, WAV, M4A, MP4, MOV lub MKV w przeglądarce. Bez rejestracji, bez logowania."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/pl/hero.webp" alt="Darmowy konwerter audio i wideo na tekst — wrzuć MP3, WAV, M4A, MP4, MOV lub MKV w przeglądarce. Bez rejestracji, bez logowania."></a>
 </p>
+
+<p align="center"><sub>Dodawanie pliku, wideo lub nagrania z mikrofonu — bez rejestracji i bez wysyłania.</sub></p>
 
 ### 2. Transkrypcja ze znacznikami czasu i waveformem — kliknij wiersz, żeby przeskoczyć
 
@@ -128,11 +130,15 @@ Dodaj kolejkę i możesz wrzucić cały folder plików, a potem odejść; dodaj 
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="Wynik transkrypcji EarScribe — audio na tekst ze znacznikami czasu, przewijalnym waveformem i eksportem napisów SRT oraz VTT jednym kliknięciem"></a>
 </p>
 
+<p align="center"><sub>Transkrypcja ze znacznikami czasu dopasowana do przebiegu fali; kliknięcie wiersza wznawia odtwarzanie w tym miejscu.</sub></p>
+
 ### 3. Trzy kroki: wrzuć → wybierz model Whisper → eksportuj
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Jak działa darmowe audio na tekst w EarScribe — wrzuć audio lub wideo, wybierz model Whisper (tiny, base, small lub turbo), przeczytaj i wyeksportuj transkrypcję"></a>
 </p>
+
+<p align="center"><sub>Trzy kroki interfejsu: dodanie pliku, wybór modelu Whisper, eksport wyniku.</sub></p>
 
 ### 4. Dlaczego EarScribe — Whisper w przeglądarce, prywatność przede wszystkim
 
@@ -140,11 +146,15 @@ Dodaj kolejkę i możesz wrzucić cały folder plików, a potem odejść; dodaj 
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="Funkcje EarScribe — bez wysyłania plików, WebGPU plus WASM, 99 języków mówionych wykrywanych automatycznie, eksport SRT VTT JSON TXT, wnioskowanie na urządzeniu"></a>
 </p>
 
+<p align="center"><sub>Strona funkcji: przetwarzanie na urządzeniu, WebGPU i WebAssembly, formaty eksportu.</sub></p>
+
 ### 5. Kto używa EarScribe — podcasterzy, dziennikarze, studenci, montażyści
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="Zastosowania EarScribe — darmowe audio na tekst dla podcasterów, dziennikarzy, studentów, badań użytkowników, napisów do wideo i transkrypcji audiobooków"></a>
 </p>
+
+<p align="center"><sub>Przegląd zastosowań: podcasty, dziennikarstwo, nauka, montaż wideo.</sub></p>
 
 ### 6. EarScribe kontra Otter.ai, Rev, HappyScribe i lokalna instalacja Whisper
 
@@ -152,11 +162,15 @@ Dodaj kolejkę i możesz wrzucić cały folder plików, a potem odejść; dodaj 
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Porównanie EarScribe, Otter.ai, Rev i HappyScribe — darmowe audio na tekst bez limitów, z wnioskowaniem na urządzeniu i bez opłat za minutę"></a>
 </p>
 
+<p align="center"><sub>Tabela porównawcza z usługami w chmurze i lokalną instalacją Whispera.</sub></p>
+
 ### 7. FAQ — prywatność, formaty, eksport napisów, praca offline
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="FAQ mowy na tekst za darmo — odpowiedzi o prywatność, MP3 i wideo na tekst, eksport napisów SRT i VTT, obsługiwane języki, pracę offline i Whispera w przeglądarce"></a>
 </p>
+
+<p align="center"><sub>Sekcja FAQ: prywatność, obsługiwane formaty, eksport napisów, praca offline.</sub></p>
 
 ---
 
@@ -194,7 +208,7 @@ W projekcie możesz przeszukiwać transkrypcję, kliknąć znacznik czasu, żeby
 
 ## 💸 Ile to kosztuje
 
-Za darmo nie znaczy bez ciężaru. To zmierzone rozmiary pobierania dla modelu i backendu, nie szacunki:
+Darmowe nie znaczy bezkosztowe. To zmierzone rozmiary pobierania dla modelu i backendu, nie szacunki:
 
 | Model | WebGPU | WebAssembly | Typowe użycie |
 |---|---:|---:|---|
@@ -302,7 +316,7 @@ Pliki dwugodzinne są obsługiwane, ale to przypadek, w którym decyduje pamię�
 
 Mówienie tego wprost oszczędza wszystkim zmarnowanego przebiegu:
 
-- **Bez rozdzielania mówców.** Dwie osoby w jednym pliku dają płaski tekst bez etykiet „Speaker 1 / Speaker 2”. Strona o wywiadach mówi o tym celowo.
+- **Bez rozdzielania mówców.** Dwie osoby w jednym pliku dają tekst bez oznaczeń mówiących, bez etykiet „Speaker 1 / Speaker 2”. Strona o wywiadach mówi o tym celowo.
 - **Bez tłumaczenia.** Transkrypcja zostaje w języku, w którym mówiono; język interfejsu i język mówiony nie mają ze sobą związku.
 - **Bez napisów na żywo.** Nagrywanie i transkrypcja to osobne kroki — najpierw mikrofon nagrywa, potem plik jest transkrybowany.
 - **Kolejka jest szeregowa i wymaga otwartej karty.** Jeden model i jedno ustawienie języka dla całej partii. Zamknięcie karty ją zatrzymuje.
@@ -356,7 +370,7 @@ Krok transkrypcji tak: po wczytaniu strony i modelu audio jest przetwarzane bez 
 
 <details>
 <summary><b>Czy oznacza, kto mówi?</b></summary><br/>
-Nie. Wynik to płaski tekst ze znacznikami czasu. Diaryzacja mówców nie jest częścią tego builda i aplikacja nie udaje inaczej.
+Nie. Wynik to tekst bez oznaczeń mówiących ze znacznikami czasu. Diaryzacja mówców nie jest częścią tego builda i aplikacja nie udaje inaczej.
 </details>
 
 <details>

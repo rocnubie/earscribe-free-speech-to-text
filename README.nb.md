@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — gratis lyd og video til tekst i nettleseren</h1>
+<h1 align="center">EarScribe — gratis lyd og video til tekst, transkribering i nettleseren</h1>
 
 <p align="center">
   <b>Slipp inn en lydfil eller en video, eller spill inn fra mikrofonen. Få en transkribering med tidsstempler og undertekster.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — gratis lyd og video til tekst i nettleseren. Slipp inn MP3, WAV, M4A eller MP4 og få en transkribering med tidsstempler uten å laste opp."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/nb/hero.webp" alt="EarScribe — gratis lyd og video til tekst i nettleseren. Slipp inn MP3, WAV, M4A eller MP4 og få en transkribering med tidsstempler uten å laste opp."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Legg til køen, og du kan slippe inn filene til en hel mappe og gå din vei; leg
 ### 1. Slipp inn en fil eller video, eller spill inn — ingen registrering, ingen opplasting
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Gratis konvertering fra lyd og video til tekst — slipp inn MP3, WAV, M4A, MP4, MOV eller MKV i nettleseren. Ingen registrering, ingen innlogging."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/nb/hero.webp" alt="Gratis konvertering fra lyd og video til tekst — slipp inn MP3, WAV, M4A, MP4, MOV eller MKV i nettleseren. Ingen registrering, ingen innlogging."></a>
 </p>
+
+<p align="center"><sub>Startsiden: slippsone for filer, mikrofonknapp og modellvalg i samme visning</sub></p>
 
 ### 2. Transkribering med tidsstempler og bølgeform — klikk på en hvilken som helst linje for å hoppe dit
 
@@ -128,11 +130,15 @@ Legg til køen, og du kan slippe inn filene til en hel mappe og gå din vei; leg
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="EarScribes transkriberingsresultat — lyd til tekst med tidsstempler, markør i bølgeformen og eksport av undertekster til SRT og VTT med ett klikk"></a>
 </p>
 
+<p align="center"><sub>Transkripsjon med tidsstempler, bølgeform og eksportknapper for SRT og VTT</sub></p>
+
 ### 3. Tre trinn: slipp inn → velg en Whisper-modell → eksporter
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Slik fungerer gratis lyd til tekst på EarScribe — slipp inn lyd eller video, velg en Whisper-modell (tiny, base, small eller turbo), les og eksporter transkriberingen"></a>
 </p>
+
+<p align="center"><sub>Tre steg i samme visning: fil, Whisper-modell og ferdig tekst klar for eksport</sub></p>
 
 ### 4. Hvorfor EarScribe — personvern først, Whisper rett i nettleseren
 
@@ -140,11 +146,15 @@ Legg til køen, og du kan slippe inn filene til en hel mappe og gå din vei; leg
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScribes funksjoner — privat uten opplasting, WebGPU pluss WASM, 99 talte språk som oppdages automatisk, eksport til SRT VTT JSON TXT, inferens på enheten"></a>
 </p>
 
+<p align="center"><sub>Funksjonsoversikt: lokal behandling, automatisk språkregistrering og eksportformater</sub></p>
+
 ### 5. Hvem bruker EarScribe — podkastere, journalister, studenter, klippere
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="EarScribes bruksområder — gratis lyd til tekst for podkastere, journalister, studenter, brukerundersøkelser, video undertekster og transkribering av lydbøker"></a>
 </p>
+
+<p align="center"><sub>Bruksområder for podkast, intervjuer, studier og undertekster</sub></p>
 
 ### 6. EarScribe mot Otter.ai, Rev, HappyScribe og en lokal Whisper-installasjon
 
@@ -152,11 +162,15 @@ Legg til køen, og du kan slippe inn filene til en hel mappe og gå din vei; leg
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Sammenligning av EarScribe mot Otter.ai, Rev og HappyScribe — gratis ubegrenset lyd til tekst med inferens på enheten og uten minuttpris"></a>
 </p>
 
+<p align="center"><sub>Sammenligningstabell mot Otter.ai, Rev, HappyScribe og lokal Whisper</sub></p>
+
 ### 7. Ofte stilte spørsmål — personvern, formater, underteksteksport, bruk uten nett
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="Ofte stilte spørsmål om gratis tale til tekst — svar om personvern, MP3 og video til tekst, eksport av undertekster til SRT og VTT, språk som støttes, bruk uten nett og Whisper i nettleseren"></a>
 </p>
+
+<p align="center"><sub>Spørsmål og svar om personvern, formater og bruk uten nett</sub></p>
 
 ---
 
@@ -302,7 +316,7 @@ Filer på to timer støttes, men det er her enhetens minne avgjør. Les [hvordan
 
 Å være tydelig her sparer alle for en bortkastet kjøring:
 
-- **Ingen taleratskillelse.** To personer i én fil gir flat tekst uten etikettene «Taler 1 / Taler 2». Intervjusiden sier det med vilje.
+- **Ingen taleratskillelse.** To personer i én fil gir tekst uten taleretiketter som «Taler 1 / Taler 2». Intervjusiden sier det med vilje.
 - **Ingen oversettelse.** Transkriberingen blir på språket som ble talt; grensesnittspråk og talt språk har ingenting med hverandre å gjøre.
 - **Ingen direkteteksting.** Opptak og transkribering er separate trinn — mikrofonen tar opp først, deretter transkriberes filen.
 - **Køen er seriell og krever at fanen er åpen.** Én modell, én språkinnstilling for hele batchen. Lukker du fanen, stopper den.
@@ -356,7 +370,7 @@ Transkriberingstrinnet gjør det: når siden og modellen først er lastet, behan
 
 <details>
 <summary><b>Merker den hvem som snakker?</b></summary><br/>
-Nei. Resultatet er flat tekst med tidskoder. Talerdiarisering er ikke en del av denne utgaven, og appen later ikke som noe annet.
+Nei. Resultatet er tekst uten taleretiketter, med tidskoder. Talerdiarisering er ikke en del av denne utgaven, og appen later ikke som noe annet.
 </details>
 
 <details>

@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — ilmainen ääni ja video tekstiksi selaimessa</h1>
+<h1 align="center">EarScribe — ilmainen puhe tekstiksi ja litterointi selaimessa</h1>
 
 <p align="center">
   <b>Pudota äänitiedosto, video tai tallenne mikrofonista. Saat aikaleimatun litteroinnin ja tekstitykset.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — ilmainen ääni ja video tekstiksi selaimessa. Pudota MP3, WAV, M4A tai MP4 ja saat aikaleimatun litteroinnin ilman lataamista palvelimelle."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/fi/hero.webp" alt="EarScribe — ilmainen ääni ja video tekstiksi selaimessa. Pudota MP3, WAV, M4A tai MP4 ja saat aikaleimatun litteroinnin ilman lataamista palvelimelle."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Kun lisäät jonon, voit pudottaa kokonaisen kansiollisen tiedostoja ja lähteä
 ### 1. Pudota tiedosto tai video tai tallenna — ei rekisteröitymistä, ei lataamista palvelimelle
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Ilmainen ääni- ja video-tekstiksi-muunnin — pudota MP3, WAV, M4A, MP4, MOV tai MKV selaimeen. Ei rekisteröitymistä, ei kirjautumista."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/fi/hero.webp" alt="Ilmainen ääni- ja video-tekstiksi-muunnin — pudota MP3, WAV, M4A, MP4, MOV tai MKV selaimeen. Ei rekisteröitymistä, ei kirjautumista."></a>
 </p>
+
+<p align="center"><sub>Etusivu: tiedostojen pudotusvyöhyke, mikrofonipainike ja mallin valinta samassa näkymässä</sub></p>
 
 ### 2. Aikaleimattu litterointi aaltomuodolla — klikkaa riviä hypätäksesi
 
@@ -128,11 +130,15 @@ Kun lisäät jonon, voit pudottaa kokonaisen kansiollisen tiedostoja ja lähteä
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="EarScriben litterointitulos — aikaleimattu ääni tekstiksi aaltomuotokahvalla ja yhden klikkauksen SRT- ja VTT-tekstitysviennillä"></a>
 </p>
 
+<p align="center"><sub>Litterointi aikaleimoilla, aaltomuoto ja SRT- sekä VTT-viennin painikkeet</sub></p>
+
 ### 3. Kolme vaihetta: pudota → valitse Whisper-malli → vie
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Näin ilmainen ääni tekstiksi toimii EarScribessä — pudota ääni tai video, valitse Whisper-malli (tiny, base, small tai turbo), lue ja vie litterointi"></a>
 </p>
+
+<p align="center"><sub>Kolme vaihetta samassa näkymässä: tiedosto, Whisper-malli ja valmis teksti vietäväksi</sub></p>
 
 ### 4. Miksi EarScribe — yksityisyys ensin, Whisper selaimessa
 
@@ -140,11 +146,15 @@ Kun lisäät jonon, voit pudottaa kokonaisen kansiollisen tiedostoja ja lähteä
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScriben ominaisuudet — yksityinen ilman lataamista, WebGPU plus WASM, 99 puhuttua kieltä tunnistetaan automaattisesti, vienti muotoon SRT VTT JSON TXT, päättely laitteella"></a>
 </p>
 
+<p align="center"><sub>Ominaisuuksien yleiskatsaus: paikallinen käsittely, kielen automaattinen tunnistus ja vientimuodot</sub></p>
+
 ### 5. Kuka EarScribea käyttää — podcastaajat, toimittajat, opiskelijat, editorit
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="EarScriben käyttötapaukset — ilmainen ääni tekstiksi podcastaajille, toimittajille, opiskelijoille, käyttäjätutkimukseen, videotekstitykseen ja äänikirjojen litterointiin"></a>
 </p>
+
+<p align="center"><sub>Käyttöesimerkkejä podcasteihin, haastatteluihin, opiskeluun ja tekstityksiin</sub></p>
 
 ### 6. EarScribe vs Otter.ai, Rev, HappyScribe ja paikallinen Whisper-asennus
 
@@ -152,11 +162,15 @@ Kun lisäät jonon, voit pudottaa kokonaisen kansiollisen tiedostoja ja lähteä
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="EarScribe vs Otter.ai vs Rev vs HappyScribe -vertailu — ilmainen rajoittamaton ääni tekstiksi laitteella tapahtuvalla päättelyllä ja ilman minuuttimaksuja"></a>
 </p>
 
+<p align="center"><sub>Vertailutaulukko: Otter.ai, Rev, HappyScribe ja paikallinen Whisper</sub></p>
+
 ### 7. UKK — yksityisyys, muodot, tekstityksen vienti, offline-käyttö
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="Ilmaisen puhe tekstiksi -UKK — vastauksia yksityisyydestä, MP3 ja video tekstiksi, SRT- ja VTT-tekstitysviennistä, tuetuista kielistä, offline-käytöstä ja Whisperistä selaimessa"></a>
 </p>
+
+<p align="center"><sub>Kysymyksiä ja vastauksia yksityisyydestä, tiedostomuodoista ja offline-käytöstä</sub></p>
 
 ---
 
@@ -231,7 +245,7 @@ Miten EarScribe vertautuu muihin tapoihin litteroida ääntä vuonna 2026?
 | **Vaatii asennuksen** | ❌ Ei mitään | ❌ Ei mitään | ❌ Ei mitään | ❌ Ei mitään | ⚠️ Python + GPU |
 | **Hinta** | $0 | $0–$30/kk | $0.25/min | €0.20/min | $0 (oma laitteisto) |
 
-**Missä se häviää:** paikallinen asennus voi ajaa suurempaa mallia nopeammalla taustajärjestelmällä kuin selainvälilehti, ja maksullinen palvelu lisää puhujamerkinnät ja tiimityötilan. EarScriben etu on, että se on ilmainen, ei vaadi asennuksia ja ääni ei koskaan siirry mihinkään.
+**Missä se ei riitä:** paikallinen asennus voi ajaa suurempaa mallia nopeammalla taustajärjestelmällä kuin selainvälilehti, ja maksullinen palvelu lisää puhujamerkinnät ja tiimityötilan. EarScriben etu on, että se on ilmainen, ei vaadi asennuksia ja ääni ei koskaan siirry mihinkään.
 
 → **[Kokeile osoitteessa earscribe.app](https://earscribe.app)**
 
@@ -321,7 +335,7 @@ Kyllä — ei maksullista tasoa, ei luottokorttia, ei minuuttimaksua, ei päivä
 
 <details>
 <summary><b>Ladataanko ääneni jonnekin?</b></summary><br/>
-Ei. Ääni puretaan välilehdessä ja syötetään Web Workerissa toimivalle Whisper-mallille. Mallin painot ladataan <i>sinun</i> selaimeesi CDN:stä, mikä tarkoittaa, että CDN näkee IP-osoitteesi — mutta tallennetta ei lähetetä. Julkisilla sivuilla on Google AdSense — paitsi persiankielisillä sivuilla, jotka AdSensen käytäntö sulkee pois — sekä evästeetön Plausible-analytiikka; <code>/dashboard</code> ei lataa mainoskoodia.
+Ei. Ääni puretaan välilehdessä ja syötetään Web Workerissa toimivalle Whisper-mallille. Mallin painot ladataan omaan selaimeesi CDN:stä, mikä tarkoittaa, että CDN näkee IP-osoitteesi — mutta tallennetta ei lähetetä. Julkisilla sivuilla on Google AdSense — paitsi persiankielisillä sivuilla, jotka AdSensen käytäntö sulkee pois — sekä evästeetön Plausible-analytiikka; <code>/dashboard</code> ei lataa mainoskoodia.
 </details>
 
 <details>
@@ -473,7 +487,7 @@ Avaa issue tai PR täällä tai kokeile ensin **[earscribe.app](https://earscrib
 
 ## 📄 Lisenssi
 
-Markkinointisivusto ja tämän repon sivut ovat [MIT](LICENSE): ilmaisia henkilökohtaiseen ja kaupalliseen käyttöön. Litterointityöläinen, äänen purkaja ja tekstityksen viejät eivät ole julkaistu täällä, joten tämä repo ei ole täydellinen itse isännöitävä kopio palvelusta.
+Markkinointisivusto ja tämän repon sivut ovat [MIT](LICENSE): ilmaisia henkilökohtaiseen ja kaupalliseen käyttöön. Litterointimoottoria, äänen purkajaa ja tekstityksen viejää ei ole julkaistu täällä, joten tämä repo ei ole täydellinen itse isännöitävä kopio palvelusta.
 
 ---
 

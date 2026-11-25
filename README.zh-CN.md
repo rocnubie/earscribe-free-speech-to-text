@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe —— 在浏览器里把音频和视频转成文字，免费</h1>
+<h1 align="center">EarScribe — 免费音频转文字、视频转文字，就在浏览器里</h1>
 
 <p align="center">
   <b>拖入一个音频文件、一段视频，或者直接对着麦克风录音。拿到带时间戳的文字稿和字幕。</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe —— 在浏览器里免费把音频和视频转成文字。拖入 MP3、WAV、M4A 或 MP4，不用上传就能拿到带时间戳的文字稿。"></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/zh-CN/hero.webp" alt="EarScribe —— 在浏览器里免费把音频和视频转成文字。拖入 MP3、WAV、M4A 或 MP4，不用上传就能拿到带时间戳的文字稿。"></a>
 </p>
 
 <p align="center">
@@ -97,13 +97,13 @@
 | | 能力 | 实际到手的东西 |
 |---|---|---|
 | 🎬 | **音频、视频和麦克风** | 视频容器可以直接拖进来。音轨在本地提取，所以一个 200 MB 的 MP4 同样不会离开你的机器。 |
-| 📝 | **带时间戳的文字稿** | 每条字幕都带开始和结束时间。点一行就能听到那一刻，波形进度条会跟着走。 |
+| 📝 | **带时间戳的文字稿** | 每个字幕条目都带开始和结束时间。点一行就能听到那一刻，波形进度条会跟着走。 |
 | 🔍 | **在文字稿里搜索** | 一个人名、一个数字、一个术语——直接跳到那句话重听，不必把整个文件从头放一遍。 |
 | 🎞️ | **字幕导出** | SRT、WebVTT、纯文本、JSON（带全精度时间码的转录对象），或者直接复制到剪贴板。 |
 | 🧪 | **字幕检查** | 导出之前，先把过长、过快、重复、空白和互相重叠的字幕条目标出来。 |
 | 📚 | **批量队列** | 一次拖进好几个文件，统一选一个模型、一种口语，让队列按顺序跑。随时可以在当前文件跑完后暂停。 |
 | 🗂️ | **项目** | 结果以项目形式保存在浏览器里，位于 `/dashboard` 下：文字稿、字幕、源文件和回收站，之后都能重新打开。 |
-| ✏️ | **字幕编辑** | 改文字、挪动某条字幕的出入点、拆分或删除，然后重新导出。 |
+| ✏️ | **字幕编辑** | 改文字、挪动某个字幕条目的出入点、拆分或删除，然后重新导出。 |
 | 💾 | **备份与恢复** | 把整个工作台导出成一个文件，在另一个浏览器里导入。 |
 | 🔁 | **字幕转换** | SRT ⇄ VTT、SRT → 文本，都在浏览器里完成，不下载模型——这是唯一一个秒开的工具。 |
 | 🆓 | **免费且不限量** | 没有付费档位，没有每日额度，没有按分钟收费，也不需要账号。 |
@@ -119,8 +119,10 @@
 ### 1. 拖文件、拖视频，或者直接录音——不用注册，不用上传
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="免费音频和视频转文字工具 —— 在浏览器里拖入 MP3、WAV、M4A、MP4、MOV 或 MKV。无需注册，无需登录。"></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/zh-CN/hero.webp" alt="免费音频和视频转文字工具 —— 在浏览器里拖入 MP3、WAV、M4A、MP4、MOV 或 MKV。无需注册，无需登录。"></a>
 </p>
+
+<p align="center"><sub>首屏：拖放区域，以及可接受的音频、视频格式一览。</sub></p>
 
 ### 2. 带时间戳的文字稿加波形图——点任意一行跳过去
 
@@ -128,11 +130,15 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="EarScribe 的文字稿输出 —— 带时间戳的音频转文字，配波形进度条，一键导出 SRT 和 VTT 字幕"></a>
 </p>
 
+<p align="center"><sub>文字稿界面：左侧是带时间戳的行，右侧是波形与播放进度。</sub></p>
+
 ### 3. 三步：拖入 → 选一个 Whisper 模型 → 导出
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="EarScribe 上的免费音频转文字流程 —— 拖入音频或视频，选一个 Whisper 模型（tiny、base、small 或 turbo），读文字稿并导出"></a>
 </p>
+
+<p align="center"><sub>三步流程：拖入文件、选择模型、导出结果依次排开。</sub></p>
 
 ### 4. 为什么选择 EarScribe——隐私优先，浏览器原生 Whisper
 
@@ -140,11 +146,15 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScribe 的功能 —— 隐私优先不上传，WebGPU 加 WASM，自动识别 99 种口语，SRT VTT JSON TXT 导出，本地推理"></a>
 </p>
 
+<p align="center"><sub>功能总览：隐私、推理后端、语言和导出格式集中在一屏。</sub></p>
+
 ### 5. 谁在用 EarScribe——播客主、记者、学生、剪辑师
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="EarScribe 的使用场景 —— 为播客主、记者、学生、用户研究、视频字幕和有声书转录提供免费音频转文字"></a>
 </p>
+
+<p align="center"><sub>使用场景：播客、采访、课堂、会议等几类用户的入口。</sub></p>
 
 ### 6. EarScribe 对比 Otter.ai、Rev、HappyScribe 和本地装一份 Whisper
 
@@ -152,11 +162,15 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="EarScribe 对比 Otter.ai、Rev、HappyScribe —— 免费不限量的音频转文字，本地推理，没有按分钟计费"></a>
 </p>
 
+<p align="center"><sub>对比表：EarScribe 与几款云端服务、本地 Whisper 的逐项对照。</sub></p>
+
 ### 7. FAQ——隐私、格式、字幕导出、离线使用
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="免费语音转文字 FAQ —— 关于隐私、MP3 和视频转文字、SRT 与 VTT 字幕导出、支持的语言、离线使用，以及浏览器里的 Whisper 的解答"></a>
 </p>
+
+<p align="center"><sub>常见问题：隐私、格式、字幕导出和离线使用的问答摘要。</sub></p>
 
 ---
 
@@ -186,7 +200,7 @@
 | **文件** | 工作台保存的源媒体，可以按类型筛选：文字稿、字幕、音频。原始音频默认**不**保存。 |
 | **回收站** | 已删除的项目，清空之前都能恢复。 |
 
-在项目里，你可以搜索文字稿、点时间戳回放、编辑字幕条目（文字、出入点、增删）、把过长的字幕拆得短一些、用任意格式重新导出，或者不离开页面就打开播放器。
+在项目里，你可以搜索文字稿、点时间戳回放、编辑字幕条目（文字、出入点、增删）、把过长的字幕条目拆得短一些、用任意格式重新导出，或者不离开页面就打开播放器。
 
 **备份：** 整个工作台可以导出成一个文件（最大 320 MB），在另一个浏览器或另一台机器上导入。既然项目从不离开设备，这个文件就是唯一会移动的那份拷贝——请像对待其他文档备份一样对待它。
 
@@ -194,7 +208,7 @@
 
 ## 💸 成本
 
-免费不等于没有代价。下面是每个模型、每种后端实测的下载体积，不是估算：
+免费，但并非没有成本。下面是每个模型、每种后端实测的下载体积，不是估算：
 
 | 模型 | WebGPU | WebAssembly | 典型用途 |
 |---|---:|---:|---|
@@ -306,7 +320,7 @@ Whisper 自动识别说的是哪种语言：英语、西班牙语、法语、德
 
 ## 🚧 它不做什么
 
-把话说清楚，能省掉所有人的一次白跑：
+下面这些事它做不到：
 
 - **不做说话人分离。** 一个文件里有两个人，出来的就是一段平铺的文字，没有“说话人 1 / 说话人 2”。采访那个页面是故意这么写的。
 - **不翻译。** 文字稿保持原本说的语言；界面语言和口语语言互不相干。

@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — free audio and video to text in the browser. Drop an MP3, WAV, M4A or MP4 and get a timestamped transcript without uploading."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/en/hero.webp" alt="EarScribe — free audio and video to text in the browser. Drop an MP3, WAV, M4A or MP4 and get a timestamped transcript without uploading."></a>
 </p>
 
 <p align="center">
@@ -119,44 +119,51 @@ Add the queue and you can drop a folder's worth of files and walk away; add the 
 ### 1. Drop a file, a video, or record — no sign-up, no upload
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Free audio and video to text converter — drop MP3, WAV, M4A, MP4, MOV or MKV in the browser. No sign-up, no login."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/en/hero.webp" alt="Free audio and video to text converter — drop MP3, WAV, M4A, MP4, MOV or MKV in the browser. No sign-up, no login."></a>
 </p>
+<p align="center"><sub>The first screen: one drop target, a mode switch, and the record button.</sub></p>
 
 ### 2. Timestamped transcript with waveform — click any line to jump
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="EarScribe transcript output — timestamped audio to text with a waveform scrubber and one-click SRT and VTT subtitle export"></a>
 </p>
+<p align="center"><sub>A finished transcript — every line carries a timestamp and replays on click.</sub></p>
 
 ### 3. Three steps: drop → pick a Whisper model → export
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="How free audio to text works on EarScribe — drop audio or video, pick a Whisper model (tiny, base, small or turbo), read and export the transcript"></a>
 </p>
+<p align="center"><sub>Three steps: drop a file, pick a model, read and export.</sub></p>
 
 ### 4. Why EarScribe — privacy-first, browser-native Whisper
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScribe features — private no upload, WebGPU plus WASM, 99 spoken languages auto-detected, SRT VTT JSON TXT export, on-device inference"></a>
 </p>
+<p align="center"><sub>What stays on the device, and what the export menu offers.</sub></p>
 
 ### 5. Who uses EarScribe — podcasters, journalists, students, editors
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="EarScribe use cases — free audio to text for podcasters, journalists, students, user research, video subtitles and audiobook transcription"></a>
 </p>
+<p align="center"><sub>Podcasts, interviews, lectures, meetings, subtitles, long recordings.</sub></p>
 
 ### 6. EarScribe vs Otter.ai, Rev, HappyScribe and a local Whisper install
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="EarScribe vs Otter.ai vs Rev vs HappyScribe comparison — free unlimited audio to text with on-device inference and no per-minute fees"></a>
 </p>
+<p align="center"><sub>Against Otter, Rev, HappyScribe and a local Whisper install.</sub></p>
 
 ### 7. FAQ — privacy, formats, subtitle export, offline use
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="Free speech to text FAQ — answers about privacy, MP3 and video to text, SRT and VTT subtitle export, supported languages, offline use, and Whisper in the browser"></a>
 </p>
+<p align="center"><sub>The questions people ask before the first run.</sub></p>
 
 ---
 

@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — 브라우저에서 오디오와 동영상을 무료로 텍스트로</h1>
+<h1 align="center">EarScribe — 브라우저에서 무료로 음성·영상 텍스트 변환</h1>
 
 <p align="center">
   <b>오디오 파일이나 동영상을 넣거나 마이크로 녹음하세요. 타임스탬프가 붙은 전사문과 자막을 받습니다.</b><br/>
@@ -37,12 +37,12 @@
   <a href="https://earscribe.app"><img alt="라이브 앱" src="https://img.shields.io/badge/Live-earscribe.app-0284c7?style=for-the-badge"></a>
   <a href="https://earscribe.app"><img alt="무료" src="https://img.shields.io/badge/100%25-Free-10b981?style=for-the-badge"></a>
   <a href="https://earscribe.app"><img alt="가입 불필요" src="https://img.shields.io/badge/No-Sign--up-8b5cf6?style=for-the-badge"></a>
-  <a href="https://earscribe.app"><img alt="프라이버시" src="https://img.shields.io/badge/On--device-Private-0f172a?style=for-the-badge"></a>
+  <a href="https://earscribe.app"><img alt="개인정보 보호" src="https://img.shields.io/badge/On--device-Private-0f172a?style=for-the-badge"></a>
   <img alt="MIT 라이선스" src="https://img.shields.io/badge/License-MIT-64748b?style=for-the-badge">
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — 브라우저에서 오디오와 동영상을 무료로 텍스트로. MP3, WAV, M4A, MP4 파일을 넣으면 업로드 없이 타임스탬프가 붙은 전사문을 얻습니다."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/ko/hero.webp" alt="EarScribe — 브라우저에서 오디오와 동영상을 무료로 텍스트로. MP3, WAV, M4A, MP4 파일을 넣으면 업로드 없이 타임스탬프가 붙은 전사문을 얻습니다."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@
 ### 1. 파일, 동영상, 녹음 무엇이든 — 가입도 업로드도 없습니다
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="무료 오디오·동영상 텍스트 변환 — 브라우저에서 MP3, WAV, M4A, MP4, MOV, MKV 파일을 넣으세요. 가입도 로그인도 없습니다."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/ko/hero.webp" alt="무료 오디오·동영상 텍스트 변환 — 브라우저에서 MP3, WAV, M4A, MP4, MOV, MKV 파일을 넣으세요. 가입도 로그인도 없습니다."></a>
 </p>
+
+<p align="center"><sub>첫 화면: 파일을 끌어다 놓는 영역과 지원하는 오디오·동영상 형식 목록.</sub></p>
 
 ### 2. 파형과 함께 보는 타임스탬프 전사문 — 아무 줄이나 클릭해 이동
 
@@ -128,17 +130,23 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="EarScribe 전사 결과 — 파형 스크러버와 원클릭 SRT·VTT 자막 내보내기를 갖춘 타임스탬프 오디오 텍스트 변환"></a>
 </p>
 
+<p align="center"><sub>전사 화면: 왼쪽에 타임스탬프가 붙은 줄, 오른쪽에 파형과 재생 위치.</sub></p>
+
 ### 3. 세 단계: 파일 넣기 → Whisper 모델 선택 → 내보내기
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="EarScribe의 무료 오디오 텍스트 변환 방식 — 오디오나 동영상을 넣고 Whisper 모델(tiny, base, small, turbo)을 고른 뒤 전사문을 읽고 내보냅니다"></a>
 </p>
 
-### 4. EarScribe를 쓰는 이유 — 프라이버시 우선, 브라우저 네이티브 Whisper
+<p align="center"><sub>세 단계 흐름: 파일 넣기, 모델 선택, 내보내기가 차례로 배치된 모습.</sub></p>
+
+### 4. EarScribe를 쓰는 이유 — 개인정보 보호 우선, 브라우저 네이티브 Whisper
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScribe 기능 — 업로드 없는 프라이버시, WebGPU + WASM, 음성 99개 언어 자동 감지, SRT VTT JSON TXT 내보내기, 기기 내 추론"></a>
+  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScribe 기능 — 업로드 없는 개인정보 보호, WebGPU + WASM, 음성 99개 언어 자동 감지, SRT VTT JSON TXT 내보내기, 기기 내 추론"></a>
 </p>
+
+<p align="center"><sub>기능 개요: 개인정보 보호, 추론 백엔드, 언어, 내보내기 형식을 한 화면에 정리.</sub></p>
 
 ### 5. EarScribe를 쓰는 사람 — 팟캐스터, 기자, 학생, 편집자
 
@@ -146,17 +154,23 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="EarScribe 활용 사례 — 팟캐스터, 기자, 학생, 사용자 리서치, 동영상 자막, 오디오북 전사를 위한 무료 오디오 텍스트 변환"></a>
 </p>
 
+<p align="center"><sub>활용 사례: 팟캐스트, 인터뷰, 수업, 회의 등 사용자별 진입점.</sub></p>
+
 ### 6. EarScribe vs Otter.ai, Rev, HappyScribe, 그리고 로컬 Whisper 설치
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="EarScribe vs Otter.ai vs Rev vs HappyScribe 비교 — 기기 내 추론과 분당 요금이 없는 무료 무제한 오디오 텍스트 변환"></a>
 </p>
 
-### 7. FAQ — 프라이버시, 형식, 자막 내보내기, 오프라인 사용
+<p align="center"><sub>비교표: EarScribe와 클라우드 서비스, 로컬 Whisper를 항목별로 맞세운 표.</sub></p>
+
+### 7. FAQ — 개인정보 보호, 형식, 자막 내보내기, 오프라인 사용
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="무료 음성 텍스트 변환 FAQ — 프라이버시, MP3와 동영상 텍스트 변환, SRT·VTT 자막 내보내기, 지원 언어, 오프라인 사용, 브라우저 속 Whisper에 대한 답변"></a>
+  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="무료 음성 텍스트 변환 FAQ — 개인정보 보호, MP3와 동영상 텍스트 변환, SRT·VTT 자막 내보내기, 지원 언어, 오프라인 사용, 브라우저 속 Whisper에 대한 답변"></a>
 </p>
+
+<p align="center"><sub>자주 묻는 질문: 개인정보, 형식, 자막 내보내기, 오프라인 사용에 대한 답변 요약.</sub></p>
 
 ---
 
@@ -302,7 +316,7 @@ YouTube, Premiere, Final Cut, Resolve를 위한 **[오디오 SRT 변환](https:/
 
 여기서 분명히 해 두면 모두의 헛된 실행을 줄일 수 있습니다.
 
-- **화자 분리 없음.** 한 파일에 두 사람이 있으면 "화자 1 / 화자 2" 라벨 없이 평평한 텍스트가 나옵니다. 인터뷰 페이지가 일부러 그렇게 안내합니다.
+- **화자 분리 없음.** 한 파일에 두 사람이 있으면 "화자 1 / 화자 2" 같은 라벨이 없는 텍스트가 나옵니다. 인터뷰 페이지가 일부러 그렇게 안내합니다.
 - **번역 없음.** 전사문은 말한 언어 그대로 남습니다. UI 언어와 음성 언어는 무관합니다.
 - **실시간 자막 없음.** 녹음과 전사는 별개 단계입니다. 마이크로 먼저 녹음하고, 그다음 파일을 전사합니다.
 - **대기열은 직렬이고 탭이 열려 있어야 합니다.** 일괄 전체에 모델 하나, 언어 설정 하나입니다. 탭을 닫으면 멈춥니다.
@@ -356,7 +370,7 @@ YouTube, Premiere, Final Cut, Resolve를 위한 **[오디오 SRT 변환](https:/
 
 <details>
 <summary><b>누가 말하는지 라벨을 붙여 주나요?</b></summary><br/>
-아니요. 출력은 타임코드가 붙은 평평한 텍스트입니다. 화자 분리는 이 빌드에 없고, 앱은 있는 척하지 않습니다.
+아니요. 출력은 타임코드가 붙은, 화자 구분 없는 텍스트입니다. 화자 분리는 이 빌드에 없고, 앱은 있는 척하지 않습니다.
 </details>
 
 <details>

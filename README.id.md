@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — Audio & Video ke Teks Gratis di Browser Anda</h1>
+<h1 align="center">EarScribe — transkripsi audio dan video ke teks, gratis di browser</h1>
 
 <p align="center">
   <b>Jatuhkan berkas audio, video, atau rekam dari mikrofon. Dapatkan transkrip berstempel waktu dan subtitel.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — audio dan video ke teks gratis di browser. Jatuhkan MP3, WAV, M4A, atau MP4 dan dapatkan transkrip berstempel waktu tanpa mengunggah apa pun."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/id/hero.webp" alt="EarScribe — audio dan video ke teks gratis di browser. Jatuhkan MP3, WAV, M4A, atau MP4 dan dapatkan transkrip berstempel waktu tanpa mengunggah apa pun."></a>
 </p>
 
 <p align="center">
@@ -108,7 +108,7 @@ Tambahkan antrean dan Anda bisa menjatuhkan satu folder penuh berkas lalu mening
 | 🔁 | **Konversi subtitel** | SRT ⇄ VTT dan SRT → teks, di dalam browser, tanpa unduhan model — satu-satunya alat di sini yang langsung siap dipakai. |
 | 🆓 | **Gratis dan tanpa batas** | Tanpa tingkatan berbayar, tanpa kuota harian, tanpa biaya per menit, tanpa akun. |
 | 🔒 | **Privat secara arsitektur** | Transkripsi berjalan secara lokal. Halaman publik memuat analitik dan iklan; `/dashboard` bebas iklan. |
-| 🌍 | **27 bahasa antarmuka, 99 bahasa lisan** | Antarmukanya diterjemahkan ke 27 lokal; Whisper mendeteksi bahasa lisan secara otomatis. |
+| 🌍 | **27 bahasa antarmuka, 99 bahasa lisan** | Antarmukanya diterjemahkan ke 27 bahasa antarmuka; Whisper mendeteksi bahasa lisan secara otomatis. |
 
 ---
 
@@ -119,8 +119,10 @@ Tambahkan antrean dan Anda bisa menjatuhkan satu folder penuh berkas lalu mening
 ### 1. Jatuhkan berkas, video, atau rekam — tanpa pendaftaran, tanpa unggahan
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Konverter audio dan video ke teks gratis — jatuhkan MP3, WAV, M4A, MP4, MOV, atau MKV di browser. Tanpa pendaftaran, tanpa login."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/id/hero.webp" alt="Konverter audio dan video ke teks gratis — jatuhkan MP3, WAV, M4A, MP4, MOV, atau MKV di browser. Tanpa pendaftaran, tanpa login."></a>
 </p>
+
+<p align="center"><sub>Halaman utama: area tarik-lepas berkas, tombol rekam mikrofon, dan pilihan model dalam satu tampilan</sub></p>
 
 ### 2. Transkrip berstempel waktu dengan bentuk gelombang — klik baris mana pun untuk melompat
 
@@ -128,11 +130,15 @@ Tambahkan antrean dan Anda bisa menjatuhkan satu folder penuh berkas lalu mening
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="Keluaran transkrip EarScribe — audio ke teks berstempel waktu dengan penggeser bentuk gelombang dan ekspor subtitel SRT serta VTT sekali klik"></a>
 </p>
 
+<p align="center"><sub>Transkrip dengan label waktu, bentuk gelombang, serta tombol ekspor SRT dan VTT</sub></p>
+
 ### 3. Tiga langkah: jatuhkan → pilih model Whisper → ekspor
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Cara kerja audio ke teks gratis di EarScribe — jatuhkan audio atau video, pilih model Whisper (tiny, base, small, atau turbo), baca dan ekspor transkripnya"></a>
 </p>
+
+<p align="center"><sub>Tiga langkah dalam satu tampilan: berkas, model Whisper, dan teks siap diekspor</sub></p>
 
 ### 4. Mengapa EarScribe — Whisper native browser yang mengutamakan privasi
 
@@ -140,11 +146,15 @@ Tambahkan antrean dan Anda bisa menjatuhkan satu folder penuh berkas lalu mening
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="Fitur EarScribe — privat tanpa unggahan, WebGPU plus WASM, 99 bahasa lisan terdeteksi otomatis, ekspor SRT VTT JSON TXT, inferensi di perangkat"></a>
 </p>
 
+<p align="center"><sub>Ringkasan fitur: pemrosesan lokal, deteksi bahasa otomatis, dan format ekspor</sub></p>
+
 ### 5. Siapa yang memakai EarScribe — podcaster, jurnalis, mahasiswa, editor
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="Kasus penggunaan EarScribe — audio ke teks gratis untuk podcaster, jurnalis, mahasiswa, riset pengguna, subtitel video, dan transkripsi buku audio"></a>
 </p>
+
+<p align="center"><sub>Contoh penggunaan untuk podcast, wawancara, studi, dan takarir video</sub></p>
 
 ### 6. EarScribe vs Otter.ai, Rev, HappyScribe, dan instalasi Whisper lokal
 
@@ -152,11 +162,15 @@ Tambahkan antrean dan Anda bisa menjatuhkan satu folder penuh berkas lalu mening
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Perbandingan EarScribe vs Otter.ai vs Rev vs HappyScribe — audio ke teks gratis tanpa batas dengan inferensi di perangkat dan tanpa biaya per menit"></a>
 </p>
 
+<p align="center"><sub>Tabel perbandingan dengan Otter.ai, Rev, HappyScribe, dan Whisper lokal</sub></p>
+
 ### 7. FAQ — privasi, format, ekspor subtitel, penggunaan offline
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="FAQ ucapan ke teks gratis — jawaban tentang privasi, MP3 dan video ke teks, ekspor subtitel SRT dan VTT, bahasa yang didukung, penggunaan offline, dan Whisper di browser"></a>
 </p>
+
+<p align="center"><sub>Tanya jawab tentang privasi, format berkas, dan penggunaan offline</sub></p>
 
 ---
 
@@ -194,7 +208,7 @@ Di dalam proyek Anda bisa mencari di dalam transkrip, mengklik stempel waktu unt
 
 ## 💸 Berapa biayanya
 
-Gratis bukan berarti tanpa beban. Berikut ukuran unduhan terukur per model dan per backend, bukan perkiraan:
+Gratis bukan berarti tanpa biaya. Berikut ukuran unduhan terukur per model dan per backend, bukan perkiraan:
 
 | Model | WebGPU | WebAssembly | Penggunaan umum |
 |---|---:|---:|---|
@@ -262,7 +276,7 @@ Perekaman berlangsung di tab dengan MediaRecorder. Rekaman ditranskripsi persis 
 
 Whisper mendeteksi bahasa lisan secara otomatis: Inggris, Spanyol, Prancis, Jerman, Italia, Portugis, Rusia, Jepang, Korea, Mandarin (Sederhana dan Tradisional), Arab, Hindi, Turki, Belanda, Polandia, Indonesia, Swedia, Norwegia, Denmark, Finlandia, Ceko, Hungaria, Yunani, Ibrani, Thai, Vietnam, dan 70+ lainnya.
 
-Antarmukanya diterjemahkan ke 27 lokal. Bahasa Inggris berada di `/`, 26 lainnya memakai prefiks:
+Antarmukanya diterjemahkan ke 27 bahasa antarmuka. Bahasa Inggris berada di `/`, 26 lainnya memakai prefiks:
 
 | | | | |
 |---|---|---|---|
@@ -302,7 +316,7 @@ Berkas dua jam didukung, tetapi justru di sinilah memori perangkat menentukan. B
 
 Menjadi jelas di sini menghemat satu percobaan sia-sia untuk semua orang:
 
-- **Tanpa pemisahan pembicara.** Dua orang dalam satu berkas menghasilkan teks datar tanpa label "Pembicara 1 / Pembicara 2". Halaman wawancara menyatakannya dengan sengaja.
+- **Tanpa pemisahan pembicara.** Dua orang dalam satu berkas menghasilkan teks tanpa label pembicara seperti "Pembicara 1 / Pembicara 2". Halaman wawancara menyatakannya dengan sengaja.
 - **Tanpa terjemahan.** Transkrip tetap dalam bahasa yang diucapkan; bahasa antarmuka dan bahasa lisan tidak saling berkaitan.
 - **Tanpa subtitel langsung.** Perekaman dan transkripsi adalah dua langkah terpisah — mikrofon merekam dulu, baru berkasnya ditranskripsi.
 - **Antrean bersifat serial dan butuh tab tetap terbuka.** Satu model, satu pengaturan bahasa untuk seluruh batch. Menutup tab menghentikannya.
@@ -356,7 +370,7 @@ Langkah transkripsinya bisa: setelah halaman dan model dimuat, audio diproses ta
 
 <details>
 <summary><b>Apakah ia memberi label siapa yang berbicara?</b></summary><br/>
-Tidak. Keluarannya adalah teks datar dengan kode waktu. Diarisasi pembicara bukan bagian dari versi ini, dan aplikasinya tidak berpura-pura sebaliknya.
+Tidak. Keluarannya adalah teks tanpa label pembicara dengan kode waktu. Diarisasi pembicara bukan bagian dari versi ini, dan aplikasinya tidak berpura-pura sebaliknya.
 </details>
 
 <details>
@@ -384,7 +398,7 @@ Jatuhkan MP3-nya ke <a href="https://earscribe.app/mp3-to-text">earscribe.app/mp
 - **[@huggingface/transformers v3](https://huggingface.co/docs/transformers.js)** — ONNX Runtime Web, WebGPU dengan cadangan WebAssembly
 - **[OpenAI Whisper](https://github.com/openai/whisper)** — tiny, base, small, dan large-v3-turbo, terkuantisasi ONNX
 - **[mediabunny](https://mediabunny.dev)** + **WebCodecs** — pemisahan video dan ekstraksi audio di dalam tab
-- **[next-intl](https://next-intl.dev)** — 27 lokal, satu katalog pesan per bahasa
+- **[next-intl](https://next-intl.dev)** — 27 bahasa antarmuka, satu katalog pesan per bahasa
 - **[Tailwind CSS v4](https://tailwindcss.com)**
 - **[Cloudflare Pages](https://pages.cloudflare.com)** untuk hosting, dengan beberapa Pages Functions (host model, endpoint umpan balik)
 
@@ -444,7 +458,7 @@ Lingkungan dan binding:
 
 ## 🌐 Menambahkan bahasa baru
 
-1. Tambahkan kode lokal ke akhir `ALL_LOCALE_NAMES` di [`i18n/locale.ts`](i18n/locale.ts).
+1. Tambahkan kode bahasa ke akhir `ALL_LOCALE_NAMES` di [`i18n/locale.ts`](i18n/locale.ts).
 2. Tambahkan `messages/<code>.json` di samping `en.json`, diterjemahkan sepenuhnya.
 3. Jalankan `pnpm i18n:gate` — routing, sitemap, hreflang, dan metadata OG akan mengenali lokal itu secara otomatis, tetapi satu kunci yang hilang akan menggagalkan pemeriksaan.
 

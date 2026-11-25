@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — Gratis lyd og video til tekst i din browser</h1>
+<h1 align="center">EarScribe — gratis lyd til tekst, transskription i din browser</h1>
 
 <p align="center">
   <b>Slip en lydfil, en video eller en optagelse fra mikrofonen. Få en transskription med tidsstempler og undertekster.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — gratis lyd og video til tekst i browseren. Slip en MP3, WAV, M4A eller MP4 og få en transskription med tidsstempler uden at uploade."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/da/hero.webp" alt="EarScribe — gratis lyd og video til tekst i browseren. Slip en MP3, WAV, M4A eller MP4 og få en transskription med tidsstempler uden at uploade."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Tilføj køen, og du kan slippe en hel mappe med filer og gå din vej; tilføj a
 ### 1. Slip en fil, en video, eller optag — ingen tilmelding, ingen upload
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Gratis lyd- og video-til-tekst-konvertering — slip MP3, WAV, M4A, MP4, MOV eller MKV i browseren. Ingen tilmelding, intet login."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/da/hero.webp" alt="Gratis lyd- og video-til-tekst-konvertering — slip MP3, WAV, M4A, MP4, MOV eller MKV i browseren. Ingen tilmelding, intet login."></a>
 </p>
+
+<p align="center"><sub>Forsiden: slipzone til filer, mikrofoneknap og modelvalg i samme visning</sub></p>
 
 ### 2. Transskription med tidsstempler og bølgeform — klik på en linje for at springe
 
@@ -128,11 +130,15 @@ Tilføj køen, og du kan slippe en hel mappe med filer og gå din vej; tilføj a
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="EarScribe-transskription — lyd til tekst med tidsstempler, bølgeformslinjal og eksport af SRT- og VTT-undertekster med ét klik"></a>
 </p>
 
+<p align="center"><sub>Transskription med tidsstempler, bølgeform og eksportknapper til SRT og VTT</sub></p>
+
 ### 3. Tre trin: slip → vælg en Whisper-model → eksportér
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Sådan fungerer gratis lyd til tekst på EarScribe — slip lyd eller video, vælg en Whisper-model (tiny, base, small eller turbo), læs og eksportér transskriptionen"></a>
 </p>
+
+<p align="center"><sub>Tre trin i samme visning: fil, Whisper-model og færdig tekst klar til eksport</sub></p>
 
 ### 4. Hvorfor EarScribe — privatliv først, Whisper indbygget i browseren
 
@@ -140,11 +146,15 @@ Tilføj køen, og du kan slippe en hel mappe med filer og gå din vej; tilføj a
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScribe-funktioner — privat uden upload, WebGPU plus WASM, 99 talte sprog registreres automatisk, eksport til SRT VTT JSON TXT, inferens på enheden"></a>
 </p>
 
+<p align="center"><sub>Funktionsoversigt: lokal behandling, automatisk sprogregistrering og eksportformater</sub></p>
+
 ### 5. Hvem bruger EarScribe — podcastværter, journalister, studerende, redaktører
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="EarScribe-brugsscenarier — gratis lyd til tekst for podcastværter, journalister, studerende, brugerundersøgelser, videoundertekster og transskription af lydbøger"></a>
 </p>
+
+<p align="center"><sub>Eksempler på brug til podcast, interviews, studier og undertekster</sub></p>
 
 ### 6. EarScribe vs Otter.ai, Rev, HappyScribe og en lokal Whisper-installation
 
@@ -152,11 +162,15 @@ Tilføj køen, og du kan slippe en hel mappe med filer og gå din vej; tilføj a
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Sammenligning af EarScribe vs Otter.ai vs Rev vs HappyScribe — gratis ubegrænset lyd til tekst med inferens på enheden og ingen betaling pr. minut"></a>
 </p>
 
+<p align="center"><sub>Sammenligningstabel mod Otter.ai, Rev, HappyScribe og lokal Whisper</sub></p>
+
 ### 7. FAQ — privatliv, formater, eksport af undertekster, offline brug
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="FAQ om gratis tale til tekst — svar om privatliv, MP3 og video til tekst, eksport af SRT- og VTT-undertekster, understøttede sprog, offline brug og Whisper i browseren"></a>
 </p>
+
+<p align="center"><sub>Spørgsmål og svar om privatliv, formater og offline brug</sub></p>
 
 ---
 
@@ -302,7 +316,7 @@ Filer på to timer understøttes, men det er her, enhedens hukommelse afgør. L�
 
 At være tydelig her sparer alle en spildt kørsel:
 
-- **Ingen taleropdeling.** To personer i én fil giver flad tekst uden "Taler 1 / Taler 2"-etiketter. Interview-siden siger det med vilje.
+- **Ingen taleropdeling.** To personer i én fil giver tekst uden taleretiketter som "Taler 1 / Taler 2". Interview-siden siger det med vilje.
 - **Ingen oversættelse.** Transskriptionen bliver på det sprog, der blev talt; grænsefladesprog og talt sprog har intet med hinanden at gøre.
 - **Ingen live-undertekster.** Optagelse og transskription er separate trin — mikrofonen optager først, derefter transskriberes filen.
 - **Køen er seriel og kræver, at vinduet er åbent.** Én model, én sprogindstilling for hele batchen. Lukker du vinduet, stopper den.
@@ -356,7 +370,7 @@ Transskriptionstrinnet gør: når siden og modellen er indlæst, behandles lyden
 
 <details>
 <summary><b>Markerer den, hvem der taler?</b></summary><br/>
-Nej. Outputtet er flad tekst med tidskoder. Taleropdeling er ikke en del af denne version, og appen foregiver ikke andet.
+Nej. Outputtet er tekst uden taleretiketter med tidskoder. Taleropdeling er ikke en del af denne version, og appen foregiver ikke andet.
 </details>
 
 <details>

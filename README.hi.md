@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — ब्राउज़र में ऑडियो और वीडियो से टेक्स्ट, मुफ़्त</h1>
+<h1 align="center">EarScribe — ऑडियो और वीडियो से टेक्स्ट, ब्राउज़र में मुफ़्त ट्रांसक्रिप्शन, हिंदी सहित</h1>
 
 <p align="center">
   <b>ऑडियो फ़ाइल, वीडियो डालें या माइक्रोफ़ोन से रिकॉर्ड करें। टाइमस्टैम्प वाला ट्रांसक्रिप्ट और सबटाइटल पाएँ।</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — ब्राउज़र में ऑडियो और वीडियो से टेक्स्ट मुफ़्त। MP3, WAV, M4A या MP4 डालें और बिना अपलोड किए टाइमस्टैम्प वाला ट्रांसक्रिप्ट पाएँ।"></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/hi/hero.webp" alt="EarScribe — ब्राउज़र में ऑडियो और वीडियो से टेक्स्ट मुफ़्त। MP3, WAV, M4A या MP4 डालें और बिना अपलोड किए टाइमस्टैम्प वाला ट्रांसक्रिप्ट पाएँ।"></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@
 ### 1. फ़ाइल डालें, वीडियो डालें, या रिकॉर्ड करें — न साइन-अप, न अपलोड
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="मुफ़्त ऑडियो और वीडियो से टेक्स्ट कन्वर्टर — ब्राउज़र में MP3, WAV, M4A, MP4, MOV या MKV डालें। न साइन-अप, न लॉगिन।"></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/hi/hero.webp" alt="मुफ़्त ऑडियो और वीडियो से टेक्स्ट कन्वर्टर — ब्राउज़र में MP3, WAV, M4A, MP4, MOV या MKV डालें। न साइन-अप, न लॉगिन।"></a>
 </p>
+
+<p align="center"><sub>पहली स्क्रीन: फ़ाइल छोड़ने की जगह और समर्थित ऑडियो-वीडियो फ़ॉर्मैट की सूची।</sub></p>
 
 ### 2. टाइमस्टैम्प वाला ट्रांसक्रिप्ट और वेवफ़ॉर्म — किसी भी पंक्ति पर क्लिक करके उस जगह पहुँचें
 
@@ -128,11 +130,15 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="EarScribe का ट्रांसक्रिप्ट आउटपुट — टाइमस्टैम्प के साथ ऑडियो से टेक्स्ट, वेवफ़ॉर्म स्क्रबर और एक-क्लिक में SRT तथा VTT सबटाइटल एक्सपोर्ट"></a>
 </p>
 
+<p align="center"><sub>ट्रांसक्रिप्ट स्क्रीन: बाईं ओर टाइमस्टैम्प वाली पंक्तियाँ, दाईं ओर वेवफ़ॉर्म और प्लेबैक स्थिति।</sub></p>
+
 ### 3. तीन कदम: फ़ाइल डालें → Whisper मॉडल चुनें → एक्सपोर्ट करें
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="EarScribe पर मुफ़्त ऑडियो से टेक्स्ट कैसे होता है — ऑडियो या वीडियो डालें, Whisper मॉडल चुनें (tiny, base, small या turbo), ट्रांसक्रिप्ट पढ़ें और एक्सपोर्ट करें"></a>
 </p>
+
+<p align="center"><sub>तीन चरण: फ़ाइल डालना, मॉडल चुनना और निर्यात करना क्रम से दिखाया गया है।</sub></p>
 
 ### 4. EarScribe क्यों — निजता पहले, ब्राउज़र में ही Whisper
 
@@ -140,11 +146,15 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScribe की विशेषताएँ — निजी और बिना अपलोड, WebGPU के साथ WASM, 99 बोली जाने वाली भाषाएँ अपने-आप पहचानी जाती हैं, SRT VTT JSON TXT एक्सपोर्ट, डिवाइस पर ही प्रोसेसिंग"></a>
 </p>
 
+<p align="center"><sub>सुविधाओं का अवलोकन: गोपनीयता, इन्फ़रेंस बैकएंड, भाषाएँ और निर्यात फ़ॉर्मैट एक ही स्क्रीन पर।</sub></p>
+
 ### 5. EarScribe कौन इस्तेमाल करता है — पॉडकास्टर, पत्रकार, छात्र, एडिटर
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="EarScribe के उपयोग — पॉडकास्टर, पत्रकार, छात्र, यूज़र रिसर्च, वीडियो सबटाइटल और ऑडियोबुक ट्रांसक्रिप्शन के लिए मुफ़्त ऑडियो से टेक्स्ट"></a>
 </p>
+
+<p align="center"><sub>उपयोग के उदाहरण: पॉडकास्ट, इंटरव्यू, क्लास और मीटिंग जैसे अलग-अलग उपयोगकर्ताओं के प्रवेश बिंदु।</sub></p>
 
 ### 6. EarScribe बनाम Otter.ai, Rev, HappyScribe और लोकल Whisper इंस्टॉल
 
@@ -152,11 +162,15 @@
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="EarScribe बनाम Otter.ai बनाम Rev बनाम HappyScribe तुलना — डिवाइस पर प्रोसेसिंग और बिना प्रति-मिनट शुल्क के साथ मुफ़्त असीमित ऑडियो से टेक्स्ट"></a>
 </p>
 
+<p align="center"><sub>तुलना तालिका: EarScribe की क्लाउड सेवाओं और लोकल Whisper से मद-दर-मद तुलना।</sub></p>
+
 ### 7. अक्सर पूछे जाने वाले प्रश्न — निजता, फ़ॉर्मैट, सबटाइटल एक्सपोर्ट, ऑफ़लाइन उपयोग
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="मुफ़्त स्पीच-टू-टेक्स्ट के सवाल-जवाब — निजता, MP3 और वीडियो से टेक्स्ट, SRT और VTT सबटाइटल एक्सपोर्ट, समर्थित भाषाएँ, ऑफ़लाइन उपयोग और ब्राउज़र में Whisper"></a>
 </p>
+
+<p align="center"><sub>सामान्य प्रश्न: गोपनीयता, फ़ॉर्मैट, सबटाइटल निर्यात और ऑफ़लाइन उपयोग के उत्तरों का सार।</sub></p>
 
 ---
 

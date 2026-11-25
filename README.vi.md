@@ -26,11 +26,11 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — Âm thanh và video miễn phí thành văn bản ngay trên trình duyệt</h1>
+<h1 align="center">EarScribe — chuyển âm thanh và video thành văn bản miễn phí trên trình duyệt</h1>
 
 <p align="center">
   <b>Thả một tệp âm thanh, một video hoặc ghi trực tiếp từ micro. Nhận bản phiên âm có mốc thời gian và phụ đề.</b><br/>
-  <sub>Whisper chạy trên chính thiết bị của bạn qua WebGPU hoặc WebAssembly — bản ghi không bao giờ được tải lên.</sub>
+  <sub>Whisper chạy trên chính máy của bạn qua WebGPU hoặc WebAssembly — bản ghi không bao giờ được tải lên.</sub>
 </p>
 
 <p align="center">
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — âm thanh và video miễn phí thành văn bản trên trình duyệt. Thả một tệp MP3, WAV, M4A hoặc MP4 và nhận bản phiên âm có mốc thời gian mà không cần tải lên."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/vi/hero.webp" alt="EarScribe — âm thanh và video miễn phí thành văn bản trên trình duyệt. Thả một tệp MP3, WAV, M4A hoặc MP4 và nhận bản phiên âm có mốc thời gian mà không cần tải lên."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Thêm hàng đợi và bạn có thể thả cả một thư mục tệp rồi r
 ### 1. Thả một tệp, một video hoặc ghi âm — không đăng ký, không tải lên
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Công cụ chuyển âm thanh và video thành văn bản miễn phí — thả MP3, WAV, M4A, MP4, MOV hoặc MKV ngay trong trình duyệt. Không đăng ký, không đăng nhập."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/vi/hero.webp" alt="Công cụ chuyển âm thanh và video thành văn bản miễn phí — thả MP3, WAV, M4A, MP4, MOV hoặc MKV ngay trong trình duyệt. Không đăng ký, không đăng nhập."></a>
 </p>
+
+<p align="center"><sub>Màn hình đầu: vùng kéo thả tệp và danh sách định dạng âm thanh, video được hỗ trợ.</sub></p>
 
 ### 2. Bản phiên âm có mốc thời gian kèm dạng sóng — nhấp vào bất kỳ dòng nào để nhảy
 
@@ -128,11 +130,15 @@ Thêm hàng đợi và bạn có thể thả cả một thư mục tệp rồi r
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="Kết quả phiên âm của EarScribe — âm thanh thành văn bản có mốc thời gian, thanh tua dạng sóng và xuất phụ đề SRT, VTT chỉ với một cú nhấp"></a>
 </p>
 
+<p align="center"><sub>Màn hình bản ghi: bên trái là các dòng có mốc thời gian, bên phải là dạng sóng và vị trí phát.</sub></p>
+
 ### 3. Ba bước: thả → chọn mô hình Whisper → xuất
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Cách EarScribe chuyển âm thanh thành văn bản miễn phí — thả âm thanh hoặc video, chọn mô hình Whisper (tiny, base, small hoặc turbo), đọc và xuất bản phiên âm"></a>
 </p>
+
+<p align="center"><sub>Ba bước: kéo tệp vào, chọn mô hình và xuất kết quả xếp theo thứ tự.</sub></p>
 
 ### 4. Vì sao chọn EarScribe — ưu tiên riêng tư, Whisper gốc trình duyệt
 
@@ -140,11 +146,15 @@ Thêm hàng đợi và bạn có thể thả cả một thư mục tệp rồi r
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="Tính năng EarScribe — riêng tư không tải lên, WebGPU cộng WASM, 99 ngôn ngữ nói tự động nhận diện, xuất SRT VTT JSON TXT, suy luận trên thiết bị"></a>
 </p>
 
+<p align="center"><sub>Tổng quan tính năng: quyền riêng tư, backend suy luận, ngôn ngữ và định dạng xuất gói trong một màn hình.</sub></p>
+
 ### 5. Ai dùng EarScribe — người làm podcast, nhà báo, sinh viên, biên tập viên
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="Các trường hợp sử dụng EarScribe — âm thanh miễn phí thành văn bản cho người làm podcast, nhà báo, sinh viên, nghiên cứu người dùng, phụ đề video và phiên âm sách nói"></a>
 </p>
+
+<p align="center"><sub>Trường hợp sử dụng: lối vào riêng cho podcast, phỏng vấn, lớp học và cuộc họp.</sub></p>
 
 ### 6. EarScribe so với Otter.ai, Rev, HappyScribe và một bản cài Whisper cục bộ
 
@@ -152,11 +162,15 @@ Thêm hàng đợi và bạn có thể thả cả một thư mục tệp rồi r
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="So sánh EarScribe với Otter.ai, Rev và HappyScribe — âm thanh thành văn bản miễn phí không giới hạn với suy luận trên thiết bị và không phí theo phút"></a>
 </p>
 
+<p align="center"><sub>Bảng so sánh: EarScribe đối chiếu từng mục với các dịch vụ đám mây và Whisper chạy cục bộ.</sub></p>
+
 ### 7. Câu hỏi thường gặp — quyền riêng tư, định dạng, xuất phụ đề, dùng ngoại tuyến
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="Câu hỏi thường gặp về chuyển giọng nói thành văn bản miễn phí — giải đáp về quyền riêng tư, MP3 và video thành văn bản, xuất phụ đề SRT và VTT, ngôn ngữ được hỗ trợ, dùng ngoại tuyến và Whisper trong trình duyệt"></a>
 </p>
+
+<p align="center"><sub>Câu hỏi thường gặp: tóm tắt câu trả lời về quyền riêng tư, định dạng, xuất phụ đề và dùng ngoại tuyến.</sub></p>
 
 ---
 
@@ -316,7 +330,7 @@ Nói rõ ở đây giúp mọi người tránh một lần chạy vô ích:
 
 <details>
 <summary><b>EarScribe có thực sự miễn phí, không giới hạn không?</b></summary><br/>
-Có — không gói trả phí, không thẻ tín dụng, không phí theo phút, không hạn mức hàng ngày hay hàng tháng, không tài khoản. Việc tính toán chạy trên phần cứng của chính bạn, nên không có hóa đơn đám mây để chuyển tiếp. Có giới hạn 1 GiB mỗi tệp, và bộ nhớ thiết bị của bạn quyết định điều gì thực sự hoàn tất.
+Có — không gói trả phí, không thẻ tín dụng, không phí theo phút, không hạn mức hàng ngày hay hàng tháng, không tài khoản. Việc tính toán chạy trên phần cứng của chính bạn, nên không có hóa đơn đám mây để chuyển tiếp. Có giới hạn 1 GiB mỗi tệp, và bộ nhớ máy của bạn quyết định điều gì thực sự hoàn tất.
 </details>
 
 <details>

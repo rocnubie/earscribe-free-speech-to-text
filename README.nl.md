@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — gratis audio en video naar tekst in je browser</h1>
+<h1 align="center">EarScribe — gratis audio en video naar tekst, transcriptie in je browser</h1>
 
 <p align="center">
   <b>Sleep een audiobestand of video naar binnen, of neem op met de microfoon. Je krijgt een transcript met tijdstempels en ondertitels.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — gratis audio en video naar tekst in de browser. Sleep een MP3, WAV, M4A of MP4 naar binnen en krijg een transcript met tijdstempels zonder iets te uploaden."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/nl/hero.webp" alt="EarScribe — gratis audio en video naar tekst in de browser. Sleep een MP3, WAV, M4A of MP4 naar binnen en krijg een transcript met tijdstempels zonder iets te uploaden."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Met de wachtrij sleep je een hele map vol bestanden naar binnen en loop je weg; 
 ### 1. Sleep een bestand of video naar binnen, of neem op — geen account, geen upload
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Gratis audio en video naar tekst — sleep MP3, WAV, M4A, MP4, MOV of MKV in de browser. Geen account, geen login."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/nl/hero.webp" alt="Gratis audio en video naar tekst — sleep MP3, WAV, M4A, MP4, MOV of MKV in de browser. Geen account, geen login."></a>
 </p>
+
+<p align="center"><sub>Een bestand, een video of een microfoonopname toevoegen — zonder registratie en zonder upload.</sub></p>
 
 ### 2. Transcript met tijdstempels en golfvorm — klik op een regel om te springen
 
@@ -128,11 +130,15 @@ Met de wachtrij sleep je een hele map vol bestanden naar binnen en loop je weg; 
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="Transcriptuitvoer van EarScribe — audio naar tekst met tijdstempels, een versleepbare golfvorm en ondertitel-export naar SRT en VTT met één klik"></a>
 </p>
 
+<p align="center"><sub>Transcript met tijdstempels langs de golfvorm; klik op een regel om dat moment opnieuw te beluisteren.</sub></p>
+
 ### 3. Drie stappen: slepen → een Whisper-model kiezen → exporteren
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Hoe gratis audio naar tekst werkt op EarScribe — sleep audio of video naar binnen, kies een Whisper-model (tiny, base, small of turbo), lees en exporteer het transcript"></a>
 </p>
+
+<p align="center"><sub>De drie stappen van de interface: media toevoegen, een Whisper-model kiezen, het resultaat exporteren.</sub></p>
 
 ### 4. Waarom EarScribe — Whisper in de browser, privacy voorop
 
@@ -140,11 +146,15 @@ Met de wachtrij sleep je een hele map vol bestanden naar binnen en loop je weg; 
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="Functies van EarScribe — geen upload, WebGPU plus WASM, 99 gesproken talen automatisch herkend, export naar SRT VTT JSON TXT, inferentie op het apparaat"></a>
 </p>
 
+<p align="center"><sub>Functiepagina: verwerking op het apparaat, WebGPU en WebAssembly, exportformaten.</sub></p>
+
 ### 5. Wie EarScribe gebruikt — podcasters, journalisten, studenten, editors
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="Toepassingen van EarScribe — gratis audio naar tekst voor podcasters, journalisten, studenten, gebruikersonderzoek, video-ondertitels en audioboektranscriptie"></a>
 </p>
+
+<p align="center"><sub>Overzicht van toepassingen: podcast, journalistiek, studie, videomontage.</sub></p>
 
 ### 6. EarScribe vs Otter.ai, Rev, HappyScribe en een lokale Whisper-installatie
 
@@ -152,11 +162,15 @@ Met de wachtrij sleep je een hele map vol bestanden naar binnen en loop je weg; 
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Vergelijking EarScribe vs Otter.ai vs Rev vs HappyScribe — gratis onbeperkt audio naar tekst met inferentie op het apparaat en geen kosten per minuut"></a>
 </p>
 
+<p align="center"><sub>Vergelijkingstabel met clouddiensten en een lokale Whisper-installatie.</sub></p>
+
 ### 7. FAQ — privacy, formaten, ondertitels exporteren, offline gebruik
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="FAQ over gratis spraak naar tekst — antwoorden over privacy, MP3 en video naar tekst, export van SRT- en VTT-ondertitels, ondersteunde talen, offline gebruik en Whisper in de browser"></a>
 </p>
+
+<p align="center"><sub>FAQ-sectie: privacy, ondersteunde formaten, ondertitels exporteren, offline gebruik.</sub></p>
 
 ---
 
@@ -194,7 +208,7 @@ In een project kun je het transcript doorzoeken, op een tijdstempel klikken om t
 
 ## 💸 Wat het kost
 
-Gratis betekent niet gewichtloos. Dit zijn gemeten downloadgroottes per model en backend, geen schattingen:
+Gratis is niet kosteloos. Dit zijn gemeten downloadgroottes per model en backend, geen schattingen:
 
 | Model | WebGPU | WebAssembly | Typisch gebruik |
 |---|---:|---:|---|
@@ -231,7 +245,7 @@ Hoe verhoudt EarScribe zich tot andere manieren om audio te transcriberen in 202
 | **Installatie nodig** | ❌ Geen | ❌ Geen | ❌ Geen | ❌ Geen | ⚠️ Python + GPU |
 | **Kosten** | $0 | $0–$30/mnd | $0.25/min | €0.20/min | $0 (jouw hardware) |
 
-**Waar het verliest:** een lokale installatie kan een groter model op een snellere backend draaien dan een browsertab, en een betaalde dienst voegt sprekerlabels en een teamwerkruimte toe. De voorsprong van EarScribe is dat het gratis is, er niets geïnstalleerd hoeft te worden en de audio nergens heen gaat.
+**Waar hij tekortschiet:** een lokale installatie kan een groter model op een snellere backend draaien dan een browsertab, en een betaalde dienst voegt sprekerlabels en een teamwerkruimte toe. De voorsprong van EarScribe is dat het gratis is, er niets geïnstalleerd hoeft te worden en de audio nergens heen gaat.
 
 → **[Probeer het op earscribe.app](https://earscribe.app)**
 
@@ -302,7 +316,7 @@ Bestanden van twee uur worden ondersteund, maar dat is precies het geval waarin 
 
 Dit expliciet zeggen bespaart iedereen een verspilde run:
 
-- **Geen sprekersscheiding.** Twee mensen in één bestand leveren platte tekst op zonder labels "Speaker 1 / Speaker 2". De interviewpagina zegt dat met opzet.
+- **Geen sprekersscheiding.** Twee mensen in één bestand leveren tekst zonder sprekerlabels op ("Speaker 1 / Speaker 2"). De interviewpagina zegt dat met opzet.
 - **Geen vertaling.** Het transcript blijft in de taal die gesproken is; interfacetaal en gesproken taal hebben niets met elkaar te maken.
 - **Geen live ondertitels.** Opnemen en transcriberen zijn aparte stappen — de microfoon neemt eerst op, daarna wordt het bestand getranscribeerd.
 - **De wachtrij is serieel en vereist een open tab.** Eén model en één taalinstelling voor de hele batch. De tab sluiten stopt hem.
@@ -356,7 +370,7 @@ De transcriptiestap wel: zodra de pagina en het model geladen zijn, wordt audio 
 
 <details>
 <summary><b>Wordt er gelabeld wie er spreekt?</b></summary><br/>
-Nee. De uitvoer is platte tekst met tijdcodes. Sprekersdiarisatie hoort niet bij deze build, en de app doet niet alsof.
+Nee. De uitvoer is tekst zonder sprekerlabels met tijdcodes. Sprekersdiarisatie hoort niet bij deze build, en de app doet niet alsof.
 </details>
 
 <details>

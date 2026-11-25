@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — audio e video in testo, gratis, nel browser</h1>
+<h1 align="center">EarScribe — Trascrizione gratuita di audio e video nel browser</h1>
 
 <p align="center">
   <b>Trascina un file audio, un video, oppure registra dal microfono. Ottieni una trascrizione con timestamp e i sottotitoli.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — audio e video in testo gratis nel browser. Trascina un MP3, WAV, M4A o MP4 e ottieni una trascrizione con timestamp senza caricare nulla."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/it/hero.webp" alt="EarScribe — audio e video in testo gratis nel browser. Trascina un MP3, WAV, M4A o MP4 e ottieni una trascrizione con timestamp senza caricare nulla."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Aggiungi la coda e puoi trascinare un'intera cartella di file e andartene; aggiu
 ### 1. Trascina un file o un video, oppure registra — senza registrazione, senza caricamento
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Convertitore gratuito da audio e video a testo — trascina MP3, WAV, M4A, MP4, MOV o MKV nel browser. Nessuna registrazione, nessun login."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/it/hero.webp" alt="Convertitore gratuito da audio e video a testo — trascina MP3, WAV, M4A, MP4, MOV o MKV nel browser. Nessuna registrazione, nessun login."></a>
 </p>
+
+<p align="center"><sub>Trascinamento di un file, di un video o registrazione dal microfono, senza registrazione né caricamento.</sub></p>
 
 ### 2. Trascrizione con timestamp e forma d'onda — fai clic su una riga per saltare
 
@@ -128,11 +130,15 @@ Aggiungi la coda e puoi trascinare un'intera cartella di file e andartene; aggiu
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="Output di trascrizione EarScribe — audio in testo con timestamp, forma d'onda navigabile ed esportazione dei sottotitoli SRT e VTT in un clic"></a>
 </p>
 
+<p align="center"><sub>Trascrizione con timestamp allineata alla forma d'onda; un clic su una riga riporta la riproduzione a quel punto.</sub></p>
+
 ### 3. Tre passaggi: trascina → scegli un modello Whisper → esporta
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Come funziona l'audio in testo gratis su EarScribe — trascina audio o video, scegli un modello Whisper (tiny, base, small o turbo), leggi ed esporta la trascrizione"></a>
 </p>
+
+<p align="center"><sub>I tre passaggi dell'interfaccia: trascinare un media, scegliere un modello Whisper, esportare il risultato.</sub></p>
 
 ### 4. Perché EarScribe — Whisper nel browser, privacy al primo posto
 
@@ -140,11 +146,15 @@ Aggiungi la coda e puoi trascinare un'intera cartella di file e andartene; aggiu
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="Funzioni di EarScribe — nessun caricamento, WebGPU più WASM, 99 lingue parlate rilevate automaticamente, esportazione SRT VTT JSON TXT, inferenza sul dispositivo"></a>
 </p>
 
+<p align="center"><sub>Pagina delle funzioni: elaborazione sul dispositivo, WebGPU e WebAssembly, formati di esportazione.</sub></p>
+
 ### 5. Chi usa EarScribe — podcaster, giornalisti, studenti, montatori
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="Casi d'uso di EarScribe — audio in testo gratis per podcaster, giornalisti, studenti, ricerca utente, sottotitoli video e trascrizione di audiolibri"></a>
 </p>
+
+<p align="center"><sub>Panoramica degli usi: podcast, giornalismo, studio, montaggio video.</sub></p>
 
 ### 6. EarScribe vs Otter.ai, Rev, HappyScribe e un'installazione locale di Whisper
 
@@ -152,11 +162,15 @@ Aggiungi la coda e puoi trascinare un'intera cartella di file e andartene; aggiu
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Confronto EarScribe vs Otter.ai vs Rev vs HappyScribe — audio in testo gratis e illimitato con inferenza sul dispositivo e nessun costo al minuto"></a>
 </p>
 
+<p align="center"><sub>Tabella di confronto con i servizi cloud e con un'installazione locale di Whisper.</sub></p>
+
 ### 7. FAQ — privacy, formati, esportazione dei sottotitoli, uso offline
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="FAQ del parlato in testo gratuito — risposte su privacy, MP3 e video in testo, esportazione dei sottotitoli SRT e VTT, lingue supportate, uso offline e Whisper nel browser"></a>
 </p>
+
+<p align="center"><sub>Sezione FAQ: privacy, formati accettati, esportazione dei sottotitoli, uso offline.</sub></p>
 
 ---
 
@@ -194,7 +208,7 @@ Dentro un progetto puoi cercare nella trascrizione, fare clic su un timestamp pe
 
 ## 💸 Quanto costa
 
-Gratis non vuol dire senza peso. Queste sono dimensioni di download misurate per modello e backend, non stime:
+Gratis, ma non senza costi. Queste sono dimensioni di download misurate per modello e backend, non stime:
 
 | Modello | WebGPU | WebAssembly | Uso tipico |
 |---|---:|---:|---|
@@ -231,7 +245,7 @@ Come si comporta EarScribe rispetto agli altri modi di trascrivere audio nel 202
 | **Installazione richiesta** | ❌ Nessuna | ❌ Nessuna | ❌ Nessuna | ❌ Nessuna | ⚠️ Python + GPU |
 | **Costo** | $0 | $0–$30/mese | $0.25/min | €0.20/min | $0 (il tuo hardware) |
 
-**Dove perde:** un'installazione locale può far girare un modello più grande su un backend più veloce di una scheda del browser, e un servizio a pagamento aggiunge le etichette degli speaker e un'area di lavoro per team. Il vantaggio di EarScribe è che è gratis, non richiede installazioni e l'audio non va da nessuna parte.
+**Dove è più debole:** un'installazione locale può far girare un modello più grande su un backend più veloce di una scheda del browser, e un servizio a pagamento aggiunge le etichette degli speaker e un'area di lavoro per team. Il vantaggio di EarScribe è che è gratis, non richiede installazioni e l'audio non va da nessuna parte.
 
 → **[Provalo su earscribe.app](https://earscribe.app)**
 
@@ -302,7 +316,7 @@ I file da due ore sono supportati, ma sono il caso in cui decide la memoria del 
 
 Essere espliciti qui fa risparmiare a tutti un'esecuzione sprecata:
 
-- **Nessuna separazione degli speaker.** Due persone in un file producono testo piatto senza etichette "Speaker 1 / Speaker 2". La pagina delle interviste lo dice di proposito.
+- **Nessuna separazione degli speaker.** Due persone in un file producono testo senza indicazione dei parlanti, senza etichette "Speaker 1 / Speaker 2". La pagina delle interviste lo dice di proposito.
 - **Nessuna traduzione.** La trascrizione resta nella lingua in cui si è parlato; la lingua dell'interfaccia e quella parlata non hanno rapporto.
 - **Nessun sottotitolo in tempo reale.** Registrazione e trascrizione sono passaggi separati: prima il microfono registra, poi il file viene trascritto.
 - **La coda è seriale e richiede la scheda aperta.** Un modello, un'impostazione di lingua per l'intero batch. Chiudere la scheda la ferma.
@@ -356,7 +370,7 @@ La fase di trascrizione sì: una volta caricati la pagina e il modello, l'audio 
 
 <details>
 <summary><b>Indica chi sta parlando?</b></summary><br/>
-No. L'output è testo piatto con timecode. La diarizzazione degli speaker non fa parte di questa build, e l'app non finge il contrario.
+No. L'output è testo senza indicazione dei parlanti con timecode. La diarizzazione degli speaker non fa parte di questa build, e l'app non finge il contrario.
 </details>
 
 <details>

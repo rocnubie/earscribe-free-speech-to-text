@@ -94,6 +94,18 @@ function read(root, path) {
   return readFileSync(join(root, path), "utf8");
 }
 
+/**
+ * Which `public/screenshots/<dir>/` a README should use.
+ *
+ * The hero shot is captured per locale so each README opens with the interface
+ * in its own language. `pt-BR.md` maps to the site's lowercase `pt-br` path.
+ */
+export function shotDir(suffix) {
+  if (!suffix) return "en";
+  const code = suffix.slice(1);
+  return code.toLowerCase() === "pt-br" ? "pt-br" : code;
+}
+
 /** `{ id, wasm, webgpu }` per model, straight from the source of truth. */
 export function modelSizes(root = ROOT) {
   const source = read(root, "lib/models.ts");
@@ -224,7 +236,19 @@ export function auditReadmes(root = ROOT) {
       if (!localLinks.includes(href)) problems.push(`${file}: links to ${href}, which is not a shipped README`);
     }
 
-    // 5. phrases that were wrong
+    // 5. the hero image is the locale's own screenshot, and it exists
+    const dir = shotDir(suffix);
+    const hero = `public/screenshots/${dir}/hero.webp`;
+    if (!text.includes(hero)) {
+      problems.push(`${file}: hero image should come from ${hero} (its own interface language)`);
+    } else if (!existsSync(join(root, hero))) {
+      problems.push(`${file}: ${hero} does not exist — run HERO_LOCALES=${dir} node scripts/capture-site-shots.mjs`);
+    }
+    for (const [, rel] of text.matchAll(/(?:src="|]\()(public\/screenshots\/[^")]+)/g)) {
+      if (!existsSync(join(root, rel))) problems.push(`${file}: references ${rel}, which does not exist`);
+    }
+
+    // 6. phrases that were wrong
     for (const { pattern, why } of BANNED) {
       if (pattern.test(text)) problems.push(`${file}: contains "${pattern.source}" — ${why}`);
     }

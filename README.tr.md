@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — Tarayıcınızda Ücretsiz Ses ve Video Metne Dönüştürme</h1>
+<h1 align="center">EarScribe — sesi ve videoyu metne çevirme, tarayıcıda ücretsiz transkripsiyon</h1>
 
 <p align="center">
   <b>Bir ses dosyası, video sürükleyin ya da mikrofondan kaydedin. Zaman damgalı bir transkript ve altyazı alın.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — tarayıcıda ücretsiz ses ve video metne dönüştürme. Bir MP3, WAV, M4A veya MP4 sürükleyin, yükleme yapmadan zaman damgalı transkript alın."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/tr/hero.webp" alt="EarScribe — tarayıcıda ücretsiz ses ve video metne dönüştürme. Bir MP3, WAV, M4A veya MP4 sürükleyin, yükleme yapmadan zaman damgalı transkript alın."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Kuyruğu ekleyin, bir klasör dolusu dosyayı bırakıp gidebilirsiniz; `/dashbo
 ### 1. Bir dosya, video bırakın ya da kaydedin — kayıt yok, yükleme yok
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Ücretsiz ses ve video metne dönüştürücü — tarayıcıda MP3, WAV, M4A, MP4, MOV veya MKV sürükleyin. Kayıt yok, giriş yok."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/tr/hero.webp" alt="Ücretsiz ses ve video metne dönüştürücü — tarayıcıda MP3, WAV, M4A, MP4, MOV veya MKV sürükleyin. Kayıt yok, giriş yok."></a>
 </p>
+
+<p align="center"><sub>Ana ekran: dosya bırakma alanı, mikrofon düğmesi ve model seçimi tek görünümde</sub></p>
 
 ### 2. Dalga formlu zaman damgalı transkript — atlamak için herhangi bir satıra tıklayın
 
@@ -128,11 +130,15 @@ Kuyruğu ekleyin, bir klasör dolusu dosyayı bırakıp gidebilirsiniz; `/dashbo
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="EarScribe transkript çıktısı — dalga formu kaydırıcısı ve tek tıkla SRT ve VTT altyazı dışa aktarma ile zaman damgalı ses metne dönüştürme"></a>
 </p>
 
+<p align="center"><sub>Zaman damgalı transkript, dalga formu ve SRT ile VTT dışa aktarma düğmeleri</sub></p>
+
 ### 3. Üç adım: bırak → bir Whisper modeli seç → dışa aktar
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="EarScribe'da ücretsiz ses metne dönüştürme nasıl çalışır — ses veya video bırakın, bir Whisper modeli seçin (tiny, base, small veya turbo), transkripti okuyup dışa aktarın"></a>
 </p>
+
+<p align="center"><sub>Tek görünümde üç adım: dosya, Whisper modeli ve dışa aktarmaya hazır metin</sub></p>
 
 ### 4. Neden EarScribe — gizliliği önceleyen, tarayıcıya özgü Whisper
 
@@ -140,11 +146,15 @@ Kuyruğu ekleyin, bir klasör dolusu dosyayı bırakıp gidebilirsiniz; `/dashbo
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="EarScribe özellikleri — yüklemesiz gizlilik, WebGPU artı WASM, otomatik algılanan 99 konuşma dili, SRT VTT JSON TXT dışa aktarma, cihaz üzerinde çıkarım"></a>
 </p>
 
+<p align="center"><sub>Özelliklere genel bakış: yerel işleme, otomatik dil algılama ve dışa aktarma biçimleri</sub></p>
+
 ### 5. EarScribe'ı kimler kullanıyor — podcast yapımcıları, gazeteciler, öğrenciler, kurgucular
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="EarScribe kullanım senaryoları — podcast yapımcıları, gazeteciler, öğrenciler, kullanıcı araştırması, video altyazıları ve sesli kitap transkripsiyonu için ücretsiz ses metne dönüştürme"></a>
 </p>
+
+<p align="center"><sub>Podcast, söyleşi, ders ve altyazı için kullanım örnekleri</sub></p>
 
 ### 6. EarScribe, Otter.ai, Rev, HappyScribe ve yerel Whisper kurulumu karşılaştırması
 
@@ -152,11 +162,15 @@ Kuyruğu ekleyin, bir klasör dolusu dosyayı bırakıp gidebilirsiniz; `/dashbo
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="EarScribe ile Otter.ai, Rev ve HappyScribe karşılaştırması — cihaz üzerinde çıkarım ve dakika başına ücret olmadan ücretsiz sınırsız ses metne dönüştürme"></a>
 </p>
 
+<p align="center"><sub>Otter.ai, Rev, HappyScribe ve yerel Whisper ile karşılaştırma tablosu</sub></p>
+
 ### 7. SSS — gizlilik, formatlar, altyazı dışa aktarma, çevrimdışı kullanım
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="Ücretsiz konuşma metne dönüştürme SSS — gizlilik, MP3 ve video metne dönüştürme, SRT ve VTT altyazı dışa aktarma, desteklenen diller, çevrimdışı kullanım ve tarayıcıda Whisper hakkında yanıtlar"></a>
 </p>
+
+<p align="center"><sub>Gizlilik, dosya biçimleri ve çevrimdışı kullanım hakkında soru ve yanıtlar</sub></p>
 
 ---
 
@@ -231,7 +245,7 @@ Yöntem ve başarısız olan çalıştırmalar dahil tam ölçümler [rehberlerd
 | **Kurulum gerekir** | ❌ Yok | ❌ Yok | ❌ Yok | ❌ Yok | ⚠️ Python + GPU |
 | **Maliyet** | $0 | $0–$30/ay | $0.25/dk | €0.20/dk | $0 (kendi donanımınız) |
 
-**Nerede kaybediyor:** yerel bir kurulum, bir tarayıcı sekmesinden daha hızlı bir arka uçta daha büyük bir model çalıştırabilir; ücretli bir hizmet ise konuşmacı etiketi ve ekip çalışma alanı ekler. EarScribe'ın avantajı ücretsiz olması, hiçbir kurulum gerektirmemesi ve sesin hiçbir yere gitmemesi.
+**Nerede zayıf kalıyor:** yerel bir kurulum, bir tarayıcı sekmesinden daha hızlı bir arka uçta daha büyük bir model çalıştırabilir; ücretli bir hizmet ise konuşmacı etiketi ve ekip çalışma alanı ekler. EarScribe'ın avantajı ücretsiz olması, hiçbir kurulum gerektirmemesi ve sesin hiçbir yere gitmemesi.
 
 → **[earscribe.app üzerinde deneyin](https://earscribe.app)**
 
@@ -302,7 +316,7 @@ YouTube, Premiere, Final Cut ve Resolve için **[ses SRT'ye dönüştürme](http
 
 Burada açık olmak herkesin boşa giden bir denemesini önler:
 
-- **Konuşmacı ayrımı yok.** Tek dosyadaki iki kişi, "Konuşmacı 1 / Konuşmacı 2" etiketi olmadan düz metin üretir. Görüşme sayfası bunu bilerek söylüyor.
+- **Konuşmacı ayrımı yok.** Tek dosyadaki iki kişi, "Konuşmacı 1 / Konuşmacı 2" gibi konuşmacı etiketleri olmadan tek bir metin üretir. Görüşme sayfası bunu bilerek söylüyor.
 - **Çeviri yok.** Transkript konuşulan dilde kalır; arayüz dili ile konuşma dili birbirinden bağımsızdır.
 - **Canlı altyazı yok.** Kayıt ve transkripsiyon ayrı adımlardır — önce mikrofon kaydeder, sonra dosya yazıya dökülür.
 - **Kuyruk sıralıdır ve sekmenin açık kalmasını gerektirir.** Tüm toplu iş için tek model, tek dil ayarı. Sekmeyi kapatmak onu durdurur.
@@ -356,7 +370,7 @@ Transkripsiyon adımı çalışır: sayfa ve model yüklendikten sonra ses, bir 
 
 <details>
 <summary><b>Kimin konuştuğunu etiketliyor mu?</b></summary><br/>
-Hayır. Çıktı, zaman kodlu düz metindir. Konuşmacı ayrıştırması bu sürümün parçası değildir ve uygulama aksini iddia etmez.
+Hayır. Çıktı, zaman kodlu, konuşmacı etiketi olmayan bir metindir. Konuşmacı ayrıştırması bu sürümün parçası değildir ve uygulama aksini iddia etmez.
 </details>
 
 <details>

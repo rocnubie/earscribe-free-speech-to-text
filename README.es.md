@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — Audio y vídeo a texto gratis en tu navegador</h1>
+<h1 align="center">EarScribe — Transcripción de audio y vídeo gratis en tu navegador</h1>
 
 <p align="center">
   <b>Suelta un archivo de audio, un vídeo, o graba desde el micrófono. Obtén una transcripción con marcas de tiempo y subtítulos.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — audio y vídeo a texto gratis en el navegador. Suelta un MP3, WAV, M4A o MP4 y obtén una transcripción con marcas de tiempo sin subir nada."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/es/hero.webp" alt="EarScribe — audio y vídeo a texto gratis en el navegador. Suelta un MP3, WAV, M4A o MP4 y obtén una transcripción con marcas de tiempo sin subir nada."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Súmale la cola y puedes soltar los archivos de una carpeta entera y dejarla tra
 ### 1. Suelta un archivo o un vídeo, o graba — sin registro y sin subir nada
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Conversor gratis de audio y vídeo a texto — suelta MP3, WAV, M4A, MP4, MOV o MKV en el navegador. Sin registro, sin inicio de sesión."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/es/hero.webp" alt="Conversor gratis de audio y vídeo a texto — suelta MP3, WAV, M4A, MP4, MOV o MKV en el navegador. Sin registro, sin inicio de sesión."></a>
 </p>
+
+<p align="center"><sub>Arrastrar un archivo, un vídeo o grabar con el micrófono, sin registro ni envío.</sub></p>
 
 ### 2. Transcripción con marcas de tiempo y forma de onda — haz clic en cualquier línea para saltar
 
@@ -128,11 +130,15 @@ Súmale la cola y puedes soltar los archivos de una carpeta entera y dejarla tra
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="Resultado de EarScribe — audio a texto con marcas de tiempo, cabezal de forma de onda y exportación de subtítulos SRT y VTT en un clic"></a>
 </p>
 
+<p align="center"><sub>Transcripción con marcas de tiempo alineada con la forma de onda; al hacer clic en una línea se reproduce ese instante.</sub></p>
+
 ### 3. Tres pasos: suelta el archivo → elige un modelo de Whisper → exporta
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Cómo funciona el audio a texto gratis en EarScribe — suelta audio o vídeo, elige un modelo de Whisper (tiny, base, small o turbo), lee y exporta la transcripción"></a>
 </p>
+
+<p align="center"><sub>Los tres pasos de la interfaz: arrastrar un archivo, elegir un modelo Whisper y exportar el resultado.</sub></p>
 
 ### 4. Por qué EarScribe — Whisper nativo del navegador, privacidad ante todo
 
@@ -140,11 +146,15 @@ Súmale la cola y puedes soltar los archivos de una carpeta entera y dejarla tra
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="Funciones de EarScribe — privado sin subidas, WebGPU más WASM, 99 idiomas hablados detectados solos, exportación SRT VTT JSON TXT, inferencia en el dispositivo"></a>
 </p>
 
+<p align="center"><sub>Página de funciones: procesamiento en el dispositivo, WebGPU y WebAssembly, formatos de exportación.</sub></p>
+
 ### 5. Quién usa EarScribe — podcasters, periodistas, estudiantes, editores
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="Casos de uso de EarScribe — audio a texto gratis para podcasters, periodistas, estudiantes, investigación de usuarios, subtítulos de vídeo y transcripción de audiolibros"></a>
 </p>
+
+<p align="center"><sub>Resumen de usos: pódcast, periodismo, estudios, montaje de vídeo.</sub></p>
 
 ### 6. EarScribe frente a Otter.ai, Rev, HappyScribe y un Whisper local
 
@@ -152,11 +162,15 @@ Súmale la cola y puedes soltar los archivos de una carpeta entera y dejarla tra
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Comparativa de EarScribe con Otter.ai, Rev y HappyScribe — audio a texto gratis e ilimitado con inferencia en el dispositivo y sin tarifas por minuto"></a>
 </p>
 
+<p align="center"><sub>Tabla comparativa con los servicios en la nube y con una instalación local de Whisper.</sub></p>
+
 ### 7. Preguntas frecuentes — privacidad, formatos, exportación de subtítulos, uso sin conexión
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="Preguntas frecuentes sobre voz a texto gratis — respuestas sobre privacidad, MP3 y vídeo a texto, exportación de subtítulos SRT y VTT, idiomas compatibles, uso sin conexión y Whisper en el navegador"></a>
 </p>
+
+<p align="center"><sub>Sección de preguntas frecuentes: privacidad, formatos admitidos, exportación de subtítulos, uso sin conexión.</sub></p>
 
 ---
 
@@ -201,11 +215,11 @@ Gratis no significa sin coste. Estos son los tamaños de descarga medidos por mo
 | **tiny** | 151 MB | 41 MB | Notas de voz, móviles modestos, una primera prueba |
 | **base** *(predeterminado)* | 291 MB | 77 MB | Entrevistas, reuniones, pódcast |
 | **small** | 968 MB | 249 MB | Voz con acento, salas ruidosas |
-| **turbo** | 3.24 GB | 1.09 GB | Transcripciones de estudio, cuando la precisión importa más que el tiempo |
+| **turbo** | 3,24 GB | 1,09 GB | Transcripciones de estudio, cuando la precisión importa más que el tiempo |
 
 - **Se descarga una vez y queda en caché.** Los pesos viven en la caché del navegador; la segunda vez no se descarga nada. Otro perfil de navegador implica descargarlos de nuevo.
-- **La GPU merece la pena.** En el mismo equipo, WebGPU terminó un archivo de 40 minutos con base en unos 3.8 minutos frente a 9.4 en la CPU —unas 2.5× más rápido, a cambio de tres o cuatro veces más descarga. `turbo` en WebGPU nunca llegó a terminar su descarga de 3.24 GB en nuestra prueba, así que aparece como no medido, no como rápido.
-- **Manda la memoria, no el tamaño del archivo.** Las grabaciones largas se decodifican a 16 kHz mono antes de transcribir. Un MP3 de 40 minutos necesita unos cientos de megabytes; un WAV estéreo de dos horas puede agotar una pestaña antes de empezar. Ahora la decodificación pide 16 kHz directamente, lo que bajó la memoria máxima de un archivo estéreo de dos horas de unos 1.6 GB a 0.5 GB.
+- **La GPU merece la pena.** En el mismo equipo, WebGPU terminó un archivo de 40 minutos con base en unos 3,8 minutos frente a 9,4 en la CPU —unas 2,5× más rápido, a cambio de tres o cuatro veces más descarga. `turbo` en WebGPU nunca llegó a terminar su descarga de 3,24 GB en nuestra prueba, así que aparece como no medido, no como rápido.
+- **Manda la memoria, no el tamaño del archivo.** Las grabaciones largas se decodifican a 16 kHz mono antes de transcribir. Un MP3 de 40 minutos necesita unos cientos de megabytes; un WAV estéreo de dos horas puede agotar una pestaña antes de empezar. Ahora la decodificación pide 16 kHz directamente, lo que bajó la memoria máxima de un archivo estéreo de dos horas de unos 1,6 GB a 0,5 GB.
 - **Sin servidor ni cola en la máquina de otro.** El tiempo es de tu CPU, así que un portátil lento va lento. Es el precio de no subir nada.
 
 Las mediciones completas, con el método y las pruebas que fallaron, están en las [guías](https://earscribe.app/guides).
@@ -231,7 +245,7 @@ Las mediciones completas, con el método y las pruebas que fallaron, están en l
 | **Requiere instalación** | ❌ Ninguna | ❌ Ninguna | ❌ Ninguna | ❌ Ninguna | ⚠️ Python + GPU |
 | **Coste** | $0 | $0–$30/mes | $0.25/min | €0.20/min | $0 (tu hardware) |
 
-**Dónde pierde:** una instalación local puede mover un modelo más grande en un backend más rápido que una pestaña del navegador, y un servicio de pago añade etiquetas de hablante y un espacio de trabajo en equipo. La ventaja de EarScribe es que es gratis, no hay que instalar nada y el audio no va a ninguna parte.
+**Dónde se queda corto:** una instalación local puede mover un modelo más grande en un backend más rápido que una pestaña del navegador, y un servicio de pago añade etiquetas de hablante y un espacio de trabajo en equipo. La ventaja de EarScribe es que es gratis, no hay que instalar nada y el audio no va a ninguna parte.
 
 → **[Pruébalo en earscribe.app](https://earscribe.app)**
 
@@ -302,7 +316,7 @@ Se admiten archivos de dos horas, pero aquí manda la memoria del dispositivo. L
 
 Ser explícitos aquí evita que alguien pierda una ejecución:
 
-- **Sin separación de hablantes.** Dos personas en un mismo archivo dan texto plano, sin etiquetas «Hablante 1 / Hablante 2». La página de entrevistas lo dice a propósito.
+- **Sin separación de hablantes.** Dos personas en un mismo archivo dan texto sin etiquetas de hablante, sin distinción «Hablante 1 / Hablante 2». La página de entrevistas lo dice a propósito.
 - **Sin traducción.** La transcripción se queda en el idioma que se habló; el idioma de la interfaz y el hablado no tienen relación.
 - **Sin subtítulos en directo.** Grabar y transcribir son pasos distintos: el micrófono graba primero y después se transcribe el archivo.
 - **La cola es en serie y necesita la pestaña abierta.** Un modelo y un idioma para todo el lote. Si cierras la pestaña, se detiene.
@@ -331,7 +345,7 @@ Sí, directamente: MP4, MOV, MKV, WebM, M4V, TS, QT y M2TS. La pista de audio se
 
 <details>
 <summary><b>¿Por qué la primera ejecución es lenta?</b></summary><br/>
-La primera vez que usas un modelo, el navegador descarga sus pesos: 41 MB para tiny en WebAssembly y hasta 3.24 GB para turbo en WebGPU. Después quedan en caché. Para casi todo, elige <b>base</b> (77 MB en WebAssembly, 291 MB en WebGPU).
+La primera vez que usas un modelo, el navegador descarga sus pesos: 41 MB para tiny en WebAssembly y hasta 3,24 GB para turbo en WebGPU. Después quedan en caché. Para casi todo, elige <b>base</b> (77 MB en WebAssembly, 291 MB en WebGPU).
 </details>
 
 <details>
@@ -356,7 +370,7 @@ El paso de transcripción sí: una vez cargados la página y el modelo, el audio
 
 <details>
 <summary><b>¿Etiqueta quién habla?</b></summary><br/>
-No. La salida es texto plano con códigos de tiempo. La diarización de hablantes no forma parte de esta versión, y la app no finge lo contrario.
+No. La salida es texto sin etiquetas de hablante con códigos de tiempo. La diarización de hablantes no forma parte de esta versión, y la app no finge lo contrario.
 </details>
 
 <details>

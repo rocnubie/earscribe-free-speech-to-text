@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — Convertir gratuitement l'audio et la vidéo en texte dans votre navigateur</h1>
+<h1 align="center">EarScribe — Transcription audio et vidéo gratuite dans votre navigateur</h1>
 
 <p align="center">
   <b>Déposez un fichier audio, une vidéo, ou enregistrez avec le micro. Vous obtenez une transcription horodatée et des sous-titres.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — convertir gratuitement l'audio et la vidéo en texte dans le navigateur. Déposez un MP3, un WAV, un M4A ou un MP4 et obtenez une transcription horodatée sans rien envoyer."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/fr/hero.webp" alt="EarScribe — convertir gratuitement l'audio et la vidéo en texte dans le navigateur. Déposez un MP3, un WAV, un M4A ou un MP4 et obtenez une transcription horodatée sans rien envoyer."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Avec la file d'attente, vous déposez un dossier entier de fichiers et vous part
 ### 1. Déposez un fichier, une vidéo, ou enregistrez — sans inscription, sans envoi
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Convertisseur audio et vidéo en texte gratuit — déposez un MP3, WAV, M4A, MP4, MOV ou MKV dans le navigateur. Sans inscription, sans connexion."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/fr/hero.webp" alt="Convertisseur audio et vidéo en texte gratuit — déposez un MP3, WAV, M4A, MP4, MOV ou MKV dans le navigateur. Sans inscription, sans connexion."></a>
 </p>
+
+<p align="center"><sub>Dépôt d'un fichier, d'une vidéo ou enregistrement au micro, sans inscription ni envoi.</sub></p>
 
 ### 2. Transcription horodatée avec forme d'onde — cliquez sur une ligne pour y aller
 
@@ -128,11 +130,15 @@ Avec la file d'attente, vous déposez un dossier entier de fichiers et vous part
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="Résultat de transcription EarScribe — audio converti en texte avec horodatage, curseur de forme d'onde et export de sous-titres SRT et VTT en un clic"></a>
 </p>
 
+<p align="center"><sub>Transcription horodatée alignée sur la forme d'onde ; un clic sur une ligne relance la lecture à cet instant.</sub></p>
+
 ### 3. Trois étapes : déposer → choisir un modèle Whisper → exporter
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Comment fonctionne la conversion audio en texte gratuite sur EarScribe — déposez de l'audio ou une vidéo, choisissez un modèle Whisper (tiny, base, small ou turbo), lisez et exportez la transcription"></a>
 </p>
+
+<p align="center"><sub>Les trois étapes de l'interface : déposer un média, choisir un modèle Whisper, exporter le résultat.</sub></p>
 
 ### 4. Pourquoi EarScribe — la confidentialité d'abord, Whisper natif dans le navigateur
 
@@ -140,11 +146,15 @@ Avec la file d'attente, vous déposez un dossier entier de fichiers et vous part
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="Fonctionnalités d'EarScribe — confidentiel sans envoi, WebGPU et WASM, 99 langues parlées détectées automatiquement, export SRT VTT JSON TXT, inférence sur l'appareil"></a>
 </p>
 
+<p align="center"><sub>Page des fonctionnalités : traitement sur l'appareil, WebGPU et WebAssembly, formats d'export.</sub></p>
+
 ### 5. Qui utilise EarScribe — podcasters, journalistes, étudiants, monteurs
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="Cas d'usage d'EarScribe — audio en texte gratuit pour les podcasters, les journalistes, les étudiants, la recherche utilisateur, les sous-titres vidéo et la transcription de livres audio"></a>
 </p>
+
+<p align="center"><sub>Aperçu des usages : podcast, journalisme, études, montage vidéo.</sub></p>
 
 ### 6. EarScribe face à Otter.ai, Rev, HappyScribe et une installation Whisper locale
 
@@ -152,11 +162,15 @@ Avec la file d'attente, vous déposez un dossier entier de fichiers et vous part
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Comparaison EarScribe face à Otter.ai, Rev et HappyScribe — audio en texte gratuit et illimité, inférence sur l'appareil, aucune facturation à la minute"></a>
 </p>
 
+<p align="center"><sub>Tableau comparatif face aux services cloud et à une installation locale de Whisper.</sub></p>
+
 ### 7. FAQ — confidentialité, formats, export de sous-titres, usage hors ligne
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="FAQ de la reconnaissance vocale gratuite — réponses sur la confidentialité, la conversion MP3 et vidéo en texte, l'export de sous-titres SRT et VTT, les langues prises en charge, l'usage hors ligne et Whisper dans le navigateur"></a>
 </p>
+
+<p align="center"><sub>Section FAQ : confidentialité, formats acceptés, export de sous-titres, usage hors ligne.</sub></p>
 
 ---
 
@@ -194,7 +208,7 @@ Dans un projet, vous pouvez rechercher dans la transcription, cliquer sur un hor
 
 ## 💸 Ce que cela coûte
 
-Gratuit ne veut pas dire sans poids. Voici des tailles de téléchargement mesurées, par modèle et par backend, pas des estimations :
+La gratuité a un coût. Voici des tailles de téléchargement mesurées, par modèle et par backend, pas des estimations :
 
 | Modèle | WebGPU | WebAssembly | Usage typique |
 |---|---:|---:|---|
@@ -231,7 +245,7 @@ Comment EarScribe se situe-t-il en 2026 face aux autres façons de transcrire de
 | **Installation requise** | ❌ Aucune | ❌ Aucune | ❌ Aucune | ❌ Aucune | ⚠️ Python + GPU |
 | **Coût** | $0 | $0–$30/mois | $0.25/min | €0.20/min | $0 (votre matériel) |
 
-**Là où il perd :** une installation locale peut faire tourner un modèle plus gros sur un backend plus rapide qu'un onglet de navigateur, et un service payant ajoute l'identification des locuteurs et un espace de travail d'équipe. L'avantage d'EarScribe, c'est qu'il est gratuit, qu'il n'y a rien à installer et que l'audio ne va nulle part.
+**Ses limites :** une installation locale peut faire tourner un modèle plus gros sur un backend plus rapide qu'un onglet de navigateur, et un service payant ajoute l'identification des locuteurs et un espace de travail d'équipe. L'avantage d'EarScribe, c'est qu'il est gratuit, qu'il n'y a rien à installer et que l'audio ne va nulle part.
 
 → **[Essayer sur earscribe.app](https://earscribe.app)**
 

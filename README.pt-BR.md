@@ -26,7 +26,7 @@
   <a href="README.bn.md">বাংলা</a>
 </p>
 
-<h1 align="center">EarScribe — Áudio e vídeo para texto grátis no navegador</h1>
+<h1 align="center">EarScribe — Transcrição de áudio e vídeo grátis no navegador</h1>
 
 <p align="center">
   <b>Solte um arquivo de áudio, um vídeo, ou grave pelo microfone. Receba uma transcrição com carimbos de tempo e legendas.</b><br/>
@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="EarScribe — áudio e vídeo para texto grátis no navegador. Solte um MP3, WAV, M4A ou MP4 e receba uma transcrição com carimbos de tempo sem enviar nada."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/pt-br/hero.webp" alt="EarScribe — áudio e vídeo para texto grátis no navegador. Solte um MP3, WAV, M4A ou MP4 e receba uma transcrição com carimbos de tempo sem enviar nada."></a>
 </p>
 
 <p align="center">
@@ -119,8 +119,10 @@ Com a fila, dá para soltar os arquivos de uma pasta inteira e deixar rodando; c
 ### 1. Solte um arquivo ou um vídeo, ou grave — sem cadastro e sem envio
 
 <p align="center">
-  <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/01-hero.webp" alt="Conversor grátis de áudio e vídeo para texto — solte MP3, WAV, M4A, MP4, MOV ou MKV no navegador. Sem cadastro, sem login."></a>
+  <a href="https://earscribe.app"><img src="public/screenshots/pt-br/hero.webp" alt="Conversor grátis de áudio e vídeo para texto — solte MP3, WAV, M4A, MP4, MOV ou MKV no navegador. Sem cadastro, sem login."></a>
 </p>
+
+<p align="center"><sub>Arraste um arquivo, um vídeo ou grave pelo microfone, sem cadastro e sem envio.</sub></p>
 
 ### 2. Transcrição com carimbos de tempo e forma de onda — clique em qualquer linha para pular
 
@@ -128,11 +130,15 @@ Com a fila, dá para soltar os arquivos de uma pasta inteira e deixar rodando; c
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/02-transcript-showcase.webp" alt="Resultado do EarScribe — áudio para texto com carimbos de tempo, cursor na forma de onda e exportação de legendas SRT e VTT em um clique"></a>
 </p>
 
+<p align="center"><sub>Transcrição com marcações de tempo alinhada à forma de onda; um clique na linha retoma a reprodução naquele ponto.</sub></p>
+
 ### 3. Três passos: soltar → escolher um modelo do Whisper → exportar
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/03-how-it-works.webp" alt="Como funciona o áudio para texto grátis no EarScribe — solte áudio ou vídeo, escolha um modelo do Whisper (tiny, base, small ou turbo), leia e exporte a transcrição"></a>
 </p>
+
+<p align="center"><sub>Os três passos da interface: enviar um arquivo, escolher um modelo Whisper e exportar o resultado.</sub></p>
 
 ### 4. Por que o EarScribe — Whisper nativo do navegador, privacidade em primeiro lugar
 
@@ -140,11 +146,15 @@ Com a fila, dá para soltar os arquivos de uma pasta inteira e deixar rodando; c
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/04-features.webp" alt="Recursos do EarScribe — privado sem envio, WebGPU mais WASM, 99 idiomas falados detectados sozinhos, exportação SRT VTT JSON TXT, inferência no dispositivo"></a>
 </p>
 
+<p align="center"><sub>Página de recursos: processamento no dispositivo, WebGPU e WebAssembly, formatos de exportação.</sub></p>
+
 ### 5. Quem usa o EarScribe — podcasters, jornalistas, estudantes, editores
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/05-use-cases.webp" alt="Casos de uso do EarScribe — áudio para texto grátis para podcasters, jornalistas, estudantes, pesquisa com usuários, legendas de vídeo e transcrição de audiolivros"></a>
 </p>
+
+<p align="center"><sub>Visão geral dos usos: podcast, jornalismo, estudos, edição de vídeo.</sub></p>
 
 ### 6. EarScribe vs Otter.ai, Rev, HappyScribe e um Whisper local
 
@@ -152,11 +162,15 @@ Com a fila, dá para soltar os arquivos de uma pasta inteira e deixar rodando; c
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/06-comparison.webp" alt="Comparação do EarScribe com Otter.ai, Rev e HappyScribe — áudio para texto grátis e ilimitado com inferência no dispositivo e sem tarifas por minuto"></a>
 </p>
 
+<p align="center"><sub>Tabela comparativa com serviços em nuvem e com uma instalação local do Whisper.</sub></p>
+
 ### 7. Perguntas frequentes — privacidade, formatos, exportação de legendas, uso offline
 
 <p align="center">
   <a href="https://earscribe.app"><img src="https://earscribe.app/screenshots/07-faq.webp" alt="Perguntas frequentes sobre fala para texto grátis — respostas sobre privacidade, MP3 e vídeo para texto, exportação de legendas SRT e VTT, idiomas compatíveis, uso offline e Whisper no navegador"></a>
 </p>
+
+<p align="center"><sub>Seção de perguntas frequentes: privacidade, formatos aceitos, exportação de legendas, uso offline.</sub></p>
 
 ---
 
@@ -321,7 +335,7 @@ Sim — sem plano pago, sem cartão, sem tarifa por minuto, sem cota diária ou 
 
 <details>
 <summary><b>Meu áudio é enviado para algum lugar?</b></summary><br/>
-Não. O áudio é decodificado na aba e entregue a um modelo Whisper rodando num Web Worker. Os pesos do modelo são baixados <i>para</i> o seu navegador a partir de uma CDN, o que significa que a CDN vê o seu endereço IP — mas a gravação não é enviada. As páginas públicas têm Google AdSense — exceto as páginas em persa, que a política do AdSense exclui — e analytics Plausible sem cookies; <code>/dashboard</code> não carrega código de anúncio.
+Não. O áudio é decodificado na aba e entregue a um modelo Whisper rodando num Web Worker. Os pesos do modelo são baixados <i>para</i> o seu navegador a partir de uma CDN, o que significa que a CDN vê o seu endereço IP — mas a gravação não é enviada. Como o áudio é processado no navegador, não há transferência de gravações para um servidor — um ponto relevante para quem trata dados pessoais sob a LGPD. As páginas públicas têm Google AdSense — exceto as páginas em persa, que a política do AdSense exclui — e analytics Plausible sem cookies; <code>/dashboard</code> não carrega código de anúncio.
 </details>
 
 <details>

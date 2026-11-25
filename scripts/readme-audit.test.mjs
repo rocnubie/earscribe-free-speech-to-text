@@ -33,6 +33,9 @@ test("every README agrees with the code", () => {
   assert.deepEqual(problems, []);
 });
 
-test("audits all nine variants", () => {
-  assert.equal(README_SUFFIXES.length, 9);
+test("audits every shipped variant, RTL excluded on purpose", () => {
+  assert.equal(README_SUFFIXES.length, 24);
+  for (const rtl of [".fa", ".ar", ".ur"]) {
+    assert.ok(!README_SUFFIXES.includes(rtl), `${rtl} is right-to-left and stays out`);
+  }
 });

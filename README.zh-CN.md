@@ -1,6 +1,29 @@
 <p align="center">
-  <b>🌐 Language / 语言 / Idioma:</b><br/>
-  <a href="README.md">English</a> · <a href="README.zh-CN.md">中文</a> · <a href="README.ja.md">日本語</a> · <a href="README.ko.md">한국어</a> · <a href="README.es.md">Español</a> · <a href="README.pt-BR.md">Português</a> · <a href="README.de.md">Deutsch</a> · <a href="README.fr.md">Français</a> · <a href="README.ru.md">Русский</a>
+  <b>🌐 Languages:</b><br/>
+  <a href="README.md">English</a> ·
+  <a href="README.zh-CN.md">简体中文</a> ·
+  <a href="README.zh-TW.md">繁體中文</a> ·
+  <a href="README.ja.md">日本語</a> ·
+  <a href="README.ko.md">한국어</a> ·
+  <a href="README.es.md">Español</a> ·
+  <a href="README.pt-BR.md">Português</a> ·
+  <a href="README.fr.md">Français</a> ·
+  <a href="README.de.md">Deutsch</a> ·
+  <a href="README.it.md">Italiano</a> ·
+  <a href="README.nl.md">Nederlands</a> ·
+  <a href="README.pl.md">Polski</a> ·
+  <a href="README.ru.md">Русский</a> ·
+  <a href="README.uk.md">Українська</a> ·
+  <a href="README.sv.md">Svenska</a> ·
+  <a href="README.nb.md">Norsk</a> ·
+  <a href="README.da.md">Dansk</a> ·
+  <a href="README.fi.md">Suomi</a> ·
+  <a href="README.id.md">Bahasa Indonesia</a> ·
+  <a href="README.tr.md">Türkçe</a> ·
+  <a href="README.vi.md">Tiếng Việt</a> ·
+  <a href="README.th.md">ไทย</a> ·
+  <a href="README.hi.md">हिन्दी</a> ·
+  <a href="README.bn.md">বাংলা</a>
 </p>
 
 <h1 align="center">EarScribe —— 在浏览器里把音频和视频转成文字，免费</h1>

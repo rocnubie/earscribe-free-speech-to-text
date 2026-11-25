@@ -27,17 +27,37 @@ import { fileURLToPath } from "node:url";
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = dirname(HERE);
 
-/** `""` is the English source; the rest must match it structurally. */
+/**
+ * Every README that ships. `""` is the English source; the rest must match it
+ * structurally. Right-to-left locales (fa, ar, ur) are deliberately absent:
+ * GitHub does not parse Markdown tables inside a `dir="rtl"` wrapper, so those
+ * READMEs would cost twice as much and look worse.
+ */
 export const README_SUFFIXES = [
   "",
   ".zh-CN",
+  ".zh-TW",
   ".ja",
   ".ko",
   ".es",
   ".pt-BR",
-  ".de",
   ".fr",
+  ".de",
+  ".it",
+  ".nl",
+  ".pl",
   ".ru",
+  ".uk",
+  ".sv",
+  ".nb",
+  ".da",
+  ".fi",
+  ".id",
+  ".tr",
+  ".vi",
+  ".th",
+  ".hi",
+  ".bn",
 ];
 
 /** Marketing pages that are not tool slugs but are legitimate link targets. */
@@ -190,9 +210,18 @@ export function auditReadmes(root = ROOT) {
       }
     }
 
-    // 4. relative links (the language switcher) point at real files
-    for (const [, href] of text.matchAll(/\((README[a-zA-Z.-]*\.md)\)/g)) {
-      if (!existsSync(join(root, href))) problems.push(`${file}: links to ${href}, which does not exist`);
+    // 4. relative links (the language switcher) point at real files, and the
+    //    switcher actually offers every language — an unlinked README is dead
+    //    weight nobody can reach.
+    const localLinks = README_SUFFIXES.map((suffix) => `README${suffix}.md`);
+    for (const link of localLinks) {
+      // The switcher is HTML (`<a href="…">`); a body link would be Markdown.
+      if (!text.includes(`"${link}"`) && !text.includes(`(${link})`)) {
+        problems.push(`${file}: language switcher does not link ${link}`);
+      }
+    }
+    for (const [, href] of text.matchAll(/(?:\(|href=")(README[a-zA-Z.-]*\.md)/g)) {
+      if (!localLinks.includes(href)) problems.push(`${file}: links to ${href}, which is not a shipped README`);
     }
 
     // 5. phrases that were wrong
